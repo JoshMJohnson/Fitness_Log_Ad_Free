@@ -33,6 +33,6 @@ public partial class GoalsBodyWeight : ContentPage
 
     private async void Add_Body_Weight_Goal(object sender, EventArgs e)
     {
-		await DisplayAlert("ya", "yaa", "ya ya");
+		await DisplayAlert("Body Weight Goal", "yaa", "Add");
     }
 }
