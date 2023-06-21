@@ -16,7 +16,7 @@
         ContentTemplate="{DataTemplate local:BodyWeight}"
         Route="BodyWeight" />
 
-    <FlyoutItem Title="Goals">
+    <FlyoutItem Title="Goals">        
         <Tab Title="Body Weight">
             <ShellContent ContentTemplate="{DataTemplate local:GoalsBodyWeight}"/>
         </Tab>

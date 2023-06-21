@@ -14,7 +14,7 @@ public partial class GoalsPR : ContentPage
 
         vertical_layout.Add(new Label
         {
-            Text = "No PR goals set yet!",
+            Text = "No PR goals!",
             FontSize = 20,
             FontAttributes = FontAttributes.Italic,
             HorizontalOptions = LayoutOptions.Center
