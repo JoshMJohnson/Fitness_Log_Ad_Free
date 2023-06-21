@@ -62,6 +62,12 @@
 	  <MauiXaml Update="Goals.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="GoalsBodyWeight.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="GoalsPR.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="PersonalRecords.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
