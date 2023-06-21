@@ -7,11 +7,6 @@
     Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
-    <ShellContent
         Title="Body Progression"
         ContentTemplate="{DataTemplate local:BodyProgression}"
         Route="BodyProgression" />
