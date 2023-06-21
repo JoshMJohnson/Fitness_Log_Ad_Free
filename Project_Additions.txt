@@ -1,0 +1,9 @@
+﻿Sections:
+ - Body Image Progression section
+ - Calendar section to indicate which day was a push/pull/leg day
+ - Body Weight section with linear chart
+ - Personal Record section
+ - Goal section
+
+To Do:
+ - 

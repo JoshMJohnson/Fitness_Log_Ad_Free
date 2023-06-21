@@ -4,11 +4,36 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:WorkoutLog"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Title="Body Progression"
+        ContentTemplate="{DataTemplate local:BodyProgression}"
+        Route="BodyProgression" />
+
+    <ShellContent
+        Title="Body Weight"
+        ContentTemplate="{DataTemplate local:BodyWeight}"
+        Route="BodyWeight" />
+
+    <ShellContent
+        Title="Goals"
+        ContentTemplate="{DataTemplate local:Goals}"
+        Route="Goals" />
+
+    <ShellContent
+        Title="Personal Records"
+        ContentTemplate="{DataTemplate local:PersonalRecords}"
+        Route="PersonalRecords" />
+
+    <ShellContent
+        Title="Workout Calendar"
+        ContentTemplate="{DataTemplate local:WorkoutCalendar}"
+        Route="WorkoutCalendar" />
 
 </Shell>
