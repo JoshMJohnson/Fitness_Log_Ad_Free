@@ -16,7 +16,7 @@
             <Grid Grid.Row="0"
                   Grid.Column="0"
                   RowDefinitions="*, *"
-                  Margin="20">
+                  Margin="10">
 
                 <Label Text="Exercise"
                        FontAttributes="Bold"

@@ -4,6 +4,8 @@ namespace WorkoutLog;
 
 public partial class WorkoutCalendar : ContentPage
 {
+    private int max_categories = 6;
+
 	public WorkoutCalendar()
 	{
 		InitializeComponent();
@@ -70,6 +72,6 @@ public partial class WorkoutCalendar : ContentPage
     /* processes a submission to record an exercise performed */
     private async void Record_Exercise(object sender, EventArgs e)
     {
-        await DisplayAlert("Record Exercise", "Record name_of_exercise on selected_date?", "Record", "Cancel");
+        await DisplayAlert("Record Exercise", "Record name_of_exercise on selected_date?", "Submit", "Cancel");
     }
 }
