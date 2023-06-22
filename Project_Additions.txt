@@ -8,3 +8,4 @@
 
 To Do:
  - Have a max number of exercise categories for spacing purposes
+ - Have a max number of characters for creating a new exercise

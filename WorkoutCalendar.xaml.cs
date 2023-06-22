@@ -9,6 +9,8 @@ public partial class WorkoutCalendar : ContentPage
 		InitializeComponent();
 
         Refresh_Categories();
+
+        exercise_category.SelectedIndex = 0; /* initializes value of excercise to be recorded */
     }
 
     /* button clicked to create a workout category */
@@ -57,5 +59,17 @@ public partial class WorkoutCalendar : ContentPage
         /* TESTING TEMP LIST end */
 
         workout_category_display.ItemsSource = category_list;
+    }
+
+    /* processes a change in exercise category dropdown box selected for recording an exercise event */
+    private void Exercise_Category_Change(object sender, EventArgs e)
+    {
+
+    }
+
+    /* processes a submission to record an exercise performed */
+    private async void Record_Exercise(object sender, EventArgs e)
+    {
+        await DisplayAlert("Record Exercise", "Record name_of_exercise on selected_date?", "Record", "Cancel");
     }
 }
