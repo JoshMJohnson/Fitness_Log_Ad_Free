@@ -1,8 +1,52 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:WorkoutLog.Model"
              x:Class="WorkoutLog.WorkoutCalendar"
              Title="Workout Calendar">
-    <VerticalStackLayout>
-    </VerticalStackLayout>
+
+    <Grid ColumnDefinitions="*, *"
+          RowDefinitions="*, *" >
+
+        <CollectionView x:Name="workout_category_display"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="Start" 
+                        VerticalOptions="Center" >
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Category">
+                    <Grid ColumnDefinitions="Auto, *">
+                        <Label Text="{Binding Id}"
+                               Grid.Column="0" />
+
+                        <Label Text="{Binding Name}"
+                               Grid.Column="1" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>            
+        </CollectionView>
+
+        <Grid Grid.Row="0"
+              Grid.Column="1"
+              RowDefinitions="Auto, Auto"
+              VerticalOptions="Center" >
+            
+            <Button Text="Create Category"
+                    Grid.Row="0"
+                    Margin="20"
+                    Clicked="Create_Category" />
+
+            <Button Text="Remove Category"
+                    Grid.Row="1"
+                    Margin="20"
+                    Clicked="Remove_Category" />
+        </Grid>
+              
+        <DatePicker x:Name="calendar_section"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" />
+    </Grid>
 </ContentPage>
