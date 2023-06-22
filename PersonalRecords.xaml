@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:WorkoutLog.Model"
              x:Class="WorkoutLog.PersonalRecords"
              Title="Personal Records">
-    <VerticalStackLayout>
-    </VerticalStackLayout>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"
+                     Clicked="Add_PR" />
+    </ContentPage.ToolbarItems>
+
+    <Grid x:Name="pr_layout"
+          RowDefinitions="*"
+          ColumnDefinitions="*">
+
+        <CollectionView x:Name="pr_display"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:PR">
+                    <Grid RowDefinitions="1"
+                          ColumnDefinitions="1">
+
+                        <Label Text="{Binding Id}"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               FontSize="12" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

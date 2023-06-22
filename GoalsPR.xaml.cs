@@ -6,7 +6,7 @@ public partial class GoalsPR : ContentPage
     {
         InitializeComponent();
 
-        /* display when body weight goal list is empty */
+        /* display when PR goal list is empty */
         VerticalStackLayout vertical_layout = new VerticalStackLayout();
 
         vertical_layout.VerticalOptions = LayoutOptions.Center;
