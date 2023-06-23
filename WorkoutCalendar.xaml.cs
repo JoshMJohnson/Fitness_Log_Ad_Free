@@ -11,7 +11,11 @@ public partial class WorkoutCalendar : ContentPage
 	{
 		InitializeComponent();
 
-        Refresh_Categories();              
+        Refresh_Categories();
+
+        /* set and display default values */
+        exercise_category.SelectedIndex = 0;
+        record_date.Date = DateTime.Now;
     }
 
     /* button clicked to create a workout category */
@@ -82,27 +86,13 @@ public partial class WorkoutCalendar : ContentPage
 
     /* processes a submission to record an exercise performed */
     private async void Record_Exercise(object sender, EventArgs e)
-    {
-        /* set default values for recording an exercise */
-        //exercise_category.SelectedIndex = 0;
-        //exercise_default_date.Date = DateTime.Now;
-
-        string action = await DisplayActionSheet("ActionSheet: SavePhoto?", "Cancel", "Record", "Photo Roll", "Email");
-        Debug.WriteLine("Action: " + action);
-
-        //await DisplayAlert("Record Exercise", "Record name_of_exercise on selected_date?", "Submit", "Cancel");
+    {        
+        await DisplayAlert("Record Exercise", "Record name_of_exercise on selected_date?", "Submit", "Cancel");
     }
 
     /* processes a submission to record an exercise performed */
     private async void Unrecord_Exercise(object sender, EventArgs e)
     {
-        /* set default values for recording an exercise */
-        //exercise_category.SelectedIndex = 0;
-        //exercise_default_date.Date = DateTime.Now;
-
-        string action = await DisplayActionSheet("ActionSheet: SavePhoto?", "Cancel", "Remove", "Photo Roll", "Email");
-        Debug.WriteLine("Action: " + action);
-
-        //await DisplayAlert("Record Exercise", "Record name_of_exercise on selected_date?", "Submit", "Cancel");
+        await DisplayAlert("Remove Exercise", "Remove name_of_exercise on selected_date?", "Submit", "Cancel");
     }
 }
