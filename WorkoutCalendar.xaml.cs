@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using WorkoutLog.Model;
 
@@ -86,13 +87,31 @@ public partial class WorkoutCalendar : ContentPage
 
     /* processes a submission to record an exercise performed */
     private async void Record_Exercise(object sender, EventArgs e)
-    {        
-        await DisplayAlert("Record Exercise", "Record name_of_exercise on selected_date?", "Submit", "Cancel");
+    {
+        /* retrieve recording data */
+        DateTime date_time = record_date.Date;
+        object category = exercise_category.SelectedItem;
+
+        /* format date to remove the time and leave date */
+        string date_time_string = date_time.ToString();
+        string[] date_array = date_time_string.Split(' ');
+        string date = date_array[0];
+
+        await DisplayAlert("Record Exercise", $"Date: {date}\nExercise Category: {category}", "Submit", "Cancel");
     }
 
     /* processes a submission to record an exercise performed */
     private async void Unrecord_Exercise(object sender, EventArgs e)
     {
-        await DisplayAlert("Remove Exercise", "Remove name_of_exercise on selected_date?", "Submit", "Cancel");
+        /* retrieve unrecording data */
+        DateTime date_time = record_date.Date;
+        object category = exercise_category.SelectedItem;
+
+        /* format date to remove the time and leave date */
+        string date_time_string = date_time.ToString();
+        string[] date_array = date_time_string.Split(' '); 
+        string date = date_array[0];
+
+        await DisplayAlert("Remove Exercise", $"Date: {date}\nExercise Category: {category}", "Submit", "Cancel");
     }
 }

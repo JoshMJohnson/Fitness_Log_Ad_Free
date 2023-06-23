@@ -99,6 +99,7 @@
 
             <DatePicker x:Name="record_date"
                         Grid.Column="1"
+                        HorizontalOptions="Center"
                         Margin="10" />
 
             <Button Text="-"
