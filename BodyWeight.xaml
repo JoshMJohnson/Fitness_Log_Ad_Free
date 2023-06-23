@@ -5,7 +5,7 @@
              x:Class="WorkoutLog.BodyWeight"
              Title="Body Weight">
 
-    <Grid RowDefinitions="Auto, *"
+    <Grid RowDefinitions="Auto, Auto, *"
           ColumnDefinitions="*"
           Padding="20">
 
@@ -99,5 +99,13 @@
                        HorizontalOptions="Center" />
             </Grid>
         </Grid>
+
+        <Label Text="values are in lbs"
+               FontAttributes="Italic"
+               FontSize="12"
+               HorizontalOptions="End"
+               Grid.Row="1" />
+        
+        
     </Grid>
 </ContentPage>
