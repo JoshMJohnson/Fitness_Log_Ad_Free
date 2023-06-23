@@ -23,5 +23,5 @@
 
 
 <div align='center'>
-    <p>:arrow_up: <a href="#chart_with_upwards_trend-stock-tracker-chart_with_upwards_trend">Back to top</a> :arrow_up:</p>
+    <p>:arrow_up: <a href="#chart_with_upwards_trend-workout-log-chart_with_upwards_trend">Back to top</a> :arrow_up:</p>
 </div>
