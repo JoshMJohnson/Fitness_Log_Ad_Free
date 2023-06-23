@@ -37,6 +37,8 @@ public partial class WorkoutCalendar : ContentPage
         Category temp2 = new Category();
         Category temp3 = new Category();
         Category temp4 = new Category();
+        Category temp5 = new Category();
+        Category temp6 = new Category();
 
         temp1.Id = 1;
         temp1.Name = "Push";
@@ -54,10 +56,20 @@ public partial class WorkoutCalendar : ContentPage
         temp4.Name = "Running";
         temp4.Color = "yellow";
 
+        temp5.Id = 5;
+        temp5.Name = "calisthenics";
+        temp5.Color = "brown";
+
+        temp6.Id = 6;
+        temp6.Name = "yoga";
+        temp6.Color = "pink";
+
         category_list.Add(temp1);
         category_list.Add(temp2);
         category_list.Add(temp3);
         category_list.Add(temp4);
+        category_list.Add(temp5);
+        category_list.Add(temp6);
         /* TESTING TEMP LIST end */
 
         workout_category_display.ItemsSource = category_list;

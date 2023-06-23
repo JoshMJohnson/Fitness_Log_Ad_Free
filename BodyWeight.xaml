@@ -1,8 +1,103 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:WorkoutLog.Model"
              x:Class="WorkoutLog.BodyWeight"
              Title="Body Weight">
-    <VerticalStackLayout>
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions="Auto, *"
+          ColumnDefinitions="*"
+          Padding="20">
+
+        <Grid Grid.Row="0"
+              RowDefinitions="50, 50"
+              ColumnDefinitions="*, *, *" 
+              Padding="20"
+              BackgroundColor="LightGray" >
+
+            <Grid Grid.Row="0"
+                  Grid.Column="0"
+                  RowDefinitions="*, *" >
+
+                <Label Text="Actual"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Center" />
+
+                <Label x:Name="actual_weight_display"
+                       Grid.Row="1"
+                       HorizontalOptions="Center" />
+            </Grid>
+
+            <Grid Grid.Row="0"
+                  Grid.Column="1"
+                  RowDefinitions="*, *" >
+
+                <Label Text="Change"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Center" />
+
+                <Label x:Name="change_weight_display"
+                       Grid.Row="1"
+                       HorizontalOptions="Center" />
+            </Grid>
+
+            <Grid Grid.Row="0"
+                  Grid.Column="2"
+                  RowDefinitions="*, *" >
+
+                <Label Text="Primary Goal"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Center" />
+
+                <Label x:Name="goal_display"
+                       Grid.Row="1"
+                       HorizontalOptions="Center" />
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  Grid.Column="0"
+                  RowDefinitions="*, *" >
+
+                <Label Text="This Week"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Center" />
+
+                <Label x:Name="week_change_display"
+                       Grid.Row="1"
+                       HorizontalOptions="Center" />
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  Grid.Column="1"
+                  RowDefinitions="*, *" >
+
+                <Label Text="This Month"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Center" />
+
+                <Label x:Name="month_change_display"
+                       Grid.Row="1"
+                       HorizontalOptions="Center" />
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  Grid.Column="2"
+                  RowDefinitions="*, *" >
+
+                <Label Text="Total"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Center" />
+
+                <Label x:Name="total_change_display"
+                       Grid.Row="1"
+                       HorizontalOptions="Center" />
+            </Grid>
+        </Grid>
+    </Grid>
 </ContentPage>

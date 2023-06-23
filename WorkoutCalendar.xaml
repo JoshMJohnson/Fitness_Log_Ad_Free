@@ -79,7 +79,7 @@
 
         <Grid Grid.Row="2"
               Grid.ColumnSpan="2" 
-              ColumnDefinitions="*, *">
+              ColumnDefinitions="*, *, *">
 
             <Picker x:Name="exercise_category"
                     SelectedIndexChanged="Exercise_Category_Change"
@@ -97,8 +97,12 @@
                 </Picker.ItemsSource>
             </Picker>
 
+            <DatePicker x:Name="record_date"
+                        Grid.Column="1"
+                        Margin="20" />
+
             <Button Text="Record"
-                    Grid.Column="1"
+                    Grid.Column="2"
                     Clicked="Record_Exercise"
                     Margin="20" />
         </Grid>
