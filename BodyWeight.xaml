@@ -5,6 +5,11 @@
              x:Class="WorkoutLog.BodyWeight"
              Title="Body Weight">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"
+                     Clicked="Record_Body_Weight" />
+    </ContentPage.ToolbarItems>
+
     <Grid RowDefinitions="Auto, Auto, *"
           ColumnDefinitions="*"
           Padding="20">

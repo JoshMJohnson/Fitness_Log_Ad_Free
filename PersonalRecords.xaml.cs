@@ -31,6 +31,7 @@ public partial class PersonalRecords : ContentPage
         goal_layout.Add(vertical_layout);
     }
 
+    /* executed when PR plus button clicked */
     private async void Add_PR(object sender, EventArgs e)
     {
         await DisplayAlert("Personal Record", "yaa", "Save");

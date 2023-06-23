@@ -27,4 +27,10 @@ public partial class BodyWeight : ContentPage
         month_change_display.Text = month_change.ToString();
         total_change_display.Text = total_change.ToString();
     }
+
+    /* executed when body weight plus button clicked to record an update in body weight */
+    private async void Record_Body_Weight(object sender, EventArgs e)
+    {
+        await DisplayAlert("Body Weight", "yaa", "Record");
+    }
 }
