@@ -97,7 +97,7 @@ public partial class WorkoutCalendar : ContentPage
         string[] date_array = date_time_string.Split(' ');
         string date = date_array[0];
 
-        await DisplayAlert("Record Exercise", $"Date: {date}\nExercise Category: {category}", "Submit", "Cancel");
+        await DisplayAlert("Record Exercise", $"Date: {date}\nCategory: {category}", "Submit", "Cancel");
     }
 
     /* processes a submission to record an exercise performed */
@@ -112,6 +112,6 @@ public partial class WorkoutCalendar : ContentPage
         string[] date_array = date_time_string.Split(' '); 
         string date = date_array[0];
 
-        await DisplayAlert("Remove Exercise", $"Date: {date}\nExercise Category: {category}", "Submit", "Cancel");
+        await DisplayAlert("Remove Exercise", $"Date: {date}\nCategory: {category}", "Submit", "Cancel");
     }
 }
