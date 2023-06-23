@@ -5,8 +5,15 @@
              x:Class="WorkoutLog.WorkoutCalendar"
              Title="Workout Calendar">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="-"
+                     Clicked="Unrecord_Exercise" />
+        <ToolbarItem Text="+"
+                     Clicked="Record_Exercise" />
+    </ContentPage.ToolbarItems>
+
     <Grid ColumnDefinitions="*, *"
-          RowDefinitions="*, Auto, Auto, *" >
+          RowDefinitions="*, *" >
 
         <Grid RowDefinitions="Auto, *"
               ColumnDefinitions="*"
@@ -58,7 +65,7 @@
               Grid.Column="1"
               RowDefinitions="Auto, Auto"
               VerticalOptions="Center" >
-            
+
             <Button Text="Create Category"
                     Grid.Row="0"
                     Margin="20"
@@ -70,51 +77,8 @@
                     Clicked="Remove_Category" />
         </Grid>
 
-        <Label Text="Record An Exercise"
-               FontSize="32"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               Grid.ColumnSpan="2"
-               Grid.Row="1" />
-
-        <Grid Grid.Row="2"
-              Grid.ColumnSpan="2"
-              ColumnDefinitions="*, *, Auto, Auto" >
-
-            <Picker x:Name="exercise_category"
-                    SelectedIndexChanged="Exercise_Category_Change"
-                    Grid.Column="0"
-                    HorizontalOptions="Center"
-                    Margin="10">
-
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Push</x:String>
-                        <x:String>Pull</x:String>
-                        <x:String>Legs</x:String>
-                        <x:String>Running</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-
-            <DatePicker x:Name="record_date"
-                        Grid.Column="1"
-                        HorizontalOptions="Center"
-                        Margin="10" />
-
-            <Button Text="-"
-                    Grid.Column="2"
-                    Clicked="Unrecord_Exercise"
-                    Margin="10" />
-
-            <Button Text="+"
-                    Grid.Column="3"
-                    Clicked="Record_Exercise"
-                    Margin="10" />
-        </Grid>
-
         <DatePicker x:Name="calendar_section"
-                    Grid.Row="3"
+                    Grid.Row="1"
                     Grid.ColumnSpan="2"
                     HorizontalOptions="Center" 
                     VerticalOptions="Center" />

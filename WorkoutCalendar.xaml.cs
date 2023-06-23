@@ -1,6 +1,8 @@
+using CommunityToolkit.Maui.Views;
 using System;
 using System.Diagnostics;
 using WorkoutLog.Model;
+using WorkoutLog.Popup;
 
 namespace WorkoutLog;
 
@@ -13,10 +15,6 @@ public partial class WorkoutCalendar : ContentPage
 		InitializeComponent();
 
         Refresh_Categories();
-
-        /* set and display default values */
-        exercise_category.SelectedIndex = 0;
-        record_date.Date = DateTime.Now;
     }
 
     /* button clicked to create a workout category */
@@ -79,39 +77,15 @@ public partial class WorkoutCalendar : ContentPage
         workout_category_display.ItemsSource = category_list;
     }
 
-    /* processes a change in exercise category dropdown box selected for recording an exercise event */
-    private void Exercise_Category_Change(object sender, EventArgs e)
-    {
-
-    }
-
-    /* processes a submission to record an exercise performed */
+    /* executes when the plus button is clicked to record an exercise */
     private async void Record_Exercise(object sender, EventArgs e)
     {
-        /* retrieve recording data */
-        DateTime date_time = record_date.Date;
-        object category = exercise_category.SelectedItem;
-
-        /* format date to remove the time and leave date */
-        string date_time_string = date_time.ToString();
-        string[] date_array = date_time_string.Split(' ');
-        string date = date_array[0];
-
-        await DisplayAlert("Record Exercise", $"Date: {date}\nCategory: {category}", "Submit", "Cancel");
+        object result = await this.ShowPopupAsync(new CalendarAddPopup());                
     }
 
-    /* processes a submission to record an exercise performed */
+    /* executes when the minus button is clicked to record an exercise */
     private async void Unrecord_Exercise(object sender, EventArgs e)
     {
-        /* retrieve unrecording data */
-        DateTime date_time = record_date.Date;
-        object category = exercise_category.SelectedItem;
-
-        /* format date to remove the time and leave date */
-        string date_time_string = date_time.ToString();
-        string[] date_array = date_time_string.Split(' '); 
-        string date = date_array[0];
-
-        await DisplayAlert("Remove Exercise", $"Date: {date}\nCategory: {category}", "Submit", "Cancel");
+        object result = await this.ShowPopupAsync(new CalendarRemovePopup());
     }
 }
