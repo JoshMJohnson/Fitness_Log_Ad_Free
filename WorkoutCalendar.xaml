@@ -45,8 +45,8 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Category">
                         <Grid ColumnDefinitions="50, 20, *"
-                              RowDefinitions="*"
-                              Padding="10">
+                              RowDefinitions="*" 
+                              Padding="5" >
 
                             <Label Text="{Binding Id}"
                                    Grid.Column="0"
