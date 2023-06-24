@@ -20,13 +20,50 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:PR">
-                    <Grid RowDefinitions="1"
-                          ColumnDefinitions="1">
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          Margin="10">
 
-                        <Label Text="{Binding Id}"
-                               Grid.Row="0"
+                        <Label Text="{Binding Exercise_Name}"
                                Grid.Column="0"
-                               FontSize="12" />
+                               FontSize="16"
+                               VerticalOptions="Center" />
+
+                        <Grid Grid.Column="1"
+                              RowDefinitions="*, *"
+                              ColumnDefinitions="*"
+                              HorizontalOptions="End" >
+
+                            <Label Text="{Binding Date_Achieved}"
+                                   Grid.Row="0"
+                                   FontSize="12"
+                                   HorizontalOptions="End" />
+
+                            <Label Text="{Binding Weight}"
+                                   x:Name="weight_display_node"
+                                   Grid.Row="1"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="*"
+                                  ColumnDefinitions="*, *, *"
+                                  x:Name="time_display_node"
+                                  IsVisible="false" >
+
+                                <Label Text="{Binding Time_Hours}"
+                                       Grid.Column="0"
+                                       FontSize="12"  />
+
+                                <Label Text="{Binding Time_Min}"
+                                       Grid.Column="1"
+                                       FontSize="12" />
+
+                                <Label Text="{Binding Time_Sec}"
+                                       Grid.Column="2"
+                                       FontSize="12" />
+                            </Grid>                            
+                        </Grid>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

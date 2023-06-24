@@ -11,3 +11,4 @@ To Do:
  - Have a max number of characters for creating a new exercise
  - Have a primary goal for body weight
  - Create exercise ability to have weight or time PR
+ - PR toggle between background node colors based on pattern or weight/time 
