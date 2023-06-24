@@ -62,8 +62,13 @@ public partial class BodyProgression : ContentPage
         temp1.Image_Sting = "image1.jpg";
         temp2.Image_Sting = "image2.png";
         temp3.Image_Sting = "image3.jpg";
+
+        //progression_list.Add(temp1);
+        //progression_list.Add(temp2);
+        //progression_list.Add(temp3);
         /* TESTING END */
 
+        progression_display.ItemsSource = progression_list;
 
         if (progression_list.Count == 0)  /* if pr list is empty - no pr's set */
         {
