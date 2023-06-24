@@ -1,0 +1,12 @@
+﻿Sections:
+ - Body Image Progression section
+ - Calendar section to indicate which day was a push/pull/leg day
+ - Body Weight section with linear chart
+ - Personal Record section
+ - Goal section
+	- TabBar -> body weight/PR
+
+To Do:
+ - Have a max number of exercise categories for spacing purposes
+ - Have a max number of characters for creating a new exercise
+ - Have a primary goal for body weight
