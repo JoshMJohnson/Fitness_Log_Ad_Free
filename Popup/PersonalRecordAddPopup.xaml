@@ -62,6 +62,7 @@
                    Grid.Row="3"
                    Grid.Column="2"
                    MaxLength="4"
+                   HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
             <Label Grid.Row="3"
@@ -73,6 +74,7 @@
                    Grid.Row="3"
                    Grid.Column="4"
                    MaxLength="2"
+                   HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
             <Label Grid.Row="3"
@@ -97,6 +99,7 @@
                    Margin="10"
                    HorizontalOptions="End"
                    VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
                    MaxLength="4"
                    Placeholder="100"/>
         </Grid>
