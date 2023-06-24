@@ -5,10 +5,10 @@
              x:Class="WorkoutLog.Popup.GoalPRPopup"
              VerticalOptions="Start"
              HorizontalOptions="Center"
-             Size="300, 200" >
+             Size="300, 500" >
 
     <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, Auto, *">
+          RowDefinitions="Auto, Auto, Auto, Auto, *">
 
         <Label Text="PR Goal"
                Grid.Row="0"
@@ -17,21 +17,73 @@
                Margin="20"
                FontSize="24" />
 
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="Date:"
+               VerticalOptions="Center"
+               HorizontalOptions="Start"
+               Margin="10" />
 
         <DatePicker x:Name="record_date"
                     Grid.Row="1"
                     Grid.Column="1"
                     HorizontalOptions="Center" />
 
+        <Grid Grid.ColumnSpan="2"
+              Grid.Row="2"
+              RowDefinitions="*"
+              ColumnDefinitions="*, Auto, *">
+
+            <Label Grid.Column="0"
+                   Text="Weight"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" />
+
+            <Switch Grid.Column="1"
+                    x:Name="exercise_type_toggle"                    
+                    Toggled="exercise_type_change"
+                    IsToggled="False"
+                    VerticalOptions="Center"
+                    Margin="20" />
+
+            <Label Grid.Column="2"
+                   Text="Time"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <Grid Grid.ColumnSpan="2"
+              Grid.Row="3"
+              RowDefinitions="*"
+              ColumnDefinitions="*, Auto, *">
+
+            <Label Grid.Column="0"
+                   Text="Date"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" />
+
+            <Switch Grid.Column="1"
+                    x:Name="date_included_toggle"                    
+                    Toggled="date_included_change"
+                    IsToggled="False"
+                    VerticalOptions="Center"
+                    Margin="20" />
+
+            <Label Grid.Column="2"
+                   Text="No Date"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" />
+        </Grid>
+
         <Button Text="Log"
-                Grid.Row="2"
+                Grid.Row="4"
                 Grid.Column="0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center" 
                 Clicked="Submit_Goal" />
 
         <Button Text="Cancel"
-                Grid.Row="2"
+                Grid.Row="4"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"

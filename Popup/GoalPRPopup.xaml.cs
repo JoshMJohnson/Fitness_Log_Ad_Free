@@ -18,4 +18,16 @@ public partial class GoalPRPopup
     {
         Close();
     }
+
+    /* handles event when toggled between weight and time PR type */
+    private void exercise_type_change(object sender, EventArgs e)
+    {
+        
+    }
+
+    /* handles event when toggled between goal date and no date */
+    private void date_included_change(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -17,4 +17,6 @@ public class Goal
 	public int weight_lbs { get; set; }
 
 	public string time { get; set; }
+
+	public DateTime goal_archieve_by_date { get; set; }
 }

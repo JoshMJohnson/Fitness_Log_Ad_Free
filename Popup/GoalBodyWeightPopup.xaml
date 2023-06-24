@@ -17,13 +17,13 @@
                Margin="20"
                FontSize="24" />
 
-        
-
-        <DatePicker x:Name="record_date"
+        <DatePicker x:Name="goal_date"
                     Grid.Row="1"
                     Grid.Column="1"
                     HorizontalOptions="Center" />
 
+        
+        
         <Button Text="Log"
                 Grid.Row="2"
                 Grid.Column="0"
