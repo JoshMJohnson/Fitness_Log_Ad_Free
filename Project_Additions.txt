@@ -12,3 +12,6 @@ To Do:
  - Have a primary goal for body weight
  - Create exercise ability to have weight or time PR
  - PR toggle between background node colors based on pattern or weight/time 
+ - PR display icon if weight or time pr type
+ - open app on workout calendar page
+ - Body Weight chart. click entry on graph to show edit and delete options

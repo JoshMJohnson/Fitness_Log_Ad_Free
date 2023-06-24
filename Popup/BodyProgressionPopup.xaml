@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="WorkoutLog.Popup.BodyProgressionPopup"
+             VerticalOptions="Start"
+             HorizontalOptions="Center"
+             Size="300, 200" >
+
+    <Grid ColumnDefinitions="*, *" 
+          RowDefinitions="Auto, *">
+
+        <Label Text="Add Progression"
+               Grid.Row="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               Margin="20"
+               FontSize="24" />
+
+        <Button Text="Save"
+                Grid.Row="2"
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" 
+                Clicked="Submit_Progression" />
+
+        <Button Text="Cancel"
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="Cancel_Progression" />
+    </Grid>
+</mct:Popup>

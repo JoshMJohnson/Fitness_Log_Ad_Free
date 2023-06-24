@@ -1,3 +1,7 @@
+using CommunityToolkit.Maui.Views;
+using WorkoutLog.Popup;
+using WorkoutLog.Model;
+
 namespace WorkoutLog;
 
 public partial class GoalsBodyWeight : ContentPage
@@ -22,7 +26,7 @@ public partial class GoalsBodyWeight : ContentPage
 
         vertical_layout.Add(new Image
         {
-            Source = "empty_goal_list.png",
+            Source = "empty_list.png",
             HeightRequest = 200
         });
 
@@ -33,6 +37,6 @@ public partial class GoalsBodyWeight : ContentPage
 
     private async void Add_Body_Weight_Goal(object sender, EventArgs e)
     {
-		await DisplayAlert("Body Weight Goal", "yaa", "Add");
+        object result = await this.ShowPopupAsync(new GoalBodyWeightPopup());
     }
 }

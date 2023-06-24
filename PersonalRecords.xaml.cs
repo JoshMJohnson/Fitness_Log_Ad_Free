@@ -2,12 +2,15 @@ using CommunityToolkit.Maui.Views;
 using WorkoutLog.Popup;
 using WorkoutLog.Model;
 using CommunityToolkit.Maui.Converters;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.Maui.Controls;
 
 namespace WorkoutLog;
 
 public partial class PersonalRecords : ContentPage
 {
-    VerticalStackLayout vertical_layout_empty_pr_list;
+    private VerticalStackLayout vertical_layout_empty_pr_list;
 
     public PersonalRecords()
 	{
@@ -29,7 +32,7 @@ public partial class PersonalRecords : ContentPage
 
         vertical_layout_empty_pr_list.Add(new Image
         {
-            Source = "empty_goal_list.png",
+            Source = "empty_list.png",
             HeightRequest = 200
         });
 
@@ -120,7 +123,7 @@ public partial class PersonalRecords : ContentPage
                 /* swap from weight pr -> time pr display */
                 if (pr_list[i].Weight == 0) /* if exercise type is a timed event */
                 {
-
+                                        
                 }
             }
         }
