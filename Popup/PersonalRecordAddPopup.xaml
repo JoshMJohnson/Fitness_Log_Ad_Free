@@ -5,64 +5,82 @@
              x:Class="WorkoutLog.Popup.PersonalRecordAddPopup"
              VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="300, 400">
+           Size="250, 400">
 
-    <Grid ColumnDefinitions="*, *" 
+    <Grid ColumnDefinitions="Auto, *" 
           RowDefinitions="Auto, Auto, Auto, Auto, *">
 
         <Label Text="Create Exercise"
                Grid.Row="0"
                Grid.ColumnSpan="2"
                HorizontalOptions="Center"
-               Margin="20"
+               Padding="20"
                FontSize="24" />
 
         <Label Grid.Row="1"
                Grid.Column="0"
                Text="Exercise:" 
-               Margin="20" />
+               Margin="10" 
+               HorizontalOptions="Start"
+               VerticalOptions="Center" />
 
         <Entry Grid.Row="1"
                Grid.Column="1"
-               Text="Enter Exercise"
-               MaxLength="20"
-               Margin="20" />
+               MaxLength="30"
+               Margin="10"
+               HorizontalOptions="End"
+               VerticalOptions="Center"
+               Placeholder="Enter Exercise"/>
 
         <Label Grid.Row="2"
                Grid.Column="0"
                Text="Date:"
-               Margin="20" />
+               Margin="10"
+               HorizontalOptions="Start"
+               VerticalOptions="Center" />
 
         <DatePicker x:Name="record_date"
                     Grid.Row="2"
                     Grid.Column="1"
-                    HorizontalOptions="Center" 
-                    Margin="20" />
+                    HorizontalOptions="End" 
+                    VerticalOptions="Center"
+                    Margin="10" />
 
         <Label Grid.Row="3"
                Grid.Column="0"
                Text="Weight:" 
-               Margin="20" />
+               Margin="10"
+               HorizontalOptions="Start"
+               VerticalOptions="Center" />
 
         <Entry Keyboard="Numeric"
                Grid.Row="3"
                Grid.Column="1"
-               Margin="20" />
+               Margin="10"
+               HorizontalOptions="End"
+               VerticalOptions="Center"
+               Placeholder="100"/>
 
-        <Button Text="Submit"
-                Grid.Row="4"
-                Grid.Column="0"
-                HorizontalOptions="Center"
-                VerticalOptions="Center" 
-                Clicked="Submit_PR" 
-                Margin="20" />
+        <Grid Grid.Row="4"
+              Grid.ColumnSpan="2"
+              RowDefinitions="*"
+              ColumnDefinitions="*, *">
 
-        <Button Text="Cancel"
-                Grid.Row="4"
-                Grid.Column="1"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Clicked="Cancel_PR" 
-                Margin="20" />
+            <Button Text="Submit"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    Clicked="Submit_PR" 
+                    Margin="10" />
+
+            <Button Text="Cancel"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="Cancel_PR" 
+                    Margin="10" />
+        </Grid>
     </Grid>
 </mct:Popup>
