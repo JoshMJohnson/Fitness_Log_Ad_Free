@@ -1,3 +1,6 @@
+using CommunityToolkit.Maui.Views;
+using WorkoutLog.Popup;
+
 namespace WorkoutLog;
 
 public partial class PersonalRecords : ContentPage
@@ -34,6 +37,6 @@ public partial class PersonalRecords : ContentPage
     /* executed when PR plus button clicked */
     private async void Add_PR(object sender, EventArgs e)
     {
-        await DisplayAlert("Personal Record", "yaa", "Save");
+        object result = await this.ShowPopupAsync(new PersonalRecordAddPopup());
     }
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="WorkoutLog.Popup.PersonalRecordAddPopup"
+             VerticalOptions="Start"
+           HorizontalOptions="Center"
+           Size="300, 400">
+
+    <Grid ColumnDefinitions="*, *" 
+          RowDefinitions="Auto, Auto, Auto, Auto, *">
+
+        <Label Text="Create Exercise"
+               Grid.Row="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               Margin="20"
+               FontSize="24" />
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="Exercise:" 
+               Margin="20" />
+
+        <Entry Grid.Row="1"
+               Grid.Column="1"
+               Text="Enter Exercise"
+               MaxLength="20"
+               Margin="20" />
+
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Text="Date:"
+               Margin="20" />
+
+        <DatePicker x:Name="record_date"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalOptions="Center" 
+                    Margin="20" />
+
+        <Label Grid.Row="3"
+               Grid.Column="0"
+               Text="Weight:" 
+               Margin="20" />
+
+        <Entry Keyboard="Numeric"
+               Grid.Row="3"
+               Grid.Column="1"
+               Margin="20" />
+
+        <Button Text="Submit"
+                Grid.Row="4"
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" 
+                Clicked="Submit_PR" 
+                Margin="20" />
+
+        <Button Text="Cancel"
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="Cancel_PR" 
+                Margin="20" />
+    </Grid>
+</mct:Popup>
