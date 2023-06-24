@@ -5,10 +5,10 @@
              x:Class="WorkoutLog.Popup.PersonalRecordAddPopup"
              VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="250, 400">
+           Size="250, 450">
 
     <Grid ColumnDefinitions="Auto, *" 
-          RowDefinitions="Auto, Auto, Auto, Auto, *">
+          RowDefinitions="Auto, Auto, Auto, Auto, Auto, *">
 
         <Label Text="Create Exercise"
                Grid.Row="0"
@@ -26,7 +26,7 @@
 
         <Entry Grid.Row="1"
                Grid.Column="1"
-               MaxLength="30"
+               MaxLength="25"
                Margin="10"
                HorizontalOptions="End"
                VerticalOptions="Center"
@@ -48,7 +48,7 @@
 
         <Label Grid.Row="3"
                Grid.Column="0"
-               Text="Weight:" 
+               Text="Weight (lbs):" 
                Margin="10"
                HorizontalOptions="Start"
                VerticalOptions="Center" />
@@ -59,9 +59,32 @@
                Margin="10"
                HorizontalOptions="End"
                VerticalOptions="Center"
-               Placeholder="100"/>
+               MaxLength="4"
+               Placeholder="100" />
 
-        <Grid Grid.Row="4"
+        <Grid Grid.ColumnSpan="2"
+              Grid.Row="4"
+              RowDefinitions="*"
+              ColumnDefinitions="*, Auto, *">
+
+            <Label Grid.Column="0"
+                   Text="Weight"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center" />
+
+            <Switch Grid.Column="1"
+                    x:Name="exercise_type_toggle"
+                    IsToggled="False"
+                    VerticalOptions="Center"
+                    Margin="20" />
+
+            <Label Grid.Column="2"
+                   Text="Time"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <Grid Grid.Row="5"
               Grid.ColumnSpan="2"
               RowDefinitions="*"
               ColumnDefinitions="*, *">

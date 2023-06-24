@@ -10,3 +10,4 @@ To Do:
  - Have a max number of exercise categories for spacing purposes
  - Have a max number of characters for creating a new exercise
  - Have a primary goal for body weight
+ - Create exercise ability to have weight or time PR

@@ -14,4 +14,6 @@ public class PR
     public string Exercise_Name { get; set; }
 
     public int Weight { get; set; }  
+
+    public TimeSpan Time { get;set; }
 }
