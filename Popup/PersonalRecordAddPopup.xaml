@@ -46,22 +46,61 @@
                     VerticalOptions="Center"
                     Margin="10" />
 
-        <Label Grid.Row="3"
-               Grid.Column="0"
-               Text="Weight (lbs):" 
-               Margin="10"
-               HorizontalOptions="Start"
-               VerticalOptions="Center" />
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="2"
+              RowDefinitions="*"
+              ColumnDefinitions="Auto, *, 40, Auto, 25, Auto"
+              x:Name="time_display" 
+              Margin="10" >
 
-        <Entry Keyboard="Numeric"
-               Grid.Row="3"
-               Grid.Column="1"
-               Margin="10"
-               HorizontalOptions="End"
-               VerticalOptions="Center"
-               MaxLength="4"
-               Placeholder="100" />
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Time:"
+                   VerticalOptions="Center" />
 
+            <Entry Keyboard="Numeric"
+                   Grid.Row="3"
+                   Grid.Column="2"
+                   MaxLength="4"
+                   Placeholder="0" />
+
+            <Label Grid.Row="3"
+                   Grid.Column="3"
+                   Text="min" 
+                   Margin="10" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Row="3"
+                   Grid.Column="4"
+                   MaxLength="2"
+                   Placeholder="0" />
+
+            <Label Grid.Row="3"
+                   Grid.Column="5"
+                   Text="sec" 
+                   Margin="10" />
+        </Grid>
+
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="2"
+              x:Name="weight_display">
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Weight (lbs):" 
+                   Margin="10"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Column="1"
+                   Margin="10"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   MaxLength="4"
+                   Placeholder="100"/>
+        </Grid>
+        
         <Grid Grid.ColumnSpan="2"
               Grid.Row="4"
               RowDefinitions="*"
@@ -73,7 +112,8 @@
                    VerticalOptions="Center" />
 
             <Switch Grid.Column="1"
-                    x:Name="exercise_type_toggle"
+                    x:Name="exercise_type_toggle"                    
+                    Toggled="exercise_type_change"
                     IsToggled="False"
                     VerticalOptions="Center"
                     Margin="20" />
