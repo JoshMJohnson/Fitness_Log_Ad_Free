@@ -5,12 +5,12 @@
            x:Class="WorkoutLog.Popup.CalendarAddPopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="300, 200" >
+           Size="225, 275" >
 
     <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, Auto, *">
+          RowDefinitions="Auto, Auto, Auto, *">
 
-        <Label Text="Record An Exercise"
+        <Label Text="Record Exercise"
                FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"
@@ -18,36 +18,55 @@
                Margin="20"
                FontSize="24" />
 
-        <Picker x:Name="exercise_category"
-                Grid.Row="1"
-                Grid.Column="0"
-                HorizontalOptions="Center">
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Margin="10"
+              ColumnDefinitions="Auto, *, Auto" >
 
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Push</x:String>
-                    <x:String>Pull</x:String>
-                    <x:String>Legs</x:String>
-                    <x:String>Calisthenics</x:String>
-                    <x:String>Running</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+            <Label Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Category:" />
 
-        <DatePicker x:Name="record_date"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    HorizontalOptions="Center" />
+            <Picker x:Name="exercise_category"
+                    Grid.Column="2"
+                    HorizontalOptions="Center">
+
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Push</x:String>
+                        <x:String>Pull</x:String>
+                        <x:String>Legs</x:String>
+                        <x:String>Calisthenics</x:String>
+                        <x:String>Running</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Grid>
+
+        <Grid Grid.Row="2"
+              Grid.ColumnSpan="2"
+              ColumnDefinitions="Auto, *, Auto"
+              Margin="10"
+              x:Name="record_date_display">
+
+            <Label Grid.Column="0"
+                   Text="Date:" 
+                   VerticalOptions="Center" />
+
+            <DatePicker Grid.Column="2"
+                        x:Name="record_date"
+                        VerticalOptions="Center" />
+        </Grid>
 
         <Button Text="Record"
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center" 
                 Clicked="Submit_Record" />
 
         <Button Text="Cancel"
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"

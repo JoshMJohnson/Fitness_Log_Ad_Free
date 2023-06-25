@@ -128,13 +128,11 @@
               x:Name="no_date_display" 
               Margin="10" >
 
-            <Label Grid.Row="3"
-                   Grid.Column="0"
+            <Label Grid.Column="0"
                    VerticalOptions="Center"
                    Text="Achieve By:" />
 
-            <Label Grid.Row="3"
-                   Grid.Column="2"
+            <Label Grid.Column="2"
                    VerticalOptions="Center"
                    Text="No Achieve Date" 
                    FontAttributes="Italic"
@@ -147,8 +145,7 @@
               x:Name="record_date_display"
               IsVisible="False">
 
-            <Label Grid.Row="3"
-                   Grid.Column="0"
+            <Label Grid.Column="0"
                    Text="Achieve By:" 
                    VerticalOptions="Center"
                    HorizontalOptions="Start" />

@@ -1,53 +1,72 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
-             x:Class="WorkoutLog.Popup.CalendarRemovePopup"
-             VerticalOptions="Start"
-             HorizontalOptions="Center"
-             Size="300, 200" >
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+           x:Class="WorkoutLog.Popup.CalendarRemovePopup"
+           VerticalOptions="Start"
+           HorizontalOptions="Center"
+           Size="225, 275" >
 
     <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, Auto, *">
+          RowDefinitions="Auto, Auto, Auto, *">
 
-        <Label Text="Remove An Exercise"
+        <Label Text="Remove Record"
                FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"
                HorizontalOptions="Center"
                Margin="20"
                FontSize="24" />
+        
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Margin="10"
+              ColumnDefinitions="Auto, *, Auto" >
 
-        <Picker x:Name="exercise_category"
-                Grid.Row="1"
-                Grid.Column="0"
-                HorizontalOptions="Center">
+            <Label Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Category:" />
 
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Push</x:String>
-                    <x:String>Pull</x:String>
-                    <x:String>Legs</x:String>
-                    <x:String>Calisthenics</x:String>
-                    <x:String>Running</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+            <Picker x:Name="exercise_category"
+                    Grid.Column="2"
+                    HorizontalOptions="Center">
 
-        <DatePicker x:Name="record_date"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    HorizontalOptions="Center" />
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Push</x:String>
+                        <x:String>Pull</x:String>
+                        <x:String>Legs</x:String>
+                        <x:String>Calisthenics</x:String>
+                        <x:String>Running</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Grid>
+
+        <Grid Grid.Row="2"
+              Grid.ColumnSpan="2"
+              ColumnDefinitions="Auto, *, Auto"
+              Margin="10"
+              x:Name="record_date_display">
+
+            <Label Grid.Column="0"
+                   Text="Date:" 
+                   VerticalOptions="Center" />
+
+            <DatePicker Grid.Column="2"
+                        x:Name="record_date"
+                        VerticalOptions="Center" />
+        </Grid>
 
         <Button Text="Remove"
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Clicked="Remove_Record" />
 
         <Button Text="Cancel"
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
