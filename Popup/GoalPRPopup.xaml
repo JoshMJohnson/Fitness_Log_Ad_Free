@@ -22,7 +22,7 @@
               RowDefinitions="*"
               ColumnDefinitions="Auto, *, 40, Auto, 25, Auto"
               x:Name="time_display" 
-              Margin="10"              
+              Margin="8"              
               IsVisible="false" >
 
             <Label Grid.Row="3"
@@ -61,7 +61,7 @@
 
         <Grid Grid.Row="1"
               Grid.ColumnSpan="2"
-              Margin="10"
+              Margin="8"
               x:Name="weight_display" >
 
             <Label Grid.Row="3"
@@ -82,7 +82,7 @@
         <Grid Grid.ColumnSpan="2"
               Grid.Row="2"
               RowDefinitions="*"
-              Margin="10"
+              Margin="8"
               ColumnDefinitions="*, Auto, *">
 
             <Label Grid.Column="0"
@@ -103,39 +103,56 @@
                    HorizontalOptions="Start"/>
         </Grid>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <Grid Grid.Row="3"
-              Grid.ColumnSpan="2" 
-              Margin="10"
+              Grid.ColumnSpan="2"
               RowDefinitions="*"
-              ColumnDefinitions="auto, *, Auto"
-              x:Name="no_date_display" >
+              ColumnDefinitions="Auto, *, Auto"
+              x:Name="no_date_display" 
+              Margin="10" >
 
             <Label Grid.Row="3"
                    Grid.Column="0"
-                   Text="Date:"
-                   VerticalOptions="Center" />
+                   VerticalOptions="Center"
+                   Text="Date:" />
 
-            <Label Grid.Column="2"
-                   Text="No Date Desired"
+            <Label Grid.Row="3"
+                   Grid.Column="2"
+                   VerticalOptions="Center"
+                   Text="No Achieve Date" 
                    FontAttributes="Italic"
-                   VerticalOptions="Center" />
+                   Margin="10" />
         </Grid>
 
         <Grid Grid.Row="3"
-              Grid.ColumnSpan="2" 
-              Margin="10"
-              RowDefinitions="*"
-              ColumnDefinitions="auto, *, Auto"
+              Grid.ColumnSpan="2"
+              Margin="8"
               x:Name="record_date_display"
-              IsVisible="False" >
+              IsVisible="False">
 
             <Label Grid.Row="3"
                    Grid.Column="0"
-                   Text="Date:"
-                   VerticalOptions="Center" />
+                   Text="Date:" 
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
 
-            <DatePicker x:Name="record_date"
-                        Grid.Column="2"
+            <DatePicker Grid.Column="1"
+                        HorizontalOptions="End"
                         VerticalOptions="Center" />
         </Grid>
 
@@ -148,7 +165,7 @@
             <Label Grid.Column="0"
                    Text="No Date"
                    VerticalOptions="Center"
-                   HorizontalOptions="End"/>
+                   HorizontalOptions="End" />
 
             <Switch Grid.Column="1"
                     x:Name="date_included_toggle"                    
@@ -160,8 +177,26 @@
             <Label Grid.Column="2"
                    Text="Date"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start" />
+                   HorizontalOptions="Start"/>
         </Grid>
+        
+        
+        
+        
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         <Button Text="Log"
                 Grid.Row="5"
