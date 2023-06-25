@@ -30,7 +30,6 @@ public partial class BodyProgressionPopup
         }
 
         var stream = result.FullPath;
-        Console.WriteLine($"******{stream}******");
 
         Close();
     }
