@@ -5,10 +5,10 @@
              x:Class="WorkoutLog.Popup.GoalPRPopup"
              VerticalOptions="Start"
              HorizontalOptions="Center"
-             Size="300, 500" >
+             Size="300, 600" >
 
     <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, Auto, Auto, Auto, *">
+          RowDefinitions="Auto, Auto, Auto, Auto, Auto, *">
 
         <Label Text="PR Goal"
                Grid.Row="0"
@@ -17,27 +17,78 @@
                Margin="20"
                FontSize="24" />
 
-        <Label Grid.Row="1"
-               Grid.Column="0"
-               Text="Date:"
-               VerticalOptions="Center"
-               HorizontalOptions="Start"
-               Margin="10" />
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              RowDefinitions="*"
+              ColumnDefinitions="Auto, *, 40, Auto, 25, Auto"
+              x:Name="time_display" 
+              Margin="10"              
+              IsVisible="false" >
 
-        <DatePicker x:Name="record_date"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    HorizontalOptions="Center" />
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Time:" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Row="3"
+                   Grid.Column="2"
+                   VerticalOptions="Center"
+                   MaxLength="4"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="0" />
+
+            <Label Grid.Row="3"
+                   Grid.Column="3"
+                   VerticalOptions="Center"
+                   Text="min" 
+                   Margin="10" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Row="3"
+                   Grid.Column="4"
+                   MaxLength="2"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="0" />
+
+            <Label Grid.Row="3"
+                   Grid.Column="5"
+                   VerticalOptions="Center"
+                   Text="sec" 
+                   Margin="10" />
+        </Grid>
+
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Margin="10"
+              x:Name="weight_display" >
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Weight (lbs):" 
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Column="1"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   MaxLength="4"
+                   Placeholder="100"/>
+        </Grid>
 
         <Grid Grid.ColumnSpan="2"
               Grid.Row="2"
               RowDefinitions="*"
+              Margin="10"
               ColumnDefinitions="*, Auto, *">
 
             <Label Grid.Column="0"
                    Text="Weight"
-                   HorizontalOptions="End"
-                   VerticalOptions="Center" />
+                   VerticalOptions="Center"
+                   HorizontalOptions="End" />
 
             <Switch Grid.Column="1"
                     x:Name="exercise_type_toggle"                    
@@ -48,19 +99,56 @@
 
             <Label Grid.Column="2"
                    Text="Time"
-                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"/>
+        </Grid>
+
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="2" 
+              Margin="10"
+              RowDefinitions="*"
+              ColumnDefinitions="auto, *, Auto"
+              x:Name="no_date_display" >
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Date:"
+                   VerticalOptions="Center" />
+
+            <Label Grid.Column="2"
+                   Text="No Date Desired"
+                   FontAttributes="Italic"
                    VerticalOptions="Center" />
         </Grid>
 
-        <Grid Grid.ColumnSpan="2"
-              Grid.Row="3"
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="2" 
+              Margin="10"
               RowDefinitions="*"
+              ColumnDefinitions="auto, *, Auto"
+              x:Name="record_date_display"
+              IsVisible="False" >
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Date:"
+                   VerticalOptions="Center" />
+
+            <DatePicker x:Name="record_date"
+                        Grid.Column="2"
+                        VerticalOptions="Center" />
+        </Grid>
+
+        <Grid Grid.ColumnSpan="2"
+              Grid.Row="4"
+              RowDefinitions="*"
+              Margin="10"
               ColumnDefinitions="*, Auto, *">
 
             <Label Grid.Column="0"
-                   Text="Date"
-                   HorizontalOptions="End"
-                   VerticalOptions="Center" />
+                   Text="No Date"
+                   VerticalOptions="Center"
+                   HorizontalOptions="End"/>
 
             <Switch Grid.Column="1"
                     x:Name="date_included_toggle"                    
@@ -70,20 +158,20 @@
                     Margin="20" />
 
             <Label Grid.Column="2"
-                   Text="No Date"
-                   HorizontalOptions="Start"
-                   VerticalOptions="Center" />
+                   Text="Date"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
         </Grid>
 
         <Button Text="Log"
-                Grid.Row="4"
+                Grid.Row="5"
                 Grid.Column="0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center" 
                 Clicked="Submit_Goal" />
 
         <Button Text="Cancel"
-                Grid.Row="4"
+                Grid.Row="5"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
