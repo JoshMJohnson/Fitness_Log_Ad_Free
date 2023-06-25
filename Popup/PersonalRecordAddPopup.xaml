@@ -120,7 +120,7 @@
                     Toggled="exercise_type_change"
                     IsToggled="False"
                     VerticalOptions="Center"
-                    Margin="20" />
+                    Margin="10" />
 
             <Label Grid.Column="2"
                    Text="Time"
