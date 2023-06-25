@@ -25,9 +25,9 @@
               ColumnDefinitions="Auto, *, Auto">
 
             <Label Grid.Row="1"
-               Grid.Column="0"
-               VerticalOptions="Center"
-               Text="Weight (lbs):" />
+                   Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Weight (lbs):" />
 
             <Entry Keyboard="Numeric"
                Grid.Row="1"

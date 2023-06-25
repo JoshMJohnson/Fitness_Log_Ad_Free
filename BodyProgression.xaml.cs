@@ -59,9 +59,9 @@ public partial class BodyProgression : ContentPage
         temp2.Id = 2;
         temp3.Id = 3;
 
-        temp1.Image_Sting = "image1.jpg";
-        temp2.Image_Sting = "image2.png";
-        temp3.Image_Sting = "image3.jpg";
+        temp1.Image_Full_Path = "image1.jpg";
+        temp2.Image_Full_Path = "image2.png";
+        temp3.Image_Full_Path = "image3.jpg";
 
         //progression_list.Add(temp1);
         //progression_list.Add(temp2);

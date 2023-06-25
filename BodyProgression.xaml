@@ -21,7 +21,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Progression">
 
-                    <Label Text="{Binding Image_Sting}"
+                    <Label Text="{Binding Image_Full_Path}"
                            Grid.Column="0"
                            FontSize="16"
                            VerticalOptions="Center" />
