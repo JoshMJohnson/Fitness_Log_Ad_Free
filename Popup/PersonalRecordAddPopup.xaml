@@ -5,7 +5,7 @@
            x:Class="WorkoutLog.Popup.PersonalRecordAddPopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="250, 450">
+           Size="250, 425">
 
     <Grid ColumnDefinitions="Auto, *" 
           RowDefinitions="Auto, Auto, Auto, Auto, Auto, *">
