@@ -130,7 +130,7 @@
             <Label Grid.Row="3"
                    Grid.Column="0"
                    VerticalOptions="Center"
-                   Text="Date:" />
+                   Text="Achieve By:" />
 
             <Label Grid.Row="3"
                    Grid.Column="2"
@@ -148,7 +148,7 @@
 
             <Label Grid.Row="3"
                    Grid.Column="0"
-                   Text="Date:" 
+                   Text="Achieve By:" 
                    VerticalOptions="Center"
                    HorizontalOptions="Start" />
 

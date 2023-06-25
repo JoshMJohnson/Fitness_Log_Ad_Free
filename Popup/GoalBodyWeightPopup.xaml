@@ -5,10 +5,10 @@
              x:Class="WorkoutLog.Popup.GoalBodyWeightPopup"
              VerticalOptions="Start"
              HorizontalOptions="Center"
-             Size="300, 200" >
+             Size="250, 350" >
 
     <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, Auto, *">
+          RowDefinitions="Auto, Auto, Auto, Auto, *">
 
         <Label Text="Body Weight Goal"
                Grid.Row="0"
@@ -17,20 +17,95 @@
                Margin="20"
                FontSize="24" />
 
-        <DatePicker x:Name="goal_date"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    HorizontalOptions="Center" />
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Margin="10"
+              RowDefinitions="*"
+              ColumnDefinitions="Auto, *, Auto">
+
+            <Label Grid.Row="1"
+               Grid.Column="0"
+               VerticalOptions="Center"
+               Text="Weight (lbs):" />
+
+            <Entry Keyboard="Numeric"
+               Grid.Row="1"
+               Grid.Column="2"
+               VerticalOptions="Center"
+               MaxLength="3"
+               HorizontalTextAlignment="Center"
+               Placeholder="200" />
+        </Grid>
+
+        <Grid Grid.Row="2"
+              Grid.ColumnSpan="2"
+              RowDefinitions="*"
+              ColumnDefinitions="Auto, *, Auto"
+              x:Name="no_date_display" 
+              Margin="10" >
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Achieve By:" />
+
+            <Label Grid.Row="3"
+                   Grid.Column="2"
+                   VerticalOptions="Center"
+                   Text="No Achieve Date" 
+                   FontAttributes="Italic"
+                   Margin="10" />
+        </Grid>
+
+        <Grid Grid.Row="2"
+              Grid.ColumnSpan="2"
+              Margin="8"
+              x:Name="record_date_display"
+              IsVisible="False">
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Achieve By:" 
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
+
+            <DatePicker Grid.Column="1"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center" />
+        </Grid>
+
+        <Grid Grid.ColumnSpan="2"
+              Grid.Row="3"
+              RowDefinitions="*"
+              ColumnDefinitions="*, Auto, *">
+
+            <Label Grid.Column="0"
+                   Text="No Date"
+                   VerticalOptions="Center"
+                   HorizontalOptions="End" />
+
+            <Switch Grid.Column="1"
+                    x:Name="date_included_toggle"                    
+                    Toggled="date_included_change"
+                    IsToggled="False"
+                    VerticalOptions="Center"
+                    Margin="10" />
+
+            <Label Grid.Column="2"
+                   Text="Date"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"/>
+        </Grid>
 
         <Button Text="Record"
-                Grid.Row="2"
+                Grid.Row="4"
                 Grid.Column="0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center" 
                 Clicked="Submit_Goal" />
 
         <Button Text="Cancel"
-                Grid.Row="2"
+                Grid.Row="4"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
