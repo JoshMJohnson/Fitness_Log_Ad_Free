@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
            xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
-             x:Class="WorkoutLog.Popup.PersonalRecordAddPopup"
-             VerticalOptions="Start"
+           x:Class="WorkoutLog.Popup.PersonalRecordAddPopup"
+           VerticalOptions="Start"
            HorizontalOptions="Center"
            Size="250, 450">
 
@@ -31,7 +31,7 @@
                HorizontalOptions="End"
                VerticalOptions="Center"
                HorizontalTextAlignment="Center"
-               Placeholder="Enter Exercise"/>
+               Placeholder="Exercise Name"/>
 
         <Label Grid.Row="2"
                Grid.Column="0"
