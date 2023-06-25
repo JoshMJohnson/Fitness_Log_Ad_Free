@@ -17,7 +17,7 @@
                Margin="20"
                FontSize="24" />
 
-        <Button Text="Save"
+        <Button Text="Record"
                 Grid.Row="2"
                 Grid.Column="0"
                 HorizontalOptions="Center"

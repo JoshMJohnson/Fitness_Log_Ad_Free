@@ -133,7 +133,7 @@
               RowDefinitions="*"
               ColumnDefinitions="*, *">
 
-            <Button Text="Submit"
+            <Button Text="Record"
                     Grid.Row="4"
                     Grid.Column="0"
                     HorizontalOptions="Center"
