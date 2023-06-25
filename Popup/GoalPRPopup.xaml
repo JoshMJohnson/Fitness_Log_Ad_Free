@@ -5,7 +5,7 @@
              x:Class="WorkoutLog.Popup.GoalPRPopup"
              VerticalOptions="Start"
              HorizontalOptions="Center"
-             Size="220, 480" >
+             Size="250, 480" >
 
     <Grid ColumnDefinitions="*, *" 
           RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, *">
@@ -29,7 +29,7 @@
 
             <Entry Grid.Row="1"
                    Grid.Column="2"
-                   MaxLength="20"
+                   MaxLength="25"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
                    Placeholder="Exercise Name" />
