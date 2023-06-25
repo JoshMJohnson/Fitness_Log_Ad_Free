@@ -11,6 +11,7 @@
           RowDefinitions="Auto, Auto, *">
 
         <Label Text="Record An Exercise"
+               FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"
                HorizontalOptions="Center"

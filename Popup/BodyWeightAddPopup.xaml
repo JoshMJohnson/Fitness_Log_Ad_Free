@@ -2,15 +2,15 @@
 <mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
            xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
-           x:Class="WorkoutLog.Popup.GoalBodyWeightPopup"
+           x:Class="WorkoutLog.Popup.BodyWeightAddPopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="250, 350" >
+           Size="225, 280">
 
     <Grid ColumnDefinitions="*, *" 
           RowDefinitions="Auto, Auto, Auto, Auto, *">
 
-        <Label Text="Body Weight Goal"
+        <Label Text="Record Weight"
                FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"
@@ -40,33 +40,12 @@
 
         <Grid Grid.Row="2"
               Grid.ColumnSpan="2"
-              RowDefinitions="*"
-              ColumnDefinitions="Auto, *, Auto"
-              x:Name="no_date_display" 
-              Margin="10" >
+              Margin="10"
+              x:Name="record_date_display" >
 
             <Label Grid.Row="3"
                    Grid.Column="0"
-                   VerticalOptions="Center"
-                   Text="Achieve By:" />
-
-            <Label Grid.Row="3"
-                   Grid.Column="2"
-                   VerticalOptions="Center"
-                   Text="No Achieve Date" 
-                   FontAttributes="Italic"
-                   Margin="10" />
-        </Grid>
-
-        <Grid Grid.Row="2"
-              Grid.ColumnSpan="2"
-              Margin="8"
-              x:Name="record_date_display"
-              IsVisible="False">
-
-            <Label Grid.Row="3"
-                   Grid.Column="0"
-                   Text="Achieve By:" 
+                   Text="Date:" 
                    VerticalOptions="Center"
                    HorizontalOptions="Start" />
 
@@ -75,41 +54,18 @@
                         VerticalOptions="Center" />
         </Grid>
 
-        <Grid Grid.ColumnSpan="2"
-              Grid.Row="3"
-              RowDefinitions="*"
-              ColumnDefinitions="*, Auto, *">
-
-            <Label Grid.Column="0"
-                   Text="No Date"
-                   VerticalOptions="Center"
-                   HorizontalOptions="End" />
-
-            <Switch Grid.Column="1"
-                    x:Name="date_included_toggle"                    
-                    Toggled="date_included_change"
-                    IsToggled="False"
-                    VerticalOptions="Center"
-                    Margin="10" />
-
-            <Label Grid.Column="2"
-                   Text="Date"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
-        </Grid>
-
         <Button Text="Record"
                 Grid.Row="4"
                 Grid.Column="0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center" 
-                Clicked="Submit_Goal" />
+                Clicked="Submit_Body_Weight" />
 
         <Button Text="Cancel"
                 Grid.Row="4"
                 Grid.Column="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                Clicked="Cancel_Goal" />
+                Clicked="Cancel_Body_Weight" />
     </Grid>
 </mct:Popup>

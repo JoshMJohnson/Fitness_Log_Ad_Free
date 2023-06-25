@@ -11,6 +11,7 @@
           RowDefinitions="Auto, *">
 
         <Label Text="Add Progression"
+               FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"
                HorizontalOptions="Center"

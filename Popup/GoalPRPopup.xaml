@@ -11,6 +11,7 @@
           RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, *">
 
         <Label Text="PR Goal"
+               FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"
                HorizontalOptions="Center"

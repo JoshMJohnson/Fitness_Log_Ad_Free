@@ -11,10 +11,11 @@
           RowDefinitions="Auto, Auto, Auto, Auto, Auto, *">
 
         <Label Text="Create Exercise"
+               FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"
                HorizontalOptions="Center"
-               Padding="20"
+               Margin="20"
                FontSize="24" />
 
         <Label Grid.Row="1"

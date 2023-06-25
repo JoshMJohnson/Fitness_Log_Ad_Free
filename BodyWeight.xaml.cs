@@ -1,4 +1,7 @@
 namespace WorkoutLog;
+using WorkoutLog.Popup;
+using WorkoutLog.Model;
+using CommunityToolkit.Maui.Views;
 
 public partial class BodyWeight : ContentPage
 {
@@ -31,6 +34,6 @@ public partial class BodyWeight : ContentPage
     /* executed when body weight plus button clicked to record an update in body weight */
     private async void Record_Body_Weight(object sender, EventArgs e)
     {
-        await DisplayAlert("Body Weight", "yaa", "Record");
+        object result = await this.ShowPopupAsync(new BodyWeightAddPopup());
     }
 }
