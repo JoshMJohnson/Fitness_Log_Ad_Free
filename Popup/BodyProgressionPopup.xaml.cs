@@ -4,6 +4,8 @@ namespace WorkoutLog.Popup;
 
 public partial class BodyProgressionPopup
 {
+    private string full_path;
+
 	public BodyProgressionPopup()
 	{
 		InitializeComponent();
@@ -13,6 +15,12 @@ public partial class BodyProgressionPopup
     private void Cancel_Progression(object sender, EventArgs e)
     {
         Close();
+    }
+
+    /* submits body progression image */
+    private void Save_Progression(object sender, EventArgs e)
+    {
+        
     }
 
     /* load local image from device */
@@ -29,8 +37,10 @@ public partial class BodyProgressionPopup
             return;
         }
 
-        var stream = result.FullPath;
+        full_path = result.FullPath;
 
-        Close();
+        var stream = await result.OpenReadAsync();
+
+        load_progression_preview.Source = ImageSource.FromStream(() => stream);
     }
 }

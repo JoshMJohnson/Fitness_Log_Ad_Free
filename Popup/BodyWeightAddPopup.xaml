@@ -40,8 +40,8 @@
 
         <Grid Grid.Row="2"
               Grid.ColumnSpan="2"
-              Margin="10"
-              x:Name="record_date_display" >
+              ColumnDefinitions="Auto, *, Auto"
+              Margin="10" >
 
             <Label Grid.Row="3"
                    Grid.Column="0"

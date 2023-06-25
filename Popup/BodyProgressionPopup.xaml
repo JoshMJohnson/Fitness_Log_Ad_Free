@@ -5,10 +5,10 @@
              x:Class="WorkoutLog.Popup.BodyProgressionPopup"
              VerticalOptions="Start"
              HorizontalOptions="Center"
-             Size="300, 160" >
+             Size="300, 500" >
 
     <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, *">
+          RowDefinitions="Auto, Auto, Auto, *, Auto">
 
         <Label Text="Save Progression"
                FontAttributes="Bold"
@@ -17,19 +17,51 @@
                HorizontalOptions="Center"
                Margin="20"
                FontSize="24" />
-       
-        <Button Grid.Column="0"
-                Grid.Row="1"
+
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              ColumnDefinitions="Auto, *, Auto"
+              Margin="10" >
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Date:" 
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
+
+            <DatePicker Grid.Column="1"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center" />
+        </Grid>
+
+        <Button Grid.ColumnSpan="2"
+                Grid.Row="2"
                 Text="Load Image"
                 Clicked="Load_Image"
                 HorizontalOptions="Center"
                 VerticalOptions="Center" />
 
-        <Button Text="Cancel"
-                Grid.Row="1"
-                Grid.Column="1"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Clicked="Cancel_Progression" />
+        <Image x:Name="load_progression_preview"
+               Margin="10"
+               Grid.Row="3"
+               Grid.ColumnSpan="2" />
+
+        <Grid Grid.Row="4"
+              Grid.ColumnSpan="2"
+              Margin="10"
+              ColumnDefinitions="*, *">
+
+            <Button Text="Record"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    Clicked="Save_Progression" />
+
+            <Button Text="Cancel"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="Cancel_Progression" />
+        </Grid>
     </Grid>
 </mct:Popup>
