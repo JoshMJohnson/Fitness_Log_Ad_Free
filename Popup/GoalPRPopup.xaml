@@ -26,6 +26,13 @@
             <Label Text="Exercise:"
                    Grid.Column="0"
                    VerticalOptions="Center"/>
+
+            <Entry Grid.Row="1"
+                   Grid.Column="2"
+                   MaxLength="20"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="Exercise Name" />
         </Grid>
 
         <Grid Grid.Row="2"
