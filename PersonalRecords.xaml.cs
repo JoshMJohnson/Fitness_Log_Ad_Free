@@ -61,11 +61,11 @@ public partial class PersonalRecords : ContentPage
         PR temp4 = new PR();
         PR temp5 = new PR();
 
-        temp1.Id = 1;
-        temp2.Id = 2;
-        temp3.Id = 3;
-        temp4.Id = 4;
-        temp5.Id = 5;
+        temp1.ID = 1;
+        temp2.ID = 2;
+        temp3.ID = 3;
+        temp4.ID = 4;
+        temp5.ID = 5;
 
         temp1.Date_Achieved = DateTime.Today;
         temp2.Date_Achieved = DateTime.Now;

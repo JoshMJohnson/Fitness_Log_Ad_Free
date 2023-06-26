@@ -36,7 +36,7 @@
 
         <Label Grid.Row="2"
                Grid.Column="0"
-               Text="Date:"
+               Text="Date Achieved:"
                Margin="10"
                HorizontalOptions="Start"
                VerticalOptions="Center" />

@@ -6,7 +6,7 @@ namespace WorkoutLog.Model;
 public class PR
 {
     [PrimaryKey, AutoIncrement]
-    public int Id { get; set; }
+    public int ID { get; set; }
 
     public DateTime Date_Achieved { get; set; }
 
