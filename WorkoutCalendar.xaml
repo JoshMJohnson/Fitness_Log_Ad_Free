@@ -64,16 +64,17 @@
         <Grid Grid.Row="0"
               Grid.Column="1"
               RowDefinitions="Auto, Auto"
-              VerticalOptions="Center" >
+              Margin="15"
+              VerticalOptions="Start" >
 
             <Button Text="Create Category"
                     Grid.Row="0"
-                    Margin="20"
+                    Margin="10"
                     Clicked="Create_Category" />
 
             <Button Text="Remove Category"
                     Grid.Row="1"
-                    Margin="20"
+                    Margin="10"
                     Clicked="Remove_Category" />
         </Grid>
 
