@@ -18,3 +18,4 @@ To Do:
  - tap on pr exercise to edit or delete
  - PR goals chosen from existing PR exercises
  - Body Weight chart. click entry on graph to show edit and delete options
+ - user can pick category color of category within workout calendar section

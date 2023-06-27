@@ -55,13 +55,13 @@ public partial class BodyProgression : ContentPage
         Progression temp2 = new Progression();
         Progression temp3 = new Progression();
 
-        temp1.Id = 1;
-        temp2.Id = 2;
-        temp3.Id = 3;
+        temp1.id = 1;
+        temp2.id = 2;
+        temp3.id = 3;
 
-        temp1.Image_Full_Path = "image1.jpg";
-        temp2.Image_Full_Path = "image2.png";
-        temp3.Image_Full_Path = "image3.jpg";
+        temp1.image_full_path = "image1.jpg";
+        temp2.image_full_path = "image2.png";
+        temp3.image_full_path = "image3.jpg";
 
         //progression_list.Add(temp1);
         //progression_list.Add(temp2);

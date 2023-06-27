@@ -61,35 +61,35 @@ public partial class PersonalRecords : ContentPage
         PR temp4 = new PR();
         PR temp5 = new PR();
 
-        temp1.ID = 1;
-        temp2.ID = 2;
-        temp3.ID = 3;
-        temp4.ID = 4;
-        temp5.ID = 5;
+        temp1.id = 1;
+        temp2.id = 2;
+        temp3.id = 3;
+        temp4.id = 4;
+        temp5.id = 5;
 
-        temp1.Date_Achieved = DateTime.Today;
-        temp2.Date_Achieved = DateTime.Now;
-        temp3.Date_Achieved = DateTime.Now;
-        temp4.Date_Achieved = DateTime.Now;
-        temp5.Date_Achieved = DateTime.Now;
+        temp1.date_achieved = DateTime.Today;
+        temp2.date_achieved = DateTime.Now;
+        temp3.date_achieved = DateTime.Now;
+        temp4.date_achieved = DateTime.Now;
+        temp5.date_achieved = DateTime.Now;
 
-        temp1.Exercise_Name = "Bench Press";
-        temp2.Exercise_Name = "Leg Press";
-        temp3.Exercise_Name = "Squat";
-        temp4.Exercise_Name = "Bar Curl";
-        temp5.Exercise_Name = "Dumbbell Curl";
+        temp1.exercise_name = "Bench Press";
+        temp2.exercise_name = "Leg Press";
+        temp3.exercise_name = "Squat";
+        temp4.exercise_name = "Bar Curl";
+        temp5.exercise_name = "Dumbbell Curl";
 
-        temp1.Weight = 150;
-        temp2.Weight = 42;
-        temp4.Weight = 71;
+        temp1.weight = 150;
+        temp2.weight = 42;
+        temp4.weight = 71;
 
-        temp3.Time_Hours = 0;
-        temp3.Time_Min = 35;
-        temp3.Time_Sec = 55;
+        temp3.time_hours = 0;
+        temp3.time_min = 35;
+        temp3.time_sec = 55;
 
-        temp5.Time_Hours = 1;
-        temp5.Time_Min = 57;
-        temp5.Time_Sec = 11;
+        temp5.time_hours = 1;
+        temp5.time_min = 57;
+        temp5.time_sec = 11;
 
         pr_list.Add(temp1);
         pr_list.Add(temp2);
@@ -121,7 +121,7 @@ public partial class PersonalRecords : ContentPage
                 }
 
                 /* swap from weight pr -> time pr display */
-                if (pr_list[i].Weight == 0) /* if exercise type is a timed event */
+                if (pr_list[i].weight == 0) /* if exercise type is a timed event */
                 {
                                         
                 }

@@ -24,7 +24,7 @@
                           ColumnDefinitions="*, *"
                           Margin="10">
 
-                        <Label Text="{Binding Exercise_Name}"
+                        <Label Text="{Binding exercise_name}"
                                Grid.Column="0"
                                FontSize="16"
                                VerticalOptions="Center" />
@@ -34,12 +34,12 @@
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
 
-                            <Label Text="{Binding Date_Achieved}"
+                            <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="12"
                                    HorizontalOptions="End" />
 
-                            <Label Text="{Binding Weight}"
+                            <Label Text="{Binding weight}"
                                    x:Name="weight_display_node"
                                    Grid.Row="1"
                                    FontSize="14"
@@ -51,15 +51,15 @@
                                   x:Name="time_display_node"
                                   IsVisible="false" >
 
-                                <Label Text="{Binding Time_Hours}"
+                                <Label Text="{Binding time_hours}"
                                        Grid.Column="0"
                                        FontSize="12"  />
 
-                                <Label Text="{Binding Time_Min}"
+                                <Label Text="{Binding time_min}"
                                        Grid.Column="1"
                                        FontSize="12" />
 
-                                <Label Text="{Binding Time_Sec}"
+                                <Label Text="{Binding time_sec}"
                                        Grid.Column="2"
                                        FontSize="12" />
                             </Grid>                            

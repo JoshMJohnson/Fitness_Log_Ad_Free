@@ -48,11 +48,11 @@
                               RowDefinitions="*" 
                               Padding="5" >
 
-                            <Label Text="{Binding Id}"
+                            <Label Text="{Binding id}"
                                    Grid.Column="0"
                                    HorizontalOptions="End" />
 
-                            <Label Text="{Binding Name}"
+                            <Label Text="{Binding name}"
                                    Grid.Column="2"
                                    HorizontalOptions="Start" />
                         </Grid>

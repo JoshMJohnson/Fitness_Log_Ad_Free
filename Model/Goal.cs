@@ -6,7 +6,9 @@ namespace WorkoutLog.Model;
 public class Goal
 {
 	[PrimaryKey, AutoIncrement]
-	public int Id { get; set; }
+	public int id { get; set; }
+
+	public bool has_accomplished_goal { get; set; }
 
 	public bool is_weight_goal { get; set; }
 

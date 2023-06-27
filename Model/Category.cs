@@ -6,10 +6,10 @@ namespace WorkoutLog.Model;
 public class Category
 {
 	[PrimaryKey, AutoIncrement]
-	public int Id { get; set; }
+	public int id { get; set; }
 
 	[Unique]
-	public string Name { get; set; }
+	public string name { get; set; }
 
-	public string Color { get; set; }
+	public string color { get; set; }
 }

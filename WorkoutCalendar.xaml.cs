@@ -42,29 +42,29 @@ public partial class WorkoutCalendar : ContentPage
         Category temp5 = new Category();
         Category temp6 = new Category();
 
-        temp1.Id = 1;
-        temp1.Name = "Push";
-        temp1.Color = "red";
+        temp1.id = 1;
+        temp1.name = "Push";
+        temp1.color = "red";
 
-        temp2.Id = 2;
-        temp2.Name = "Pull";
-        temp2.Color = "green";
+        temp2.id = 2;
+        temp2.name = "Pull";
+        temp2.color = "green";
 
-        temp3.Id = 3;
-        temp3.Name = "Legs";
-        temp3.Color = "blue";
+        temp3.id = 3;
+        temp3.name = "Legs";
+        temp3.color = "blue";
 
-        temp4.Id = 4;
-        temp4.Name = "Running";
-        temp4.Color = "yellow";
+        temp4.id = 4;
+        temp4.name = "Running";
+        temp4.color = "yellow";
 
-        temp5.Id = 5;
-        temp5.Name = "calisthenics";
-        temp5.Color = "brown";
+        temp5.id = 5;
+        temp5.name = "calisthenics";
+        temp5.color = "brown";
 
-        temp6.Id = 6;
-        temp6.Name = "yoga";
-        temp6.Color = "pink";
+        temp6.id = 6;
+        temp6.name = "yoga";
+        temp6.color = "pink";
 
         category_list.Add(temp1);
         category_list.Add(temp2);

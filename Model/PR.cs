@@ -6,18 +6,18 @@ namespace WorkoutLog.Model;
 public class PR
 {
     [PrimaryKey, AutoIncrement]
-    public int ID { get; set; }
+    public int id { get; set; }
 
-    public DateTime Date_Achieved { get; set; }
+    public DateTime date_achieved { get; set; }
 
     [Unique]
-    public string Exercise_Name { get; set; }
+    public string exercise_name { get; set; }
 
-    public int Weight { get; set; }
+    public int weight { get; set; }
 
-    public int Time_Hours { get; set; }
-    public int Time_Min { get;set; }
-    public int Time_Sec { get; set; }
+    public int time_hours { get; set; }
+    public int time_min { get;set; }
+    public int time_sec { get; set; }
 
-    public bool Weight_PR_Type { get; set; } /* true = Weight; else false = Time */
+    public bool weight_pr_type { get; set; } /* true = Weight; else false = Time */
 }

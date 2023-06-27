@@ -6,9 +6,9 @@ namespace WorkoutLog.Model;
 public class Progression
 {
     [PrimaryKey, AutoIncrement]
-    public int Id { get; set; }
+    public int id { get; set; }
 
-    public DateTime Image_Date { get; set; }
+    public DateTime image_date { get; set; }
 
-    public string Image_Full_Path { get; set; }
+    public string image_full_path { get; set; }
 }
