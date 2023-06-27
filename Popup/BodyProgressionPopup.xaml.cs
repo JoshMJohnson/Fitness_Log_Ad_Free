@@ -11,7 +11,7 @@ public partial class BodyProgressionPopup
 		InitializeComponent();
     }
 
-    /* closes popup for creating an exercise */
+    /* closes popup for adding body progression */
     private void Cancel_Progression(object sender, EventArgs e)
     {
         Close();

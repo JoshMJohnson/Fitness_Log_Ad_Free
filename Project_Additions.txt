@@ -19,3 +19,4 @@ To Do:
  - PR goals chosen from existing PR exercises
  - Body Weight chart. click entry on graph to show edit and delete options
  - user can pick category color of category within workout calendar section
+ - add 'local storage access' to project readme concepts demonstrated

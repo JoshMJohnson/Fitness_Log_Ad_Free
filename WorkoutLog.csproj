@@ -84,6 +84,12 @@
 	  <MauiXaml Update="Popup\CalendarAddPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Popup\CalendarCategoryAddPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Popup\CalendarCategoryRemovePopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Popup\CalendarRemovePopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

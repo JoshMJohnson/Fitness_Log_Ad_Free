@@ -20,13 +20,13 @@ public partial class WorkoutCalendar : ContentPage
     /* button clicked to create a workout category */
     private async void Create_Category(object sender, EventArgs e)
     {
-        await DisplayAlert("Create Category", "ya", "Create");
+        object result = await this.ShowPopupAsync(new CalendarCategoryAddPopup());
     }
 
     /* button clicked to remove a workout category */
     private async void Remove_Category(object sender, EventArgs e)
     {
-        await DisplayAlert("Remove Category", "ya", "Remove");
+        object result = await this.ShowPopupAsync(new CalendarCategoryRemovePopup());
     }
 
     /* updates category display */
