@@ -17,8 +17,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+        /* database access */
+        string database_path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Workout_Log_Database.db");
+        builder.Services.AddSingleton<RecordRepository>(s => ActivatorUtilities.CreateInstance<RecordRepository>(s, database_path));
+
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
 		return builder.Build();
