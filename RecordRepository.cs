@@ -1,7 +1,9 @@
 using SQLite;
 using System.Net;
+using System.Xml.Linq;
 using WorkoutLog.Model;
 using static SQLite.SQLite3;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WorkoutLog;
 
@@ -106,10 +108,45 @@ public class RecordRepository
     }
 
     /* * pr goals section */
-    /* todo adds a pr entry to the goal table within the database */
-    public async Task Add_Goal_PR()
+    /* ? adds a pr entry to the goal table within the database */
+    public async Task Add_Goal_PR(string goal_name, DateTime date, bool is_weight, bool is_pr, bool is_body_weight,
+                                    int goal_weight, int hours, int mins, int sec)
     {
+        ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
+        ArgumentNullException.ThrowIfNull(date, nameof(date));
+        ArgumentNullException.ThrowIfNull(is_weight, nameof(is_weight));
+        ArgumentNullException.ThrowIfNull(is_pr, nameof(is_pr));
+        ArgumentNullException.ThrowIfNull(is_body_weight, nameof(is_body_weight));
+        ArgumentNullException.ThrowIfNull(goal_weight, nameof(goal_weight));
+        ArgumentNullException.ThrowIfNull(hours, nameof(hours));
+        ArgumentNullException.ThrowIfNull(mins, nameof(mins));
+        ArgumentNullException.ThrowIfNull(sec, nameof(sec));
 
+        try
+        {
+            await Init_Database();
+
+            Goal new_goal = new Goal
+            {
+                name = goal_name,
+                goal_archieve_by_date = date,
+                is_weight_goal = is_weight,
+                is_pr_goal = is_pr,
+                is_body_weight_goal = is_body_weight,
+                weight = goal_weight,
+                time_hours = hours,
+                time_min = mins,
+                time_sec = sec
+            };
+
+            int result = await conn.InsertAsync(new_goal);
+
+            status_message = string.Format("{0} goal added (Goal name: {1})", result, goal_name);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to add goal: {0}. Error: {1}", goal_name, e.Message);
+        }
     }
 
     /* todo edits a pr entry in the goal table within the database */
@@ -121,7 +158,7 @@ public class RecordRepository
     /* todo removes a pr entry in the goal table within the database */
     public async Task Remove_Goal_PR()
     {
-
+        
     }
 
     /* todo returns a list of pr goals from the database */
@@ -138,6 +175,10 @@ public class RecordRepository
         ArgumentNullException.ThrowIfNull(name, nameof(name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
         ArgumentNullException.ThrowIfNull(is_weight_pr_type, nameof(is_weight_pr_type));
+        ArgumentNullException.ThrowIfNull(weight_par, nameof(weight_par));
+        ArgumentNullException.ThrowIfNull(hours, nameof(hours));
+        ArgumentNullException.ThrowIfNull(min, nameof(min));
+        ArgumentNullException.ThrowIfNull(sec, nameof(sec));
 
         try
         {
@@ -194,10 +235,30 @@ public class RecordRepository
     }
 
     /* * workout calendar section*/
-    /* todo adds an entry to the workout calendar table within the database */
+    /* ? adds an entry to the workout calendar table within the database */
     public async Task Add_Calendar_Entry(DateTime date, Category category)
     {
+        ArgumentNullException.ThrowIfNull(date, nameof(date));
+        ArgumentNullException.ThrowIfNull(category, nameof(category));
 
+        try
+        {
+            await Init_Database();
+
+            Calendar calendar_entry = new Calendar
+            {
+                entry_date = date,
+                calendar_category = category
+            };
+
+            int result = await conn.InsertAsync(calendar_entry);
+
+            status_message = string.Format("{0} calendar entry made for {1})", result, date);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to add calendar entry on {0}. Error: {1}", date, e.Message);
+        }
     }
 
     /* todo edits an entry in the workout calendar table within the database */
@@ -209,7 +270,25 @@ public class RecordRepository
     /* todo removes an entry in the workout calendar table within the database */
     public async Task Remove_Calendar_Entry(DateTime date, Category category)
     {
-        
+        ArgumentNullException.ThrowIfNull(date, nameof(date));
+        ArgumentNullException.ThrowIfNull(category, nameof(category));
+
+        try
+        {
+            await Init_Database();
+
+
+
+
+
+            int result = 1;
+
+            status_message = string.Format("{0} calendar entry removed (Date: {1})", result, date);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to remove calendar entry on {0}. Error: {1}", date, e.Message);
+        }
     }
 
     /* todo returns a list of calendar entries from the database */
