@@ -3,7 +3,7 @@ using SQLite;
 namespace WorkoutLog.Model;
 
 [Table("Calendar")]
-public class CalendarEntry 
+public class Calendar
 {
     [PrimaryKey, AutoIncrement]
     public int id { get; set; }

@@ -28,6 +28,8 @@ public class RecordRepository
         conn = new SQLiteAsyncConnection(database_path); /* create database */
 
         /* create database tables */
+        await conn.CreateTableAsync<BodyWeight>();
+        await conn.CreateTableAsync<Calendar>();
         await conn.CreateTableAsync<Category>();
         await conn.CreateTableAsync<Goal>();
         await conn.CreateTableAsync<PR>();

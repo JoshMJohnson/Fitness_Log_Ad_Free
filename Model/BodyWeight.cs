@@ -3,7 +3,7 @@ using SQLite;
 namespace WorkoutLog.Model;
 
 [Table("BodyWeight")]
-public class BodyWeightEntry
+public class BodyWeight
 {
     [PrimaryKey, AutoIncrement]
     public int id { get; set; }
