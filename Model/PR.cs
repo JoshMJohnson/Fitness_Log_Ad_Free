@@ -5,13 +5,10 @@ namespace WorkoutLog.Model;
 [Table("PRs")]
 public class PR
 {
-    [PrimaryKey, AutoIncrement]
-    public int id { get; set; }
+    [PrimaryKey]
+    public string exercise_name { get; set; }
 
     public DateTime date_achieved { get; set; }
-
-    [Unique]
-    public string exercise_name { get; set; }
 
     public int weight { get; set; }
 
