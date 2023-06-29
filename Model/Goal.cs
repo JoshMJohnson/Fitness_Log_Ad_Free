@@ -1,4 +1,5 @@
 using SQLite;
+using System.ComponentModel;
 
 namespace WorkoutLog.Model;
 
@@ -10,6 +11,7 @@ public class Goal
 
     public string name { get; set; }
 
+    [DefaultValue(false)]
     public bool has_accomplished_goal { get; set; }
 
     public DateTime goal_archieve_by_date { get; set; }
