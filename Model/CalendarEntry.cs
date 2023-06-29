@@ -2,7 +2,7 @@ using SQLite;
 
 namespace WorkoutLog.Model;
 
-[Table("CalendarEntry")]
+[Table("CalendarEntries")]
 public class CalendarEntry 
 {
     [PrimaryKey, AutoIncrement]
