@@ -1,18 +1,38 @@
 using SQLite;
 using System.Net;
 using WorkoutLog.Model;
+using static SQLite.SQLite3;
 
 namespace WorkoutLog;
 
 public class RecordRepository
 {
 	private static SQLiteAsyncConnection conn;
+    private string database_path;
+    public string status_message { get; set; }
 
 	/* constructor - creates a database */
 	public RecordRepository(string db_path)
 	{
-		conn = new SQLiteAsyncConnection(db_path);
+        database_path = db_path;
 	}
+
+    /* initializes database */
+    private async Task Init_Database()
+    {
+        if (conn != null)
+        {
+            return;
+        }
+
+        conn = new SQLiteAsyncConnection(database_path); /* create database */
+
+        /* create database tables */
+        await conn.CreateTableAsync<Category>();
+        await conn.CreateTableAsync<Goal>();
+        await conn.CreateTableAsync<PR>();
+        await conn.CreateTableAsync<Progression>();
+    }
 
     /* * body progression section */
     /* todo adds an entry to the body progression table within the database */
@@ -110,7 +130,8 @@ public class RecordRepository
 
     /* * personal records section */
     /* todo adds a pr entry to the pr table within the database */
-    public async Task Add_PR()
+    public async Task Add_PR(string exercise_name, DateTime date_achieved, int weight, 
+                                int time_hours, int time_min, int time_sec, bool weight_pr_type)
     {
 
     }
@@ -121,10 +142,21 @@ public class RecordRepository
 
     }
 
-    /* todo removes a pr entry in the pr table within the database */
-    public async Task Remove_PR()
+    /* removes a pr entry in the pr table within the database */
+    public async Task Remove_PR(string exercise_name)
     {
+        ArgumentNullException.ThrowIfNull(exercise_name, nameof(exercise_name));
 
+        try
+        {
+            await Init_Database();
+            PR removing_pr = await conn.FindAsync<PR>(exercise_name);
+            await conn.DeleteAsync(removing_pr);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to remove {0}. Error: {1}", exercise_name, e.Message);
+        }
     }
 
     /* todo returns a list of PR's from the database */
@@ -135,7 +167,7 @@ public class RecordRepository
 
     /* * workout calendar section*/
     /* todo adds an entry to the workout calendar table within the database */
-    public async Task Add_Calendar_Entry()
+    public async Task Add_Calendar_Entry(DateTime date, Category category)
     {
 
     }
@@ -147,9 +179,9 @@ public class RecordRepository
     }
 
     /* todo removes an entry in the workout calendar table within the database */
-    public async Task Remove_Calendar_Entry()
+    public async Task Remove_Calendar_Entry(DateTime date, Category category)
     {
-
+        
     }
 
     /* todo returns a list of calendar entries from the database */
@@ -158,16 +190,45 @@ public class RecordRepository
 
     }
 
-    /* todo adds a category to the categories table within the database */
-    public async Task Add_Calendar_Category()
+    /* adds a category to the categories table within the database */
+    public async Task Add_Calendar_Category(string category_name, Color category_color)
     {
+        try
+        {
+            await Init_Database();
 
+            Category new_category = new Category
+            {
+                name = category_name,
+                color = category_color
+            };
+
+            int result = await conn.InsertAsync(new_category);
+
+            status_message = string.Format("{0} category added (Category Name: {1})", result, category_name);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to add category {0}. Error: {1}", category_name, e.Message);
+        }
     }
-
-    /* todo removes a category in the categories table within the database */
-    public async Task Remove_Calendar_Category()
+    
+    /* removes a category in the categories table within the database */
+    public async Task Remove_Calendar_Category(string category_name)
     {
+        try
+        {
+            await Init_Database();
 
+            Category removing_category = await conn.FindAsync<Category>(category_name);
+            int result = await conn.DeleteAsync(removing_category);
+
+            status_message = string.Format("{0} category removed (Category Name: {1})", result, category_name);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to remove category {0}. Error: {1}", category_name, e.Message);
+        }
     }
 
     /* todo returns a list of calendar categories from the database */
