@@ -142,7 +142,7 @@ public class RecordRepository
 
     }
 
-    /* removes a pr entry in the pr table within the database */
+    /* ? removes a pr entry in the pr table within the database */
     public async Task Remove_PR(string exercise_name)
     {
         ArgumentNullException.ThrowIfNull(exercise_name, nameof(exercise_name));
@@ -190,9 +190,12 @@ public class RecordRepository
 
     }
 
-    /* adds a category to the categories table within the database */
+    /* ? adds a category to the categories table within the database */
     public async Task Add_Calendar_Category(string category_name, Color category_color)
     {
+        ArgumentNullException.ThrowIfNull(category_name, nameof(category_name));
+        ArgumentNullException.ThrowIfNull(category_color, nameof(category_color));
+
         try
         {
             await Init_Database();
@@ -213,9 +216,11 @@ public class RecordRepository
         }
     }
     
-    /* removes a category in the categories table within the database */
+    /* ? removes a category in the categories table within the database */
     public async Task Remove_Calendar_Category(string category_name)
     {
+        ArgumentNullException.ThrowIfNull(category_name, nameof(category_name));
+
         try
         {
             await Init_Database();
