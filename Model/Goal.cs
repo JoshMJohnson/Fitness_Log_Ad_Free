@@ -17,7 +17,7 @@ public class Goal
     public DateTime goal_archieve_by_date { get; set; }
 
 	public bool is_weight_goal { get; set; }
-    public bool is_pr_goal { get; set; }
+    public bool is_time_goal { get; set; }
     public bool is_body_weight_goal { get; set; }
 
 	public int weight { get; set; }
