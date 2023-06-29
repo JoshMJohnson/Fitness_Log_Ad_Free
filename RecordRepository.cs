@@ -129,11 +129,37 @@ public class RecordRepository
     }
 
     /* * personal records section */
-    /* todo adds a pr entry to the pr table within the database */
-    public async Task Add_PR(string exercise_name, DateTime date_achieved, int weight, 
-                                int time_hours, int time_min, int time_sec, bool weight_pr_type)
+    /* ? adds a pr entry to the pr table within the database */
+    public async Task Add_PR(string name, DateTime date, bool is_weight_pr_type,
+                                int weight_par, int hours, int min, int sec)
     {
+        ArgumentNullException.ThrowIfNull(name, nameof(name));
+        ArgumentNullException.ThrowIfNull(date, nameof(date));
+        ArgumentNullException.ThrowIfNull(is_weight_pr_type, nameof(is_weight_pr_type));
 
+        try
+        {
+            await Init_Database();
+
+            PR new_pr = new PR
+            {
+                exercise_name = name,
+                date_achieved = date,
+                is_weight_pr = is_weight_pr_type,
+                weight = weight_par,
+                time_hours = hours,
+                time_min = min,
+                time_sec = sec
+            };
+
+            int result = await conn.InsertAsync(new_pr);
+
+            status_message = string.Format("{0} PR added (PR Name: {1})", result, name);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to add {0}. Error: {1}", name, e.Message);
+        }
     }
 
     /* todo edits a pr entry in the pr table within the database */
