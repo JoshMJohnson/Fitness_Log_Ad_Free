@@ -8,9 +8,11 @@ public class PR
     [PrimaryKey]
     public string exercise_name { get; set; }
 
+    [NotNull]
     public DateTime date_achieved { get; set; }
 
-    public bool weight_pr_type { get; set; } /* true = Weight; else false = Time */
+    [NotNull]
+    public bool is_weight_pr { get; set; }
 
     public int weight { get; set; }
 
