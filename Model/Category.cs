@@ -5,11 +5,9 @@ namespace WorkoutLog.Model;
 [Table("Categories")]
 public class Category
 {
-	[PrimaryKey, AutoIncrement]
-	public int id { get; set; }
-
-	[Unique]
+	[PrimaryKey]
 	public string name { get; set; }
 
-	public string color { get; set; }
+	[Unique]
+	public Color color { get; set; }
 }
