@@ -75,10 +75,24 @@ public class RecordRepository
 
     }
 
-    /* todo updates an entry in the body weight table within the database */
-    public async Task Update_Body_Weight()
+    /* ? edit an entry in the body weight table within the database */
+    public async Task Edit_Body_Weight(DateTime date, int updated_weight)
     {
+        ArgumentNullException.ThrowIfNull(date, nameof(date));
+        ArgumentNullException.ThrowIfNull(updated_weight, nameof(updated_weight));
 
+        try
+        {
+            await Init_Database();
+
+            BodyWeightEntry updating_body_weight_entry = await conn.FindAsync<BodyWeightEntry>(date);
+            updating_body_weight_entry.weight = updated_weight;
+            await conn.UpdateAsync(updating_body_weight_entry);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to update. Error: {0}", e.Message);
+        }
     }
 
     /* todo removes an entry in the body weight table within the database */
