@@ -43,7 +43,9 @@
                    Text="Color:" 
                    VerticalOptions="Center" />
 
-            
+            <Picker x:Name="category_color_picker"
+                    Grid.Column="2"
+                    HorizontalOptions="Center" />
         </Grid>
 
         <Grid Grid.Row="3"

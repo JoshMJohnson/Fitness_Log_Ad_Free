@@ -51,10 +51,21 @@ public class RecordRepository
 
     }
 
-    /* todo returns a list of progressions from the database */
-    public async Task Get_Progression_List()
+    /* ? returns a list of progressions from the database */
+    public async Task<List<Progression>> Get_Progression_List()
     {
+        try
+        {
+            await Init_Database();
+            List<Progression> body_progression_list = await conn.Table<Progression>().ToListAsync();
+            return body_progression_list;
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+        }
 
+        return new List<Progression>();
     }
 
     /* * body weight section */
@@ -76,10 +87,21 @@ public class RecordRepository
 
     }
 
-    /* todo returns a list of body weight entries from the database */
-    public async Task Get_Body_Weight_List()
+    /* ? returns a list of body weight entries from the database */
+    public async Task<List<BodyWeight>> Get_Body_Weight_List()
     {
+        try
+        {
+            await Init_Database();
+            List<BodyWeight> body_weight_list = await conn.Table<BodyWeight>().ToListAsync();
+            return body_weight_list;
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+        }
 
+        return new List<BodyWeight>();
     }
 
     /* * body weight goals section */
@@ -105,10 +127,31 @@ public class RecordRepository
 
     }
 
-    /* todo returns a list of body weight goals from the database */
-    public async Task Get_Body_Weight_Goal_List()
+    /* ? returns a list of body weight goals from the database */
+    public async Task<List<Goal>> Get_Body_Weight_Goal_List()
     {
+        try
+        {
+            await Init_Database();
+            List<Goal> body_weight_goal_list = await conn.Table<Goal>().ToListAsync();
 
+            /* traverse through list and find all goals that are pr goals */
+            for (int i = 0; i < body_weight_goal_list.Count; i++)
+            {
+                if (body_weight_goal_list[i].is_weight_goal || body_weight_goal_list[i].is_time_goal) /*  if goal is not a pr goal; is body weight goal */
+                {
+                    body_weight_goal_list.Remove(body_weight_goal_list[i]);
+                }
+            }
+
+            return body_weight_goal_list;
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+        }
+
+        return new List<Goal>();
     }
 
     /* * pr goals section */
@@ -143,10 +186,31 @@ public class RecordRepository
         
     }
 
-    /* todo returns a list of pr goals from the database */
-    public async Task Get_Goal_PR_List()
+    /* ? returns a list of pr goals from the database */
+    public async Task<List<Goal>> Get_Goal_PR_List()
     {
+        try
+        {
+            await Init_Database();
+            List<Goal> pr_goal_list = await conn.Table<Goal>().ToListAsync();
 
+            /* traverse through list and find all goals that are pr goals */
+            for (int i = 0; i < pr_goal_list.Count; i++)
+            {
+                if (pr_goal_list[i].is_body_weight_goal) /*  if goal is not a pr goal; is body weight goal */
+                {
+                    pr_goal_list.Remove(pr_goal_list[i]);
+                }
+            }
+
+            return pr_goal_list;
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+        }
+
+        return new List<Goal>();
     }
 
     /* ? removes a goal entry from goals table within the database */
@@ -247,10 +311,21 @@ public class RecordRepository
         }
     }
 
-    /* todo returns a list of PR's from the database */
-    public async Task Get_PR_List()
+    /* ? returns a list of PR's from the database */
+    public async Task<List<PR>> Get_PR_List()
     {
+        try
+        {
+            await Init_Database();
+            List<PR> pr_list = await conn.Table<PR>().ToListAsync();
+            return pr_list;
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+        }
 
+        return new List<PR>();
     }
 
     /* * workout calendar section*/
@@ -310,10 +385,21 @@ public class RecordRepository
         }
     }
 
-    /* todo returns a list of calendar entries from the database */
-    public async Task Get_Calendar_Entries_List()
+    /* ? returns a list of calendar entries from the database */
+    public async Task<List<Calendar>> Get_Calendar_Entries_List()
     {
+        try
+        {
+            await Init_Database();
+            List<Calendar> calendar_entry_list = await conn.Table<Calendar>().ToListAsync();
+            return calendar_entry_list;
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+        }
 
+        return new List<Calendar>();
     }
 
     /* ? adds a category to the categories table within the database */
@@ -371,9 +457,9 @@ public class RecordRepository
             List<Category> category_list = await conn.Table<Category>().ToListAsync();
             return category_list;
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            status_message = string.Format("Failed to retrieve data. {0}", ex.Message);
+            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
         }
 
         return new List<Category>();
