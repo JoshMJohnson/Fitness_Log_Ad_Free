@@ -75,8 +75,8 @@ public class RecordRepository
 
     }
 
-    /* todo edits an entry in the body weight table within the database */
-    public async Task Edit_Body_Weight()
+    /* todo updates an entry in the body weight table within the database */
+    public async Task Update_Body_Weight()
     {
 
     }
@@ -115,8 +115,8 @@ public class RecordRepository
         await Add_Goal(goal_name, date, false, false, true, goal_weight, -1, -1, -1); /* else time pr type */
     }
 
-    /* todo edits a body weight entry in the goal table within the database */
-    public async Task Edit_Goal_Body_Weight()
+    /* todo updates a body weight entry in the goal table within the database */
+    public async Task Update_Goal_Body_Weight()
     {
 
     }
@@ -174,8 +174,8 @@ public class RecordRepository
         await Add_Goal(goal_name, date, false, true, false, goal_weight, hours, mins, sec); /* else time pr type */
     }
 
-    /* todo edits a pr entry in the goal table within the database */
-    public async Task Edit_Goal_PR()
+    /* todo updates a pr entry in the goal table within the database */
+    public async Task Update_Goal_PR()
     {
 
     }
@@ -288,10 +288,40 @@ public class RecordRepository
         }
     }
 
-    /* todo edits a pr entry in the pr table within the database */
-    public async Task Edit_PR()
+    /* ? updates a pr entry in the pr table within the database */
+    public async Task Update_PR(string exercise_name, DateTime date, int updated_weight, int hours, int mins, int sec)
     {
+        ArgumentNullException.ThrowIfNull(exercise_name, nameof(exercise_name));
+        ArgumentNullException.ThrowIfNull(date, nameof(date));
+        ArgumentNullException.ThrowIfNull(updated_weight, nameof(updated_weight));
+        ArgumentNullException.ThrowIfNull(hours, nameof(hours));
+        ArgumentNullException.ThrowIfNull(mins, nameof(mins));
+        ArgumentNullException.ThrowIfNull(sec, nameof(sec));
+        
+        try
+        {
+            await Init_Database();
+            PR updating_pr = await conn.FindAsync<PR>(exercise_name);
 
+            updating_pr.date_achieved = date;
+
+            if (updating_pr.is_weight_pr) /* if updating pr is a weight pr */
+            {
+                updating_pr.weight = updated_weight;
+            }
+            else /* else updating pr is a timed pr */
+            {
+                updating_pr.time_hours = hours;
+                updating_pr.time_min = mins;
+                updating_pr.time_sec = sec;
+            }
+
+            await conn.UpdateAsync(updating_pr);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to update. Error: {0}", e.Message);
+        }
     }
 
     /* ? removes a pr entry in the pr table within the database */
@@ -353,12 +383,6 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add calendar entry on {0}. Error: {1}", date, e.Message);
         }
-    }
-
-    /* todo edits an entry in the workout calendar table within the database */
-    public async Task Edit_Calendar_Entry()
-    {
-
     }
 
     /* todo removes an entry in the workout calendar table within the database */
