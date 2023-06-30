@@ -4,7 +4,9 @@ namespace WorkoutLog.Popup;
 
 public partial class CalendarCategoryAddPopup
 {
-	public CalendarCategoryAddPopup()
+    private int max_categories = 6; /* max number of workout categories available to database */
+    
+    public CalendarCategoryAddPopup()
 	{
 		InitializeComponent();
 	}

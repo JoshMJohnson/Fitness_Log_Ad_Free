@@ -9,8 +9,7 @@ namespace WorkoutLog;
 public partial class WorkoutCalendar : ContentPage
 {
     private VerticalStackLayout vertical_layout_empty_category_list;
-    private int max_categories = 6;
-
+    
 	public WorkoutCalendar()
 	{
 		InitializeComponent();

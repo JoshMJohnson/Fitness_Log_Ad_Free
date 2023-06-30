@@ -368,9 +368,7 @@ public class RecordRepository
         try
         {
             await Init_Database();
-
             List<Category> category_list = await conn.Table<Category>().ToListAsync();
-
             return category_list;
         }
         catch (Exception ex)
