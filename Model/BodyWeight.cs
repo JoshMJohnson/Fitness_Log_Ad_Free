@@ -5,10 +5,7 @@ namespace WorkoutLog.Model;
 [Table("BodyWeight")]
 public class BodyWeight
 {
-    [PrimaryKey, AutoIncrement]
-    public int id { get; set; }
-
-    [NotNull]
+    [PrimaryKey]
     public DateTime entry_date { get; set; }
 
     [NotNull]
