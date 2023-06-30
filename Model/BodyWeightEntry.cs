@@ -3,7 +3,7 @@ using SQLite;
 namespace WorkoutLog.Model;
 
 [Table("BodyWeight")]
-public class BodyWeight
+public class BodyWeightEntry
 {
     [PrimaryKey]
     public DateTime entry_date { get; set; }
