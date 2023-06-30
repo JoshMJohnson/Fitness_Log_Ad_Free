@@ -1,3 +1,4 @@
+using Android.OS;
 using SQLite;
 using System.Net;
 using System.Xml.Linq;
@@ -22,20 +23,27 @@ public class RecordRepository
     /* initializes database */
     private async Task Init_Database()
     {
-        if (conn != null)
-        {
-            return;
-        }
+        Console.WriteLine("pre init");
+
+        if (conn != null) { return; }
 
         conn = new SQLiteAsyncConnection(database_path); /* create database */
 
+        Console.WriteLine("mid init");
+
         /* create database tables */
-        await conn.CreateTableAsync<BodyWeight>();
-        await conn.CreateTableAsync<Calendar>();
+
         await conn.CreateTableAsync<Category>();
-        await conn.CreateTableAsync<Goal>();
-        await conn.CreateTableAsync<PR>();
-        await conn.CreateTableAsync<Progression>();
+
+        /*
+         await conn.CreateTableAsync<BodyWeight>();
+         await conn.CreateTableAsync<Calendar>();
+         await conn.CreateTableAsync<Category>();
+         await conn.CreateTableAsync<Goal>();
+         await conn.CreateTableAsync<PR>();
+         await conn.CreateTableAsync<Progression>();*/
+
+        Console.WriteLine("past init");
     }
 
     /* * body progression section */
@@ -87,6 +95,7 @@ public class RecordRepository
 
             BodyWeightEntry updating_body_weight_entry = await conn.FindAsync<BodyWeightEntry>(date);
             updating_body_weight_entry.weight = updated_weight;
+
             await conn.UpdateAsync(updating_body_weight_entry);
         }
         catch (Exception e)
@@ -397,6 +406,8 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add calendar entry on {0}. Error: {1}", date, e.Message);
         }
+
+        Console.WriteLine($"***repo status_message: {status_message}");
     }
 
     /* todo removes an entry in the workout calendar table within the database */
@@ -440,11 +451,11 @@ public class RecordRepository
         return new List<Calendar>();
     }
 
-    /* ? adds a category to the categories table within the database */
-    public async Task Add_Calendar_Category(string category_name, Color category_color)
+    /* adds a category to the categories table within the database */
+    public async Task Add_Calendar_Category(string category_name, int category_color_index)
     {
         ArgumentNullException.ThrowIfNull(category_name, nameof(category_name));
-        ArgumentNullException.ThrowIfNull(category_color, nameof(category_color));
+        ArgumentNullException.ThrowIfNull(category_color_index, nameof(category_color_index));
 
         try
         {
@@ -453,7 +464,7 @@ public class RecordRepository
             Category new_category = new Category
             {
                 name = category_name,
-                color = category_color
+                color = category_color_index
             };
 
             int result = await conn.InsertAsync(new_category);

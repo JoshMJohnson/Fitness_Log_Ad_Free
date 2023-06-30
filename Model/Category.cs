@@ -9,5 +9,5 @@ public class Category
 	public string name { get; set; }
 
 	[Unique]
-	public Color color { get; set; }
+	public int color { get; set; }
 }

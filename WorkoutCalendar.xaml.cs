@@ -28,8 +28,6 @@ public partial class WorkoutCalendar : ContentPage
             HorizontalOptions = LayoutOptions.Center,
         });
 
-        
-
         Grid goal_layout = category_layout;
         Grid.SetRow(vertical_layout_empty_category_list, 0);
         goal_layout.Add(vertical_layout_empty_category_list);
@@ -41,6 +39,7 @@ public partial class WorkoutCalendar : ContentPage
     private async void Create_Category(object sender, EventArgs e)
     {
         object result = await this.ShowPopupAsync(new CalendarCategoryAddPopup());
+        Retrieve_Categories();
     }
 
     /* button clicked to remove a workout category */
@@ -50,7 +49,7 @@ public partial class WorkoutCalendar : ContentPage
     }
 
     /* updates category display */
-    private async void Retrieve_Categories()
+    public async void Retrieve_Categories()
     {
         List<Category> category_list = await App.RecordRepo.Get_Calendar_Category_List();
         workout_category_display.ItemsSource = category_list;

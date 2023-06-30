@@ -27,7 +27,8 @@
                    VerticalOptions="Center"
                    Text="Name:" />
 
-            <Entry Grid.Column="2"
+            <Entry x:Name="category_name"
+                   Grid.Column="2"
                    MaxLength="25"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
