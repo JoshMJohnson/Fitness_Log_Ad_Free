@@ -5,10 +5,10 @@
            x:Class="WorkoutLog.Popup.CalendarCategoryRemovePopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="250, 275" >
+           Size="250, 225" >
 
     <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, Auto, Auto, *, Auto">
+          RowDefinitions="Auto, Auto, *">
 
         <Label Text="Remove Category"
                FontAttributes="Bold"
@@ -18,7 +18,26 @@
                Margin="20"
                FontSize="24" />
 
-        <Grid Grid.Row="4"
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Margin="10"
+              ColumnDefinitions="Auto, *, Auto" >
+
+            <Label Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Name:" />
+
+            <Picker x:Name="exercise_category"
+                    Grid.Column="2" />
+
+            <Label x:Name="exercise_category_empty_display"
+                   Text="No Categories Found"
+                   FontAttributes="Italic"
+                   FontSize="12"
+                   Grid.Column="2" />
+        </Grid>
+
+        <Grid Grid.Row="2"
               Grid.ColumnSpan="2"
               Margin="10"
               ColumnDefinitions="*, *">

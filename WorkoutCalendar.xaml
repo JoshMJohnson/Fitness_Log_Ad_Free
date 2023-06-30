@@ -38,27 +38,33 @@
                        FontSize="20" />
             </Grid>
 
-            <CollectionView x:Name="workout_category_display"
-                            Grid.Row="1"
-                            VerticalOptions="Start" >
+            <Grid x:Name="category_layout" 
+                  RowDefinitions="*"
+                  ColumnDefinitions="*"
+                  VerticalOptions="Start"
+                  Grid.Row="1">
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Category">
-                        <Grid ColumnDefinitions="50, 20, *"
+                <CollectionView x:Name="workout_category_display"
+                                VerticalOptions="Start" >
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Category">
+                            <Grid ColumnDefinitions="50, 20, *"
                               RowDefinitions="*" 
                               Padding="5" >
 
-                            <Label Text="{Binding id}"
+                                <Label Text="{Binding color}"
                                    Grid.Column="0"
                                    HorizontalOptions="End" />
 
-                            <Label Text="{Binding name}"
+                                <Label Text="{Binding name}"
                                    Grid.Column="2"
                                    HorizontalOptions="Start" />
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
         </Grid>
 
         <Grid Grid.Row="0"

@@ -1,3 +1,5 @@
+using WorkoutLog.Model;
+
 namespace WorkoutLog.Popup;
 
 public partial class CalendarCategoryAddPopup

@@ -8,13 +8,34 @@ namespace WorkoutLog;
 
 public partial class WorkoutCalendar : ContentPage
 {
+    private VerticalStackLayout vertical_layout_empty_category_list;
     private int max_categories = 6;
 
 	public WorkoutCalendar()
 	{
 		InitializeComponent();
 
-        Refresh_Categories();
+        /* display when PR list is empty */
+        vertical_layout_empty_category_list = new VerticalStackLayout();
+
+        vertical_layout_empty_category_list.VerticalOptions = LayoutOptions.Center;
+        vertical_layout_empty_category_list.HorizontalOptions = LayoutOptions.Center;
+
+        vertical_layout_empty_category_list.Add(new Label
+        {
+            Text = "No Categories Yet!",
+            FontSize = 12,
+            FontAttributes = FontAttributes.Italic,
+            HorizontalOptions = LayoutOptions.Center,
+        });
+
+        
+
+        Grid goal_layout = category_layout;
+        Grid.SetRow(vertical_layout_empty_category_list, 0);
+        goal_layout.Add(vertical_layout_empty_category_list);
+
+        Retrieve_Categories();
     }
 
     /* button clicked to create a workout category */
@@ -30,51 +51,19 @@ public partial class WorkoutCalendar : ContentPage
     }
 
     /* updates category display */
-    private void Refresh_Categories()
+    private async void Retrieve_Categories()
     {
-        List<Category> category_list = new List<Category>();
-
-        /* TESTING TEMP LIST start */
-        Category temp1 = new Category();
-        Category temp2 = new Category();
-        Category temp3 = new Category();
-        Category temp4 = new Category();
-        Category temp5 = new Category();
-        Category temp6 = new Category();
-
-        temp1.id = 1;
-        temp1.name = "Push";
-        temp1.color = "red";
-
-        temp2.id = 2;
-        temp2.name = "Pull";
-        temp2.color = "green";
-
-        temp3.id = 3;
-        temp3.name = "Legs";
-        temp3.color = "blue";
-
-        temp4.id = 4;
-        temp4.name = "Running";
-        temp4.color = "yellow";
-
-        temp5.id = 5;
-        temp5.name = "calisthenics";
-        temp5.color = "brown";
-
-        temp6.id = 6;
-        temp6.name = "yoga";
-        temp6.color = "pink";
-
-        category_list.Add(temp1);
-        category_list.Add(temp2);
-        category_list.Add(temp3);
-        category_list.Add(temp4);
-        category_list.Add(temp5);
-        category_list.Add(temp6);
-        /* TESTING TEMP LIST end */
-
+        List<Category> category_list = await App.RecordRepo.Get_Calendar_Category_List();
         workout_category_display.ItemsSource = category_list;
+
+        if (category_list.Count == 0)  /* if pr list is empty - no pr's set */
+        {
+            vertical_layout_empty_category_list.IsVisible = true;
+        }
+        else  /* else pr list is not empty */
+        {
+            vertical_layout_empty_category_list.IsVisible = false;
+        }
     }
 
     /* executes when the plus button is clicked to record an exercise */

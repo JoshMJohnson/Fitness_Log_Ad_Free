@@ -362,9 +362,22 @@ public class RecordRepository
         }
     }
 
-    /* todo returns a list of calendar categories from the database */
-    public async Task Get_Calendar_Category_List()
+    /* returns a list of calendar categories from the database */
+    public async Task<List<Category>> Get_Calendar_Category_List()
     {
+        try
+        {
+            await Init_Database();
 
+            List<Category> category_list = await conn.Table<Category>().ToListAsync();
+
+            return category_list;
+        }
+        catch (Exception ex)
+        {
+            status_message = string.Format("Failed to retrieve data. {0}", ex.Message);
+        }
+
+        return new List<Category>();
     }
 }
