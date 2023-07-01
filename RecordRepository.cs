@@ -33,14 +33,11 @@ public class RecordRepository
 
         /* create database tables */
 
-        await conn.CreateTablesAsync<Category, PR>();
+        await conn.CreateTablesAsync<Category, PR, Goal>();
 
         /*
          await conn.CreateTableAsync<BodyWeight>();
          await conn.CreateTableAsync<Calendar>();
-         await conn.CreateTableAsync<Category>();
-         await conn.CreateTableAsync<Goal>();
-         await conn.CreateTableAsync<PR>();
          await conn.CreateTableAsync<Progression>();*/
 
         Console.WriteLine("past init");
@@ -129,13 +126,14 @@ public class RecordRepository
 
     /* * body weight goals section */
     /* ? adds a body weight entry to the goal table within the database */
-    public async Task Add_Goal_Body_Weight(string goal_name, DateTime date, int goal_weight)
+    public async Task Add_Goal_Body_Weight(string goal_name, DateTime date, bool has_desired, int goal_weight)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
+        ArgumentNullException.ThrowIfNull(has_desired, nameof(has_desired));
         ArgumentNullException.ThrowIfNull(goal_weight, nameof(goal_weight));
 
-        await Add_Goal(goal_name, date, false, false, true, goal_weight, -1, -1, -1); /* else time pr type */
+        await Add_Goal(goal_name, date, has_desired, false, false, true, goal_weight, -1, -1, -1); /* else time pr type */
     }
 
     /* todo updates a body weight entry in the goal table within the database */
@@ -179,10 +177,11 @@ public class RecordRepository
 
     /* * pr goals section */
     /* ? adds a pr entry to the goal table within the database */
-    public async Task Add_Goal_PR(string goal_name, DateTime date, bool is_weight, int goal_weight, int hours, int mins, int sec)
+    public async Task Add_Goal_PR(string goal_name, DateTime date, bool date_desired, bool is_weight, int goal_weight, int hours, int mins, int sec)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
+        ArgumentNullException.ThrowIfNull(date_desired, nameof(date_desired));
         ArgumentNullException.ThrowIfNull(is_weight, nameof(is_weight));
         ArgumentNullException.ThrowIfNull(goal_weight, nameof(goal_weight));
         ArgumentNullException.ThrowIfNull(hours, nameof(hours));
@@ -191,10 +190,12 @@ public class RecordRepository
 
         if (is_weight) /* if weight pr type */
         {
-            await Add_Goal(goal_name, date, true, false, false, goal_weight, hours, mins, sec);
+            await Add_Goal(goal_name, date, date_desired, true, false, false, goal_weight, hours, mins, sec);
         }
 
-        await Add_Goal(goal_name, date, false, true, false, goal_weight, hours, mins, sec); /* else time pr type */
+        await Add_Goal(goal_name, date, date_desired, false, true, false, goal_weight, hours, mins, sec); /* else time pr type */
+
+        Console.WriteLine($"***repo");
     }
 
     /* todo updates a pr entry in the goal table within the database */
@@ -204,7 +205,7 @@ public class RecordRepository
     }
 
     /* todo removes a pr entry in the goal table within the database */
-    public async Task Remove_Goal_PR()
+    public async Task Remove_Goal_PR(string pr_name)
     {
         
     }
@@ -237,7 +238,7 @@ public class RecordRepository
     }
 
     /* ? removes a goal entry from goals table within the database */
-    public async Task Add_Goal(string goal_name, DateTime date, bool is_weight, bool is_time, bool is_body_weight,
+    public async Task Add_Goal(string goal_name, DateTime date, bool has_desired, bool is_weight, bool is_time, bool is_body_weight,
                                     int goal_weight, int hours, int mins, int sec)
     {       
         try
@@ -247,7 +248,8 @@ public class RecordRepository
             Goal new_goal = new Goal
             {
                 name = goal_name,
-                goal_archieve_by_date = date,
+                goal_achieve_by_date = date,
+                date_desired = has_desired,
                 is_weight_goal = is_weight,
                 is_time_goal = is_time,
                 is_body_weight_goal = is_body_weight,
@@ -265,6 +267,8 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add goal: {0}. Error: {1}", goal_name, e.Message);
         }
+
+        Console.WriteLine($"***repo status_message: {status_message}");
     }
 
     /* todo removes a goal entry from goals table within the database */
@@ -278,8 +282,6 @@ public class RecordRepository
     public async Task Add_PR(string name, DateTime date, bool is_weight_pr_type,
                                 int weight_pr, int hours, int min, int sec)
     {
-        Console.WriteLine($"**here");
-
         ArgumentNullException.ThrowIfNull(name, nameof(name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
         ArgumentNullException.ThrowIfNull(is_weight_pr_type, nameof(is_weight_pr_type));
@@ -311,8 +313,6 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add {0}. Error: {1}", name, e.Message);
         }
-
-        Console.WriteLine($"**here2");
     }
 
     /* ? updates a pr entry in the pr table within the database */

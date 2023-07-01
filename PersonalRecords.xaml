@@ -40,8 +40,8 @@
                         </SwipeView.RightItems>
 
                         <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
-                          Margin="10">
+                              ColumnDefinitions="*, *"
+                              Margin="10">
 
                             <Label Text="{Binding exercise_name}"
                                    Grid.Column="0"

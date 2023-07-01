@@ -23,7 +23,7 @@
                     <Grid RowDefinitions="1"
                           ColumnDefinitions="1">
 
-                        <Label Text="{Binding id}"
+                        <Label Text="{Binding name}"
                                Grid.Row="0"
                                Grid.Column="0"
                                FontSize="12" />

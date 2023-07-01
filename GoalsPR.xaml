@@ -20,14 +20,71 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Goal">
-                    <Grid RowDefinitions="1"
-                          ColumnDefinitions="1">
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems SwipeBehaviorOnInvoked="Close">
+                                <SwipeItem Text="{Binding name}"
+                                           IconImageSource="trash_icon.png"
+                                           BackgroundColor="Red"
+                                           Invoked="Remove_PR_Goal" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
 
-                        <Label Text="{Binding id}"
-                               Grid.Row="0"
-                               Grid.Column="0"
-                               FontSize="12" />
-                    </Grid>
+                        <SwipeView.RightItems>
+                            <SwipeItems SwipeBehaviorOnInvoked="Close">
+                                <SwipeItem Text="{Binding name}"
+                                           IconImageSource="edit_icon.png"
+                                           BackgroundColor="Blue"
+                                           Invoked="Update_PR_Goal" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          Margin="10">
+
+                            <Label Text="{Binding name}"
+                                   Grid.Column="0"
+                                   FontSize="16"
+                                   VerticalOptions="Center" />
+
+                            <Grid Grid.Column="1"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="End" >
+
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"
+                                       FontSize="12"
+                                       HorizontalOptions="End" />
+
+                                <Label Text="{Binding weight}"
+                                       x:Name="weight_display_node"
+                                       Grid.Row="1"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
+
+                                <Grid Grid.Row="1"
+                                      RowDefinitions="*"
+                                      ColumnDefinitions="*, *, *"
+                                      x:Name="time_display_node"
+                                      IsVisible="false" >
+
+                                    <Label Text="{Binding time_hours}"
+                                           Grid.Column="0"
+                                           FontSize="12"  />
+
+                                    <Label Text="{Binding time_min}"
+                                           Grid.Column="1"
+                                           FontSize="12" />
+
+                                    <Label Text="{Binding time_sec}"
+                                           Grid.Column="2"
+                                           FontSize="12" />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

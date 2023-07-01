@@ -33,6 +33,7 @@
                    MaxLength="25"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
+                   x:Name="exercise_name_entry"
                    Placeholder="Exercise Name" />
         </Grid>
 
@@ -53,6 +54,7 @@
                    Grid.Row="3"
                    Grid.Column="2"
                    VerticalOptions="Center"
+                   x:Name="min_pr"
                    MaxLength="4"
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
@@ -67,6 +69,7 @@
                    Grid.Row="3"
                    Grid.Column="4"
                    MaxLength="2"
+                   x:Name="sec_pr"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
@@ -95,6 +98,7 @@
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
                    MaxLength="4"
+                   x:Name="weight_pr"
                    Placeholder="100"/>
         </Grid>
 
@@ -152,6 +156,7 @@
 
             <DatePicker Grid.Column="1"
                         HorizontalOptions="End"
+                        x:Name="achieve_by_date"
                         VerticalOptions="Center" />
         </Grid>
 
