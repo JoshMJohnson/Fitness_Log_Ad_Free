@@ -69,7 +69,7 @@ public partial class GoalsPR : ContentPage
     /* refreshes the PR goal list being displayed on UI */
     public async void Refresh_PR_Goal_List()
     {
-        List<Goal> pr_goal_list = await App.RecordRepo.Get_Goal_PR_List();
+        List<GoalPR> pr_goal_list = await App.RecordRepo.Get_Goal_PR_List();
 
         pr_goals_display.ItemsSource = pr_goal_list;
 

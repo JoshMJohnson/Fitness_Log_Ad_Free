@@ -19,15 +19,47 @@
                         VerticalOptions="Start">
 
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Goal">
-                    <Grid RowDefinitions="1"
-                          ColumnDefinitions="1">
+                <DataTemplate x:DataType="model:GoalBW">
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems SwipeBehaviorOnInvoked="Close">
+                                <SwipeItem Text="{Binding name}"
+                                           IconImageSource="trash_icon.png"
+                                           BackgroundColor="Red"
+                                           Invoked="Remove_Body_Weight_Goal" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
 
-                        <Label Text="{Binding name}"
-                               Grid.Row="0"
-                               Grid.Column="0"
-                               FontSize="12" />
-                    </Grid>
+                        <SwipeView.RightItems>
+                            <SwipeItems SwipeBehaviorOnInvoked="Close">
+                                <SwipeItem Text="{Binding name}"
+                                           IconImageSource="edit_icon.png"
+                                           BackgroundColor="Blue"
+                                           Invoked="Update_Body_Weight_Goal" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="*, *"
+                              Margin="10">
+
+                            <Label Text="{Binding name}"
+                                   Grid.Column="0"
+                                   HorizontalOptions="Start" />
+
+                            <Grid Grid.Column="1"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="End" >
+
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"/>
+
+                                <Label Text="{Binding weight}"
+                                       Grid.Row="1"/>
+                            </Grid>
+                        </Grid>
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

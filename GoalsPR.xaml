@@ -19,7 +19,7 @@
                         VerticalOptions="Start">
 
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Goal">
+                <DataTemplate x:DataType="model:GoalPR">
                     <SwipeView>
                         <SwipeView.LeftItems>
                             <SwipeItems SwipeBehaviorOnInvoked="Close">
@@ -40,8 +40,8 @@
                         </SwipeView.RightItems>
 
                         <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
-                          Margin="10">
+                              ColumnDefinitions="*, *"
+                              Margin="10">
 
                             <Label Text="{Binding name}"
                                    Grid.Column="0"

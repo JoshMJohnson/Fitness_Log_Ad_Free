@@ -33,7 +33,7 @@ public class RecordRepository
 
         /* create database tables */
 
-        await conn.CreateTablesAsync<Category, PR, Goal>();
+        await conn.CreateTablesAsync<Category, PR, GoalPR, GoalBW>();
 
         /*
          await conn.CreateTableAsync<BodyWeight>();
@@ -133,7 +133,28 @@ public class RecordRepository
         ArgumentNullException.ThrowIfNull(has_desired, nameof(has_desired));
         ArgumentNullException.ThrowIfNull(goal_weight, nameof(goal_weight));
 
-        await Add_Goal(goal_name, date, has_desired, false, false, true, goal_weight, -1, -1, -1); /* else time pr type */
+        try
+        {
+            await Init_Database();
+
+            GoalBW new_goal = new GoalBW
+            {
+                name = goal_name,
+                goal_achieve_by_date = date,
+                date_desired = has_desired,
+                weight = goal_weight,
+            };
+
+            int result = await conn.InsertAsync(new_goal);
+
+            status_message = string.Format("{0} goal added (Goal date: {1})", result, date);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to add goal date: {0}. Error: {1}", date, e.Message);
+        }
+
+        Console.WriteLine($"***repo status_message: {status_message}");
     }
 
     /* todo updates a body weight entry in the goal table within the database */
@@ -143,28 +164,18 @@ public class RecordRepository
     }
 
     /* todo removes a body weight entry in the goal table within the database */
-    public async Task Remove_Goal_Body_Weight()
+    public async Task Remove_Goal_Body_Weight(int Id)
     {
 
     }
 
     /* ? returns a list of body weight goals from the database */
-    public async Task<List<Goal>> Get_Body_Weight_Goal_List()
+    public async Task<List<GoalBW>> Get_Body_Weight_Goal_List()
     {
         try
         {
             await Init_Database();
-            List<Goal> body_weight_goal_list = await conn.Table<Goal>().ToListAsync();
-
-            /* traverse through list and find all goals that are pr goals */
-            for (int i = 0; i < body_weight_goal_list.Count; i++)
-            {
-                if (body_weight_goal_list[i].is_weight_goal || body_weight_goal_list[i].is_time_goal) /*  if goal is not a pr goal; is body weight goal */
-                {
-                    body_weight_goal_list.Remove(body_weight_goal_list[i]);
-                }
-            }
-
+            List<GoalBW> body_weight_goal_list = await conn.Table<GoalBW>().ToListAsync();
             return body_weight_goal_list;
         }
         catch (Exception e)
@@ -172,16 +183,17 @@ public class RecordRepository
             status_message = string.Format("Failed to retrieve data. {0}", e.Message);
         }
 
-        return new List<Goal>();
+        return new List<GoalBW>();
     }
 
     /* * pr goals section */
-    /* adds a pr entry to the goal table within the database */
-    public async Task Add_Goal_PR(string goal_name, DateTime date, bool date_desired, bool is_weight, int goal_weight, int hours, int mins, int sec)
+    /* ? adds a pr entry to the goal table within the database */
+    public async Task Add_Goal_PR(string goal_name, DateTime date, bool has_desired, bool is_weight, 
+                                    int goal_weight, int hours, int mins, int sec)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
-        ArgumentNullException.ThrowIfNull(date_desired, nameof(date_desired));
+        ArgumentNullException.ThrowIfNull(has_desired, nameof(has_desired));
         ArgumentNullException.ThrowIfNull(is_weight, nameof(is_weight));
         ArgumentNullException.ThrowIfNull(goal_weight, nameof(goal_weight));
         ArgumentNullException.ThrowIfNull(hours, nameof(hours));
@@ -190,12 +202,39 @@ public class RecordRepository
 
         if (is_weight) /* if weight pr type */
         {
-            await Add_Goal(goal_name, date, date_desired, true, false, false, goal_weight, hours, mins, sec);
+            hours = -1;
+            mins = -1;
+            sec = -1;
+        }
+        else /* if time pr type */
+        {
+            goal_weight = -1;
         }
 
-        await Add_Goal(goal_name, date, date_desired, false, true, false, goal_weight, hours, mins, sec); /* else time pr type */
+        try
+        {
+            await Init_Database();
 
-        Console.WriteLine($"***repo");
+            GoalPR new_goal = new GoalPR
+            {
+                name = goal_name,
+                goal_achieve_by_date = date,
+                date_desired = has_desired,
+                is_weight_goal = is_weight,
+                weight = goal_weight,
+                time_hours = hours,
+                time_min = mins,
+                time_sec = sec
+            };
+
+            int result = await conn.InsertAsync(new_goal);
+
+            status_message = string.Format("{0} PR goal added (Goal date: {1})", result, date);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to add PR goal date: {0}. Error: {1}", date, e.Message);
+        }
     }
 
     /* todo updates a pr entry in the goal table within the database */
@@ -211,22 +250,12 @@ public class RecordRepository
     }
 
     /* returns a list of pr goals from the database */
-    public async Task<List<Goal>> Get_Goal_PR_List()
+    public async Task<List<GoalPR>> Get_Goal_PR_List()
     {
         try
         {
             await Init_Database();
-            List<Goal> pr_goal_list = await conn.Table<Goal>().ToListAsync();
-
-            /* traverse through list and find all goals that are pr goals */
-            for (int i = 0; i < pr_goal_list.Count; i++)
-            {
-                if (pr_goal_list[i].is_body_weight_goal) /*  if goal is not a pr goal; is body weight goal */
-                {
-                    pr_goal_list.Remove(pr_goal_list[i]);
-                }
-            }
-
+            List<GoalPR> pr_goal_list = await conn.Table<GoalPR>().ToListAsync();
             return pr_goal_list;
         }
         catch (Exception e)
@@ -234,41 +263,7 @@ public class RecordRepository
             status_message = string.Format("Failed to retrieve data. {0}", e.Message);
         }
 
-        return new List<Goal>();
-    }
-
-    /* ? removes a goal entry from goals table within the database */
-    public async Task Add_Goal(string goal_name, DateTime date, bool has_desired, bool is_weight, bool is_time, bool is_body_weight,
-                                    int goal_weight, int hours, int mins, int sec)
-    {       
-        try
-        {
-            await Init_Database();
-
-            Goal new_goal = new Goal
-            {
-                name = goal_name,
-                goal_achieve_by_date = date,
-                date_desired = has_desired,
-                is_weight_goal = is_weight,
-                is_time_goal = is_time,
-                is_body_weight_goal = is_body_weight,
-                weight = goal_weight,
-                time_hours = hours,
-                time_min = mins,
-                time_sec = sec
-            };
-
-            int result = await conn.InsertAsync(new_goal);
-
-            status_message = string.Format("{0} goal added (Goal name: {1})", result, goal_name);
-        }
-        catch (Exception e)
-        {
-            status_message = string.Format("Failed to add goal: {0}. Error: {1}", goal_name, e.Message);
-        }
-
-        Console.WriteLine($"***repo status_message: {status_message}");
+        return new List<GoalPR>();
     }
 
     /* todo removes a goal entry from goals table within the database */
