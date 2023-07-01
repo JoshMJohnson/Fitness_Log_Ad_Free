@@ -38,14 +38,14 @@ public partial class WorkoutCalendar : ContentPage
     /* button clicked to create a workout category */
     private async void Create_Category(object sender, EventArgs e)
     {
-        object result = await this.ShowPopupAsync(new CalendarCategoryAddPopup());
+        await this.ShowPopupAsync(new CalendarCategoryAddPopup());
         Retrieve_Categories();
     }
 
     /* button clicked to remove a workout category */
     private async void Remove_Category(object sender, EventArgs e)
     {
-        object result = await this.ShowPopupAsync(new CalendarCategoryRemovePopup());
+        await this.ShowPopupAsync(new CalendarCategoryRemovePopup());
         Retrieve_Categories();
     }
 
