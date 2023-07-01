@@ -30,7 +30,7 @@ public partial class CalendarCategoryAddPopup
         Close();
     }
 
-    /* todo submits category creation */
+    /* submits category creation */
     private async void Create_Category(object sender, EventArgs e)
     {
         int max_categories = 6; /* max number of categories allowed for calendar */
@@ -45,7 +45,7 @@ public partial class CalendarCategoryAddPopup
 
             await App.RecordRepo.Add_Calendar_Category(name, category_index);
         }
-        else /* prevent the creation of category; limit reached */
+        else /* todo prevent the creation of category; limit reached */
         {
             
         }

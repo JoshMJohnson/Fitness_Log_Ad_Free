@@ -477,7 +477,7 @@ public class RecordRepository
         }
     }
     
-    /* ? removes a category in the categories table within the database */
+    /* removes a category in the categories table within the database */
     public async Task Remove_Calendar_Category(string category_name)
     {
         ArgumentNullException.ThrowIfNull(category_name, nameof(category_name));
