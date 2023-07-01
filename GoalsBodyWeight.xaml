@@ -45,6 +45,7 @@
 
                             <Label Text="{Binding name}"
                                    Grid.Column="0"
+                                   FontSize="16"
                                    HorizontalOptions="Start" />
 
                             <Grid Grid.Column="1"
