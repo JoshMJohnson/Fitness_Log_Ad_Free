@@ -23,13 +23,9 @@ public class RecordRepository
     /* initializes database */
     private async Task Init_Database()
     {
-        Console.WriteLine("pre init");
-
         if (conn != null) { return; }
 
         conn = new SQLiteAsyncConnection(database_path); /* create database */
-
-        Console.WriteLine("mid init");
 
         /* create database tables */
 
@@ -39,8 +35,6 @@ public class RecordRepository
          await conn.CreateTableAsync<BodyWeight>();
          await conn.CreateTableAsync<Calendar>();
          await conn.CreateTableAsync<Progression>();*/
-
-        Console.WriteLine("past init");
     }
 
     /* * body progression section */
@@ -125,7 +119,7 @@ public class RecordRepository
     }
 
     /* * body weight goals section */
-    /* ? adds a body weight entry to the goal table within the database */
+    /* adds a body weight entry to the goal table within the database */
     public async Task Add_Goal_Body_Weight(string goal_name, DateTime date, bool has_desired, int goal_weight)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
@@ -153,8 +147,6 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add goal date: {0}. Error: {1}", date, e.Message);
         }
-
-        Console.WriteLine($"***repo status_message: {status_message}");
     }
 
     /* todo updates a body weight entry in the goal table within the database */
@@ -169,7 +161,7 @@ public class RecordRepository
 
     }
 
-    /* ? returns a list of body weight goals from the database */
+    /* returns a list of body weight goals from the database */
     public async Task<List<GoalBW>> Get_Body_Weight_Goal_List()
     {
         try
@@ -366,8 +358,6 @@ public class RecordRepository
     /* returns a list of PR's from the database */
     public async Task<List<PR>> Get_PR_List()
     {
-        Console.WriteLine($"**here3");
-
         try
         {
             await Init_Database();
@@ -407,8 +397,6 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add calendar entry on {0}. Error: {1}", date, e.Message);
         }
-
-        Console.WriteLine($"***repo status_message: {status_message}");
     }
 
     /* todo removes an entry in the workout calendar table within the database */
