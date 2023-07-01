@@ -17,16 +17,27 @@ public partial class CalendarCategoryRemovePopup
     }
 
     /* submits the removal of a workout calendar category */
-    private void Remove_Category(object sender, EventArgs e)
+    private async void Remove_Category(object sender, EventArgs e)
     {
+        string name = exercise_category.SelectedItem.ToString();
+        await App.RecordRepo.Remove_Calendar_Category(name);
 
+        Close();
     }
 
     /* retrieves list of categories from database and displays them within the picker */
     private async void Retrieve_Categories()
     {
         List<Category> category_list = await App.RecordRepo.Get_Calendar_Category_List();
-        exercise_category.ItemsSource = category_list;
+        List<string> category_string_list = new List<string>();
+
+        /* gets list of category names */
+        for (int i = 0; i < category_list.Count; i++)
+        {
+            category_string_list.Add(category_list[i].name);
+        }
+
+        exercise_category.ItemsSource = category_string_list;
 
         if (category_list.Count == 0) /* if not categories in database */
         {

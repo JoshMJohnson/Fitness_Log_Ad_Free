@@ -46,6 +46,7 @@ public partial class WorkoutCalendar : ContentPage
     private async void Remove_Category(object sender, EventArgs e)
     {
         object result = await this.ShowPopupAsync(new CalendarCategoryRemovePopup());
+        Retrieve_Categories();
     }
 
     /* updates category display */
