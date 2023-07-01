@@ -7,7 +7,7 @@ public partial class CalendarCategoryRemovePopup
 	public CalendarCategoryRemovePopup()
 	{
 		InitializeComponent();
-        Retrieve_Categories();
+        Retrieve_Categories();        
     }
 
     /* closes popup for removing a workout calendar category */
@@ -48,6 +48,8 @@ public partial class CalendarCategoryRemovePopup
         {
             exercise_category_empty_display.IsVisible = false;
             exercise_category.IsVisible = true;
+
+            exercise_category.SelectedIndex = 0;
         }
     }
 }

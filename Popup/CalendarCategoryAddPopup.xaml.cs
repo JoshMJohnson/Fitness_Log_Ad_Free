@@ -53,8 +53,8 @@ public partial class CalendarCategoryAddPopup
         Close();
     }
 
-    /* displays a list of available colors for a new category */
-    private void Generate_Category_Colors()
+    /* returns a list of available colors for a new category */
+    public List<Color> Generate_Category_Colors()
     {
         List<Color> colors = new List<Color>();
 
@@ -81,6 +81,8 @@ public partial class CalendarCategoryAddPopup
         colors.Add(color8);
         colors.Add(color9);
 
-        category_color_picker.ItemsSource = colors; 
+        category_color_picker.ItemsSource = colors;
+
+        return colors;
     }
 }

@@ -50,16 +50,16 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Category">
                             <Grid ColumnDefinitions="50, 20, *"
-                              RowDefinitions="*" 
-                              Padding="5" >
+                                  RowDefinitions="*" 
+                                  Padding="5" >
 
                                 <Label Text="{Binding color}"
-                                   Grid.Column="0"
-                                   HorizontalOptions="End" />
+                                       Grid.Column="0"
+                                       HorizontalOptions="End" />
 
                                 <Label Text="{Binding name}"
-                                   Grid.Column="2"
-                                   HorizontalOptions="Start" />
+                                       Grid.Column="2"
+                                       HorizontalOptions="Start" />
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
