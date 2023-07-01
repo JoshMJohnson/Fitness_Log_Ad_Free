@@ -1,22 +1,14 @@
-﻿Sections:
- - Body Image Progression section
- - Calendar section to indicate which day was a push/pull/leg day
- - Body Weight section with linear chart
- - Personal Record section
- - Goal section
-	- TabBar -> body weight/PR
-
-To Do:
+﻿To Do:
  - Have a max number of exercise categories for spacing purposes
- - Have a max number of characters for creating a new exercise
  - Have a primary goal for body weight
  - Create exercise ability to have weight or time PR
  - PR toggle between background node colors based on pattern or weight/time 
  - PR display icon if weight or time pr type
  - open app on workout calendar page
  - goal option to add an archieve by date
- - tap on pr exercise to edit or delete
  - PR goals chosen from existing PR exercises
  - Body Weight chart. click entry on graph to show edit and delete options
  - user can pick category color of category within workout calendar section
  - add 'local storage access' to project readme concepts demonstrated
+ - trim() input values from popups to remove whitespace
+ - Confirm list deletions and edits
