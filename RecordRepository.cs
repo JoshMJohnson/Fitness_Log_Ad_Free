@@ -351,7 +351,7 @@ public class RecordRepository
         }
     }
 
-    /* ? removes a pr entry in the pr table within the database */
+    /* removes a pr entry in the pr table within the database */
     public async Task Remove_PR(string exercise_name)
     {
         ArgumentNullException.ThrowIfNull(exercise_name, nameof(exercise_name));

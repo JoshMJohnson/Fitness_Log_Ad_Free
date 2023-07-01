@@ -22,7 +22,7 @@
                 <DataTemplate x:DataType="model:PR">
                     <SwipeView>
                         <SwipeView.LeftItems>
-                            <SwipeItems SwipeBehaviorOnInvoked="Auto">
+                            <SwipeItems SwipeBehaviorOnInvoked="Close">
                                 <SwipeItem Text="{Binding exercise_name}"
                                            IconImageSource="trash_icon.png"
                                            BackgroundColor="Red"
@@ -31,7 +31,7 @@
                         </SwipeView.LeftItems>
 
                         <SwipeView.RightItems>
-                            <SwipeItems SwipeBehaviorOnInvoked="Auto">
+                            <SwipeItems SwipeBehaviorOnInvoked="Close">
                                 <SwipeItem Text="{Binding exercise_name}"
                                            IconImageSource="edit_icon.png"
                                            BackgroundColor="Blue"
