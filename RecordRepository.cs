@@ -179,7 +179,7 @@ public class RecordRepository
     }
 
     /* * pr goals section */
-    /* ? adds a pr entry to the goal table within the database */
+    /* adds a pr entry to the goal table within the database */
     public async Task Add_Goal_PR(string goal_name, DateTime date, bool has_desired, bool is_weight, 
                                     int goal_weight, int hours, int mins, int sec)
     {
@@ -235,10 +235,21 @@ public class RecordRepository
 
     }
 
-    /* todo removes a pr entry in the goal table within the database */
-    public async Task Remove_Goal_PR(string pr_name)
+    /* removes a pr goal entry in the GoalPR table within the database */
+    public async Task Remove_Goal_PR(string goal_name)
     {
-        
+        ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
+
+        try
+        {
+            await Init_Database();
+            GoalPR removing_pr_goal = await conn.FindAsync<GoalPR>(goal_name);
+            await conn.DeleteAsync(removing_pr_goal);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to remove {0}. Error: {1}", goal_name, e.Message);
+        }
     }
 
     /* returns a list of pr goals from the database */
@@ -256,12 +267,6 @@ public class RecordRepository
         }
 
         return new List<GoalPR>();
-    }
-
-    /* todo removes a goal entry from goals table within the database */
-    public async Task Remove_Goal()
-    {
-
     }
 
     /* * personal records section */
