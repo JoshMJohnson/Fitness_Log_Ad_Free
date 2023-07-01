@@ -41,12 +41,12 @@
 
                         <Grid RowDefinitions="*"
                               ColumnDefinitions="*, *"
+                              VerticalOptions="Center"
                               Margin="10">
 
                             <Label Text="{Binding name}"
                                    Grid.Column="0"
-                                   FontSize="16"
-                                   VerticalOptions="Center" />
+                                   FontSize="16" />
 
                             <Grid Grid.Column="1"
                                   RowDefinitions="*, *"
