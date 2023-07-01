@@ -33,7 +33,7 @@ public class RecordRepository
 
         /* create database tables */
 
-        await conn.CreateTableAsync<Category>();
+        await conn.CreateTablesAsync<Category, PR>();
 
         /*
          await conn.CreateTableAsync<BodyWeight>();
@@ -274,14 +274,16 @@ public class RecordRepository
     }
 
     /* * personal records section */
-    /* ? adds a pr entry to the pr table within the database */
+    /* adds a pr entry to the pr table within the database */
     public async Task Add_PR(string name, DateTime date, bool is_weight_pr_type,
-                                int weight_par, int hours, int min, int sec)
+                                int weight_pr, int hours, int min, int sec)
     {
+        Console.WriteLine($"**here");
+
         ArgumentNullException.ThrowIfNull(name, nameof(name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
         ArgumentNullException.ThrowIfNull(is_weight_pr_type, nameof(is_weight_pr_type));
-        ArgumentNullException.ThrowIfNull(weight_par, nameof(weight_par));
+        ArgumentNullException.ThrowIfNull(weight_pr, nameof(weight_pr));
         ArgumentNullException.ThrowIfNull(hours, nameof(hours));
         ArgumentNullException.ThrowIfNull(min, nameof(min));
         ArgumentNullException.ThrowIfNull(sec, nameof(sec));
@@ -295,7 +297,7 @@ public class RecordRepository
                 exercise_name = name,
                 date_achieved = date,
                 is_weight_pr = is_weight_pr_type,
-                weight = weight_par,
+                weight = weight_pr,
                 time_hours = hours,
                 time_min = min,
                 time_sec = sec
@@ -309,6 +311,8 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add {0}. Error: {1}", name, e.Message);
         }
+
+        Console.WriteLine($"**here2");
     }
 
     /* ? updates a pr entry in the pr table within the database */
@@ -364,9 +368,11 @@ public class RecordRepository
         }
     }
 
-    /* ? returns a list of PR's from the database */
+    /* returns a list of PR's from the database */
     public async Task<List<PR>> Get_PR_List()
     {
+        Console.WriteLine($"**here3");
+
         try
         {
             await Init_Database();

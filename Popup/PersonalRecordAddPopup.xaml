@@ -32,6 +32,7 @@
                HorizontalOptions="End"
                VerticalOptions="Center"
                HorizontalTextAlignment="Center"
+               x:Name="exercise_name_entry"
                Placeholder="Exercise Name"/>
 
         <Label Grid.Row="2"
@@ -64,6 +65,7 @@
                    Grid.Row="3"
                    Grid.Column="2"
                    MaxLength="4"
+                   x:Name="min_pr"
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
@@ -76,6 +78,7 @@
                    Grid.Row="3"
                    Grid.Column="4"
                    MaxLength="2"
+                   x:Name="sec_pr"
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
@@ -103,6 +106,7 @@
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
                    MaxLength="4"
+                   x:Name="weight_pr"
                    Placeholder="100"/>
         </Grid>
         

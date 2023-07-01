@@ -46,13 +46,34 @@ public partial class PersonalRecords : ContentPage
     /* executed when PR plus button clicked */
     private async void Add_PR(object sender, EventArgs e)
     {
-        object result = await this.ShowPopupAsync(new PersonalRecordAddPopup());
+        await this.ShowPopupAsync(new PersonalRecordAddPopup());
+        Refresh_PR_List();
     }
 
-    /* todo refreshes the PR list being displayed on UI */
+    /* swipe remove pr */
+    private async void Remove_PR(object sender, EventArgs e)
+    {
+        SwipeItem remove_pr = (SwipeItem) sender;
+        string pr_name = remove_pr.Text;
+
+        await App.RecordRepo.Remove_PR(pr_name);
+        Refresh_PR_List();
+    }
+
+    /* todo swipe edit pr */
+    private async void Update_PR(object sender, EventArgs e)
+    {
+        SwipeItem remove_pr = (SwipeItem)sender;
+        string pr_name = remove_pr.Text;
+
+
+        Refresh_PR_List();
+    }
+
+    /* refreshes the PR list being displayed on UI */
     public async void Refresh_PR_List()
     {
-        List<PR> pr_list = new List<PR>();
+        List<PR> pr_list = await App.RecordRepo.Get_PR_List();
 
         pr_display.ItemsSource = pr_list;
 
