@@ -45,13 +45,13 @@ public partial class GoalsBodyWeight : ContentPage
         Refresh_BW_Goal_List();
     }
 
-    /* todo swipe remove BW goal */
+    /* swipe remove BW goal */
     private async void Remove_Body_Weight_Goal(object sender, EventArgs e)
     {
-        SwipeItem remove_pr = (SwipeItem) sender;
-        string pr_name = remove_pr.Text;
+        SwipeItem remove_bw_goal = (SwipeItem) sender;
+        string goal_name = remove_bw_goal.Text;
 
-        //await App.RecordRepo.Remove_Goal_Body_Weight(0);
+        await App.RecordRepo.Remove_Goal_Body_Weight(goal_name);
         Refresh_BW_Goal_List();
     }
 

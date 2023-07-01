@@ -155,10 +155,21 @@ public class RecordRepository
 
     }
 
-    /* todo removes a body weight entry in the goal table within the database */
-    public async Task Remove_Goal_Body_Weight(int Id)
+    /* removes a body weight entry in the goal table within the database */
+    public async Task Remove_Goal_Body_Weight(string goal_name)
     {
+        ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
 
+        try
+        {
+            await Init_Database();
+            GoalBW removing_bw_goal = await conn.FindAsync<GoalBW>(goal_name);
+            await conn.DeleteAsync(removing_bw_goal);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to remove {0}. Error: {1}", goal_name, e.Message);
+        }
     }
 
     /* returns a list of body weight goals from the database */
