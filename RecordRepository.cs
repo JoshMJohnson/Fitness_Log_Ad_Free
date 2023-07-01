@@ -176,7 +176,7 @@ public class RecordRepository
     }
 
     /* * pr goals section */
-    /* ? adds a pr entry to the goal table within the database */
+    /* adds a pr entry to the goal table within the database */
     public async Task Add_Goal_PR(string goal_name, DateTime date, bool date_desired, bool is_weight, int goal_weight, int hours, int mins, int sec)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
@@ -210,7 +210,7 @@ public class RecordRepository
         
     }
 
-    /* ? returns a list of pr goals from the database */
+    /* returns a list of pr goals from the database */
     public async Task<List<Goal>> Get_Goal_PR_List()
     {
         try
