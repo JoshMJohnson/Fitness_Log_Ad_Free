@@ -6,15 +6,13 @@ namespace WorkoutLog.Model;
 [Table("Goals")]
 public class Goal
 {
-	[PrimaryKey, AutoIncrement]
-	public int id { get; set; }
-
+    [PrimaryKey]
     public string name { get; set; }
 
     [DefaultValue(false)]
     public bool has_accomplished_goal { get; set; }
 
-    public DateTime goal_archieve_by_date { get; set; }
+    public DateTime goal_achieve_by_date { get; set; }
 
 	public bool is_weight_goal { get; set; }
     public bool is_time_goal { get; set; }
