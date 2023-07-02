@@ -12,3 +12,4 @@
  - add 'local storage access' to project readme concepts demonstrated
  - trim() input values from popups to remove whitespace
  - Confirm list deletions and edits
+ - Add a section: 'Memorable PRs' -> First marathon time. Reached 200lbs bench press. etc. 
