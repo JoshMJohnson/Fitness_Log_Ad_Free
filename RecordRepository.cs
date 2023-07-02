@@ -240,7 +240,7 @@ public class RecordRepository
         }
     }
 
-    /* todo updates a pr entry in the goal table within the database */
+    /* todo updates a pr goal entry in the GoalPR table within the database */
     public async Task Update_Goal_PR()
     {
 
