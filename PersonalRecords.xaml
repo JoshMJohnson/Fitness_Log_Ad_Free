@@ -59,7 +59,7 @@
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
-                            <Label Text=" lbs"
+                            <Label Text=" lbs."
                                    Grid.Row="1"
                                    Grid.Column="1"
                                    FontSize="14"
