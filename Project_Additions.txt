@@ -13,3 +13,5 @@
  - trim() input values from popups to remove whitespace
  - Confirm list deletions and edits
  - Add a section: 'Memorable PRs' -> First marathon time. Reached 200lbs bench press. etc. 
+ - pr/goal/bw lists can hold and re-arrange order
+ - have MaximumDate be DateTime.Now for pr list; cant set pr date later than current time
