@@ -12,7 +12,7 @@ public class GoalPR
     [DefaultValue(false)]
     public bool has_accomplished_goal { get; set; }
 
-    public DateTime goal_achieve_by_date { get; set; }
+    public string goal_achieve_by_date { get; set; }
     public bool date_desired { get; set; }
 
     public bool is_weight_goal { get; set; }

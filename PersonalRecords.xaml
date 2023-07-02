@@ -109,13 +109,13 @@
 
                             <Grid Grid.Row="1"
                                   RowDefinitions="*"
-                                  ColumnDefinitions="*, Auto, *, Auto, *, Auto" >
+                                  ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" >
 
                                 <Label Text="{Binding time_hours}"
                                        Grid.Column="0"
                                        FontSize="14"  />
 
-                                <Label Text="hrs. "
+                                <Label Text=" hrs. "
                                        Grid.Column="1"
                                        FontSize="14"  />
 
@@ -123,7 +123,7 @@
                                        Grid.Column="2"
                                        FontSize="14" />
 
-                                <Label Text="mins. "
+                                <Label Text=" mins. "
                                        Grid.Column="3"
                                        FontSize="14"  />
 
@@ -131,7 +131,7 @@
                                        Grid.Column="4"
                                        FontSize="14" />
 
-                                <Label Text="secs."
+                                <Label Text=" secs."
                                        Grid.Column="5"
                                        FontSize="14"  />
                             </Grid>

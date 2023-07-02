@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:WorkoutLog.Model"
+             xmlns:cells="clr-namespace:WorkoutLog.Cells"
              x:Class="WorkoutLog.GoalsPR"
              Title="Goals">
     
@@ -10,83 +11,148 @@
                      Clicked="Add_PR_Goal" />
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="Is_Weight_PR_Goal">
+                <SwipeView>
+                    <SwipeView.LeftItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="trash_icon.png"
+                                       BackgroundColor="Red"
+                                       Invoked="Remove_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+
+                    <SwipeView.RightItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="edit_icon.png"
+                                       BackgroundColor="Blue"
+                                       Invoked="Update_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          VerticalOptions="Center"
+                          Margin="10">
+
+                        <Label Text="{Binding name}"
+                               Grid.Column="0"
+                               FontSize="16" />
+
+                        <Grid Grid.Column="1"
+                              RowDefinitions="*, *"
+                              ColumnDefinitions="*, Auto"
+                              HorizontalOptions="End" >
+
+                            <Label Text="{Binding goal_achieve_by_date}"
+                                   Grid.Row="0"
+                                   FontSize="14"
+                                   Grid.ColumnSpan="2"
+                                   HorizontalOptions="End" />
+
+                            <Label Text="{Binding weight}"
+                                   Grid.Row="1"
+                                   Grid.Column="0"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Label Text=" lbs"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                    </Grid>
+                </SwipeView>
+            </DataTemplate>
+            <DataTemplate x:Key="Is_Time_PR_Goal">
+                <SwipeView>
+                    <SwipeView.LeftItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="trash_icon.png"
+                                       BackgroundColor="Red"
+                                       Invoked="Remove_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+
+                    <SwipeView.RightItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="edit_icon.png"
+                                       BackgroundColor="Blue"
+                                       Invoked="Update_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          VerticalOptions="Center"
+                          Margin="10">
+
+                        <Label Text="{Binding name}"
+                               Grid.Column="0"
+                               FontSize="16" />
+
+                        <Grid Grid.Column="1"
+                              RowDefinitions="*, *"
+                              ColumnDefinitions="*"
+                              HorizontalOptions="End" >
+
+                            <Label Text="{Binding goal_achieve_by_date}"
+                                   Grid.Row="0"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="*"
+                                  ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" >
+
+                                <Label Text="{Binding time_hours}"
+                                       Grid.Column="0"
+                                       FontSize="14"  />
+
+                                <Label Text=" hrs. "
+                                       Grid.Column="1"
+                                       FontSize="14"  />
+
+                                <Label Text="{Binding time_min}"
+                                       Grid.Column="2"
+                                       FontSize="14" />
+
+                                <Label Text=" mins. "
+                                       Grid.Column="3"
+                                       FontSize="14"  />
+
+                                <Label Text="{Binding time_sec}"
+                                       Grid.Column="4"
+                                       FontSize="14" />
+
+                                <Label Text=" secs."
+                                       Grid.Column="5"
+                                       FontSize="14"  />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </SwipeView>
+            </DataTemplate>
+
+            <cells:PRGoalDataTemplateSelector x:Key="PRGoalTypeSelector"
+                                              Is_Weight_PR_Goal="{StaticResource Is_Weight_PR_Goal}"
+                                              Is_Time_PR_Goal="{StaticResource Is_Time_PR_Goal}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <Grid x:Name="goal_pr_layout"
           RowDefinitions="*"
           ColumnDefinitions="*">
 
         <CollectionView x:Name="pr_goals_display"
                         HorizontalOptions="Center"
-                        VerticalOptions="Start">
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:GoalPR">
-                    <SwipeView>
-                        <SwipeView.LeftItems>
-                            <SwipeItems SwipeBehaviorOnInvoked="Close">
-                                <SwipeItem Text="{Binding name}"
-                                           IconImageSource="trash_icon.png"
-                                           BackgroundColor="Red"
-                                           Invoked="Remove_PR_Goal" />
-                            </SwipeItems>
-                        </SwipeView.LeftItems>
-
-                        <SwipeView.RightItems>
-                            <SwipeItems SwipeBehaviorOnInvoked="Close">
-                                <SwipeItem Text="{Binding name}"
-                                           IconImageSource="edit_icon.png"
-                                           BackgroundColor="Blue"
-                                           Invoked="Update_PR_Goal" />
-                            </SwipeItems>
-                        </SwipeView.RightItems>
-
-                        <Grid RowDefinitions="*"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center"
-                              Margin="10">
-
-                            <Label Text="{Binding name}"
-                                   Grid.Column="0"
-                                   FontSize="16" />
-
-                            <Grid Grid.Column="1"
-                                  RowDefinitions="*, *"
-                                  ColumnDefinitions="*"
-                                  HorizontalOptions="End" >
-
-                                <Label Text="{Binding goal_achieve_by_date}"
-                                       Grid.Row="0"
-                                       FontSize="12"
-                                       HorizontalOptions="End" />
-
-                                <Label Text="{Binding weight}"
-                                       x:Name="weight_display_node"
-                                       Grid.Row="1"
-                                       FontSize="14"
-                                       HorizontalOptions="End" />
-
-                                <Grid Grid.Row="1"
-                                      RowDefinitions="*"
-                                      ColumnDefinitions="*, *, *"
-                                      x:Name="time_display_node"
-                                      IsVisible="false" >
-
-                                    <Label Text="{Binding time_hours}"
-                                           Grid.Column="0"
-                                           FontSize="12"  />
-
-                                    <Label Text="{Binding time_min}"
-                                           Grid.Column="1"
-                                           FontSize="12" />
-
-                                    <Label Text="{Binding time_sec}"
-                                           Grid.Column="2"
-                                           FontSize="12" />
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </SwipeView>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                        VerticalOptions="Start"
+                        ItemTemplate="{StaticResource PRGoalTypeSelector}" />
     </Grid>
 </ContentPage>
