@@ -9,7 +9,7 @@ public class PR
     public string exercise_name { get; set; }
 
     [NotNull]
-    public DateTime date_achieved { get; set; }
+    public string date_achieved { get; set; }
 
     [NotNull]
     public bool is_weight_pr { get; set; }

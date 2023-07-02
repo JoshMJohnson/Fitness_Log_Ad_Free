@@ -49,19 +49,17 @@
 
                             <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
-                                   FontSize="12"
+                                   FontSize="14"
                                    Grid.ColumnSpan="2"
                                    HorizontalOptions="End" />
 
                             <Label Text="{Binding weight}"
-                                   x:Name="weight_display_node"
                                    Grid.Row="1"
                                    Grid.Column="0"
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
                             <Label Text=" lbs"
-                                   x:Name="weight_display_node"
                                    Grid.Row="1"
                                    Grid.Column="1"
                                    FontSize="14"
@@ -106,13 +104,12 @@
 
                             <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
-                                   FontSize="12"
+                                   FontSize="14"
                                    HorizontalOptions="End" />
 
                             <Grid Grid.Row="1"
                                   RowDefinitions="*"
-                                  ColumnDefinitions="*, Auto, *, Auto, *, Auto"
-                                  x:Name="time_display_node" >
+                                  ColumnDefinitions="*, Auto, *, Auto, *, Auto" >
 
                                 <Label Text="{Binding time_hours}"
                                        Grid.Column="0"

@@ -293,14 +293,20 @@ public class RecordRepository
         ArgumentNullException.ThrowIfNull(min, nameof(min));
         ArgumentNullException.ThrowIfNull(sec, nameof(sec));
 
+        Console.WriteLine($"******sec: {sec}******");
+
         try
         {
             await Init_Database();
 
+            /* translate DateTime to string; removes the time display */
+            string[] date_time_temp = date.ToString().Split(' ');
+            string date_only = date_time_temp[0];
+
             PR new_pr = new PR
             {
                 exercise_name = name,
-                date_achieved = date,
+                date_achieved = date_only,
                 is_weight_pr = is_weight_pr_type,
                 weight = weight_pr,
                 time_hours = hours,
@@ -333,7 +339,11 @@ public class RecordRepository
             await Init_Database();
             PR updating_pr = await conn.FindAsync<PR>(exercise_name);
 
-            updating_pr.date_achieved = date;
+            /* translate DateTime to string; removes the time display */
+            string[] date_time_temp = date.ToString().Split(' ');
+            string date_only = date_time_temp[0];
+
+            updating_pr.date_achieved = date_only;
 
             if (updating_pr.is_weight_pr) /* if updating pr is a weight pr */
             {
