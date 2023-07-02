@@ -44,17 +44,26 @@
 
                         <Grid Grid.Column="1"
                               RowDefinitions="*, *"
-                              ColumnDefinitions="*"
+                              ColumnDefinitions="*, Auto"
                               HorizontalOptions="End" >
 
                             <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="12"
+                                   Grid.ColumnSpan="2"
                                    HorizontalOptions="End" />
 
                             <Label Text="{Binding weight}"
                                    x:Name="weight_display_node"
                                    Grid.Row="1"
+                                   Grid.Column="0"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Label Text=" lbs"
+                                   x:Name="weight_display_node"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
                                    FontSize="14"
                                    HorizontalOptions="End" />
                         </Grid>
@@ -102,20 +111,32 @@
 
                             <Grid Grid.Row="1"
                                   RowDefinitions="*"
-                                  ColumnDefinitions="*, *, *"
+                                  ColumnDefinitions="*, Auto, *, Auto, *, Auto"
                                   x:Name="time_display_node" >
 
                                 <Label Text="{Binding time_hours}"
                                        Grid.Column="0"
-                                       FontSize="12"  />
+                                       FontSize="14"  />
+
+                                <Label Text="hrs. "
+                                       Grid.Column="1"
+                                       FontSize="14"  />
 
                                 <Label Text="{Binding time_min}"
-                                       Grid.Column="1"
-                                       FontSize="12" />
+                                       Grid.Column="2"
+                                       FontSize="14" />
+
+                                <Label Text="mins. "
+                                       Grid.Column="3"
+                                       FontSize="14"  />
 
                                 <Label Text="{Binding time_sec}"
-                                       Grid.Column="2"
-                                       FontSize="12" />
+                                       Grid.Column="4"
+                                       FontSize="14" />
+
+                                <Label Text="secs."
+                                       Grid.Column="5"
+                                       FontSize="14"  />
                             </Grid>
                         </Grid>
                     </Grid>
