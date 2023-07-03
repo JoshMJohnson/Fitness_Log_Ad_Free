@@ -42,16 +42,23 @@
 
                             <Grid Grid.Column="1"
                                   RowDefinitions="*, *"
-                                  ColumnDefinitions="*"
+                                  ColumnDefinitions="*, Auto"
                                   HorizontalOptions="End" >
 
                                 <Label Text="{Binding goal_achieve_by_date}"
                                        Grid.Row="0"
-                                       FontSize="12"
+                                       FontSize="14"
+                                       Grid.ColumnSpan="2"
                                        HorizontalOptions="End" />
 
                                 <Label Text="{Binding weight}"
                                        Grid.Row="1"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
+
+                                <Label Text=" lbs."
+                                       Grid.Row="1"
+                                       Grid.Column="1"
                                        FontSize="14"
                                        HorizontalOptions="End" />
                             </Grid>
