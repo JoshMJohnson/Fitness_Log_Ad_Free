@@ -60,7 +60,7 @@ public partial class PersonalRecords : ContentPage
         Refresh_PR_List();
     }
 
-    /* todo swipe edit pr */
+    /* ? swipe edit pr */
     private async void Update_PR(object sender, EventArgs e)
     {
         SwipeItem remove_pr = (SwipeItem)sender;
