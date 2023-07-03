@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+           x:Class="WorkoutLog.Popup.UpdatePR"
+           VerticalOptions="Start"
+           HorizontalOptions="Center"
+           Size="250, 325">
+
+    <Grid ColumnDefinitions="Auto, *" 
+          RowDefinitions="Auto, Auto, Auto, Auto, *">
+
+        <Label Text="Update PR"
+               FontAttributes="Bold"
+               Grid.Row="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               Margin="20"
+               FontSize="24" />
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="Exercise:" 
+               Margin="10" 
+               HorizontalOptions="Start"
+               VerticalOptions="Center" />
+
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               HorizontalOptions="End"
+               VerticalOptions="Center"
+               Margin="10" 
+               x:Name="update_pr_exercise_name" />
+
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Text="Date Achieved:"
+               Margin="10"
+               HorizontalOptions="Start"
+               VerticalOptions="Center" />
+
+        <DatePicker x:Name="record_date"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalOptions="End" 
+                    VerticalOptions="Center"
+                    Margin="10" />
+
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="2"
+              RowDefinitions="*"
+              ColumnDefinitions="Auto, *, 40, Auto, 25, Auto"
+              x:Name="time_display" 
+              Margin="10" >
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Time:"
+                   VerticalOptions="Center" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Row="3"
+                   Grid.Column="2"
+                   MaxLength="4"
+                   x:Name="min_pr"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="0" />
+
+            <Label Grid.Row="3"
+                   Grid.Column="3"
+                   Text="min" 
+                   Margin="10" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Row="3"
+                   Grid.Column="4"
+                   MaxLength="2"
+                   x:Name="sec_pr"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="0" />
+
+            <Label Grid.Row="3"
+                   Grid.Column="5"
+                   Text="sec" 
+                   Margin="10" />
+        </Grid>
+
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="2"
+              x:Name="weight_display">
+
+            <Label Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Weight (lbs):" 
+                   Margin="10"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Column="1"
+                   Margin="10"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   MaxLength="4"
+                   x:Name="weight_pr"
+                   Placeholder="100"/>
+        </Grid>
+
+        <Grid Grid.Row="4"
+              Grid.ColumnSpan="2"
+              RowDefinitions="*"
+              ColumnDefinitions="*, *">
+
+            <Button Text="Record"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    Clicked="Submit_PR_Update" 
+                    Margin="10" />
+
+            <Button Text="Cancel"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="Cancel_PR_Update" 
+                    Margin="10" />
+        </Grid>
+    </Grid>
+</mct:Popup>

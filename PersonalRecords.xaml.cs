@@ -66,7 +66,7 @@ public partial class PersonalRecords : ContentPage
         SwipeItem remove_pr = (SwipeItem)sender;
         string pr_name = remove_pr.Text;
 
-
+        await this.ShowPopupAsync(new UpdatePR(pr_name));
         Refresh_PR_List();
     }
 

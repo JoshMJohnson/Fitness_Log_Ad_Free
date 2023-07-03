@@ -405,6 +405,14 @@ public class RecordRepository
         }
     }
 
+    /* returns a pr object from database with primary key matching parameter */
+    public async Task<PR> Get_PR(string exercise_name)
+    {
+        PR updating_pr = await conn.FindAsync<PR>(exercise_name);
+
+        return updating_pr;
+    }
+
     /* returns a list of PR's from the database */
     public async Task<List<PR>> Get_PR_List()
     {
