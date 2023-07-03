@@ -16,7 +16,7 @@
  - have MaximumDate be DateTime.Now for pr list; cant set pr date later than current time
  - add a small help button visible throughout entire project
  - when pr is clicked on, show pr exercise history in a chart/graph
+ - sort goals by alphebetical/date
 
  Sections:
- - add an 'Accomplished Goals' section 
  - Add a section: 'Memorable PRs' -> First marathon time. Reached 200lbs bench press. etc. 
