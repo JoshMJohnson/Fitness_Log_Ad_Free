@@ -15,3 +15,5 @@
  - Add a section: 'Memorable PRs' -> First marathon time. Reached 200lbs bench press. etc. 
  - pr/goal/bw lists can hold and re-arrange order
  - have MaximumDate be DateTime.Now for pr list; cant set pr date later than current time
+ - add a small help button visible throughout entire project
+ - show charts for each pr when clicked on

@@ -264,10 +264,23 @@ public class RecordRepository
         }
     }
 
-    /* todo updates a pr goal entry in the GoalPR table within the database */
-    public async Task Update_Goal_PR()
+    /* ? updates a pr goal entry in the GoalPR table within the database; marks as completed */
+    public async Task Update_Goal_PR(string goal_name)
     {
+        ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
 
+        try
+        {
+            await Init_Database();
+            GoalPR updating_pr_goal = await conn.FindAsync<GoalPR>(goal_name);
+
+            updating_pr_goal.has_accomplished_goal = true;
+            await conn.UpdateAsync(updating_pr_goal);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to update. Error: {0}", e.Message);
+        }
     }
 
     /* removes a pr goal entry in the GoalPR table within the database */

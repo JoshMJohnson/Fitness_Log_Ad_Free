@@ -60,11 +60,11 @@ public partial class PersonalRecords : ContentPage
         Refresh_PR_List();
     }
 
-    /* ? swipe edit pr */
+    /* swipe edit pr */
     private async void Update_PR(object sender, EventArgs e)
     {
-        SwipeItem remove_pr = (SwipeItem)sender;
-        string pr_name = remove_pr.Text;
+        SwipeItem update_pr = (SwipeItem) sender;
+        string pr_name = update_pr.Text;
 
         await this.ShowPopupAsync(new UpdatePR(pr_name));
         Refresh_PR_List();
