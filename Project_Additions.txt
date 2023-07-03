@@ -17,6 +17,4 @@
  - add a small help button visible throughout entire project on top toolkit
  - when pr is clicked on, show pr exercise history in a chart/graph
  - sort goals by alphebetical/date
-
- Sections:
- - Add a section: 'Memorable PRs' -> First marathon time. Reached 200lbs bench press. etc. 
+ - choose primary weight goal for chart inside goal list
