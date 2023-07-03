@@ -12,8 +12,11 @@
  - add 'local storage access' to project readme concepts demonstrated
  - trim() input values from popups to remove whitespace
  - Confirm list deletions and edits
- - Add a section: 'Memorable PRs' -> First marathon time. Reached 200lbs bench press. etc. 
  - pr/goal/bw lists can hold and re-arrange order
  - have MaximumDate be DateTime.Now for pr list; cant set pr date later than current time
  - add a small help button visible throughout entire project
- - show charts for each pr when clicked on
+ - when pr is clicked on, show pr exercise history in a chart/graph
+
+ Sections:
+ - add an 'Accomplished Goals' section 
+ - Add a section: 'Memorable PRs' -> First marathon time. Reached 200lbs bench press. etc. 

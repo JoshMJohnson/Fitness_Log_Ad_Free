@@ -264,7 +264,7 @@ public class RecordRepository
         }
     }
 
-    /* ? updates a pr goal entry in the GoalPR table within the database; marks as completed */
+    /* updates a pr goal entry in the GoalPR table within the database; marks as completed */
     public async Task Update_Goal_PR(string goal_name)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
@@ -275,7 +275,7 @@ public class RecordRepository
             GoalPR updating_pr_goal = await conn.FindAsync<GoalPR>(goal_name);
 
             updating_pr_goal.has_accomplished_goal = true;
-            await conn.UpdateAsync(updating_pr_goal);
+            await conn.UpdateAsync(updating_pr_goal); // todo move to Accomplished Goals section; remove from GoalPR table and add to other table
         }
         catch (Exception e)
         {

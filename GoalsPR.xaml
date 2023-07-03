@@ -27,7 +27,7 @@
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItem Text="{Binding name}"
-                                       IconImageSource="edit_icon.png"
+                                       IconImageSource="save_icon.png"
                                        BackgroundColor="Blue"
                                        Invoked="Update_PR_Goal" />
                         </SwipeItems>
@@ -82,7 +82,7 @@
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItem Text="{Binding name}"
-                                       IconImageSource="edit_icon.png"
+                                       IconImageSource="save_icon.png"
                                        BackgroundColor="Blue"
                                        Invoked="Update_PR_Goal" />
                         </SwipeItems>
