@@ -14,7 +14,7 @@
  - Confirm list deletions and edits
  - pr/goal/bw lists can hold and re-arrange order
  - have MaximumDate be DateTime.Now for pr list; cant set pr date later than current time
- - add a small help button visible throughout entire project
+ - add a small help button visible throughout entire project on top toolkit
  - when pr is clicked on, show pr exercise history in a chart/graph
  - sort goals by alphebetical/date
 
