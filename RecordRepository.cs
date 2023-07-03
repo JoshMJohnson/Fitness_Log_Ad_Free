@@ -130,11 +130,23 @@ public class RecordRepository
         try
         {
             await Init_Database();
+            string date_only;
+
+            if (has_desired) /* if a date set for pr goal */
+            {
+                /* translate DateTime to string; removes the time display */
+                string[] date_time_temp = date.ToString().Split(' ');
+                date_only = date_time_temp[0];
+            }
+            else /* else no date of goal set */
+            {
+                date_only = "N/A";
+            }
 
             GoalBW new_goal = new GoalBW
             {
                 name = goal_name,
-                goal_achieve_by_date = date,
+                goal_achieve_by_date = date_only,
                 date_desired = has_desired,
                 weight = goal_weight,
             };
