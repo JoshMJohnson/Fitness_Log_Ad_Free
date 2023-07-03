@@ -30,15 +30,6 @@
                             </SwipeItems>
                         </SwipeView.LeftItems>
 
-                        <SwipeView.RightItems>
-                            <SwipeItems SwipeBehaviorOnInvoked="Close">
-                                <SwipeItem Text="{Binding name}"
-                                           IconImageSource="edit_icon.png"
-                                           BackgroundColor="Blue"
-                                           Invoked="Update_Body_Weight_Goal" />
-                            </SwipeItems>
-                        </SwipeView.RightItems>
-                        
                         <Grid RowDefinitions="*"
                               ColumnDefinitions="*, *"
                               VerticalOptions="Center"

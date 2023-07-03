@@ -161,12 +161,6 @@ public class RecordRepository
         }
     }
 
-    /* todo updates a body weight entry in the goal table within the database */
-    public async Task Update_Goal_Body_Weight()
-    {
-
-    }
-
     /* removes a body weight entry in the goal table within the database */
     public async Task Remove_Goal_Body_Weight(string goal_name)
     {
@@ -261,25 +255,6 @@ public class RecordRepository
         catch (Exception e)
         {
             status_message = string.Format("Failed to add PR goal date: {0}. Error: {1}", date, e.Message);
-        }
-    }
-
-    /* updates a pr goal entry in the GoalPR table within the database; marks as completed */
-    public async Task Update_Goal_PR(string goal_name)
-    {
-        ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
-
-        try
-        {
-            await Init_Database();
-            GoalPR updating_pr_goal = await conn.FindAsync<GoalPR>(goal_name);
-
-            updating_pr_goal.has_accomplished_goal = true;
-            await conn.UpdateAsync(updating_pr_goal); // todo move to Accomplished Goals section; remove from GoalPR table and add to other table
-        }
-        catch (Exception e)
-        {
-            status_message = string.Format("Failed to update. Error: {0}", e.Message);
         }
     }
 

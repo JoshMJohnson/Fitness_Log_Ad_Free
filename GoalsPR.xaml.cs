@@ -55,16 +55,6 @@ public partial class GoalsPR : ContentPage
         Refresh_PR_Goal_List();
     }
 
-    /* ? swipe edit pr goal */
-    private async void Update_PR_Goal(object sender, EventArgs e)
-    {
-        SwipeItem update_pr = (SwipeItem) sender;
-        string pr_name = update_pr.Text;
-
-        await App.RecordRepo.Update_Goal_PR(pr_name);
-        Refresh_PR_Goal_List();
-    }
-
     /* refreshes the PR goal list being displayed on UI */
     public async void Refresh_PR_Goal_List()
     {

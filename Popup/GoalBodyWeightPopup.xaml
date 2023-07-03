@@ -34,7 +34,7 @@
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
                    x:Name="goal_name_entry"
-                   Placeholder="Exercise Name" />
+                   Placeholder="Goal Name" />
         </Grid>
 
         <Grid Grid.Row="2"

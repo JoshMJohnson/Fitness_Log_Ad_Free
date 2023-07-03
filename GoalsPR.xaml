@@ -24,15 +24,6 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
-                    <SwipeView.RightItems>
-                        <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="save_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR_Goal" />
-                        </SwipeItems>
-                    </SwipeView.RightItems>
-
                     <Grid RowDefinitions="*"
                           ColumnDefinitions="*, *"
                           VerticalOptions="Center"
@@ -78,15 +69,6 @@
                                        Invoked="Remove_PR_Goal" />
                         </SwipeItems>
                     </SwipeView.LeftItems>
-
-                    <SwipeView.RightItems>
-                        <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="save_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR_Goal" />
-                        </SwipeItems>
-                    </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
                           ColumnDefinitions="*, *"

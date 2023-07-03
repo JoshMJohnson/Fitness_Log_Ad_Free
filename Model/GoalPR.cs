@@ -9,9 +9,6 @@ public class GoalPR
     [PrimaryKey]
     public string name { get; set; }
 
-    [DefaultValue(false)]
-    public bool has_accomplished_goal { get; set; }
-
     public string goal_achieve_by_date { get; set; }
     public bool date_desired { get; set; }
 
