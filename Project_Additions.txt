@@ -1,20 +1,18 @@
-﻿To Do:
- - Have a max number of exercise categories for spacing purposes
- - Have a primary goal for body weight
- - Create exercise ability to have weight or time PR
- - PR toggle between background node colors based on pattern or weight/time 
+﻿Additions:
+ - PR/goals nodes alternate background color (grey/transparent)
  - PR display icon if weight or time pr type
- - open app on workout calendar page
- - goal option to add an archieve by date
- - PR goals chosen from existing PR exercises
+ - open app on workout calendar page every time
  - Body Weight chart. click entry on graph to show edit and delete options
  - user can pick category color of category within workout calendar section
- - add 'local storage access' to project readme concepts demonstrated
- - trim() input values from popups to remove whitespace
- - Confirm list deletions and edits
- - pr/goal/bw lists can hold and re-arrange order
- - have MaximumDate be DateTime.Now for pr list; cant set pr date later than current time
+ - Confirm popup for pr/goals deletions and edits
  - add a small help button visible throughout entire project on top toolkit
- - when pr is clicked on, show pr exercise history in a chart/graph
  - sort goals by alphebetical/date
- - choose primary weight goal for chart inside goal list
+ - Body Progression display -> closed tabs showing dates, tabs can expand and display image
+
+ To Do:
+ - Create datatemplate selector for goals body weight to allow a display for primary goal
+	- Display primary goal in Body Weight section table
+ - Set default date, and MaximumDate to DateTime.Now for new pr
+ - trim() input values from popups to remove whitespace
+ - add 'local storage access' to project readme concepts demonstrated
+ - Have a max number of exercise categories for spacing purposes
