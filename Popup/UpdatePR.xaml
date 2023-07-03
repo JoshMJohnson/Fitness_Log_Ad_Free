@@ -87,18 +87,17 @@
 
         <Grid Grid.Row="3"
               Grid.ColumnSpan="2"
+              Margin="10"
               x:Name="weight_display">
 
             <Label Grid.Row="3"
                    Grid.Column="0"
                    Text="Weight (lbs):" 
-                   Margin="10"
                    HorizontalOptions="Start"
                    VerticalOptions="Center" />
 
             <Entry Keyboard="Numeric"
                    Grid.Column="1"
-                   Margin="10"
                    HorizontalOptions="End"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
@@ -112,7 +111,7 @@
               RowDefinitions="*"
               ColumnDefinitions="*, *">
 
-            <Button Text="Record"
+            <Button Text="Update"
                     Grid.Row="4"
                     Grid.Column="0"
                     HorizontalOptions="Center"
