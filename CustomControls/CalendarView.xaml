@@ -29,6 +29,24 @@
                                FontAttributes="Bold"
                                HorizontalTextAlignment="Center" />
                     </VerticalStackLayout>
+                    
+                    <Border.Triggers>
+                        <DataTrigger TargetType="Border"
+                                     Binding="{Binding is_current_date}"
+                                     Value="True">
+
+                            <Setter Property="BackgroundColor"
+                                    Value="LightBlue" />
+                        </DataTrigger>
+                        
+                        <DataTrigger TargetType="Border"
+                                     Binding="{Binding is_current_date}"
+                                     Value="False">
+
+                            <Setter Property="BackgroundColor"
+                                    Value="Transparent" />
+                        </DataTrigger>
+                    </Border.Triggers>
                     <Border.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=current_date_command}"
                                               CommandParameter="{Binding .}" />

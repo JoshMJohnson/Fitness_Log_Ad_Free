@@ -48,6 +48,8 @@ public partial class CalendarView : StackLayout
 	public ICommand current_date_command => new Command<CalendarDay>((current_date) =>
 	{
 		selected_date = current_date.date;
+		dates.ToList().ForEach(d => d.is_current_date = false); 
+		current_date.is_current_date = true;
 	});
     #endregion
 }
