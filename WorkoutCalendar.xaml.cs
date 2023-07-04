@@ -13,6 +13,7 @@ public partial class WorkoutCalendar : ContentPage
 	public WorkoutCalendar()
 	{
 		InitializeComponent();
+        horizontal_calendar.selected_date = DateTime.Now.AddDays(5);
 
         /* display when PR list is empty */
         vertical_layout_empty_category_list = new VerticalStackLayout();
@@ -75,5 +76,10 @@ public partial class WorkoutCalendar : ContentPage
     private async void Unrecord_Exercise(object sender, EventArgs e)
     {
         object result = await this.ShowPopupAsync(new CalendarRemovePopup());
+    }
+
+    private void horizontal_calendar_on_date_selected(object sender, DateTime e)
+    {
+        Console.WriteLine($"***Clicked date!***");
     }
 }

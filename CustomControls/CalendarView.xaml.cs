@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using WorkoutLog.Model;
 
@@ -7,21 +8,61 @@ namespace WorkoutLog.CustomControls;
 public partial class CalendarView : StackLayout
 {
 	#region BinableProperty
+
 	public static readonly BindableProperty selected_date_property = BindableProperty.Create(
 		nameof(selected_date),
 		typeof(DateTime),
 		declaringType: typeof(CalendarView),
 		defaultBindingMode: BindingMode.TwoWay,
-		defaultValue: DateTime.Now
+		defaultValue: DateTime.Now,
+		propertyChanged: Selected_Date_Property_Changed
 		);
 
-	public DateTime selected_date
+	private static void Selected_Date_Property_Changed(BindableObject bindable, object oldValue, object newValue)
+	{
+		var controls = (CalendarView) bindable;
+
+		if (newValue != null)
+		{
+			var new_date = (DateTime) newValue;
+
+			if (controls._tempDate.Month == new_date.Month && controls._tempDate.Year == new_date.Year)
+			{
+				var current_date = controls.dates.Where(d => d.date == new_date.Date).FirstOrDefault();
+
+				if (current_date != null)
+				{
+					controls.dates.ToList().ForEach(d => d.is_current_date = false);
+					current_date.is_current_date = true;
+				}
+			}
+			else
+			{
+                controls.Bind_Dates(new_date);
+            }
+		}
+	}
+
+
+    public DateTime selected_date
 	{
 		get => (DateTime) GetValue(selected_date_property);
 		set => SetValue(selected_date_property, value);
 	}
 
-	private DateTime _tempDate;
+    public static readonly BindableProperty selected_date_command_property = BindableProperty.Create(
+        nameof(selected_date_command),
+        typeof(ICommand),
+        declaringType: typeof(CalendarView));
+
+    public ICommand selected_date_command
+    {
+        get => (ICommand) GetValue(selected_date_command_property);
+        set => SetValue(selected_date_command_property, value);
+    }
+
+	public event EventHandler<DateTime> on_date_selected;
+    private DateTime _tempDate;
     #endregion
 
     public ObservableCollection<CalendarDay> dates { get; set; } = new ObservableCollection<CalendarDay>();
@@ -61,9 +102,10 @@ public partial class CalendarView : StackLayout
 	{
 		_tempDate = current_date.date;
 		selected_date = current_date.date;
-		dates.ToList().ForEach(d => d.is_current_date = false); 
-		current_date.is_current_date = true;
-	});
+		on_date_selected?.Invoke(null, current_date.date);
+		selected_date_command?.Execute(current_date.date);
+
+    });
 
 	public ICommand next_month_command => new Command(() =>
 	{
