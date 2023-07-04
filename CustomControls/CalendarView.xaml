@@ -3,9 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:WorkoutLog.Model"
              x:Name="this"
+             Spacing="10"
              x:Class="WorkoutLog.CustomControls.CalendarView">
 
-    <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMM dd yyyy}'}" />
+    <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMM dd yyyy}'}"
+           FontSize="16"
+           FontAttributes="Bold" />
     
 
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=dates}">
@@ -22,12 +25,32 @@
                     <VerticalStackLayout>
                         <Label Text="{Binding date, StringFormat='{0:ddd}'}" 
                                FontSize="18" 
-                               HorizontalTextAlignment="Center" />
-                        
+                               HorizontalTextAlignment="Center" >
+
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" 
+                                             Binding="{Binding is_current_date}" 
+                                             Value="True">
+                                    <Setter Property="TextColor"
+                                            Value="White" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+
                         <Label Text="{Binding date, StringFormat='{0:d }'}" 
                                FontSize="24" 
                                FontAttributes="Bold"
-                               HorizontalTextAlignment="Center" />
+                               HorizontalTextAlignment="Center" >
+
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" 
+                                             Binding="{Binding is_current_date}" 
+                                             Value="True">
+                                    <Setter Property="TextColor"
+                                            Value="White" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
                     </VerticalStackLayout>
                     
                     <Border.Triggers>

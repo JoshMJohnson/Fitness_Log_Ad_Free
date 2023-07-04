@@ -42,6 +42,8 @@ public partial class CalendarView : StackLayout
 				date = new DateTime(selected_date.Year, selected_date.Month, day)
 			});
 		}
+
+		dates.Where(d => d.date.Date == selected_date.Date).FirstOrDefault().is_current_date = true;
 	}
 
 	#region Commands
