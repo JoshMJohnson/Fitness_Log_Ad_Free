@@ -33,7 +33,7 @@ public class RecordRepository
 
         /*
          await conn.CreateTableAsync<BodyWeight>();
-         await conn.CreateTableAsync<Calendar>();
+         await conn.CreateTableAsync<CalendarEntries>();
          await conn.CreateTableAsync<Progression>();*/
     }
 
@@ -429,7 +429,7 @@ public class RecordRepository
         {
             await Init_Database();
 
-            Calendar calendar_entry = new Calendar
+            CalendarEntry calendar_entry = new CalendarEntry
             {
                 entry_date = date,
                 calendar_category = category
@@ -470,12 +470,12 @@ public class RecordRepository
     }
 
     /* ? returns a list of calendar entries from the database */
-    public async Task<List<Calendar>> Get_Calendar_Entries_List()
+    public async Task<List<CalendarEntry>> Get_Calendar_Entries_List()
     {
         try
         {
             await Init_Database();
-            List<Calendar> calendar_entry_list = await conn.Table<Calendar>().ToListAsync();
+            List<CalendarEntry> calendar_entry_list = await conn.Table<CalendarEntry>().ToListAsync();
             return calendar_entry_list;
         }
         catch (Exception e)
@@ -483,7 +483,7 @@ public class RecordRepository
             status_message = string.Format("Failed to retrieve data. {0}", e.Message);
         }
 
-        return new List<Calendar>();
+        return new List<CalendarEntry>();
     }
 
     /* adds a category to the categories table within the database */

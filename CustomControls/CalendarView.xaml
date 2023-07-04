@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:WorkoutLog.Model"
+             x:Name="this"
+             x:Class="WorkoutLog.CustomControls.CalendarView">
+
+    <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMM dd yyyy}'}" />
+    
+
+    <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=dates}">
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Horizontal" 
+                               ItemSpacing="10"/>
+            
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:CalendarDay">
+                <Border WidthRequest="80"
+                        Padding="15">
+                    
+                    <VerticalStackLayout>
+                        <Label Text="{Binding date, StringFormat='{0:ddd}'}" 
+                               FontSize="18" 
+                               HorizontalTextAlignment="Center" />
+                        
+                        <Label Text="{Binding date, StringFormat='{0:d }'}" 
+                               FontSize="24" 
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=current_date_command}"
+                                              CommandParameter="{Binding .}" />
+                    </Border.GestureRecognizers>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</StackLayout>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:WorkoutLog.CustomControls"
              xmlns:model="clr-namespace:WorkoutLog.Model"
              x:Class="WorkoutLog.WorkoutCalendar"
              Title="Workout Calendar">
@@ -13,7 +14,7 @@
     </ContentPage.ToolbarItems>
 
     <Grid ColumnDefinitions="*, *"
-          RowDefinitions="*, *" >
+          RowDefinitions="*, Auto, *" >
 
         <Grid RowDefinitions="Auto, *"
               ColumnDefinitions="*"
@@ -84,10 +85,11 @@
                     Clicked="Remove_Category" />
         </Grid>
 
-        <DatePicker x:Name="calendar_section"
-                    Grid.Row="1"
-                    Grid.ColumnSpan="2"
-                    HorizontalOptions="Center" 
-                    VerticalOptions="Center" />
+        <customControls:CalendarView Grid.Row="1"
+                                     Grid.ColumnSpan="2"
+                                     Margin="10" />
+
+
+
     </Grid>
 </ContentPage>
