@@ -20,6 +20,8 @@ public partial class CalendarView : StackLayout
 		get => (DateTime) GetValue(selected_date_property);
 		set => SetValue(selected_date_property, value);
 	}
+
+	private DateTime _tempDate;
     #endregion
 
     public ObservableCollection<CalendarDay> dates { get; set; } = new ObservableCollection<CalendarDay>();
@@ -30,28 +32,49 @@ public partial class CalendarView : StackLayout
         Bind_Dates(DateTime.Now);
     }
 
-	private void Bind_Dates(DateTime selected_date)
+	private void Bind_Dates(DateTime date)
 	{
-		int days_count = DateTime.DaysInMonth(selected_date.Year, selected_date.Month); /* get num of days in selected month */
+		dates.Clear();
+
+		int days_count = DateTime.DaysInMonth(date.Year, date.Month); /* get num of days in selected month */
 
 		/* loop through the days in the selected month */
 		for (int day = 1; day <= days_count; day++)
 		{
 			dates.Add(new CalendarDay
 			{
-				date = new DateTime(selected_date.Year, selected_date.Month, day)
+				date = new DateTime(date.Year, date.Month, day)
 			});
 		}
 
-		dates.Where(d => d.date.Date == selected_date.Date).FirstOrDefault().is_current_date = true;
+		var selected_date_data = dates.Where(d => d.date.Date == selected_date.Date).FirstOrDefault();
+
+		if (selected_date_data != null)
+		{
+			selected_date_data.is_current_date = true;
+			_tempDate = selected_date_data.date;
+		}
 	}
 
 	#region Commands
 	public ICommand current_date_command => new Command<CalendarDay>((current_date) =>
 	{
+		_tempDate = current_date.date;
 		selected_date = current_date.date;
 		dates.ToList().ForEach(d => d.is_current_date = false); 
 		current_date.is_current_date = true;
 	});
+
+	public ICommand next_month_command => new Command(() =>
+	{
+		_tempDate = _tempDate.AddMonths(1);
+		Bind_Dates(_tempDate);
+	});
+
+    public ICommand previous_month_command => new Command(() =>
+    {
+        _tempDate = _tempDate.AddMonths(-1);
+        Bind_Dates(_tempDate);
+    });
     #endregion
 }
