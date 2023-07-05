@@ -97,21 +97,23 @@ public partial class CalendarView : StackLayout
 	}
 
 	#region Commands
+	/* update calendar currently selected date info */
 	public ICommand current_date_command => new Command<CalendarDay>((current_date) =>
 	{
 		_tempDate = current_date.date;
 		selected_date = current_date.date;
 		on_date_selected?.Invoke(null, current_date.date);
 		selected_date_command?.Execute(current_date.date);
-
     });
 
-	public ICommand next_month_command => new Command(() =>
+	/* changes temp variables to next months data */
+	public ICommand next_month_command => new Command<CalendarDay>((current_date) =>
 	{
 		_tempDate = _tempDate.AddMonths(1);
 		Bind_Dates(_tempDate);
-	});
+    });
 
+    /* changes temp variables to previous months data */
     public ICommand previous_month_command => new Command(() =>
     {
         _tempDate = _tempDate.AddMonths(-1);
