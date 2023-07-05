@@ -6,36 +6,6 @@
              Spacing="10"
              x:Class="WorkoutLog.CustomControls.CalendarView">
 
-    <Grid ColumnDefinitions="*, Auto">
-        
-        <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMM dd yyyy}'}"
-               FontSize="16"
-               FontAttributes="Bold" />
-
-        <HorizontalStackLayout Grid.Column="1"
-                               Spacing="20"
-                               HorizontalOptions="End">
-
-            <Image HeightRequest="15"
-                   WidthRequest="15"
-                   Source="left_arrow.png" >
-
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=previous_month_command}" />
-                </Image.GestureRecognizers>
-            </Image>
-
-            <Image HeightRequest="15"
-                   WidthRequest="15"
-                   Source="right_arrow.png" >
-
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=next_month_command}" />
-                </Image.GestureRecognizers>
-            </Image>
-        </HorizontalStackLayout>
-    </Grid>
-
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=dates}">
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Horizontal" 
@@ -103,4 +73,33 @@
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
+
+    <Grid ColumnDefinitions="*, Auto, *"
+          RowDefinitions="*">
+
+        <Image Grid.Column="0"
+               HeightRequest="15"
+               WidthRequest="15"
+               Source="left_arrow.png" >
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=previous_month_command}" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM dd yyyy}'}"
+               FontSize="16"
+               Grid.Column="1"
+               FontAttributes="Bold" />
+
+        <Image HeightRequest="15"
+               WidthRequest="15"
+               Grid.Column="2"
+               Source="right_arrow.png" >
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=next_month_command}" />
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
 </StackLayout>

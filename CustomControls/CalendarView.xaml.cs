@@ -43,7 +43,6 @@ public partial class CalendarView : StackLayout
 		}
 	}
 
-
     public DateTime selected_date
 	{
 		get => (DateTime) GetValue(selected_date_property);
