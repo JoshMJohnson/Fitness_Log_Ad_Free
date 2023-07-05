@@ -77,6 +77,7 @@ public partial class WorkoutCalendar : ContentPage
         object result = await this.ShowPopupAsync(new CalendarRemovePopup());
     }
 
+    /* executes when a date is selected in the horizontal calendar */
     private void horizontal_calendar_on_date_selected(object sender, DateTime e)
     {
         Console.WriteLine($"***Clicked date!***");
