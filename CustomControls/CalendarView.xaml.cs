@@ -104,7 +104,7 @@ public partial class CalendarView : StackLayout
         Bind_Dates(DateTime.Now);
     }
 
-	private void Bind_Dates(DateTime date)
+    private void Bind_Dates(DateTime date)
 	{
 		dates.Clear();
 

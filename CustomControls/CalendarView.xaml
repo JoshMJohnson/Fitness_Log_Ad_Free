@@ -45,17 +45,22 @@
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:CalendarDay">
                 <Border WidthRequest="80"
+                        HeightRequest="120"
                         Padding="15">
 
-                    <VerticalStackLayout>
+                    <Grid RowDefinitions="Auto, Auto, *"
+                          ColumnDefinitions="*">
+
                         <Label Text="{Binding date, StringFormat='{0:ddd}'}" 
-                               FontSize="18" 
-                               HorizontalTextAlignment="Center" >
+                               HorizontalOptions="Center"
+                               Grid.Row="0"
+                               FontSize="18" >
 
                             <Label.Triggers>
                                 <DataTrigger TargetType="Label" 
                                              Binding="{Binding is_current_date}" 
                                              Value="True">
+
                                     <Setter Property="TextColor"
                                             Value="White" />
                                 </DataTrigger>
@@ -64,19 +69,26 @@
 
                         <Label Text="{Binding date, StringFormat='{0:d }'}" 
                                FontSize="24" 
-                               FontAttributes="Bold"
-                               HorizontalTextAlignment="Center" >
+                               HorizontalOptions="Center"
+                               Grid.Row="1"
+                               FontAttributes="Bold">
 
                             <Label.Triggers>
                                 <DataTrigger TargetType="Label" 
                                              Binding="{Binding is_current_date}" 
                                              Value="True">
+
                                     <Setter Property="TextColor"
                                             Value="White" />
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
-                    </VerticalStackLayout>
+
+                        <CollectionView Grid.Row="2"
+                                        x:Name="horizontal_calendar_date_entries_display">
+                            
+                        </CollectionView>
+                    </Grid>
 
                     <Border.Triggers>
                         <DataTrigger TargetType="Border"

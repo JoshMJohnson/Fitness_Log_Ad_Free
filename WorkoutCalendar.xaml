@@ -14,7 +14,7 @@
     </ContentPage.ToolbarItems>
 
     <Grid ColumnDefinitions="*, *"
-          RowDefinitions="*, Auto, *" >
+          RowDefinitions="275, Auto, *" >
 
         <Grid RowDefinitions="Auto, *"
               ColumnDefinitions="*"
