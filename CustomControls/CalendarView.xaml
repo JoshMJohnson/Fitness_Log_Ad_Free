@@ -104,7 +104,7 @@
         </CollectionView.ItemTemplate>
     </CollectionView>
 
-    <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM d yyyy}'}"
+    <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM d, yyyy}'}"
            FontSize="16"
            Grid.Column="1"
            HorizontalOptions="Start"
