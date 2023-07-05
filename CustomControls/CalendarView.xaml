@@ -6,17 +6,46 @@
              Spacing="10"
              x:Class="WorkoutLog.CustomControls.CalendarView">
 
+    <Grid ColumnDefinitions="*, Auto, *, Auto"
+          RowDefinitions="*">
+
+        <Image Grid.Column="0"
+               HeightRequest="15"
+               WidthRequest="15"
+               Source="left_arrow.png" >
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=previous_month_command}" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM}'}"
+               FontSize="16"
+               Grid.Column="1"
+               FontAttributes="Bold" />
+
+        <Image HeightRequest="15"
+               WidthRequest="15"
+               Grid.Column="2"
+               Source="right_arrow.png" >
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=next_month_command}" />
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
+
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=dates}">
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Horizontal" 
                                ItemSpacing="10"/>
-            
+
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:CalendarDay">
                 <Border WidthRequest="80"
                         Padding="15">
-                    
+
                     <VerticalStackLayout>
                         <Label Text="{Binding date, StringFormat='{0:ddd}'}" 
                                FontSize="18" 
@@ -47,7 +76,7 @@
                             </Label.Triggers>
                         </Label>
                     </VerticalStackLayout>
-                    
+
                     <Border.Triggers>
                         <DataTrigger TargetType="Border"
                                      Binding="{Binding is_current_date}"
@@ -56,7 +85,7 @@
                             <Setter Property="BackgroundColor"
                                     Value="LightBlue" />
                         </DataTrigger>
-                        
+
                         <DataTrigger TargetType="Border"
                                      Binding="{Binding is_current_date}"
                                      Value="False">
@@ -74,32 +103,10 @@
         </CollectionView.ItemTemplate>
     </CollectionView>
 
-    <Grid ColumnDefinitions="*, Auto, *"
-          RowDefinitions="*">
-
-        <Image Grid.Column="0"
-               HeightRequest="15"
-               WidthRequest="15"
-               Source="left_arrow.png" >
-
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=previous_month_command}" />
-            </Image.GestureRecognizers>
-        </Image>
-
-        <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM dd yyyy}'}"
-               FontSize="16"
-               Grid.Column="1"
-               FontAttributes="Bold" />
-
-        <Image HeightRequest="15"
-               WidthRequest="15"
-               Grid.Column="2"
-               Source="right_arrow.png" >
-
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=next_month_command}" />
-            </Image.GestureRecognizers>
-        </Image>
-    </Grid>
+    <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM d yyyy}'}"
+           FontSize="16"
+           Grid.Column="1"
+           HorizontalOptions="Start"
+           Margin="10"
+           FontAttributes="Bold" />
 </StackLayout>
