@@ -75,18 +75,20 @@
 
             <Button Text="Create Category"
                     Grid.Row="0"
-                    Margin="20"
+                    Margin="10"
                     CornerRadius="100"
                     LineBreakMode="WordWrap"
-                    WidthRequest="110"
+                    WidthRequest="100"
+                    HeightRequest="100"
                     Clicked="Create_Category" />
 
             <Button Text="Remove Category"
                     Grid.Row="1"
-                    Margin="20"
+                    Margin="10"
                     CornerRadius="100"
                     LineBreakMode="WordWrap"
-                    WidthRequest="110"
+                    WidthRequest="100"
+                    HeightRequest="100"
                     Clicked="Remove_Category" />
         </Grid>
 
