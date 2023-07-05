@@ -16,3 +16,4 @@
  - trim() input values from popups to remove whitespace
  - add 'local storage access' to project readme concepts demonstrated
  - Have a max number of exercise categories for spacing purposes
+ - horizontal calendar button to just back to current date
