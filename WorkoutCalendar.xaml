@@ -87,7 +87,6 @@
 
         <customControls:CalendarView Grid.Row="1"
                                      Grid.ColumnSpan="2"
-                                     x:Name="horizontal_calendar"
                                      Margin="10" 
                                      on_date_selected="horizontal_calendar_on_date_selected" />
     </Grid>

@@ -19,7 +19,7 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM yyyy}'}"
+        <Label Text="{Binding Source={x:Reference this}, Path=_tempDate, StringFormat='{0: MMMMMMMMM yyyy}'}"
                FontSize="16"
                Grid.Column="1"
                FontAttributes="Bold" />

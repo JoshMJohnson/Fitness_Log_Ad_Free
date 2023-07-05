@@ -7,16 +7,25 @@ namespace WorkoutLog.CustomControls;
 
 public partial class CalendarView : StackLayout
 {
-	#region BinableProperty
+    #region BinableProperty
 
-	public static readonly BindableProperty selected_date_property = BindableProperty.Create(
+	/* updating data after changing month displayed */
+    public static readonly BindableProperty displayed_month_property = BindableProperty.Create(
+        nameof(_tempDate),
+        typeof(DateTime),
+        declaringType: typeof(CalendarView),
+        defaultBindingMode: BindingMode.TwoWay,
+        defaultValue: DateTime.Now,
+        propertyChanged: Selected_Date_Property_Changed);
+
+	/* updating data after selecting a new date */
+    public static readonly BindableProperty selected_date_property = BindableProperty.Create(
 		nameof(selected_date),
 		typeof(DateTime),
 		declaringType: typeof(CalendarView),
 		defaultBindingMode: BindingMode.TwoWay,
 		defaultValue: DateTime.Now,
-		propertyChanged: Selected_Date_Property_Changed
-		);
+		propertyChanged: Selected_Date_Property_Changed);
 
 	private static void Selected_Date_Property_Changed(BindableObject bindable, object oldValue, object newValue)
 	{
@@ -43,6 +52,25 @@ public partial class CalendarView : StackLayout
 		}
 	}
 
+	/* displays current month displayed for workout calendar */
+	public DateTime displaying_month
+	{
+        get => (DateTime) GetValue(displayed_month_property);
+        set => SetValue(displayed_month_property, value);
+    }
+
+    public static readonly BindableProperty displaying_month_command_property = BindableProperty.Create(
+        nameof(displaying_month_command),
+        typeof(ICommand),
+        declaringType: typeof(CalendarView));
+
+    public ICommand displaying_month_command
+    {
+        get => (ICommand) GetValue(displaying_month_command_property);
+        set => SetValue(displaying_month_command_property, value);
+    }
+
+    /* contains data for the current date selected */
     public DateTime selected_date
 	{
 		get => (DateTime) GetValue(selected_date_property);
@@ -61,7 +89,11 @@ public partial class CalendarView : StackLayout
     }
 
 	public event EventHandler<DateTime> on_date_selected;
-    private DateTime _tempDate;
+    public DateTime _tempDate 
+	{
+        get => (DateTime)GetValue(displayed_month_property);
+        set => SetValue(displayed_month_property, value);
+    }
     #endregion
 
     public ObservableCollection<CalendarDay> dates { get; set; } = new ObservableCollection<CalendarDay>();
@@ -89,7 +121,7 @@ public partial class CalendarView : StackLayout
 
 		var selected_date_data = dates.Where(d => d.date.Date == selected_date.Date).FirstOrDefault();
 
-		if (selected_date_data != null)
+        if (selected_date_data != null)
 		{
 			selected_date_data.is_current_date = true;
 			_tempDate = selected_date_data.date;
@@ -107,16 +139,18 @@ public partial class CalendarView : StackLayout
     });
 
 	/* changes temp variables to next months data */
-	public ICommand next_month_command => new Command<CalendarDay>((current_date) =>
+	public ICommand next_month_command => new Command(() =>
 	{
 		_tempDate = _tempDate.AddMonths(1);
-		Bind_Dates(_tempDate);
+        displaying_month = _tempDate;
+        Bind_Dates(_tempDate);
     });
 
     /* changes temp variables to previous months data */
     public ICommand previous_month_command => new Command(() =>
     {
         _tempDate = _tempDate.AddMonths(-1);
+        displaying_month = _tempDate;
         Bind_Dates(_tempDate);
     });
     #endregion

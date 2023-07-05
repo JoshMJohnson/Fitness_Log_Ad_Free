@@ -13,7 +13,6 @@ public partial class WorkoutCalendar : ContentPage
 	public WorkoutCalendar()
 	{
 		InitializeComponent();
-        horizontal_calendar.selected_date = DateTime.Now;
 
         /* display when PR list is empty */
         vertical_layout_empty_category_list = new VerticalStackLayout();
