@@ -33,7 +33,7 @@ public partial class CalendarCategoryAddPopup
     /* submits category creation */
     private async void Create_Category(object sender, EventArgs e)
     {
-        int max_categories = 8; /* max number of categories allowed for calendar */
+        int max_categories = 7; /* max number of categories allowed for calendar */
 
         List<Category> category_list = await App.RecordRepo.Get_Calendar_Category_List();
 
