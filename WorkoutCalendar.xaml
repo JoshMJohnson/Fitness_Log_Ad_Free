@@ -70,24 +70,30 @@
 
         <Grid Grid.Row="0"
               Grid.Column="1"
-              RowDefinitions="Auto, Auto"
-              Margin="15"
-              VerticalOptions="Start" >
+              RowDefinitions="*, *"
+              VerticalOptions="Center" >
 
             <Button Text="Create Category"
                     Grid.Row="0"
-                    Margin="10"
+                    Margin="20"
+                    CornerRadius="100"
+                    LineBreakMode="WordWrap"
+                    WidthRequest="110"
                     Clicked="Create_Category" />
 
             <Button Text="Remove Category"
                     Grid.Row="1"
-                    Margin="10"
+                    Margin="20"
+                    CornerRadius="100"
+                    LineBreakMode="WordWrap"
+                    WidthRequest="110"
                     Clicked="Remove_Category" />
         </Grid>
 
         <customControls:CalendarView Grid.Row="1"
                                      Grid.ColumnSpan="2"
                                      Margin="10" 
+                                     x:Name="horizontal_calendar"
                                      on_date_selected="horizontal_calendar_on_date_selected" />
     </Grid>
 </ContentPage>
