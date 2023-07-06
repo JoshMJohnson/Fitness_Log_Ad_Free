@@ -18,3 +18,4 @@
  - Have a max number of exercise categories for spacing purposes
  - horizontal calendar button to just back to current date
  - horizontal calendar furthest right date is current date when opening up section
+ - calendar date has corner colored if at least 1 entry for that date
