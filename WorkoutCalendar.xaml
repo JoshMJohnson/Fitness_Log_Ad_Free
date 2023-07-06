@@ -98,19 +98,26 @@
                                      x:Name="horizontal_calendar"
                                      on_date_selected="horizontal_calendar_on_date_selected" />
 
-        <CollectionView x:Name="workout_selected_date_exercise_display"
-                        VerticalOptions="Start" 
-                        Grid.Row="2">
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:CalendarEntry">
-                    <HorizontalStackLayout Padding="5" >
-                        <Label Text="{Binding calendar_category_name}"
-                               HorizontalOptions="End" />
-                        
-                    </HorizontalStackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <HorizontalStackLayout VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               Grid.ColumnSpan="2"
+                               Grid.Row="2">
+            <ScrollView>
+                <CollectionView x:Name="workout_selected_date_exercise_display">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:CalendarEntry">
+                            <HorizontalStackLayout Padding="5" >
+                                <Label Text="{Binding calendar_category_name}" 
+                                       Margin="5"
+                                       WidthRequest="200"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       FontSize="16"/>
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </HorizontalStackLayout>
     </Grid>
 </ContentPage>
