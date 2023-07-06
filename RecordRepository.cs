@@ -303,8 +303,6 @@ public class RecordRepository
         ArgumentNullException.ThrowIfNull(min, nameof(min));
         ArgumentNullException.ThrowIfNull(sec, nameof(sec));
 
-        Console.WriteLine($"******sec: {sec}******");
-
         try
         {
             await Init_Database();
@@ -440,8 +438,6 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add calendar entry on {0}. Error: {1}", date, e.Message);
         }
-
-        Console.WriteLine($"***********status_message: {status_message}");
     }
 
     /* todo removes an entry in the workout calendar table within the database */
@@ -468,7 +464,7 @@ public class RecordRepository
         }
     }
 
-    /* ? returns a list of calendar entries from the database with a dat eequal to the parameter */
+    /* returns a list of calendar entries from the database with a date eequal to the parameter */
     public async Task<List<CalendarEntry>> Get_Calendar_Entries_List(DateTime date)
     {
         try
