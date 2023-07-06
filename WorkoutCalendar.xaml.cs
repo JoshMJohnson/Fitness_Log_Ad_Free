@@ -2,6 +2,7 @@ using CommunityToolkit.Maui.Views;
 using System;
 using System.Diagnostics;
 using WorkoutLog.Model;
+using WorkoutLog.CustomControls;
 using WorkoutLog.Popup;
 
 namespace WorkoutLog;
@@ -9,6 +10,7 @@ namespace WorkoutLog;
 public partial class WorkoutCalendar : ContentPage
 {
     private VerticalStackLayout vertical_layout_empty_category_list;
+    private DateTime selected_date_calendar;
     
 	public WorkoutCalendar()
 	{
@@ -33,6 +35,10 @@ public partial class WorkoutCalendar : ContentPage
         goal_layout.Add(vertical_layout_empty_category_list);
 
         Retrieve_Categories();
+
+        /* initialize selected date to current date */
+        selected_date_calendar = DateTime.Now.Date;
+        Refresh_Selected_Date();
     }
 
     /* button clicked to create a workout category */
@@ -68,20 +74,32 @@ public partial class WorkoutCalendar : ContentPage
     /* executes when the plus button is clicked to record an exercise */
     private async void Record_Exercise(object sender, EventArgs e)
     {
-        object result = await this.ShowPopupAsync(new CalendarAddPopup());                
+        object result = await this.ShowPopupAsync(new CalendarAddPopup());
+        Refresh_Selected_Date();
     }
 
     /* executes when the minus button is clicked to record an exercise */
     private async void Unrecord_Exercise(object sender, EventArgs e)
     {
         object result = await this.ShowPopupAsync(new CalendarRemovePopup());
+        Refresh_Selected_Date();
     }
 
-    /* todo executes when a date is selected in the horizontal calendar */
+    /* ? refreshes selected date exercise display after exercise entry recorded */
+    private async void Refresh_Selected_Date()
+    {
+        Console.WriteLine($"***********************************selected_date_calendar: {selected_date_calendar}**");
+
+        List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(selected_date_calendar);
+        workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
+    }
+
+    /* executes when a date is selected in the horizontal calendar */
     private async void horizontal_calendar_on_date_selected(object sender, DateTime date)
     {
-        Console.WriteLine($"***Clicked date! e: {date}***");
+        Console.WriteLine($"***********************************date: {date}**");
 
+        selected_date_calendar = date;
         List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(date);
         workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
     }

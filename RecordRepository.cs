@@ -468,13 +468,13 @@ public class RecordRepository
         }
     }
 
-    /* todo returns a list of calendar entries from the database */
+    /* ? returns a list of calendar entries from the database with a dat eequal to the parameter */
     public async Task<List<CalendarEntry>> Get_Calendar_Entries_List(DateTime date)
     {
         try
         {
             await Init_Database();
-            List<CalendarEntry> calendar_entry_list = await conn.Table<CalendarEntry>().ToListAsync();
+            List<CalendarEntry> calendar_entry_list = await conn.Table<CalendarEntry>().Where(d => d.entry_date == date).ToListAsync();
             return calendar_entry_list;
         }
         catch (Exception e)
