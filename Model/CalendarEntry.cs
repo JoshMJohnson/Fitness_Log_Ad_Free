@@ -12,5 +12,5 @@ public class CalendarEntry
     public DateTime entry_date { get; set; }
 
     [NotNull]
-    public Category calendar_category { get; set; }
+    public string calendar_category_name { get; set; }
 }

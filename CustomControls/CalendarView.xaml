@@ -42,6 +42,7 @@
                                ItemSpacing="10"/>
 
         </CollectionView.ItemsLayout>
+        
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:CalendarDay">
                 <Border WidthRequest="80"
@@ -116,10 +117,20 @@
         </CollectionView.ItemTemplate>
     </CollectionView>
 
-    <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM d, yyyy}'}"
+    <Grid ColumnDefinitions="*, *"
+          RowDefinitions="*">
+
+        <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM d, yyyy}'}"
            FontSize="16"
-           Grid.Column="1"
+               Grid.Column="0"
            HorizontalOptions="Start"
            Margin="10"
            FontAttributes="Bold" />
+
+        <Button Grid.Column="1"
+                WidthRequest="150"
+                CornerRadius="50"
+                Clicked="Jump_To_Current_Date"
+                Text="Current Date" />
+    </Grid>
 </StackLayout>

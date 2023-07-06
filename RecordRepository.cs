@@ -28,12 +28,10 @@ public class RecordRepository
         conn = new SQLiteAsyncConnection(database_path); /* create database */
 
         /* create database tables */
-
-        await conn.CreateTablesAsync<Category, PR, GoalPR, GoalBW>();
+        await conn.CreateTablesAsync<Category, PR, GoalPR, GoalBW, CalendarEntry>();
 
         /*
          await conn.CreateTableAsync<BodyWeight>();
-         await conn.CreateTableAsync<CalendarEntries>();
          await conn.CreateTableAsync<Progression>();*/
     }
 
@@ -336,7 +334,7 @@ public class RecordRepository
         }
     }
 
-    /* ? updates a pr entry in the pr table within the database */
+    /* updates a pr entry in the pr table within the database */
     public async Task Update_PR(string exercise_name, DateTime date, int updated_weight, int hours, int mins, int sec)
     {
         ArgumentNullException.ThrowIfNull(exercise_name, nameof(exercise_name));
@@ -397,7 +395,6 @@ public class RecordRepository
     public async Task<PR> Get_PR(string exercise_name)
     {
         PR updating_pr = await conn.FindAsync<PR>(exercise_name);
-
         return updating_pr;
     }
 
@@ -420,10 +417,10 @@ public class RecordRepository
 
     /* * workout calendar section*/
     /* ? adds an entry to the workout calendar table within the database */
-    public async Task Add_Calendar_Entry(DateTime date, Category category)
+    public async Task Add_Calendar_Entry(string category_name, DateTime date)
     {
         ArgumentNullException.ThrowIfNull(date, nameof(date));
-        ArgumentNullException.ThrowIfNull(category, nameof(category));
+        ArgumentNullException.ThrowIfNull(category_name, nameof(category_name));
 
         try
         {
@@ -432,7 +429,7 @@ public class RecordRepository
             CalendarEntry calendar_entry = new CalendarEntry
             {
                 entry_date = date,
-                calendar_category = category
+                calendar_category_name = category_name
             };
 
             int result = await conn.InsertAsync(calendar_entry);
@@ -443,6 +440,8 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add calendar entry on {0}. Error: {1}", date, e.Message);
         }
+
+        Console.WriteLine($"***********status_message: {status_message}");
     }
 
     /* todo removes an entry in the workout calendar table within the database */
@@ -469,8 +468,8 @@ public class RecordRepository
         }
     }
 
-    /* ? returns a list of calendar entries from the database */
-    public async Task<List<CalendarEntry>> Get_Calendar_Entries_List()
+    /* todo returns a list of calendar entries from the database */
+    public async Task<List<CalendarEntry>> Get_Calendar_Entries_List(DateTime date)
     {
         try
         {
@@ -547,5 +546,12 @@ public class RecordRepository
         }
 
         return new List<Category>();
+    }
+
+    /* returns a category object from database with primary key matching parameter */
+    public async Task<Category> Get_Category(string category_name)
+    {
+        Category temp_category = await conn.FindAsync<Category>(category_name);
+        return temp_category;
     }
 }

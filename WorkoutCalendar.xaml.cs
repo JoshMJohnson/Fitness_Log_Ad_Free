@@ -77,9 +77,12 @@ public partial class WorkoutCalendar : ContentPage
         object result = await this.ShowPopupAsync(new CalendarRemovePopup());
     }
 
-    /* executes when a date is selected in the horizontal calendar */
-    private void horizontal_calendar_on_date_selected(object sender, DateTime e)
+    /* todo executes when a date is selected in the horizontal calendar */
+    private async void horizontal_calendar_on_date_selected(object sender, DateTime date)
     {
-        Console.WriteLine($"***Clicked date!***");
+        Console.WriteLine($"***Clicked date! e: {date}***");
+
+        List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(date);
+        workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
     }
 }

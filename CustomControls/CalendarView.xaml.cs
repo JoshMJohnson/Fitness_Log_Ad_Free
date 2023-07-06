@@ -154,4 +154,10 @@ public partial class CalendarView : StackLayout
         Bind_Dates(_tempDate);
     });
     #endregion
+
+	/* todo jumps horizontal calendar to display current date on display */
+	private void Jump_To_Current_Date(object sender, EventArgs e)
+	{
+
+	}
 }

@@ -17,3 +17,4 @@
  - add 'local storage access' to project readme concepts demonstrated
  - Have a max number of exercise categories for spacing purposes
  - horizontal calendar button to just back to current date
+ - horizontal calendar furthest right date is current date when opening up section

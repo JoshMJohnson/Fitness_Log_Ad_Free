@@ -29,18 +29,7 @@
 
             <Picker x:Name="exercise_category"
                     Grid.Column="2"
-                    HorizontalOptions="Center">
-
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Push</x:String>
-                        <x:String>Pull</x:String>
-                        <x:String>Legs</x:String>
-                        <x:String>Calisthenics</x:String>
-                        <x:String>Running</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
+                    HorizontalOptions="Center" />
         </Grid>
 
         <Grid Grid.Row="2"
