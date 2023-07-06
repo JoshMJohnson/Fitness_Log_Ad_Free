@@ -38,7 +38,7 @@ public partial class WorkoutCalendar : ContentPage
 
         /* initialize selected date to current date */
         selected_date_calendar = DateTime.Now.Date;
-        Refresh_Selected_Date();
+        Refresh_Selected_Date(selected_date_calendar);
     }
 
     /* button clicked to create a workout category */
@@ -75,21 +75,25 @@ public partial class WorkoutCalendar : ContentPage
     private async void Record_Exercise(object sender, EventArgs e)
     {
         object result = await this.ShowPopupAsync(new CalendarAddPopup());
-        Refresh_Selected_Date();
+        Refresh_Selected_Date(selected_date_calendar);
     }
 
     /* executes when the minus button is clicked to record an exercise */
     private async void Unrecord_Exercise(object sender, EventArgs e)
     {
         object result = await this.ShowPopupAsync(new CalendarRemovePopup());
-        Refresh_Selected_Date();
+        Refresh_Selected_Date(selected_date_calendar);
     }
 
     /* refreshes selected date exercise display after exercise entry recorded */
-    private async void Refresh_Selected_Date()
+    public async void Refresh_Selected_Date(DateTime selected_date_parameter)
     {
-        List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(selected_date_calendar);
+        Console.WriteLine($"******************selected_date_parameter: {selected_date_parameter}");
+
+        List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(selected_date_parameter);
         workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
+
+        Console.WriteLine($"******************selected_date_parameter2: {selected_date_parameter}");
     }
 
     /* executes when a date is selected in the horizontal calendar */

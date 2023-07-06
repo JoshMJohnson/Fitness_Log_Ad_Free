@@ -121,11 +121,11 @@
           RowDefinitions="*">
 
         <Label Text="{Binding Source={x:Reference this}, Path=selected_date, StringFormat='{0: MMMMMMMMM d, yyyy}'}"
-           FontSize="16"
+               FontSize="16"
                Grid.Column="0"
-           HorizontalOptions="Start"
-           Margin="10"
-           FontAttributes="Bold" />
+               HorizontalOptions="Start"
+               Margin="10"
+               FontAttributes="Bold" />
 
         <Button Grid.Column="1"
                 WidthRequest="150"
