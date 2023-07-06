@@ -414,7 +414,7 @@ public class RecordRepository
     }
 
     /* * workout calendar section*/
-    /* ? adds an entry to the workout calendar table within the database */
+    /* adds an entry to the workout calendar table within the database */
     public async Task Add_Calendar_Entry(string category_name, DateTime date)
     {
         ArgumentNullException.ThrowIfNull(date, nameof(date));
@@ -467,6 +467,8 @@ public class RecordRepository
     /* returns a list of calendar entries from the database with a date eequal to the parameter */
     public async Task<List<CalendarEntry>> Get_Calendar_Entries_List(DateTime date)
     {
+        ArgumentNullException.ThrowIfNull(date, nameof(date));
+
         try
         {
             await Init_Database();
