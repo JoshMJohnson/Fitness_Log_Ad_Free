@@ -155,7 +155,7 @@ public partial class CalendarView : StackLayout
     });
     #endregion
 
-	/* todo jumps horizontal calendar to display current date on display */
+	/* jumps horizontal calendar to display current date on display */
 	private void Jump_To_Current_Date(object sender, EventArgs e)
 	{
 		DateTime present_date = DateTime.Now.Date;
@@ -167,7 +167,7 @@ public partial class CalendarView : StackLayout
         selected_date_command?.Execute(present_date);
         Bind_Dates(present_date);
 
-		/* todo update date exercise display */
+		/* update date exercise display */
 		WorkoutCalendar workout_calendar = new WorkoutCalendar();
 		workout_calendar.Refresh_Selected_Date(present_date);
     }

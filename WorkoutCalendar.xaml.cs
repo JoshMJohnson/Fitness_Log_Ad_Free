@@ -88,12 +88,8 @@ public partial class WorkoutCalendar : ContentPage
     /* refreshes selected date exercise display after exercise entry recorded */
     public async void Refresh_Selected_Date(DateTime selected_date_parameter)
     {
-        Console.WriteLine($"******************selected_date_parameter: {selected_date_parameter}");
-
         List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(selected_date_parameter);
         workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
-
-        Console.WriteLine($"******************selected_date_parameter2: {selected_date_parameter}");
     }
 
     /* executes when a date is selected in the horizontal calendar */
