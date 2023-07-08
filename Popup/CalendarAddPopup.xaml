@@ -28,6 +28,7 @@
                    Text="Category:" />
 
             <Picker x:Name="exercise_category"
+                    HorizontalTextAlignment="Center"
                     Grid.Column="2"
                     HorizontalOptions="Center" />
         </Grid>

@@ -8,10 +8,6 @@ public partial class CalendarAddPopup
     {
         InitializeComponent();
         Get_Exercise_Categories();
-
-        /* set and display default values */
-        exercise_category.SelectedIndex = 0;
-        record_date.Date = DateTime.Now;
     }
 
     /* processes a submission to record an exercise performed */
@@ -43,5 +39,9 @@ public partial class CalendarAddPopup
         }
 
         exercise_category.ItemsSource = category_string_list;
+
+        /* set and display default values */
+        exercise_category.SelectedIndex = 0;
+        record_date.Date = DateTime.Now;
     }
 }
