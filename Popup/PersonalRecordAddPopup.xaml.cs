@@ -2,11 +2,12 @@ namespace WorkoutLog.Popup;
 
 public partial class PersonalRecordAddPopup
 {
-	public PersonalRecordAddPopup()
+    public PersonalRecordAddPopup()
 	{
 		InitializeComponent();
 
         time_display.IsVisible = false;
+        record_date.MaximumDate = DateTime.Now;
     }
 
     /* creates an exercise along with the PR */

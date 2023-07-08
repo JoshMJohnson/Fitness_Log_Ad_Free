@@ -12,10 +12,12 @@
  To Do:
  - Create datatemplate selector for goals body weight to allow a display for primary goal
 	- Display primary goal in Body Weight section table
- - Set default date, and MaximumDate to DateTime.Now for new pr
- - trim() input values from popups to remove whitespace
  - add 'local storage access' to project readme concepts demonstrated
  - Have a max number of exercise categories for spacing purposes
- - horizontal calendar button to just back to current date
  - horizontal calendar furthest right date is current date when opening up section
  - calendar date has corner colored if at least 1 entry for that date
+
+
+ Bugs:
+ - horizontal calendar: breaks when clicking button 'current date' when nothing is entered for that date
+	- also breaks when clicked too fast

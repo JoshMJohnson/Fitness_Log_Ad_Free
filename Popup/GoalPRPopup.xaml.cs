@@ -5,6 +5,7 @@ public partial class GoalPRPopup
 	public GoalPRPopup()
 	{
 		InitializeComponent();
+        achieve_by_date.MinimumDate = DateTime.Now;
     }
 
     /* creates an exercise along with the PR */

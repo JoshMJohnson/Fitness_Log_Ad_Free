@@ -5,6 +5,7 @@ public partial class GoalBodyWeightPopup
 	public GoalBodyWeightPopup()
 	{
 		InitializeComponent();
+        weight_date.MinimumDate = DateTime.Now;
     }
 
     /* creates an exercise along with the PR */
