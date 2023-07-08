@@ -11,6 +11,8 @@ public partial class GoalPRPopup
     private async void Submit_Goal(object sender, EventArgs e)
     {
         string name = exercise_name_entry.Text;
+        name = name.Trim(); /* removes leading and trailing whitespace */
+
         DateTime date;
         bool has_desired;
 

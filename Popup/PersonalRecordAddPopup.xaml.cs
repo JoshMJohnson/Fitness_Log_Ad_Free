@@ -13,6 +13,8 @@ public partial class PersonalRecordAddPopup
     private async void Submit_PR(object sender, EventArgs e)
     {
         string name = exercise_name_entry.Text;
+        name = name.Trim(); /* removes leading and trailing whitespace */
+
         DateTime date = record_date.Date;
 
         if (exercise_type_toggle.IsToggled) /* if time pr */

@@ -11,6 +11,8 @@ public partial class GoalBodyWeightPopup
     private async void Submit_Goal(object sender, EventArgs e)
     {
         string goal_name = goal_name_entry.Text;
+        goal_name = goal_name.Trim(); /* removes leading and trailing whitespace */
+
         string weight_update_string = weight_entry.Text.ToString();
         int weight_update = int.Parse(weight_update_string);
 

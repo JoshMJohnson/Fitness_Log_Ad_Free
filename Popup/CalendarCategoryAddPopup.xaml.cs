@@ -41,6 +41,8 @@ public partial class CalendarCategoryAddPopup
         if (category_list.Count < max_categories) /* if category limit not reached with creation; create category */
         {
             string name = category_name.Text;
+            name = name.Trim(); /* removes leading and trailing whitespace */
+
             int category_index = category_color_picker.SelectedIndex;
 
             await App.RecordRepo.Add_Calendar_Category(name, category_index);
