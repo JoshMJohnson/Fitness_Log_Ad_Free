@@ -9,6 +9,7 @@ namespace WorkoutLog;
 
 public partial class WorkoutCalendar : ContentPage
 {
+    private VerticalStackLayout selected_date_empty_list;
     private VerticalStackLayout vertical_layout_empty_category_list;
     private DateTime selected_date_calendar;
     
@@ -39,6 +40,8 @@ public partial class WorkoutCalendar : ContentPage
         /* initialize selected date to current date */
         selected_date_calendar = DateTime.Now.Date;
         Refresh_Selected_Date(selected_date_calendar);
+
+        Empty_Date_Display();
     }
 
     /* button clicked to create a workout category */
@@ -90,13 +93,57 @@ public partial class WorkoutCalendar : ContentPage
     {
         List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(selected_date_parameter);
         workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
+
+        /* if no exercises recorded for selected date */
+        if (day_exercise_list.Count == 0)
+        {
+            selected_date_empty_list.IsVisible = true;
+        }
+        else /* else; at least one entry for selected date */
+        {
+            selected_date_empty_list.IsVisible = false;
+        }
     }
 
     /* executes when a date is selected in the horizontal calendar */
-    private async void horizontal_calendar_on_date_selected(object sender, DateTime date)
+    private async void Horizontal_Calendar_On_Date_Selected(object sender, DateTime date)
     {
         selected_date_calendar = date;
         List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(date);
         workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
+
+        /* if no exercises recorded for selected date */
+        if (day_exercise_list.Count == 0)
+        {
+            selected_date_empty_list.IsVisible = true;
+        }
+        else /* else; at least one entry for selected date */
+        {
+            selected_date_empty_list.IsVisible = false;
+        }
     }
+
+    /* creates message stating that no exercises have been recorded for selected day */
+    private void Empty_Date_Display()
+    {
+        selected_date_empty_list = new VerticalStackLayout();
+
+        selected_date_empty_list.VerticalOptions = LayoutOptions.Center;
+        selected_date_empty_list.HorizontalOptions = LayoutOptions.Center;
+
+        selected_date_empty_list.Add(new Label
+        {
+            Text = "No Exercises Recorded!",
+            FontSize = 14,
+            FontAttributes = FontAttributes.Italic,
+            HorizontalOptions = LayoutOptions.Center,
+        });
+
+        Grid goal_layout = calendar_day_exercise_display;
+        Grid.SetRow(selected_date_empty_list, 0);
+        goal_layout.Add(selected_date_empty_list);
+    }
+
+    /* todo creates message for empty categories */
+
 }

@@ -14,7 +14,7 @@
     </ContentPage.ToolbarItems>
 
     <Grid ColumnDefinitions="*, *"
-          RowDefinitions="275, Auto, *" >
+          RowDefinitions="*, Auto, *" >
 
         <Grid RowDefinitions="Auto, *"
               ColumnDefinitions="*"
@@ -60,6 +60,7 @@
 
                                 <Label Text="{Binding name}"
                                        Grid.Column="2"
+                                       FontAttributes="Italic"
                                        HorizontalOptions="Start" />
                             </Grid>
                         </DataTemplate>
@@ -96,28 +97,30 @@
                                      Grid.ColumnSpan="2"
                                      Margin="10" 
                                      x:Name="horizontal_calendar"
-                                     on_date_selected="horizontal_calendar_on_date_selected" />
+                                     on_date_selected="Horizontal_Calendar_On_Date_Selected" />
 
-        <HorizontalStackLayout VerticalOptions="Start"
-                               HorizontalOptions="Center"
-                               Grid.ColumnSpan="2"
-                               Grid.Row="2">
+        <Grid x:Name="calendar_day_exercise_display"
+              Grid.ColumnSpan="2"
+              Grid.Row="2"
+              RowDefinitions="*"
+              ColumnDefinitions="*" >
+            
             <ScrollView>
                 <CollectionView x:Name="workout_selected_date_exercise_display">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:CalendarEntry">
-                            <HorizontalStackLayout Padding="5" >
+                            <HorizontalStackLayout Padding="5"
+                                                   HorizontalOptions="Center">
+                                
                                 <Label Text="{Binding calendar_category_name}" 
                                        Margin="5"
-                                       WidthRequest="200"
-                                       HorizontalOptions="Center"
-                                       HorizontalTextAlignment="Center"
+                                       FontAttributes="Italic"
                                        FontSize="16"/>
                             </HorizontalStackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </ScrollView>
-        </HorizontalStackLayout>
+        </Grid>
     </Grid>
 </ContentPage>
