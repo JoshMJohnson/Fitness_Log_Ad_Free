@@ -42,7 +42,6 @@
             <Grid x:Name="category_layout" 
                   RowDefinitions="*"
                   ColumnDefinitions="*"
-                  VerticalOptions="Start"
                   Grid.Row="1">
 
                 <CollectionView x:Name="workout_category_display"

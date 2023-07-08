@@ -17,24 +17,7 @@ public partial class WorkoutCalendar : ContentPage
 	{
 		InitializeComponent();
 
-        /* display when PR list is empty */
-        vertical_layout_empty_category_list = new VerticalStackLayout();
-
-        vertical_layout_empty_category_list.VerticalOptions = LayoutOptions.Center;
-        vertical_layout_empty_category_list.HorizontalOptions = LayoutOptions.Center;
-
-        vertical_layout_empty_category_list.Add(new Label
-        {
-            Text = "No Categories Yet!",
-            FontSize = 12,
-            FontAttributes = FontAttributes.Italic,
-            HorizontalOptions = LayoutOptions.Center,
-        });
-
-        Grid goal_layout = category_layout;
-        Grid.SetRow(vertical_layout_empty_category_list, 0);
-        goal_layout.Add(vertical_layout_empty_category_list);
-
+        Empty_Category_Display();
         Retrieve_Categories();
 
         /* initialize selected date to current date */
@@ -144,6 +127,24 @@ public partial class WorkoutCalendar : ContentPage
         goal_layout.Add(selected_date_empty_list);
     }
 
-    /* todo creates message for empty categories */
+    /* creates message for empty categories */
+    private void Empty_Category_Display()
+    {
+        vertical_layout_empty_category_list = new VerticalStackLayout();
 
+        vertical_layout_empty_category_list.VerticalOptions = LayoutOptions.Center;
+        vertical_layout_empty_category_list.HorizontalOptions = LayoutOptions.Center;
+
+        vertical_layout_empty_category_list.Add(new Label
+        {
+            Text = "No Categories Yet!",
+            FontSize = 12,
+            FontAttributes = FontAttributes.Italic,
+            HorizontalOptions = LayoutOptions.Center,
+        });
+
+        Grid goal_layout = category_layout;
+        Grid.SetRow(vertical_layout_empty_category_list, 0);
+        goal_layout.Add(vertical_layout_empty_category_list);
+    }
 }
