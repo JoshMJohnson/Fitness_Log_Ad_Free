@@ -11,31 +11,7 @@ public partial class GoalsPR : ContentPage
     public GoalsPR()
     {
         InitializeComponent();
-
-        /* display when PR goal list is empty */
-        vertical_layout_empty_pr_goal_list = new VerticalStackLayout();
-
-        vertical_layout_empty_pr_goal_list.VerticalOptions = LayoutOptions.Center;
-        vertical_layout_empty_pr_goal_list.HorizontalOptions = LayoutOptions.Center;
-
-        vertical_layout_empty_pr_goal_list.Add(new Label
-        {
-            Text = "No PR goals!",
-            FontSize = 20,
-            FontAttributes = FontAttributes.Italic,
-            HorizontalOptions = LayoutOptions.Center
-        });
-
-        vertical_layout_empty_pr_goal_list.Add(new Image
-        {
-            Source = "empty_list.png",
-            HeightRequest = 200
-        });
-
-        Grid goal_layout = goal_pr_layout;
-        Grid.SetRow(vertical_layout_empty_pr_goal_list, 0);
-        goal_layout.Add(vertical_layout_empty_pr_goal_list);
-
+        Empty_PR_Goal_List_Display();
         Refresh_PR_Goal_List();
     }
 
@@ -70,5 +46,32 @@ public partial class GoalsPR : ContentPage
         {
             vertical_layout_empty_pr_goal_list.IsVisible = false;
         }
+    }
+
+    /* creates message for empty pr goal list */
+    private void Empty_PR_Goal_List_Display()
+    {
+        vertical_layout_empty_pr_goal_list = new VerticalStackLayout();
+
+        vertical_layout_empty_pr_goal_list.VerticalOptions = LayoutOptions.Center;
+        vertical_layout_empty_pr_goal_list.HorizontalOptions = LayoutOptions.Center;
+
+        vertical_layout_empty_pr_goal_list.Add(new Label
+        {
+            Text = "No PR goals!",
+            FontSize = 20,
+            FontAttributes = FontAttributes.Italic,
+            HorizontalOptions = LayoutOptions.Center
+        });
+
+        vertical_layout_empty_pr_goal_list.Add(new Image
+        {
+            Source = "empty_list.png",
+            HeightRequest = 200
+        });
+
+        Grid goal_layout = goal_pr_layout;
+        Grid.SetRow(vertical_layout_empty_pr_goal_list, 0);
+        goal_layout.Add(vertical_layout_empty_pr_goal_list);
     }
 }

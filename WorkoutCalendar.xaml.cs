@@ -16,7 +16,6 @@ public partial class WorkoutCalendar : ContentPage
 	public WorkoutCalendar()
 	{
 		InitializeComponent();
-
         Empty_Category_Display();
         Retrieve_Categories();
 

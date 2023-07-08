@@ -11,31 +11,7 @@ public partial class BodyProgression : ContentPage
     public BodyProgression()
 	{
 		InitializeComponent();
-
-        /* display when PR list is empty */
-        vertical_layout_body_progression_empty = new VerticalStackLayout();
-
-        vertical_layout_body_progression_empty.VerticalOptions = LayoutOptions.Center;
-        vertical_layout_body_progression_empty.HorizontalOptions = LayoutOptions.Center;
-
-        vertical_layout_body_progression_empty.Add(new Label
-        {
-            Text = "No Progressions Saved!",
-            FontSize = 20,
-            FontAttributes = FontAttributes.Italic,
-            HorizontalOptions = LayoutOptions.Center
-        });
-
-        vertical_layout_body_progression_empty.Add(new Image
-        {
-            Source = "empty_list.png",
-            HeightRequest = 200
-        });
-
-        Grid goal_layout = progression_layout;
-        Grid.SetRow(vertical_layout_body_progression_empty, 0);
-        goal_layout.Add(vertical_layout_body_progression_empty);
-
+        Empty_Progression_Display();
         Refresh_Progression();
     }
 
@@ -78,5 +54,32 @@ public partial class BodyProgression : ContentPage
         {
             vertical_layout_body_progression_empty.IsVisible = false;
         }
+    }
+
+    /* creates message for empty categories */
+    private void Empty_Progression_Display()
+    {
+        vertical_layout_body_progression_empty = new VerticalStackLayout();
+
+        vertical_layout_body_progression_empty.VerticalOptions = LayoutOptions.Center;
+        vertical_layout_body_progression_empty.HorizontalOptions = LayoutOptions.Center;
+
+        vertical_layout_body_progression_empty.Add(new Label
+        {
+            Text = "No Progressions Saved!",
+            FontSize = 20,
+            FontAttributes = FontAttributes.Italic,
+            HorizontalOptions = LayoutOptions.Center
+        });
+
+        vertical_layout_body_progression_empty.Add(new Image
+        {
+            Source = "empty_list.png",
+            HeightRequest = 200
+        });
+
+        Grid goal_layout = progression_layout;
+        Grid.SetRow(vertical_layout_body_progression_empty, 0);
+        goal_layout.Add(vertical_layout_body_progression_empty);
     }
 }

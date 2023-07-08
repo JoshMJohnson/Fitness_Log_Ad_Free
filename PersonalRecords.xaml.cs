@@ -15,31 +15,7 @@ public partial class PersonalRecords : ContentPage
     public PersonalRecords()
 	{
 		InitializeComponent();
-
-        /* display when PR list is empty */
-        vertical_layout_empty_pr_list = new VerticalStackLayout();
-
-        vertical_layout_empty_pr_list.VerticalOptions = LayoutOptions.Center;
-        vertical_layout_empty_pr_list.HorizontalOptions = LayoutOptions.Center;
-
-        vertical_layout_empty_pr_list.Add(new Label
-        {
-            Text = "No PRs Saved!",
-            FontSize = 20,
-            FontAttributes = FontAttributes.Italic,
-            HorizontalOptions = LayoutOptions.Center
-        });
-
-        vertical_layout_empty_pr_list.Add(new Image
-        {
-            Source = "empty_list.png",
-            HeightRequest = 200
-        });
-
-        Grid goal_layout = pr_layout;
-        Grid.SetRow(vertical_layout_empty_pr_list, 0);
-        goal_layout.Add(vertical_layout_empty_pr_list);
-
+        Empty_PR_Display();
         Refresh_PR_List();
     }
 
@@ -85,5 +61,33 @@ public partial class PersonalRecords : ContentPage
         {
             vertical_layout_empty_pr_list.IsVisible = false;
         }
+    }
+
+    /* creates message for empty categories */
+    private void Empty_PR_Display()
+    {
+        /* display when PR list is empty */
+        vertical_layout_empty_pr_list = new VerticalStackLayout();
+
+        vertical_layout_empty_pr_list.VerticalOptions = LayoutOptions.Center;
+        vertical_layout_empty_pr_list.HorizontalOptions = LayoutOptions.Center;
+
+        vertical_layout_empty_pr_list.Add(new Label
+        {
+            Text = "No PRs Saved!",
+            FontSize = 20,
+            FontAttributes = FontAttributes.Italic,
+            HorizontalOptions = LayoutOptions.Center
+        });
+
+        vertical_layout_empty_pr_list.Add(new Image
+        {
+            Source = "empty_list.png",
+            HeightRequest = 200
+        });
+
+        Grid goal_layout = pr_layout;
+        Grid.SetRow(vertical_layout_empty_pr_list, 0);
+        goal_layout.Add(vertical_layout_empty_pr_list);
     }
 }
