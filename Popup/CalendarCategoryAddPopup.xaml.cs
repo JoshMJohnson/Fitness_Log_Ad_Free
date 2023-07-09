@@ -20,22 +20,19 @@ public partial class CalendarCategoryAddPopup
     /* submits category creation */
     private async void Create_Category(object sender, EventArgs e)
     {
-
         string name = category_name.Text;
 
-        if (name != null)
+        if (name != null && name.Length != 0) /* if name field is not empty */
         {
             name = name.Trim(); /* removes leading and trailing whitespace */
             error_prompt.IsVisible = false;
             await App.RecordRepo.Add_Calendar_Category(name);
             Close();
         }
-        else
+        else /* else; name field is empty */
         {
             error_prompt.Text = "Category name cannot be empty";
             error_prompt.IsVisible = true;
         }
-
-        
     }
 }
