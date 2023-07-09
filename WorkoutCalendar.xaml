@@ -104,22 +104,20 @@
               RowDefinitions="*"
               ColumnDefinitions="*" >
             
-            <ScrollView>
-                <CollectionView x:Name="workout_selected_date_exercise_display">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="model:CalendarEntry">
-                            <HorizontalStackLayout Padding="5"
-                                                   HorizontalOptions="Center">
+            <CollectionView x:Name="workout_selected_date_exercise_display">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:CalendarEntry">
+                        <HorizontalStackLayout Padding="5"
+                                               HorizontalOptions="Center">
                                 
-                                <Label Text="{Binding calendar_category_name}" 
-                                       Margin="5"
-                                       FontAttributes="Italic"
-                                       FontSize="16"/>
-                            </HorizontalStackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </ScrollView>
+                            <Label Text="{Binding calendar_category_name}" 
+                                   Margin="5"
+                                   FontAttributes="Italic"
+                                   FontSize="16"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </Grid>
     </Grid>
 </ContentPage>
