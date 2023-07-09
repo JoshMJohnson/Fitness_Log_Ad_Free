@@ -3,21 +3,24 @@
  - PR display icon if weight or time pr type
  - open app on workout calendar page every time
  - Body Weight chart. click entry on graph to show edit and delete options
- - user can pick category color of category within workout calendar section
  - Confirm popup for pr/goals deletions and edits
  - add a small help button visible throughout entire project on top toolkit
  - sort goals by alphebetical/date
  - Body Progression display -> closed tabs showing dates, tabs can expand and display image
-
- To Do:
- - Create datatemplate selector for goals body weight to allow a display for primary goal
-	- Display primary goal in Body Weight section table
- - add 'local storage access' to project readme concepts demonstrated
- - Have a max number of exercise categories for spacing purposes
  - horizontal calendar furthest right date is current date when opening up section
  - calendar date has corner colored if at least 1 entry for that date
+ - Create datatemplate selector for goals body weight to allow a display for primary goal
+	- Display primary goal in Body Weight section table
 
+To Do:
+ - notify when remove submitted but nothing removed
+	- category
+	- workout calendar record
+ - if time pr/goal is 0 hr or 0 sec then make invisible
+ - popup entries for body progression and body weight
 
- Bugs:
+Bugs:
  - horizontal calendar: breaks when clicking button 'current date' when nothing is entered for that date
 	- also breaks when clicked too fast
+
+Testing:
