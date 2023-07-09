@@ -67,7 +67,7 @@ public class RecordRepository
 
     /* * body weight section */
     /* todo adds an entry to the body weight table within the database */
-    public async Task Add_Body_Weight()
+    public async Task Add_Body_Weight(int weight, DateTime date)
     {
 
     }

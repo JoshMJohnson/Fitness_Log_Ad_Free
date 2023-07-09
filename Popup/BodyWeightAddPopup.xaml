@@ -5,7 +5,7 @@
            x:Class="WorkoutLog.Popup.BodyWeightAddPopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="225, 280">
+           Size="225, 295">
 
     <Grid ColumnDefinitions="*, *" 
           RowDefinitions="Auto, Auto, Auto, Auto, *">
@@ -18,38 +18,46 @@
                Margin="20"
                FontSize="24" />
 
-        <Grid Grid.Row="1"
+        <Label Grid.Row="1"
+               Grid.ColumnSpan="2"
+               x:Name="error_prompt"
+               IsVisible="False"
+               FontAttributes="Italic"
+               TextColor="Red"
+               FontSize="11"
+               HorizontalOptions="Center" />
+
+        <Grid Grid.Row="2"
               Grid.ColumnSpan="2"
               Margin="10"
               RowDefinitions="*"
               ColumnDefinitions="Auto, *, Auto">
 
-            <Label Grid.Row="1"
-               Grid.Column="0"
-               VerticalOptions="Center"
-               Text="Weight (lbs):" />
+            <Label Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Weight (lbs):" />
 
             <Entry Keyboard="Numeric"
-               Grid.Row="1"
-               Grid.Column="2"
-               VerticalOptions="Center"
-               MaxLength="3"
-               HorizontalTextAlignment="Center"
-               Placeholder="200" />
+                   x:Name="weight_entry"
+                   Grid.Column="2"
+                   VerticalOptions="Center"
+                   MaxLength="3"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="200" />
         </Grid>
 
-        <Grid Grid.Row="2"
+        <Grid Grid.Row="3"
               Grid.ColumnSpan="2"
               ColumnDefinitions="Auto, *, Auto"
               Margin="10" >
 
-            <Label Grid.Row="3"
-                   Grid.Column="0"
+            <Label Grid.Column="0"
                    Text="Date:" 
                    VerticalOptions="Center"
                    HorizontalOptions="Start" />
 
             <DatePicker Grid.Column="1"
+                        x:Name="record_date"
                         HorizontalOptions="End"
                         VerticalOptions="Center" />
         </Grid>

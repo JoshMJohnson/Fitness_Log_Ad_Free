@@ -53,7 +53,7 @@ public partial class PersonalRecordAddPopup
             {
                 string weight_update_string = weight_pr.Text;
 
-                if (weight_update_string != null && weight_update_string.Length != 0) /* if wieght field is not empty */
+                if (weight_update_string != null && weight_update_string.Length != 0) /* if weight field is not empty */
                 {
                     weight_update_string = weight_update_string.ToString();
 
