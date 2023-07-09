@@ -49,19 +49,11 @@
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Category">
-                            <Grid ColumnDefinitions="50, 20, *"
-                                  RowDefinitions="*" 
-                                  Padding="5" >
-
-                                <Label Text="{Binding color}"
-                                       Grid.Column="0"
-                                       HorizontalOptions="End" />
-
-                                <Label Text="{Binding name}"
-                                       Grid.Column="2"
-                                       FontAttributes="Italic"
-                                       HorizontalOptions="Start" />
-                            </Grid>
+                            <Label Text="{Binding name}"
+                                   FontAttributes="Italic"
+                                   Padding="5"
+                                   HorizontalOptions="Center" />
+                            
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

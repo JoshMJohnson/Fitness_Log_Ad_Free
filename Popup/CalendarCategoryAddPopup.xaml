@@ -5,10 +5,10 @@
            x:Class="WorkoutLog.Popup.CalendarCategoryAddPopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="225, 275" >
+           Size="250, 225" >
 
     <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, Auto, Auto, *">
+          RowDefinitions="Auto, Auto, *">
 
         <Label Text="Create Category"
                FontAttributes="Bold"
@@ -36,20 +36,6 @@
         </Grid>
 
         <Grid Grid.Row="2"
-              Grid.ColumnSpan="2"
-              ColumnDefinitions="Auto, *, Auto"
-              Margin="10">
-
-            <Label Grid.Column="0"
-                   Text="Color:" 
-                   VerticalOptions="Center" />
-
-            <Picker x:Name="category_color_picker"
-                    Grid.Column="2"
-                    HorizontalOptions="Center" />
-        </Grid>
-
-        <Grid Grid.Row="3"
               Grid.ColumnSpan="2"
               Margin="10"
               ColumnDefinitions="*, *">

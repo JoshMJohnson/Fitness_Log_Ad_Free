@@ -46,7 +46,7 @@
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:CalendarDay">
                 <Border WidthRequest="80"
-                        HeightRequest="120"
+                        HeightRequest="100"
                         Padding="15">
 
                     <Grid RowDefinitions="Auto, Auto, *"

@@ -484,10 +484,9 @@ public class RecordRepository
     }
 
     /* adds a category to the categories table within the database */
-    public async Task Add_Calendar_Category(string category_name, int category_color_index)
+    public async Task Add_Calendar_Category(string category_name)
     {
         ArgumentNullException.ThrowIfNull(category_name, nameof(category_name));
-        ArgumentNullException.ThrowIfNull(category_color_index, nameof(category_color_index));
 
         try
         {
@@ -496,7 +495,6 @@ public class RecordRepository
             Category new_category = new Category
             {
                 name = category_name,
-                color = category_color_index
             };
 
             int result = await conn.InsertAsync(new_category);
