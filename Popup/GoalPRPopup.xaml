@@ -5,10 +5,10 @@
              x:Class="WorkoutLog.Popup.GoalPRPopup"
              VerticalOptions="Start"
              HorizontalOptions="Center"
-             Size="250, 480" >
+             Size="250, 495" >
 
     <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, *">
+          RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, *">
 
         <Label Text="PR Goal"
                FontAttributes="Bold"
@@ -18,7 +18,16 @@
                Margin="20"
                FontSize="24" />
 
-        <Grid Grid.Row="1"
+        <Label Grid.Row="1"
+               Grid.ColumnSpan="2"
+               x:Name="error_prompt"
+               IsVisible="False"
+               FontAttributes="Italic"
+               TextColor="Red"
+               FontSize="11"
+               HorizontalOptions="Center" />
+
+        <Grid Grid.Row="2"
               Grid.ColumnSpan="2"
               Margin="10"
               RowDefinitions="*"
@@ -28,8 +37,7 @@
                    Grid.Column="0"
                    VerticalOptions="Center"/>
 
-            <Entry Grid.Row="1"
-                   Grid.Column="2"
+            <Entry Grid.Column="2"
                    MaxLength="25"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
@@ -37,7 +45,7 @@
                    Placeholder="Exercise Name" />
         </Grid>
 
-        <Grid Grid.Row="2"
+        <Grid Grid.Row="3"
               Grid.ColumnSpan="2"
               RowDefinitions="*"
               ColumnDefinitions="Auto, *, 40, Auto, 25, Auto"
@@ -45,13 +53,11 @@
               Margin="10"              
               IsVisible="false" >
 
-            <Label Grid.Row="3"
-                   Grid.Column="0"
+            <Label Grid.Column="0"
                    VerticalOptions="Center"
                    Text="Time:" />
 
             <Entry Keyboard="Numeric"
-                   Grid.Row="3"
                    Grid.Column="2"
                    VerticalOptions="Center"
                    x:Name="min_pr"
@@ -59,14 +65,12 @@
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
-            <Label Grid.Row="3"
-                   Grid.Column="3"
+            <Label Grid.Column="3"
                    VerticalOptions="Center"
                    Text="min" 
                    Margin="10" />
 
             <Entry Keyboard="Numeric"
-                   Grid.Row="3"
                    Grid.Column="4"
                    MaxLength="2"
                    x:Name="sec_pr"
@@ -74,20 +78,18 @@
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
-            <Label Grid.Row="3"
-                   Grid.Column="5"
+            <Label Grid.Column="5"
                    VerticalOptions="Center"
                    Text="sec" 
                    Margin="10" />
         </Grid>
 
-        <Grid Grid.Row="2"
+        <Grid Grid.Row="3"
               Grid.ColumnSpan="2"
               Margin="10"
               x:Name="weight_display" >
 
-            <Label Grid.Row="3"
-                   Grid.Column="0"
+            <Label Grid.Column="0"
                    Text="Weight (lbs):" 
                    VerticalOptions="Center"
                    HorizontalOptions="Start" />
@@ -103,7 +105,7 @@
         </Grid>
 
         <Grid Grid.ColumnSpan="2"
-              Grid.Row="3"
+              Grid.Row="4"
               RowDefinitions="*"
               ColumnDefinitions="*, Auto, *">
 
@@ -125,7 +127,7 @@
                    HorizontalOptions="Start"/>
         </Grid>
 
-        <Grid Grid.Row="4"
+        <Grid Grid.Row="5"
               Grid.ColumnSpan="2"
               RowDefinitions="*"
               ColumnDefinitions="Auto, *, Auto"
@@ -143,7 +145,7 @@
                    Margin="10" />
         </Grid>
 
-        <Grid Grid.Row="4"
+        <Grid Grid.Row="5"
               Grid.ColumnSpan="2"
               Margin="8"
               x:Name="record_date_display"
@@ -161,7 +163,7 @@
         </Grid>
 
         <Grid Grid.ColumnSpan="2"
-              Grid.Row="5"
+              Grid.Row="6"
               RowDefinitions="*"
               ColumnDefinitions="*, Auto, *">
 
@@ -183,7 +185,7 @@
                    HorizontalOptions="Start"/>
         </Grid>
 
-        <Grid Grid.Row="6"
+        <Grid Grid.Row="7"
               Grid.ColumnSpan="2"
               Margin="10"
               ColumnDefinitions="*, *">

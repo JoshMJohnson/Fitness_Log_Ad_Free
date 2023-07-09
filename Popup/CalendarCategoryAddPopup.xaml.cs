@@ -25,8 +25,9 @@ public partial class CalendarCategoryAddPopup
         if (name != null && name.Length != 0) /* if name field is not empty */
         {
             name = name.Trim(); /* removes leading and trailing whitespace */
-            error_prompt.IsVisible = false;
             await App.RecordRepo.Add_Calendar_Category(name);
+            
+            error_prompt.IsVisible = false;
             Close();
         }
         else /* else; name field is empty */
