@@ -1,3 +1,5 @@
+using GoogleGson;
+
 namespace WorkoutLog.Popup;
 
 public partial class PersonalRecordAddPopup
@@ -23,29 +25,55 @@ public partial class PersonalRecordAddPopup
 
             if (exercise_type_toggle.IsToggled) /* if time pr */
             {
+                string hr_update_string = hr_pr.Text;
                 string min_update_string = min_pr.Text;
                 string sec_update_string = sec_pr.Text;
 
-                if (min_update_string != null && sec_update_string != null
-                        && min_update_string.Length != 0 && sec_update_string.Length != 0) /* if time field is not empty */
+                if ((hr_update_string != null && hr_update_string.Length != 0) || (min_update_string != null && min_update_string.Length != 0) 
+                        || (sec_update_string != null && sec_update_string.Length != 0)) /* if at least one time field is not empty */
                 {
-                    min_update_string = min_update_string.ToString();
-                    sec_update_string = sec_update_string.ToString();
+                    int hr_update;
+                    int min_update;
+                    int sec_update;
 
-                    int min_update = int.Parse(min_update_string);
-                    int sec_update = int.Parse(sec_update_string);
+                    if (hr_update_string != null && hr_update_string.Length != 0) /* if hour field is not empty */
+                    {
+                        hr_update_string = hr_update_string.ToString();
+                        hr_update = int.Parse(hr_update_string);
+                    }
+                    else /* else; hr field is empty */
+                    {
+                        hr_update = 0;
+                    }
 
-                    int hours = min_update / 60;
-                    int mins = min_update % 60;
+                    if (min_update_string != null && min_update_string.Length != 0) /* if min field is not empty */
+                    {
+                        min_update_string = min_update_string.ToString();
+                        min_update = int.Parse(min_update_string);
+                    }
+                    else /* else; min field is empty */
+                    {
+                        min_update = 0;
+                    }
 
-                    await App.RecordRepo.Add_PR(name, date, false, -1, hours, mins, sec_update);
+                    if (sec_update_string != null && sec_update_string.Length != 0) /* if sec field is not empty */
+                    {
+                        sec_update_string = sec_update_string.ToString();
+                        sec_update = int.Parse(sec_update_string);
+                    }
+                    else /* else; sec field is empty */
+                    {
+                        sec_update = 0;
+                    }
+
+                    await App.RecordRepo.Add_PR(name, date, false, -1, hr_update, min_update, sec_update);
 
                     error_prompt.IsVisible = false;
                     Close();
                 } 
                 else /* else; time field is empty */
                 {
-                    error_prompt.Text = "PR time values cannot be empty";
+                    error_prompt.Text = "At least one time field must have a value";
                     error_prompt.IsVisible = true;
                 }
             }

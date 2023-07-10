@@ -5,7 +5,7 @@
            x:Class="WorkoutLog.Popup.PersonalRecordAddPopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="250, 440">
+           Size="300, 440">
 
     <Grid ColumnDefinitions="Auto, *" 
           RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, *">
@@ -61,7 +61,7 @@
         <Grid Grid.Row="4"
               Grid.ColumnSpan="2"
               RowDefinitions="*"
-              ColumnDefinitions="Auto, *, 40, Auto, 25, Auto"
+              ColumnDefinitions="Auto, *, 40, Auto, 25, Auto, 25, Auto"
               x:Name="time_display" 
               Margin="10" >
 
@@ -72,23 +72,34 @@
             <Entry Keyboard="Numeric"
                    Grid.Column="2"
                    MaxLength="4"
-                   x:Name="min_pr"
+                   x:Name="hr_pr"
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
             <Label Grid.Column="3"
-                   Text="min" 
+                   Text="hrs" 
                    Margin="10" />
 
             <Entry Keyboard="Numeric"
                    Grid.Column="4"
                    MaxLength="2"
-                   x:Name="sec_pr"
+                   x:Name="min_pr"
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
             <Label Grid.Column="5"
-                   Text="sec" 
+                   Text="mins" 
+                   Margin="10" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Column="6"
+                   MaxLength="2"
+                   x:Name="sec_pr"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="0" />
+
+            <Label Grid.Column="7"
+                   Text="secs" 
                    Margin="10" />
         </Grid>
 
