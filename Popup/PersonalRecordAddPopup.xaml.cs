@@ -93,7 +93,7 @@ public partial class PersonalRecordAddPopup
                 }
                 else /* if weight field is empty */
                 {
-                    error_prompt.Text = "PR weight value cannot be empty";
+                    error_prompt.Text = "Weight value cannot be empty";
                     error_prompt.IsVisible = true;
                 }
             }

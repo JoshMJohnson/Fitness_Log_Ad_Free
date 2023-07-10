@@ -5,7 +5,7 @@
              x:Class="WorkoutLog.Popup.GoalPRPopup"
              VerticalOptions="Start"
              HorizontalOptions="Center"
-             Size="250, 495" >
+             Size="300, 495" >
 
     <Grid ColumnDefinitions="*, *" 
           RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, *">
@@ -48,7 +48,7 @@
         <Grid Grid.Row="3"
               Grid.ColumnSpan="2"
               RowDefinitions="*"
-              ColumnDefinitions="Auto, *, 40, Auto, 25, Auto"
+              ColumnDefinitions="Auto, *, 40, Auto, 25, Auto, 25, Auto"
               x:Name="time_display" 
               Margin="10"              
               IsVisible="false" >
@@ -59,28 +59,39 @@
 
             <Entry Keyboard="Numeric"
                    Grid.Column="2"
+                   MaxLength="4"
+                   x:Name="hr_pr"
+                   HorizontalTextAlignment="Center"
+                   Placeholder="0" />
+
+            <Label Grid.Column="3"
+                   Text="hrs" 
+                   Margin="10" />
+
+            <Entry Keyboard="Numeric"
+                   Grid.Column="4"
                    VerticalOptions="Center"
                    x:Name="min_pr"
                    MaxLength="4"
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
-            <Label Grid.Column="3"
+            <Label Grid.Column="5"
                    VerticalOptions="Center"
-                   Text="min" 
+                   Text="mins" 
                    Margin="10" />
 
             <Entry Keyboard="Numeric"
-                   Grid.Column="4"
+                   Grid.Column="6"
                    MaxLength="2"
                    x:Name="sec_pr"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
 
-            <Label Grid.Column="5"
+            <Label Grid.Column="7"
                    VerticalOptions="Center"
-                   Text="sec" 
+                   Text="secs" 
                    Margin="10" />
         </Grid>
 
