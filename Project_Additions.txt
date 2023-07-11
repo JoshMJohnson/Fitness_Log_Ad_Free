@@ -16,8 +16,9 @@ To Do:
  - notify when remove submitted but nothing removed
 	- category
 	- workout calendar record
- - if time pr/goal is 0 hr or 0 sec then make invisible
  - popup entries for body progression and body weight
+ - update pr popup error checks; user input prompt
+ - popup time values; min max of 60. sec max of 60.
 
 Bugs:
  - horizontal calendar: breaks when clicking button 'current date' when nothing is entered for that date
