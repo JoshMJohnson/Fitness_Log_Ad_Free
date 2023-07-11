@@ -79,6 +79,15 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
+                    <SwipeView.RightItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding exercise_name}"
+                                       IconImageSource="edit_icon.png"
+                                       BackgroundColor="Blue"
+                                       Invoked="Update_PR" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+
                     <Grid RowDefinitions="*"
                           ColumnDefinitions="*, *"
                           VerticalOptions="Center"
@@ -143,6 +152,15 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
+                    <SwipeView.RightItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding exercise_name}"
+                                       IconImageSource="edit_icon.png"
+                                       BackgroundColor="Blue"
+                                       Invoked="Update_PR" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+
                     <Grid RowDefinitions="*"
                           ColumnDefinitions="*, *"
                           VerticalOptions="Center"
@@ -198,6 +216,15 @@
                                        Invoked="Remove_PR" />
                         </SwipeItems>
                     </SwipeView.LeftItems>
+
+                    <SwipeView.RightItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding exercise_name}"
+                                       IconImageSource="edit_icon.png"
+                                       BackgroundColor="Blue"
+                                       Invoked="Update_PR" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
                           ColumnDefinitions="*, *"
@@ -255,6 +282,15 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
+                    <SwipeView.RightItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding exercise_name}"
+                                       IconImageSource="edit_icon.png"
+                                       BackgroundColor="Blue"
+                                       Invoked="Update_PR" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+
                     <Grid RowDefinitions="*"
                           ColumnDefinitions="*, *"
                           VerticalOptions="Center"
@@ -302,6 +338,15 @@
                                        Invoked="Remove_PR" />
                         </SwipeItems>
                     </SwipeView.LeftItems>
+
+                    <SwipeView.RightItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding exercise_name}"
+                                       IconImageSource="edit_icon.png"
+                                       BackgroundColor="Blue"
+                                       Invoked="Update_PR" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
                           ColumnDefinitions="*, *"
@@ -359,6 +404,15 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
+                    <SwipeView.RightItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding exercise_name}"
+                                       IconImageSource="edit_icon.png"
+                                       BackgroundColor="Blue"
+                                       Invoked="Update_PR" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+
                     <Grid RowDefinitions="*"
                           ColumnDefinitions="*, *"
                           VerticalOptions="Center"
@@ -406,6 +460,15 @@
                                        Invoked="Remove_PR" />
                         </SwipeItems>
                     </SwipeView.LeftItems>
+
+                    <SwipeView.RightItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding exercise_name}"
+                                       IconImageSource="edit_icon.png"
+                                       BackgroundColor="Blue"
+                                       Invoked="Update_PR" />
+                        </SwipeItems>
+                    </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
                           ColumnDefinitions="*, *"
