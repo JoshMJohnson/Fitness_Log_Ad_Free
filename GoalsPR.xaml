@@ -168,7 +168,7 @@
                                        Grid.Column="2"
                                        FontSize="14" />
 
-                                <Label Text=" mins. "
+                                <Label Text=" mins."
                                        Grid.Column="3"
                                        FontSize="14"  />
                             </Grid>
@@ -270,7 +270,7 @@
                                        Grid.Column="0"
                                        FontSize="14"  />
 
-                                <Label Text=" hrs. "
+                                <Label Text=" hrs."
                                        Grid.Column="1"
                                        FontSize="14"  />
                             </Grid>
@@ -372,7 +372,7 @@
                                        Grid.Column="0"
                                        FontSize="14" />
 
-                                <Label Text=" mins. "
+                                <Label Text=" mins."
                                        Grid.Column="1"
                                        FontSize="14"  />
                             </Grid>
