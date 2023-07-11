@@ -59,7 +59,7 @@
                     </Grid>
                 </SwipeView>
             </DataTemplate>
-            <DataTemplate x:Key="Is_Time_PR_Goal">
+            <DataTemplate x:Key="Is_Time_PR_Goal_HMS">
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
@@ -122,9 +122,321 @@
                 </SwipeView>
             </DataTemplate>
 
+            <DataTemplate x:Key="Is_Time_PR_Goal_HM">
+                <SwipeView>
+                    <SwipeView.LeftItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="trash_icon.png"
+                                       BackgroundColor="Red"
+                                       Invoked="Remove_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          VerticalOptions="Center"
+                          Margin="10">
+
+                        <Label Text="{Binding name}"
+                               Grid.Column="0"
+                               FontSize="16" />
+
+                        <Grid Grid.Column="1"
+                              RowDefinitions="*, *"
+                              ColumnDefinitions="*"
+                              HorizontalOptions="End" >
+
+                            <Label Text="{Binding goal_achieve_by_date}"
+                                   Grid.Row="0"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="*"
+                                  ColumnDefinitions="Auto, Auto, Auto, Auto" >
+
+                                <Label Text="{Binding time_hours}"
+                                       Grid.Column="0"
+                                       FontSize="14"  />
+
+                                <Label Text=" hrs. "
+                                       Grid.Column="1"
+                                       FontSize="14"  />
+
+                                <Label Text="{Binding time_min}"
+                                       Grid.Column="2"
+                                       FontSize="14" />
+
+                                <Label Text=" mins. "
+                                       Grid.Column="3"
+                                       FontSize="14"  />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </SwipeView>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="Is_Time_PR_Goal_HS">
+                <SwipeView>
+                    <SwipeView.LeftItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="trash_icon.png"
+                                       BackgroundColor="Red"
+                                       Invoked="Remove_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          VerticalOptions="Center"
+                          Margin="10">
+
+                        <Label Text="{Binding name}"
+                               Grid.Column="0"
+                               FontSize="16" />
+
+                        <Grid Grid.Column="1"
+                              RowDefinitions="*, *"
+                              ColumnDefinitions="*"
+                              HorizontalOptions="End" >
+
+                            <Label Text="{Binding goal_achieve_by_date}"
+                                   Grid.Row="0"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="*"
+                                  ColumnDefinitions="Auto, Auto, Auto, Auto" >
+
+                                <Label Text="{Binding time_hours}"
+                                       Grid.Column="0"
+                                       FontSize="14"  />
+
+                                <Label Text=" hrs. "
+                                       Grid.Column="1"
+                                       FontSize="14"  />
+
+                                <Label Text="{Binding time_sec}"
+                                       Grid.Column="2"
+                                       FontSize="14" />
+
+                                <Label Text=" secs."
+                                       Grid.Column="3"
+                                       FontSize="14"  />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </SwipeView>
+            </DataTemplate>
+
+            <DataTemplate x:Key="Is_Time_PR_Goal_H">
+                <SwipeView>
+                    <SwipeView.LeftItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="trash_icon.png"
+                                       BackgroundColor="Red"
+                                       Invoked="Remove_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          VerticalOptions="Center"
+                          Margin="10">
+
+                        <Label Text="{Binding name}"
+                               Grid.Column="0"
+                               FontSize="16" />
+
+                        <Grid Grid.Column="1"
+                              RowDefinitions="*, *"
+                              ColumnDefinitions="*"
+                              HorizontalOptions="End" >
+
+                            <Label Text="{Binding goal_achieve_by_date}"
+                                   Grid.Row="0"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="*"
+                                  ColumnDefinitions="Auto, Auto" >
+
+                                <Label Text="{Binding time_hours}"
+                                       Grid.Column="0"
+                                       FontSize="14"  />
+
+                                <Label Text=" hrs. "
+                                       Grid.Column="1"
+                                       FontSize="14"  />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </SwipeView>
+            </DataTemplate>
+
+            <DataTemplate x:Key="Is_Time_PR_Goal_MS">
+                <SwipeView>
+                    <SwipeView.LeftItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="trash_icon.png"
+                                       BackgroundColor="Red"
+                                       Invoked="Remove_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          VerticalOptions="Center"
+                          Margin="10">
+
+                        <Label Text="{Binding name}"
+                               Grid.Column="0"
+                               FontSize="16" />
+
+                        <Grid Grid.Column="1"
+                              RowDefinitions="*, *"
+                              ColumnDefinitions="*"
+                              HorizontalOptions="End" >
+
+                            <Label Text="{Binding goal_achieve_by_date}"
+                                   Grid.Row="0"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="*"
+                                  ColumnDefinitions="Auto, Auto, Auto, Auto" >
+
+                                <Label Text="{Binding time_min}"
+                                       Grid.Column="0"
+                                       FontSize="14" />
+
+                                <Label Text=" mins. "
+                                       Grid.Column="1"
+                                       FontSize="14"  />
+
+                                <Label Text="{Binding time_sec}"
+                                       Grid.Column="2"
+                                       FontSize="14" />
+
+                                <Label Text=" secs."
+                                       Grid.Column="3"
+                                       FontSize="14"  />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </SwipeView>
+            </DataTemplate>
+
+            <DataTemplate x:Key="Is_Time_PR_Goal_M">
+                <SwipeView>
+                    <SwipeView.LeftItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="trash_icon.png"
+                                       BackgroundColor="Red"
+                                       Invoked="Remove_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          VerticalOptions="Center"
+                          Margin="10">
+
+                        <Label Text="{Binding name}"
+                               Grid.Column="0"
+                               FontSize="16" />
+
+                        <Grid Grid.Column="1"
+                              RowDefinitions="*, *"
+                              ColumnDefinitions="*"
+                              HorizontalOptions="End" >
+
+                            <Label Text="{Binding goal_achieve_by_date}"
+                                   Grid.Row="0"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="*"
+                                  ColumnDefinitions="Auto, Auto" >
+
+                                <Label Text="{Binding time_min}"
+                                       Grid.Column="0"
+                                       FontSize="14" />
+
+                                <Label Text=" mins. "
+                                       Grid.Column="1"
+                                       FontSize="14"  />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </SwipeView>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="Is_Time_PR_Goal_S">
+                <SwipeView>
+                    <SwipeView.LeftItems>
+                        <SwipeItems SwipeBehaviorOnInvoked="Close">
+                            <SwipeItem Text="{Binding name}"
+                                       IconImageSource="trash_icon.png"
+                                       BackgroundColor="Red"
+                                       Invoked="Remove_PR_Goal" />
+                        </SwipeItems>
+                    </SwipeView.LeftItems>
+
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          VerticalOptions="Center"
+                          Margin="10">
+
+                        <Label Text="{Binding name}"
+                               Grid.Column="0"
+                               FontSize="16" />
+
+                        <Grid Grid.Column="1"
+                              RowDefinitions="*, *"
+                              ColumnDefinitions="*"
+                              HorizontalOptions="End" >
+
+                            <Label Text="{Binding goal_achieve_by_date}"
+                                   Grid.Row="0"
+                                   FontSize="14"
+                                   HorizontalOptions="End" />
+
+                            <Grid Grid.Row="1"
+                                  RowDefinitions="*"
+                                  ColumnDefinitions="Auto, Auto" >
+
+                                <Label Text="{Binding time_sec}"
+                                       Grid.Column="0"
+                                       FontSize="14" />
+
+                                <Label Text=" secs."
+                                       Grid.Column="1"
+                                       FontSize="14"  />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </SwipeView>
+            </DataTemplate>
+
             <cells:PRGoalDataTemplateSelector x:Key="PRGoalTypeSelector"
                                               Is_Weight_PR_Goal="{StaticResource Is_Weight_PR_Goal}"
-                                              Is_Time_PR_Goal="{StaticResource Is_Time_PR_Goal}" />
+                                              Is_Time_PR_Goal_HMS="{StaticResource Is_Time_PR_Goal_HMS}"
+                                              Is_Time_PR_Goal_HM="{StaticResource Is_Time_PR_Goal_HM}"
+                                              Is_Time_PR_Goal_HS="{StaticResource Is_Time_PR_Goal_HS}"
+                                              Is_Time_PR_Goal_H="{StaticResource Is_Time_PR_Goal_H}"
+                                              Is_Time_PR_Goal_MS="{StaticResource Is_Time_PR_Goal_MS}"
+                                              Is_Time_PR_Goal_M="{StaticResource Is_Time_PR_Goal_M}"
+                                              Is_Time_PR_Goal_S="{StaticResource Is_Time_PR_Goal_S}" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
