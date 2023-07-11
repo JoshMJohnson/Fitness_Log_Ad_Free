@@ -6,6 +6,8 @@
              Title="Body Weight">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="help_icon.png"
+                     Clicked="Help_Window" />
         <ToolbarItem Text="+"
                      Clicked="Record_Body_Weight" />
     </ContentPage.ToolbarItems>

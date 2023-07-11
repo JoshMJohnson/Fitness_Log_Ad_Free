@@ -31,6 +31,12 @@ public partial class BodyWeight : ContentPage
         total_change_display.Text = total_change.ToString();
     }
 
+    /* todo executes help button is clicked */
+    private void Help_Window(object sender, EventArgs e)
+    {
+
+    }
+
     /* executed when body weight plus button clicked to record an update in body weight */
     private async void Record_Body_Weight(object sender, EventArgs e)
     {

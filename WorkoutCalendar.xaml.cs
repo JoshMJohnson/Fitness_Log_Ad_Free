@@ -56,6 +56,12 @@ public partial class WorkoutCalendar : ContentPage
         }
     }
 
+    /* todo executes help button is clicked */
+    private void Help_Window(object sender, EventArgs e)
+    {
+
+    }
+
     /* executes when the plus button is clicked to record an exercise */
     private async void Record_Exercise(object sender, EventArgs e)
     {

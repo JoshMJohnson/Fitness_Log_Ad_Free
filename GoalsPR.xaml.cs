@@ -15,6 +15,12 @@ public partial class GoalsPR : ContentPage
         Refresh_PR_Goal_List();
     }
 
+    /* todo executes help button is clicked */
+    private void Help_Window(object sender, EventArgs e)
+    {
+
+    }
+
     private async void Add_PR_Goal(object sender, EventArgs e)
     {
         await this.ShowPopupAsync(new GoalPRPopup());

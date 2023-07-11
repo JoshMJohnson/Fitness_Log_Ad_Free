@@ -15,6 +15,12 @@ public partial class BodyProgression : ContentPage
         Refresh_Progression();
     }
 
+    /* todo executes help button is clicked */
+    private void Help_Window(object sender, EventArgs e)
+    {
+
+    }
+
     /* executed when PR plus button clicked */
     private async void Add_Body_Progression(object sender, EventArgs e)
     {
