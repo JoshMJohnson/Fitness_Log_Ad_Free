@@ -19,6 +19,7 @@ To Do:
  - popup entries for body progression and body weight
  - update pr popup error checks; user input prompt
  - popup time values; min max of 60. sec max of 60.
+ - remove calendar entry; pick a date, shows all the recorded entries for that day; select one to remove
 
 Bugs:
  - horizontal calendar: breaks when clicking button 'current date' when nothing is entered for that date
