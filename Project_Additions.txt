@@ -17,8 +17,7 @@ To Do:
  - popup time values; min max of 60. sec max of 60.
 
 Bugs:
- - horizontal calendar: breaks when clicking button 'current date' when nothing is entered for that date
-	- also breaks when clicked too fast
+
 
 Ads:
  - Unity

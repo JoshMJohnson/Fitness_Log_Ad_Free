@@ -56,12 +56,6 @@ public partial class WorkoutCalendar : ContentPage
         }
     }
 
-    /* todo executes help button is clicked */
-    private void Help_Window(object sender, EventArgs e)
-    {
-
-    }
-
     /* executes when the plus button is clicked to record an exercise */
     private async void Record_Exercise(object sender, EventArgs e)
     {
@@ -80,16 +74,18 @@ public partial class WorkoutCalendar : ContentPage
     public async void Refresh_Selected_Date(DateTime selected_date_parameter)
     {
         List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(selected_date_parameter);
-        workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
 
         /* if no exercises recorded for selected date */
         if (day_exercise_list.Count == 0)
         {
             selected_date_empty_list.IsVisible = true;
+            calendar_day_exercise_display.IsVisible = false;
         }
         else /* else; at least one entry for selected date */
         {
             selected_date_empty_list.IsVisible = false;
+            workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
+            calendar_day_exercise_display.IsVisible = true;
         }
     }
 
@@ -98,16 +94,18 @@ public partial class WorkoutCalendar : ContentPage
     {
         selected_date_calendar = date;
         List<CalendarEntry> day_exercise_list = await App.RecordRepo.Get_Calendar_Entries_List(date);
-        workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
-
+        
         /* if no exercises recorded for selected date */
         if (day_exercise_list.Count == 0)
         {
             selected_date_empty_list.IsVisible = true;
+            calendar_day_exercise_display.IsVisible = false;
         }
         else /* else; at least one entry for selected date */
         {
             selected_date_empty_list.IsVisible = false;
+            calendar_day_exercise_display.IsVisible = true;
+            workout_selected_date_exercise_display.ItemsSource = day_exercise_list;
         }
     }
 
