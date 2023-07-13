@@ -527,8 +527,6 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add category {0}. Error: {1}", category_name, e.Message);
         }
-
-        Console.WriteLine($"******status_message: {status_message}");
     }
     
     /* removes a category in the categories table within the database */
