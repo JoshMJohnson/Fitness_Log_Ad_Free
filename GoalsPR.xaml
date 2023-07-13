@@ -25,15 +25,20 @@
                     </SwipeView.LeftItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="weight_icon.png" />
+
                         <Label Text="{Binding name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*, Auto"
                               HorizontalOptions="End" >
@@ -59,6 +64,7 @@
                     </Grid>
                 </SwipeView>
             </DataTemplate>
+            
             <DataTemplate x:Key="Is_Time_PR_Goal_HMS">
                 <SwipeView>
                     <SwipeView.LeftItems>
@@ -71,15 +77,20 @@
                     </SwipeView.LeftItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -134,15 +145,20 @@
                     </SwipeView.LeftItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -189,15 +205,20 @@
                     </SwipeView.LeftItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -244,15 +265,20 @@
                     </SwipeView.LeftItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -291,15 +317,20 @@
                     </SwipeView.LeftItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -346,15 +377,20 @@
                     </SwipeView.LeftItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -393,15 +429,20 @@
                     </SwipeView.LeftItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
