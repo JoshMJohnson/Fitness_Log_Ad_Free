@@ -1,10 +1,7 @@
 ﻿Additions:
  - PR/goals nodes alternate background color (grey/transparent)
- - PR display icon if weight or time pr type
  - open app on workout calendar page every time
  - Body Weight chart. click entry on graph to show edit and delete options
- - Confirm popup for pr/goals deletions and edits
- - add a small help button visible throughout entire project on top toolkit
  - sort goals by date
  - Body Progression display -> closed tabs showing dates, tabs can expand and display image
  - horizontal calendar furthest right date is current date when opening up section
@@ -17,9 +14,7 @@
 
 To Do:
  - popup entries for body progression and body weight
- - update pr popup error checks; user input prompt
  - popup time values; min max of 60. sec max of 60.
- - remove calendar entry; pick a date, shows all the recorded entries for that day; select one to remove
 
 Bugs:
  - horizontal calendar: breaks when clicking button 'current date' when nothing is entered for that date
