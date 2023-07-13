@@ -5,10 +5,8 @@
              xmlns:cells="clr-namespace:WorkoutLog.Cells"
              x:Class="WorkoutLog.GoalsPR"
              Title="Goals">
-    
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="help_icon.png"
-                     Clicked="Help_Window" />
         <ToolbarItem Text="+"
                      Clicked="Add_PR_Goal" />
     </ContentPage.ToolbarItems>

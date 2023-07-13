@@ -5,24 +5,29 @@
  - Body Weight chart. click entry on graph to show edit and delete options
  - Confirm popup for pr/goals deletions and edits
  - add a small help button visible throughout entire project on top toolkit
- - sort goals by alphebetical/date
+ - sort goals by date
  - Body Progression display -> closed tabs showing dates, tabs can expand and display image
  - horizontal calendar furthest right date is current date when opening up section
  - calendar date has corner colored if at least 1 entry for that date
- - Create datatemplate selector for goals body weight to allow a display for primary goal
-	- Display primary goal in Body Weight section table
+ - toggle between lbs and kg
+ - body weight goals displayed as horizontal lines on body weight chart
+	- goal dates shown
+	- closest date goal shown in table
+ - can zoom out and see entrie body weight chart
 
 To Do:
- - notify when remove submitted but nothing removed
-	- category
-	- workout calendar record
  - popup entries for body progression and body weight
  - update pr popup error checks; user input prompt
  - popup time values; min max of 60. sec max of 60.
  - remove calendar entry; pick a date, shows all the recorded entries for that day; select one to remove
+ - ability to remove workout entries after the category was removed
 
 Bugs:
  - horizontal calendar: breaks when clicking button 'current date' when nothing is entered for that date
 	- also breaks when clicked too fast
+
+Ads:
+ - Unity
+ - *Google admob
 
 Testing:

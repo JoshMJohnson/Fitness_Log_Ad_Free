@@ -20,7 +20,6 @@ public partial class CalendarCategoryRemovePopup
     private async void Remove_Category(object sender, EventArgs e)
     {
         string name = exercise_category.SelectedItem.ToString();
-
         await App.RecordRepo.Remove_Calendar_Category(name);
         Close();
     }

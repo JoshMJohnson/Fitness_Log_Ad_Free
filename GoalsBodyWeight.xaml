@@ -6,8 +6,6 @@
              Title="Goals">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="help_icon.png"
-                     Clicked="Help_Window" />
         <ToolbarItem Text="+"
                      Clicked="Add_Body_Weight_Goal" />
     </ContentPage.ToolbarItems>

@@ -75,6 +75,9 @@
 	  <MauiXaml Update="GoalsPR.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Notes.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="PersonalRecords.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

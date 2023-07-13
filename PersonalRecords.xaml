@@ -7,8 +7,6 @@
              Title="Personal Records">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="help_icon.png"
-                     Clicked="Help_Window" />
         <ToolbarItem Text="+"
                      Clicked="Add_PR" />
     </ContentPage.ToolbarItems>

@@ -35,4 +35,9 @@
         ContentTemplate="{DataTemplate local:WorkoutCalendar}"
         Route="WorkoutCalendar" />
 
+    <ShellContent
+        Title="Notes"
+        ContentTemplate="{DataTemplate local:Notes}"
+        Route="Notes" />
+
 </Shell>

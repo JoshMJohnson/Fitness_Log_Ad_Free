@@ -6,8 +6,6 @@
              Title="Body Progression">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="help_icon.png"
-                     Clicked="Help_Window" />
         <ToolbarItem Text="+"
                      Clicked="Add_Body_Progression" />
     </ContentPage.ToolbarItems>
