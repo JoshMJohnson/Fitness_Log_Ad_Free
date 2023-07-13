@@ -44,6 +44,7 @@
 
             <Picker x:Name="day_entries_display"
                     Grid.Column="2"
+                    HorizontalTextAlignment="Center"
                     HorizontalOptions="Center" />
 
             <Label Text="No Entries Recorded"

@@ -440,7 +440,7 @@ public class RecordRepository
         }
     }
 
-    /* todo removes an entry in the workout calendar table within the database */
+    /* removes an entry in the workout calendar table within the database */
     public async Task Remove_Calendar_Entry(DateTime date, Category category)
     {
         ArgumentNullException.ThrowIfNull(date, nameof(date));
@@ -450,11 +450,20 @@ public class RecordRepository
         {
             await Init_Database();
 
+            List<CalendarEntry> day_entries_list = await Get_Calendar_Entries_List(date); /* gets list of all entries for that day */
 
+            /* gets list of calendar entries for selected date that match category for removal */
+            List<CalendarEntry> day_entries_list_matching_removal_category = new List<CalendarEntry>();
+            foreach (CalendarEntry day_entry in day_entries_list)
+            {
+                if (day_entry.calendar_category_name == category.name) /* if category matches removal category */ 
+                { 
+                    day_entries_list_matching_removal_category.Add(day_entry);
+                }
+            }
 
-
-
-            int result = 1;
+            /* removes 1 instance of entry for that day */
+            int result = await conn.DeleteAsync(day_entries_list_matching_removal_category[0]);
 
             status_message = string.Format("{0} calendar entry removed (Date: {1})", result, date);
         }
@@ -464,7 +473,7 @@ public class RecordRepository
         }
     }
 
-    /* returns a list of calendar entries from the database with a date eequal to the parameter */
+    /* returns a list of all calendar entries from the database with a date equal to the parameter */
     public async Task<List<CalendarEntry>> Get_Calendar_Entries_List(DateTime date)
     {
         ArgumentNullException.ThrowIfNull(date, nameof(date));
@@ -495,6 +504,7 @@ public class RecordRepository
             Category new_category = new Category
             {
                 name = category_name,
+                still_available = true
             };
 
             int result = await conn.InsertAsync(new_category);
@@ -505,6 +515,8 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to add category {0}. Error: {1}", category_name, e.Message);
         }
+
+        Console.WriteLine($"******status_message: {status_message}");
     }
     
     /* removes a category in the categories table within the database */
@@ -517,9 +529,13 @@ public class RecordRepository
             await Init_Database();
 
             Category removing_category = await conn.FindAsync<Category>(category_name);
-            int result = await conn.DeleteAsync(removing_category);
 
-            status_message = string.Format("{0} category removed (Category Name: {1})", result, category_name);
+            removing_category.still_available = false;
+
+            await conn.UpdateAsync(removing_category);
+
+
+            status_message = string.Format("category removed (Category Name: {1})", category_name);
         }
         catch (Exception e)
         {
@@ -527,14 +543,25 @@ public class RecordRepository
         }
     }
 
-    /* returns a list of calendar categories from the database */
+    /* returns a list of all calendar categories from the database */
     public async Task<List<Category>> Get_Calendar_Category_List()
     {
         try
         {
             await Init_Database();
             List<Category> category_list = await conn.Table<Category>().ToListAsync();
-            return category_list;
+            List<Category> available_category_list = new List<Category>();
+
+            /* do not include unavailable categories */
+            foreach(Category category in category_list) 
+            {
+                if (category.still_available)
+                {                    
+                    available_category_list.Add(category);
+                }
+            }
+
+            return available_category_list;
         }
         catch (Exception e)
         {

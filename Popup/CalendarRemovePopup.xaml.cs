@@ -19,11 +19,20 @@ public partial class CalendarRemovePopup
         Retrieve_Day_Entries();
     }
 
-    /* todo processes a submission to record an exercise performed */
+    /* processes a submission to record an exercise performed */
     private async void Remove_Record(object sender, EventArgs e)
     {
+        /* gather info of entry to be removed */
+        DateTime removal_date = selected_date;
 
-        
+        string string_removal_category = day_entries_display.SelectedItem.ToString();
+
+        Category removal_category = await App.RecordRepo.Get_Category(string_removal_category);
+
+        /* remove entry */
+        await App.RecordRepo.Remove_Calendar_Entry(removal_date, removal_category);
+
+        Close();     
     }
 
     /* closes popup for adding an exercise */
