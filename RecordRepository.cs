@@ -492,7 +492,7 @@ public class RecordRepository
         return new List<CalendarEntry>();
     }
 
-    /* adds a category to the categories table within the database */
+    /* creates a category to the categories table within the database */
     public async Task Add_Calendar_Category(string category_name)
     {
         ArgumentNullException.ThrowIfNull(category_name, nameof(category_name));
@@ -501,13 +501,25 @@ public class RecordRepository
         {
             await Init_Database();
 
-            Category new_category = new Category
-            {
-                name = category_name,
-                still_available = true
-            };
+            /* if category already exists but marked as not available; mark as available */
+            Category existing_category = await Get_Category(category_name);
+            int result;
 
-            int result = await conn.InsertAsync(new_category);
+            if (existing_category != null) /* if category already exists; mark as available */
+            {
+                existing_category.still_available = true;
+                result = await conn.UpdateAsync(existing_category);
+            }
+            else /* else no record of category; create a new category */
+            {
+                Category new_category = new Category
+                {
+                    name = category_name,
+                    still_available = true
+                };
+
+                result = await conn.InsertAsync(new_category);
+            }
 
             status_message = string.Format("{0} category added (Category Name: {1})", result, category_name);
         }
@@ -534,7 +546,6 @@ public class RecordRepository
 
             await conn.UpdateAsync(removing_category);
 
-
             status_message = string.Format("category removed (Category Name: {1})", category_name);
         }
         catch (Exception e)
@@ -543,12 +554,13 @@ public class RecordRepository
         }
     }
 
-    /* returns a list of all calendar categories from the database */
+    /* returns a list of all calendar categories that are still available from the database */
     public async Task<List<Category>> Get_Calendar_Category_List()
     {
         try
         {
             await Init_Database();
+
             List<Category> category_list = await conn.Table<Category>().ToListAsync();
             List<Category> available_category_list = new List<Category>();
 
