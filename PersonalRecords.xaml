@@ -34,15 +34,20 @@
                     </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="weight_icon.png" />
+
                         <Label Text="{Binding exercise_name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*, Auto"
                               HorizontalOptions="End" >
@@ -89,15 +94,20 @@
                     </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding exercise_name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -162,15 +172,20 @@
                     </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding exercise_name}"
-                               Grid.Column="0"
+                               Padding="10"
+                               VerticalOptions="Center"
+                               Grid.Column="1"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -227,15 +242,20 @@
                     </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding exercise_name}"
-                               Grid.Column="0"
+                               VerticalOptions="Center"
+                               Grid.Column="1"
+                               Padding="10"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -292,15 +312,20 @@
                     </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding exercise_name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               VerticalOptions="Center"
+                               Padding="10"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -349,15 +374,20 @@
                     </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding exercise_name}"
-                               Grid.Column="0"
+                               Padding="10"
+                               Grid.Column="1"
+                               VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -414,15 +444,20 @@
                     </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding exercise_name}"
-                               Grid.Column="0"
+                               VerticalOptions="Center"
+                               Grid.Column="1"
+                               Padding="10"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
@@ -471,15 +506,20 @@
                     </SwipeView.RightItems>
 
                     <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
+                          ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
+                        <Image Grid.Column="0"
+                               Source="time_icon.png" />
+
                         <Label Text="{Binding exercise_name}"
-                               Grid.Column="0"
+                               Grid.Column="1"
+                               VerticalOptions="Center"
+                               Padding="10"
                                FontSize="16" />
 
-                        <Grid Grid.Column="1"
+                        <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
