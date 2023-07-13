@@ -47,6 +47,7 @@
                     Grid.Column="0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
+                    x:Name="remove_category_button"
                     Clicked="Remove_Category" />
 
             <Button Text="Cancel"

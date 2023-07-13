@@ -53,7 +53,7 @@ public partial class CalendarRemovePopup
             /* updates data */
             List<string> string_day_entries = new List<string>();
 
-            foreach (CalendarEntry day in day_entries)
+            foreach (CalendarEntry day in day_entries) 
             {
                 string_day_entries.Add(day.calendar_category_name);
             }
