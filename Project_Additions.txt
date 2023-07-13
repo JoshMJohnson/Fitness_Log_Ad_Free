@@ -18,8 +18,7 @@ To Do:
  - workout entry remove
 
 Bugs:
- - remove calendar entries when category doesnt exist anymore
- - if create new category already exists but marked as unavailable. just mark as available
+
 
 Ads:
  - Unity
