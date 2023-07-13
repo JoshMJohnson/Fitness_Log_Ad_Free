@@ -1,19 +1,28 @@
+using WorkoutLog.Model;
+
 namespace WorkoutLog.Popup;
 
 public partial class CalendarRemovePopup
 {
-	public CalendarRemovePopup()
+    private DateTime selected_date { get; set; }
+
+	public CalendarRemovePopup(DateTime date)
 	{
         InitializeComponent();
 
+        selected_date = date;
+
         /* set and display default values */
-        exercise_category.SelectedIndex = 0;
-        record_date.Date = DateTime.Now;
+        string selected_date_string = $"{selected_date.Month}/{selected_date.Day}/{selected_date.Year}";
+        record_date.Text = selected_date_string;
+
+        Retrieve_Day_Entries();
     }
 
-    /* processes a submission to record an exercise performed */
-    private void Remove_Record(object sender, EventArgs e)
+    /* todo processes a submission to record an exercise performed */
+    private async void Remove_Record(object sender, EventArgs e)
     {
+
         
     }
 
@@ -21,5 +30,36 @@ public partial class CalendarRemovePopup
     private void Cancel_Record(object sender, EventArgs e)
     {
         Close();
+    }
+
+    /* retrieves day entries for selected date */
+    private async void Retrieve_Day_Entries()
+    {
+        List<CalendarEntry> day_entries = await App.RecordRepo.Get_Calendar_Entries_List(selected_date);
+
+        /* if no entries for that day */
+        if (day_entries.Count == 0)
+        {
+            remove_button.IsVisible = false;
+            day_entries_display.IsVisible = false;
+            day_entries_display_empty.IsVisible = true;
+        }
+        else /* else; at least one entry for that day */
+        {
+            remove_button.IsVisible = true;
+            day_entries_display.IsVisible = true;
+            day_entries_display_empty.IsVisible = false;
+
+            /* updates data */
+            List<string> string_day_entries = new List<string>();
+
+            foreach (CalendarEntry day in day_entries)
+            {
+                string_day_entries.Add(day.calendar_category_name);
+            }
+            
+            day_entries_display.ItemsSource = string_day_entries;
+            day_entries_display.SelectedIndex = 0;
+        }
     }
 }
