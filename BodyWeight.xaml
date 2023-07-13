@@ -52,7 +52,7 @@
                   Grid.Column="2"
                   RowDefinitions="*, *" >
 
-                <Label Text="Primary Goal"
+                <Label Text="Closest Goal"
                        Grid.Row="0"
                        Grid.Column="0"
                        HorizontalOptions="Center" />
