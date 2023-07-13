@@ -30,6 +30,8 @@
                           Margin="10">
 
                         <Image Grid.Column="0"
+                               WidthRequest="40"
+                               HeightRequest="40"
                                Source="weight_icon.png" />
 
                         <Label Text="{Binding name}"
@@ -82,6 +84,8 @@
                           Margin="10">
 
                         <Image Grid.Column="0"
+                               WidthRequest="40"
+                               HeightRequest="40"
                                Source="time_icon.png" />
 
                         <Label Text="{Binding name}"
@@ -150,6 +154,8 @@
                           Margin="10">
 
                         <Image Grid.Column="0"
+                               WidthRequest="40"
+                               HeightRequest="40"
                                Source="time_icon.png" />
 
                         <Label Text="{Binding name}"
@@ -210,6 +216,8 @@
                           Margin="10">
 
                         <Image Grid.Column="0"
+                               WidthRequest="40"
+                               HeightRequest="40"
                                Source="time_icon.png" />
 
                         <Label Text="{Binding name}"
@@ -270,6 +278,8 @@
                           Margin="10">
 
                         <Image Grid.Column="0"
+                               WidthRequest="40"
+                               HeightRequest="40"
                                Source="time_icon.png" />
 
                         <Label Text="{Binding name}"
@@ -322,6 +332,8 @@
                           Margin="10">
 
                         <Image Grid.Column="0"
+                               WidthRequest="40"
+                               HeightRequest="40"
                                Source="time_icon.png" />
 
                         <Label Text="{Binding name}"
@@ -382,6 +394,8 @@
                           Margin="10">
 
                         <Image Grid.Column="0"
+                               WidthRequest="40"
+                               HeightRequest="40"
                                Source="time_icon.png" />
 
                         <Label Text="{Binding name}"
@@ -434,6 +448,8 @@
                           Margin="10">
 
                         <Image Grid.Column="0"
+                               WidthRequest="40"
+                               HeightRequest="40"
                                Source="time_icon.png" />
 
                         <Label Text="{Binding name}"
