@@ -32,6 +32,7 @@
 
             <Label x:Name="exercise_category_empty_display"
                    Text="No Categories Found"
+                   Margin="10"
                    FontAttributes="Italic"
                    FontSize="12"
                    Grid.Column="2" />
