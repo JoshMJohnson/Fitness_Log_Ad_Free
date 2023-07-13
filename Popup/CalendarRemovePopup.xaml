@@ -46,7 +46,7 @@
                     Grid.Column="2"
                     HorizontalOptions="Center" />
 
-            <Label Text="No entries"
+            <Label Text="No Entries Recorded"
                    FontAttributes="Italic"
                    x:Name="day_entries_display_empty"
                    Grid.Column="2"
