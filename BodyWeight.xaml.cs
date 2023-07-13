@@ -19,9 +19,9 @@ public partial class BodyWeight : ContentPage
 
 		actual_weight = Preferences.Get("ActualWeight", 0);
         change_weight = Preferences.Get("ChangeWeight", 0);
-        week_change = Preferences.Get("ChangeWeight", 0);
-        month_change = Preferences.Get("ChangeWeight", 0);
-        total_change = Preferences.Get("ChangeWeight", 0);
+        week_change = Preferences.Get("WeekChangeWeight", 0);
+        month_change = Preferences.Get("MonthChangeWeight", 0);
+        total_change = Preferences.Get("TotalChangeWeight", 0);
 
         actual_weight_display.Text = actual_weight.ToString();
         change_weight_display.Text = change_weight.ToString();
