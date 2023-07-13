@@ -110,7 +110,7 @@
                    HorizontalOptions="End"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
-                   MaxLength="4"
+                   MaxLength="5"
                    x:Name="weight_pr"
                    Placeholder="100"/>
         </Grid>

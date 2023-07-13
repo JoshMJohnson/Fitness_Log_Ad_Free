@@ -62,7 +62,7 @@
                    Grid.Row="1"
                    Grid.Column="2"
                    VerticalOptions="Center"
-                   MaxLength="3"
+                   MaxLength="5"
                    HorizontalTextAlignment="Center"
                    Placeholder="200" />
         </Grid>
