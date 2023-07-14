@@ -14,14 +14,15 @@
 
 To Do:
  - popup entries for body progression and body weight
- - popup time values; min max of 60. sec max of 60.
- - workout entry remove
+
 
 Bugs:
+ - 
 
 
 Ads:
  - Unity
  - *Google admob
+
 
 Testing:
