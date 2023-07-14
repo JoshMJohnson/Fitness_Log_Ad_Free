@@ -564,14 +564,14 @@
             </DataTemplate>
 
             <cells:PRDataTemplateSelector x:Key="PRTypeSelector"
-                                              Is_Weight_PR="{StaticResource Is_Weight_PR}"
-                                              Is_Time_PR_HMS="{StaticResource Is_Time_PR_HMS}"
-                                              Is_Time_PR_HM="{StaticResource Is_Time_PR_HM}"
-                                              Is_Time_PR_HS="{StaticResource Is_Time_PR_HS}"
-                                              Is_Time_PR_H="{StaticResource Is_Time_PR_H}"
-                                              Is_Time_PR_MS="{StaticResource Is_Time_PR_MS}"
-                                              Is_Time_PR_M="{StaticResource Is_Time_PR_M}"
-                                              Is_Time_PR_S="{StaticResource Is_Time_PR_S}" />
+                                          Is_Weight_PR="{StaticResource Is_Weight_PR}"
+                                          Is_Time_PR_HMS="{StaticResource Is_Time_PR_HMS}"
+                                          Is_Time_PR_HM="{StaticResource Is_Time_PR_HM}"
+                                          Is_Time_PR_HS="{StaticResource Is_Time_PR_HS}"
+                                          Is_Time_PR_H="{StaticResource Is_Time_PR_H}"
+                                          Is_Time_PR_MS="{StaticResource Is_Time_PR_MS}"
+                                          Is_Time_PR_M="{StaticResource Is_Time_PR_M}"
+                                          Is_Time_PR_S="{StaticResource Is_Time_PR_S}" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
