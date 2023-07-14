@@ -46,13 +46,13 @@
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:CalendarDay">
                 <Border WidthRequest="80"
-                        HeightRequest="100"
+                        HeightRequest="120"
                         Padding="15">
 
                     <Grid RowDefinitions="Auto, Auto, *"
                           ColumnDefinitions="*">
 
-                        <Label Text="{Binding date, StringFormat='{0:ddd}'}" 
+                        <Label Text="{Binding date, StringFormat='{0:ddd }'}" 
                                HorizontalOptions="Center"
                                Grid.Row="0"
                                FontSize="18" >
@@ -85,10 +85,10 @@
                             </Label.Triggers>
                         </Label>
 
-                        <CollectionView Grid.Row="2"
-                                        x:Name="horizontal_calendar_date_entries_display">
-                            
-                        </CollectionView>
+                        <Frame Grid.Row="2"
+                               Margin="10"
+                               x:Name="calendar_entry_indicator"
+                               BackgroundColor="Red"/>
                     </Grid>
 
                     <Border.Triggers>
