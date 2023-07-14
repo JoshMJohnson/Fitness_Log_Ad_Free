@@ -32,38 +32,42 @@ public partial class PersonalRecordAddPopup
                 if ((hr_update_string != null && hr_update_string.Length != 0) || (min_update_string != null && min_update_string.Length != 0) 
                         || (sec_update_string != null && sec_update_string.Length != 0)) /* if at least one time field is not empty */
                 {
-                    int hr_update;
-                    int min_update;
-                    int sec_update;
+                    int hr_update = 0;
+                    int min_update = 0;
+                    int sec_update = 0;
+                                       
+                    if (sec_update_string != null && sec_update_string.Length != 0) /* if sec field is not empty */
+                    {
+                        sec_update_string = sec_update_string.ToString();
+                        sec_update = int.Parse(sec_update_string);
 
-                    if (hr_update_string != null && hr_update_string.Length != 0) /* if hour field is not empty */
-                    {
-                        hr_update_string = hr_update_string.ToString();
-                        hr_update = int.Parse(hr_update_string);
-                    }
-                    else /* else; hr field is empty */
-                    {
-                        hr_update = 0;
+                        if (sec_update > 60) /* ? if sec field is more than 60 mins */
+                        {
+                            int additonal_mins = sec_update / 60;
+                            min_update = additonal_mins;
+
+                            sec_update = sec_update % 60;
+                        }
                     }
 
                     if (min_update_string != null && min_update_string.Length != 0) /* if min field is not empty */
                     {
                         min_update_string = min_update_string.ToString();
-                        min_update = int.Parse(min_update_string);
-                    }
-                    else /* else; min field is empty */
-                    {
-                        min_update = 0;
+                        min_update += int.Parse(min_update_string);
+
+                        if (min_update > 60) /* ? if min field is more than 60 mins */
+                        {
+                            int additional_hrs = min_update / 60;
+                            hr_update = additional_hrs;
+
+                            min_update = min_update % 60;
+                        }
                     }
 
-                    if (sec_update_string != null && sec_update_string.Length != 0) /* if sec field is not empty */
+                    if (hr_update_string != null && hr_update_string.Length != 0) /* if hour field is not empty */
                     {
-                        sec_update_string = sec_update_string.ToString();
-                        sec_update = int.Parse(sec_update_string);
-                    }
-                    else /* else; sec field is empty */
-                    {
-                        sec_update = 0;
+                        hr_update_string = hr_update_string.ToString();
+                        hr_update += int.Parse(hr_update_string);
                     }
 
                     await App.RecordRepo.Add_PR(name, date, false, -1, hr_update, min_update, sec_update);
