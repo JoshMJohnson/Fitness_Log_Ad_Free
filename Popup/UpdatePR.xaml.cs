@@ -65,7 +65,7 @@ public partial class UpdatePR
                     hr_update += int.Parse(hr_update_string);
                 }
 
-                await App.RecordRepo.Add_PR(name, date, false, -1, hr_update, min_update, sec_update);
+                await App.RecordRepo.Update_PR(name, date, -1, hr_update, min_update, sec_update);
 
                 error_prompt.IsVisible = false;
                 Close();
