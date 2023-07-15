@@ -172,7 +172,7 @@ public partial class CalendarView : StackLayout
         Bind_Dates(present_date);
     }
 
-	/* todo marks/unmarks each date if it has/hasn't any workout entries */
+	/* marks/unmarks each date if it has/hasn't any workout entries */
 	private async void Identify_Date_Needs_Entry_Symbol()
 	{
 		/* loops through all the dates in the month being displayed */
