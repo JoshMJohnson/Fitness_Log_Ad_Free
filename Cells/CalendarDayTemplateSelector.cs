@@ -9,8 +9,6 @@ public class CalendarDayTemplateSelector : DataTemplateSelector
 
     public DataTemplate no_display_day_entry_symbol { get; set; } /* hide display the symbol indicating an entry for that date */
 
-    private bool display_indicator { get; set; }
-
     protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
     {
         var day_entry = (CalendarDay) item;
