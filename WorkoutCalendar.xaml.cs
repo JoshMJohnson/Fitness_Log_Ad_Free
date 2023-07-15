@@ -59,14 +59,14 @@ public partial class WorkoutCalendar : ContentPage
     /* executes when the plus button is clicked to record an exercise */
     private async void Record_Exercise(object sender, EventArgs e)
     {
-        object result = await this.ShowPopupAsync(new CalendarAddPopup());
+        await this.ShowPopupAsync(new CalendarAddPopup());
         Refresh_Selected_Date(selected_date_calendar);
     }
 
     /* executes when the minus button is clicked to record an exercise */
     private async void Unrecord_Exercise(object sender, EventArgs e)
     {
-        object result = await this.ShowPopupAsync(new CalendarRemovePopup(selected_date_calendar));
+        await this.ShowPopupAsync(new CalendarRemovePopup(selected_date_calendar));
         Refresh_Selected_Date(selected_date_calendar);
     }
 
