@@ -52,7 +52,6 @@
 
                         <Frame Grid.Row="2"
                                Margin="10"
-                               x:Name="calendar_entry_indicator"
                                BackgroundColor="Red"/>
                     </Grid>
 
