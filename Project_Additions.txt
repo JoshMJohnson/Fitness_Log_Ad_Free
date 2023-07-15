@@ -17,8 +17,8 @@ To Do:
 
 
 Bugs:
- - 
-
+ - calendar date entry indicator buggy when clicking 'current date' button
+	- doesnt refresh on new entry
 
 Ads:
  - Unity

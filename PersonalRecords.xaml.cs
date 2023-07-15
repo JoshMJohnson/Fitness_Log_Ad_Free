@@ -19,12 +19,6 @@ public partial class PersonalRecords : ContentPage
         Refresh_PR_List();
     }
 
-    /* todo executes help button is clicked */
-    private void Help_Window(object sender, EventArgs e)
-    {
-
-    }
-
     /* executed when PR plus button clicked */
     private async void Add_PR(object sender, EventArgs e)
     {

@@ -10,6 +10,4 @@ public class CalendarDay : CalendarDatePropertyChanged
 		get => _isCurrentDate;
 		set => SetProperty(ref _isCurrentDate, value);
 	}
-
-	public bool has_day_entry { get; set; }
 }
