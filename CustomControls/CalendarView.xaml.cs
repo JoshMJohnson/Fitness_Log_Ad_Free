@@ -1,3 +1,4 @@
+using Java.Lang;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -104,6 +105,7 @@ public partial class CalendarView : StackLayout
         Bind_Dates(DateTime.Now);
     }
 
+	/* prepares the calendar to be displayed; links calendar nodes with appropriate data */
     private void Bind_Dates(DateTime date)
 	{
 		dates.Clear();
@@ -115,7 +117,7 @@ public partial class CalendarView : StackLayout
 		{
 			dates.Add(new CalendarDay
 			{
-				date = new DateTime(date.Year, date.Month, day)
+				date = new DateTime(date.Year, date.Month, day),
 			});
 		}
 
@@ -126,7 +128,9 @@ public partial class CalendarView : StackLayout
 			selected_date_data.is_current_date = true;
 			_tempDate = selected_date_data.date;
 		}
-	}
+
+		Identify_Date_Needs_Entry_Symbol();
+    }
 
 	#region Commands
 	/* update calendar currently selected date info */
@@ -167,4 +171,25 @@ public partial class CalendarView : StackLayout
         selected_date_command?.Execute(present_date);
         Bind_Dates(present_date);
     }
+
+	/* todo marks/unmarks each date if it has/hasn't any workout entries */
+	private async void Identify_Date_Needs_Entry_Symbol()
+	{
+		/* loops through all the dates in the month being displayed */
+		for (int i = 0; i < dates.Count; i++)
+		{
+			DateTime current_date = dates[i].date;
+
+            List<CalendarEntry> entries = await App.RecordRepo.Get_Calendar_Entries_List(current_date);
+
+			if (entries.Count != 0) /* if at least one entry for current calendar date */
+			{
+				dates[i].has_entry = true;
+            }
+			else /* else; no entries for current calendar date */
+			{
+                dates[i].has_entry = false;
+            }
+        }
+	}
 }

@@ -120,12 +120,6 @@
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
-
-                        <Frame Grid.Row="2"
-                               Margin="10"
-                               x:Name="calendar_entry_indicator"
-                               BackgroundColor="Red"
-                               IsVisible="False"/>
                     </Grid>
 
                     <Border.Triggers>
@@ -189,7 +183,7 @@
     </Grid>
 
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=dates}"
-                    ItemTemplate="{StaticResource DateTypeSelector}">
+                    ItemTemplate="{StaticResource DateTypeSelector}" >
         
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Horizontal" 
