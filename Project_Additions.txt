@@ -2,7 +2,6 @@
  - PR/goals nodes alternate background color (grey/transparent)
  - open app on workout calendar page every time
  - Body Weight chart. click entry on graph to show edit and delete options
- - sort goals by date
  - Body Progression display -> closed tabs showing dates, tabs can expand and display image
  - calendar date has corner colored if at least 1 entry for that date
  - toggle between lbs and kg
