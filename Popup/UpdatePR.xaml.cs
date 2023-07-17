@@ -36,7 +36,7 @@ public partial class UpdatePR
                     sec_update_string = sec_update_string.ToString();
                     sec_update = int.Parse(sec_update_string);
 
-                    if (sec_update > 60) /* if sec field is more than 60 mins */
+                    if (sec_update >= 60) /* if sec field is more than 60 mins */
                     {
                         int additonal_mins = sec_update / 60;
                         min_update = additonal_mins;
@@ -50,7 +50,7 @@ public partial class UpdatePR
                     min_update_string = min_update_string.ToString();
                     min_update += int.Parse(min_update_string);
 
-                    if (min_update > 60) /* if min field is more than 60 mins */
+                    if (min_update >= 60) /* if min field is more than 60 mins */
                     {
                         int additional_hrs = min_update / 60;
                         hr_update = additional_hrs;
