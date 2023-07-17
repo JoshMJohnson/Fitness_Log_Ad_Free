@@ -34,11 +34,11 @@ public partial class GoalsBodyWeight : ContentPage
     /* refreshes the BW goal list being displayed on UI */
     public async void Refresh_BW_Goal_List()
     {
-        List<GoalBW> pr_goal_list = await App.RecordRepo.Get_Body_Weight_Goal_List();
+        List<GoalBW> body_weight_goal_list = await App.RecordRepo.Get_Body_Weight_Goal_List();
+        
+        body_weight_goals_display.ItemsSource = body_weight_goal_list;
 
-        body_weight_goals_display.ItemsSource = pr_goal_list;
-
-        if (pr_goal_list.Count == 0)  /* if pr list is empty - no pr's set */
+        if (body_weight_goal_list.Count == 0)  /* if pr list is empty - no pr's set */
         {
             vertical_layout_empty_bw_goal_list.IsVisible = true;
         }

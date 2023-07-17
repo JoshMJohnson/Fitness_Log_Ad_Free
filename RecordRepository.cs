@@ -182,8 +182,47 @@ public class RecordRepository
         try
         {
             await Init_Database();
-            List<GoalBW> body_weight_goal_list = await conn.Table<GoalBW>().ToListAsync();
-            return body_weight_goal_list;
+
+            List<GoalBW> body_weight_goal_list = await conn.Table<GoalBW>().ToListAsync();            
+            body_weight_goal_list = body_weight_goal_list.OrderBy(goal => goal.date_desired).Reverse().ToList();
+
+            List<GoalBW> sorted_body_weight_goal_list = new List<GoalBW>();
+            List<GoalBW> final_list = new List<GoalBW>();
+
+            int paused_index = 0;
+
+            /* loops through list of body weight goal entries found in database */
+            for (int i = 0; i < body_weight_goal_list.Count; i++)
+            {
+                string[] date_array = body_weight_goal_list[i].goal_achieve_by_date.Split('/');
+
+                if (body_weight_goal_list[i].date_desired) /* if goal has no date desired set */
+                {
+                    body_weight_goal_list[i].date_sort = new DateTime(int.Parse(date_array[2]), int.Parse(date_array[0]), int.Parse(date_array[1]));
+                    sorted_body_weight_goal_list.Add(body_weight_goal_list[i]); 
+                }
+                else /* else; no goal date set */
+                {
+                    paused_index = i;
+                    break;
+                }
+            }
+
+            sorted_body_weight_goal_list = sorted_body_weight_goal_list.OrderBy(goal => goal.date_sort).ToList();
+
+            /* adds all none date desired body weight goals to final list */
+            for (int i = paused_index; i < body_weight_goal_list.Count; i++)
+            {
+                final_list.Add(body_weight_goal_list[i]);
+            }
+
+            /* adds all date desired body weight goals to final list */
+            for (int i = 0; i < sorted_body_weight_goal_list.Count; i++)
+            {
+                final_list.Add(sorted_body_weight_goal_list[i]);
+            }
+
+            return final_list;
         }
         catch (Exception e)
         {
@@ -279,8 +318,47 @@ public class RecordRepository
         try
         {
             await Init_Database();
+
             List<GoalPR> pr_goal_list = await conn.Table<GoalPR>().ToListAsync();
-            return pr_goal_list;
+            pr_goal_list = pr_goal_list.OrderBy(goal => goal.date_desired).Reverse().ToList();
+
+            List<GoalPR> sorted_pr_goal_list = new List<GoalPR>();
+            List<GoalPR> final_list = new List<GoalPR>();
+
+            int paused_index = 0;
+
+            /* loops through list of body weight goal entries found in database */
+            for (int i = 0; i < pr_goal_list.Count; i++)
+            {
+                string[] date_array = pr_goal_list[i].goal_achieve_by_date.Split('/');
+
+                if (pr_goal_list[i].date_desired) /* if goal has no date desired set */
+                {
+                    pr_goal_list[i].date_sort = new DateTime(int.Parse(date_array[2]), int.Parse(date_array[0]), int.Parse(date_array[1]));
+                    sorted_pr_goal_list.Add(pr_goal_list[i]);
+                }
+                else /* else; no goal date set */
+                {
+                    paused_index = i;
+                    break;
+                }
+            }
+
+            sorted_pr_goal_list = sorted_pr_goal_list.OrderBy(goal => goal.date_sort).ToList();
+
+            /* adds all none date desired body weight goals to final list */
+            for (int i = paused_index; i < pr_goal_list.Count; i++)
+            {
+                final_list.Add(pr_goal_list[i]);
+            }
+
+            /* adds all date desired body weight goals to final list */
+            for (int i = 0; i < sorted_pr_goal_list.Count; i++)
+            {
+                final_list.Add(sorted_pr_goal_list[i]);
+            }
+
+            return final_list;
         }
         catch (Exception e)
         {

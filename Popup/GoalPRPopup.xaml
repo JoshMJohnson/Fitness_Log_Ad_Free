@@ -72,7 +72,7 @@
                    Grid.Column="4"
                    VerticalOptions="Center"
                    x:Name="min_pr"
-                   MaxLength="4"
+                   MaxLength="2"
                    HorizontalTextAlignment="Center"
                    Placeholder="0" />
 

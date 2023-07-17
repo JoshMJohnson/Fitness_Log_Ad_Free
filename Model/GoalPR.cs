@@ -11,6 +11,7 @@ public class GoalPR
 
     public string goal_achieve_by_date { get; set; }
     public bool date_desired { get; set; }
+    public DateTime date_sort { get; set; }
 
     public bool is_weight_goal { get; set; }
 

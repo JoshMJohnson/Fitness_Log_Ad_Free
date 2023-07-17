@@ -4,7 +4,6 @@
  - Body Weight chart. click entry on graph to show edit and delete options
  - sort goals by date
  - Body Progression display -> closed tabs showing dates, tabs can expand and display image
- - horizontal calendar furthest right date is current date when opening up section
  - calendar date has corner colored if at least 1 entry for that date
  - toggle between lbs and kg
  - body weight goals displayed as horizontal lines on body weight chart
