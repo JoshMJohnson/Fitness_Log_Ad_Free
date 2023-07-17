@@ -481,6 +481,7 @@ public class RecordRepository
         {
             await Init_Database();
             List<PR> pr_list = await conn.Table<PR>().ToListAsync();
+            pr_list = pr_list.OrderBy(pr => pr.exercise_name).ToList();
             return pr_list;
         }
         catch (Exception e)
