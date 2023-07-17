@@ -327,7 +327,7 @@ public class RecordRepository
 
             int paused_index = 0;
 
-            /* loops through list of body weight goal entries found in database */
+            /* loops through list of pr goal entries found in database */
             for (int i = 0; i < pr_goal_list.Count; i++)
             {
                 string[] date_array = pr_goal_list[i].goal_achieve_by_date.Split('/');
@@ -346,13 +346,13 @@ public class RecordRepository
 
             sorted_pr_goal_list = sorted_pr_goal_list.OrderBy(goal => goal.date_sort).ToList();
 
-            /* adds all none date desired body weight goals to final list */
+            /* adds all none date desired pr goals to final list */
             for (int i = paused_index; i < pr_goal_list.Count; i++)
             {
                 final_list.Add(pr_goal_list[i]);
             }
 
-            /* adds all date desired body weight goals to final list */
+            /* adds all date desired pr goals to final list */
             for (int i = 0; i < sorted_pr_goal_list.Count; i++)
             {
                 final_list.Add(sorted_pr_goal_list[i]);
