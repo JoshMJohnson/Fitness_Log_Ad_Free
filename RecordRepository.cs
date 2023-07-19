@@ -186,7 +186,7 @@ public class RecordRepository
             await Init_Database();
 
             List<GoalBW> body_weight_goal_list = await conn.Table<GoalBW>().ToListAsync();            
-            body_weight_goal_list = body_weight_goal_list.OrderBy(goal => goal.date_desired).Reverse().ToList();
+            body_weight_goal_list = body_weight_goal_list.OrderBy(goal => goal.date_desired).ToList();
 
             List<GoalBW> sorted_body_weight_goal_list = new List<GoalBW>();
             List<GoalBW> final_list = new List<GoalBW>();
@@ -200,6 +200,12 @@ public class RecordRepository
 
                 if (body_weight_goal_list[i].date_desired) /* if goal has no date desired set */
                 {
+                    if (i == 0) /* if there are no N/A dates in database */
+                    {
+                        paused_index = i;
+                        break;
+                    }
+
                     body_weight_goal_list[i].date_sort = new DateTime(int.Parse(date_array[2]), int.Parse(date_array[0]), int.Parse(date_array[1]));
                     sorted_body_weight_goal_list.Add(body_weight_goal_list[i]); 
                 }

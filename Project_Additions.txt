@@ -15,8 +15,8 @@ To Do:
 
 
 Bugs:
- - calendar date entry indicator buggy when clicking 'current date' button
-	- doesnt refresh on new entry
+ - goal body weight remove sometimes makes duplicates of other list items
+	- occurs when last n/a date is removed
 
 Ads:
  - Unity
