@@ -24,8 +24,8 @@ public partial class GoalsPR : ContentPage
     /* swipe remove pr goal */
     private async void Remove_PR_Goal(object sender, EventArgs e)
     {
-        SwipeItem remove_pr = (SwipeItem)sender;
-        string pr_name = remove_pr.Text;
+        ImageButton remove_pr = (ImageButton) sender;
+        string pr_name = remove_pr.BindingContext.ToString();
 
         await App.RecordRepo.Remove_Goal_PR(pr_name);
         Refresh_PR_Goal_List();

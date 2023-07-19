@@ -17,10 +17,16 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR_Goal" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR_Goal"
+                                                 BindingContext="{Binding name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
@@ -82,10 +88,16 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR_Goal" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR_Goal"
+                                                 BindingContext="{Binding name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
@@ -163,10 +175,16 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR_Goal" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR_Goal"
+                                                 BindingContext="{Binding name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
@@ -236,10 +254,16 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR_Goal" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR_Goal"
+                                                 BindingContext="{Binding name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
@@ -309,10 +333,16 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR_Goal" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR_Goal"
+                                                 BindingContext="{Binding name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
@@ -374,10 +404,16 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR_Goal" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR_Goal"
+                                                 BindingContext="{Binding name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
@@ -447,10 +483,16 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR_Goal" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR_Goal"
+                                                 BindingContext="{Binding name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
@@ -512,10 +554,16 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR_Goal" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR_Goal"
+                                                 BindingContext="{Binding name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 

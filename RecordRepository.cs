@@ -328,7 +328,7 @@ public class RecordRepository
             await Init_Database();
 
             List<GoalPR> pr_goal_list = await conn.Table<GoalPR>().ToListAsync();
-            pr_goal_list = pr_goal_list.OrderBy(goal => goal.date_desired).Reverse().ToList();
+            pr_goal_list = pr_goal_list.OrderBy(goal => goal.date_desired).ToList();
 
             List<GoalPR> sorted_pr_goal_list = new List<GoalPR>();
             List<GoalPR> final_list = new List<GoalPR>();
@@ -342,6 +342,12 @@ public class RecordRepository
 
                 if (pr_goal_list[i].date_desired) /* if goal has no date desired set */
                 {
+                    if (i == 0) /* if there are no N/A dates in database */
+                    {
+                        paused_index = i;
+                        break;
+                    }
+
                     pr_goal_list[i].date_sort = new DateTime(int.Parse(date_array[2]), int.Parse(date_array[0]), int.Parse(date_array[1]));
                     sorted_pr_goal_list.Add(pr_goal_list[i]);
                 }
