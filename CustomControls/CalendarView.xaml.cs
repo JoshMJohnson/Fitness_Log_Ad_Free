@@ -187,7 +187,6 @@ public partial class CalendarView : StackLayout
             if (entries.Count != 0) /* if at least one entry for current calendar date */
 			{
                 dates[i].Has_Entry = true;
-
             }
 			else /* else; no entries for current calendar date */
 			{

@@ -23,46 +23,67 @@
                     <SwipeView>
                         <SwipeView.LeftItems>
                             <SwipeItems SwipeBehaviorOnInvoked="Close">
-                                <SwipeItem Text="{Binding name}"
-                                           IconImageSource="trash_icon.png"
-                                           BackgroundColor="Red"
-                                           Invoked="Remove_Body_Weight_Goal" />
+
+                                <SwipeItemView>
+                                    <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_Body_Weight_Goal"
+                                                 BindingContext="{Binding name}"/>
+                                </SwipeItemView>
+                                                                
                             </SwipeItems>
                         </SwipeView.LeftItems>
 
-                        <Grid RowDefinitions="*"
-                              ColumnDefinitions="*, *"
-                              VerticalOptions="Center"
-                              Margin="10">
+                        <Border Margin="5"
+                                BackgroundColor="LightGrey">
+                            
+                            <Border.Shadow>
+                                <Shadow Brush="Black"
+                                        Offset="20,20"
+                                        Radius="40"
+                                        Opacity="1" />
+                            </Border.Shadow>             
+                            
+                            <Grid RowDefinitions="*"
+                                  ColumnDefinitions="*, *"
+                                  VerticalOptions="Center"
+                                  Margin="10">
 
-                            <Label Text="{Binding name}"
-                                   Grid.Column="0"
-                                   FontSize="16"
-                                   HorizontalOptions="Start" />
+                                <Label Text="{Binding name}"
+                                       Grid.Column="0"
+                                       FontSize="16"
+                                       Margin="10"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Start" />
 
-                            <Grid Grid.Column="1"
-                                  RowDefinitions="*, *"
-                                  ColumnDefinitions="*, Auto"
-                                  HorizontalOptions="End" >
+                                <Grid Grid.Column="1"
+                                      RowDefinitions="*, *"
+                                      ColumnDefinitions="*, Auto"
+                                      HorizontalOptions="End" >
 
-                                <Label Text="{Binding goal_achieve_by_date}"
-                                       Grid.Row="0"
-                                       FontSize="14"
-                                       Grid.ColumnSpan="2"
-                                       HorizontalOptions="End" />
+                                    <Label Text="{Binding goal_achieve_by_date}"
+                                           Grid.Row="0"
+                                           FontSize="14"
+                                           Grid.ColumnSpan="2"
+                                           HorizontalOptions="End" />
 
-                                <Label Text="{Binding weight}"
-                                       Grid.Row="1"
-                                       FontSize="14"
-                                       HorizontalOptions="End" />
+                                    <Label Text="{Binding weight}"
+                                           Grid.Row="1"
+                                           FontSize="14"
+                                           HorizontalOptions="End" />
 
-                                <Label Text=" lbs."
-                                       Grid.Row="1"
-                                       Grid.Column="1"
-                                       FontSize="14"
-                                       HorizontalOptions="End" />
+                                    <Label Text=" lbs."
+                                           Grid.Row="1"
+                                           Grid.Column="1"
+                                           FontSize="14"
+                                           HorizontalOptions="End" />
+                                </Grid>
                             </Grid>
-                        </Grid>
+                        </Border>
                     </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

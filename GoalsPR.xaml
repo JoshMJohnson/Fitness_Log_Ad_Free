@@ -24,46 +24,57 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
-                    <Grid RowDefinitions="*"
-                          ColumnDefinitions="50, *, *"
-                          VerticalOptions="Center"
-                          Margin="10">
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
 
-                        <Image Grid.Column="0"
-                               WidthRequest="40"
-                               HeightRequest="40"
-                               Source="weight_icon.png" />
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="20,20"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                        </Border.Shadow>
+                        
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="50, *, *"
+                              VerticalOptions="Center"
+                              Margin="10">
 
-                        <Label Text="{Binding name}"
-                               Grid.Column="1"
-                               Padding="10"
-                               VerticalOptions="Center"
-                               FontSize="16" />
+                            <Image Grid.Column="0"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Source="weight_icon.png" />
 
-                        <Grid Grid.Column="2"
-                              RowDefinitions="*, *"
-                              ColumnDefinitions="*, Auto"
-                              HorizontalOptions="End" >
-
-                            <Label Text="{Binding goal_achieve_by_date}"
-                                   Grid.Row="0"
-                                   FontSize="14"
-                                   Grid.ColumnSpan="2"
-                                   HorizontalOptions="End" />
-
-                            <Label Text="{Binding weight}"
-                                   Grid.Row="1"
-                                   Grid.Column="0"
-                                   FontSize="14"
-                                   HorizontalOptions="End" />
-
-                            <Label Text=" lbs."
-                                   Grid.Row="1"
+                            <Label Text="{Binding name}"
                                    Grid.Column="1"
-                                   FontSize="14"
-                                   HorizontalOptions="End" />
+                                   Padding="10"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
+
+                            <Grid Grid.Column="2"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*, Auto"
+                                  HorizontalOptions="End" >
+
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"
+                                       FontSize="14"
+                                       Grid.ColumnSpan="2"
+                                       HorizontalOptions="End" />
+
+                                <Label Text="{Binding weight}"
+                                       Grid.Row="1"
+                                       Grid.Column="0"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
+
+                                <Label Text=" lbs."
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
+                            </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
             
@@ -78,62 +89,73 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
-                    <Grid RowDefinitions="*"
-                          ColumnDefinitions="50, *, *"
-                          VerticalOptions="Center"
-                          Margin="10">
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
 
-                        <Image Grid.Column="0"
-                               WidthRequest="40"
-                               HeightRequest="40"
-                               Source="time_icon.png" />
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="20,20"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                        </Border.Shadow>
+                        
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="50, *, *"
+                              VerticalOptions="Center"
+                              Margin="10">
 
-                        <Label Text="{Binding name}"
-                               Grid.Column="1"
-                               Padding="10"
-                               VerticalOptions="Center"
-                               FontSize="16" />
+                            <Image Grid.Column="0"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Source="time_icon.png" />
 
-                        <Grid Grid.Column="2"
-                              RowDefinitions="*, *"
-                              ColumnDefinitions="*"
-                              HorizontalOptions="End" >
+                            <Label Text="{Binding name}"
+                                   Grid.Column="1"
+                                   Padding="10"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
 
-                            <Label Text="{Binding goal_achieve_by_date}"
-                                   Grid.Row="0"
-                                   FontSize="14"
-                                   HorizontalOptions="End" />
+                            <Grid Grid.Column="2"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="End" >
 
-                            <Grid Grid.Row="1"
-                                  RowDefinitions="*"
-                                  ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" >
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
 
-                                <Label Text="{Binding time_hours}"
-                                       Grid.Column="0"
-                                       FontSize="14"  />
+                                <Grid Grid.Row="1"
+                                      RowDefinitions="*"
+                                      ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" >
 
-                                <Label Text=" hrs. "
-                                       Grid.Column="1"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_hours}"
+                                           Grid.Column="0"
+                                           FontSize="14"  />
 
-                                <Label Text="{Binding time_min}"
-                                       Grid.Column="2"
-                                       FontSize="14" />
+                                    <Label Text=" hrs. "
+                                           Grid.Column="1"
+                                           FontSize="14"  />
 
-                                <Label Text=" mins. "
-                                       Grid.Column="3"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_min}"
+                                           Grid.Column="2"
+                                           FontSize="14" />
 
-                                <Label Text="{Binding time_sec}"
-                                       Grid.Column="4"
-                                       FontSize="14" />
+                                    <Label Text=" mins. "
+                                           Grid.Column="3"
+                                           FontSize="14"  />
 
-                                <Label Text=" secs."
-                                       Grid.Column="5"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_sec}"
+                                           Grid.Column="4"
+                                           FontSize="14" />
+
+                                    <Label Text=" secs."
+                                           Grid.Column="5"
+                                           FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -148,54 +170,65 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
-                    <Grid RowDefinitions="*"
-                          ColumnDefinitions="50, *, *"
-                          VerticalOptions="Center"
-                          Margin="10">
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
 
-                        <Image Grid.Column="0"
-                               WidthRequest="40"
-                               HeightRequest="40"
-                               Source="time_icon.png" />
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="20,20"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                        </Border.Shadow>
+                        
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="50, *, *"
+                              VerticalOptions="Center"
+                              Margin="10">
 
-                        <Label Text="{Binding name}"
-                               Grid.Column="1"
-                               Padding="10"
-                               VerticalOptions="Center"
-                               FontSize="16" />
+                            <Image Grid.Column="0"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Source="time_icon.png" />
 
-                        <Grid Grid.Column="2"
-                              RowDefinitions="*, *"
-                              ColumnDefinitions="*"
-                              HorizontalOptions="End" >
+                            <Label Text="{Binding name}"
+                                   Grid.Column="1"
+                                   Padding="10"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
 
-                            <Label Text="{Binding goal_achieve_by_date}"
-                                   Grid.Row="0"
-                                   FontSize="14"
-                                   HorizontalOptions="End" />
+                            <Grid Grid.Column="2"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="End" >
 
-                            <Grid Grid.Row="1"
-                                  RowDefinitions="*"
-                                  ColumnDefinitions="Auto, Auto, Auto, Auto" >
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
 
-                                <Label Text="{Binding time_hours}"
-                                       Grid.Column="0"
-                                       FontSize="14"  />
+                                <Grid Grid.Row="1"
+                                      RowDefinitions="*"
+                                      ColumnDefinitions="Auto, Auto, Auto, Auto" >
 
-                                <Label Text=" hrs. "
-                                       Grid.Column="1"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_hours}"
+                                           Grid.Column="0"
+                                           FontSize="14"  />
 
-                                <Label Text="{Binding time_min}"
-                                       Grid.Column="2"
-                                       FontSize="14" />
+                                    <Label Text=" hrs. "
+                                           Grid.Column="1"
+                                           FontSize="14"  />
 
-                                <Label Text=" mins."
-                                       Grid.Column="3"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_min}"
+                                           Grid.Column="2"
+                                           FontSize="14" />
+
+                                    <Label Text=" mins."
+                                           Grid.Column="3"
+                                           FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
             
@@ -210,54 +243,65 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
-                    <Grid RowDefinitions="*"
-                          ColumnDefinitions="50, *, *"
-                          VerticalOptions="Center"
-                          Margin="10">
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
 
-                        <Image Grid.Column="0"
-                               WidthRequest="40"
-                               HeightRequest="40"
-                               Source="time_icon.png" />
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="20,20"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                        </Border.Shadow>
+                        
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="50, *, *"
+                              VerticalOptions="Center"
+                              Margin="10">
 
-                        <Label Text="{Binding name}"
-                               Grid.Column="1"
-                               Padding="10"
-                               VerticalOptions="Center"
-                               FontSize="16" />
+                            <Image Grid.Column="0"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Source="time_icon.png" />
 
-                        <Grid Grid.Column="2"
-                              RowDefinitions="*, *"
-                              ColumnDefinitions="*"
-                              HorizontalOptions="End" >
+                            <Label Text="{Binding name}"
+                                   Grid.Column="1"
+                                   Padding="10"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
 
-                            <Label Text="{Binding goal_achieve_by_date}"
-                                   Grid.Row="0"
-                                   FontSize="14"
-                                   HorizontalOptions="End" />
+                            <Grid Grid.Column="2"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="End" >
 
-                            <Grid Grid.Row="1"
-                                  RowDefinitions="*"
-                                  ColumnDefinitions="Auto, Auto, Auto, Auto" >
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
 
-                                <Label Text="{Binding time_hours}"
-                                       Grid.Column="0"
-                                       FontSize="14"  />
+                                <Grid Grid.Row="1"
+                                      RowDefinitions="*"
+                                      ColumnDefinitions="Auto, Auto, Auto, Auto" >
 
-                                <Label Text=" hrs. "
-                                       Grid.Column="1"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_hours}"
+                                           Grid.Column="0"
+                                           FontSize="14"  />
 
-                                <Label Text="{Binding time_sec}"
-                                       Grid.Column="2"
-                                       FontSize="14" />
+                                    <Label Text=" hrs. "
+                                           Grid.Column="1"
+                                           FontSize="14"  />
 
-                                <Label Text=" secs."
-                                       Grid.Column="3"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_sec}"
+                                           Grid.Column="2"
+                                           FontSize="14" />
+
+                                    <Label Text=" secs."
+                                           Grid.Column="3"
+                                           FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -272,46 +316,57 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
-                    <Grid RowDefinitions="*"
-                          ColumnDefinitions="50, *, *"
-                          VerticalOptions="Center"
-                          Margin="10">
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
 
-                        <Image Grid.Column="0"
-                               WidthRequest="40"
-                               HeightRequest="40"
-                               Source="time_icon.png" />
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="20,20"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                        </Border.Shadow>
+                        
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="50, *, *"
+                              VerticalOptions="Center"
+                              Margin="10">
 
-                        <Label Text="{Binding name}"
-                               Grid.Column="1"
-                               Padding="10"
-                               VerticalOptions="Center"
-                               FontSize="16" />
+                            <Image Grid.Column="0"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Source="time_icon.png" />
 
-                        <Grid Grid.Column="2"
-                              RowDefinitions="*, *"
-                              ColumnDefinitions="*"
-                              HorizontalOptions="End" >
+                            <Label Text="{Binding name}"
+                                   Grid.Column="1"
+                                   Padding="10"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
 
-                            <Label Text="{Binding goal_achieve_by_date}"
-                                   Grid.Row="0"
-                                   FontSize="14"
-                                   HorizontalOptions="End" />
+                            <Grid Grid.Column="2"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="End" >
 
-                            <Grid Grid.Row="1"
-                                  RowDefinitions="*"
-                                  ColumnDefinitions="Auto, Auto" >
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
 
-                                <Label Text="{Binding time_hours}"
-                                       Grid.Column="0"
-                                       FontSize="14"  />
+                                <Grid Grid.Row="1"
+                                      RowDefinitions="*"
+                                      ColumnDefinitions="Auto, Auto" >
 
-                                <Label Text=" hrs."
-                                       Grid.Column="1"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_hours}"
+                                           Grid.Column="0"
+                                           FontSize="14"  />
+
+                                    <Label Text=" hrs."
+                                           Grid.Column="1"
+                                           FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -326,54 +381,65 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
-                    <Grid RowDefinitions="*"
-                          ColumnDefinitions="50, *, *"
-                          VerticalOptions="Center"
-                          Margin="10">
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
 
-                        <Image Grid.Column="0"
-                               WidthRequest="40"
-                               HeightRequest="40"
-                               Source="time_icon.png" />
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="20,20"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                        </Border.Shadow>
+                        
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="50, *, *"
+                              VerticalOptions="Center"
+                              Margin="10">
 
-                        <Label Text="{Binding name}"
-                               Grid.Column="1"
-                               Padding="10"
-                               VerticalOptions="Center"
-                               FontSize="16" />
+                            <Image Grid.Column="0"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Source="time_icon.png" />
 
-                        <Grid Grid.Column="2"
-                              RowDefinitions="*, *"
-                              ColumnDefinitions="*"
-                              HorizontalOptions="End" >
+                            <Label Text="{Binding name}"
+                                   Grid.Column="1"
+                                   Padding="10"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
 
-                            <Label Text="{Binding goal_achieve_by_date}"
-                                   Grid.Row="0"
-                                   FontSize="14"
-                                   HorizontalOptions="End" />
+                            <Grid Grid.Column="2"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="End" >
 
-                            <Grid Grid.Row="1"
-                                  RowDefinitions="*"
-                                  ColumnDefinitions="Auto, Auto, Auto, Auto" >
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
 
-                                <Label Text="{Binding time_min}"
-                                       Grid.Column="0"
-                                       FontSize="14" />
+                                <Grid Grid.Row="1"
+                                      RowDefinitions="*"
+                                      ColumnDefinitions="Auto, Auto, Auto, Auto" >
 
-                                <Label Text=" mins. "
-                                       Grid.Column="1"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_min}"
+                                           Grid.Column="0"
+                                           FontSize="14" />
 
-                                <Label Text="{Binding time_sec}"
+                                    <Label Text=" mins. "
+                                           Grid.Column="1"
+                                           FontSize="14"  />
+
+                                    <Label Text="{Binding time_sec}"
                                        Grid.Column="2"
                                        FontSize="14" />
 
-                                <Label Text=" secs."
-                                       Grid.Column="3"
-                                       FontSize="14"  />
+                                    <Label Text=" secs."
+                                           Grid.Column="3"
+                                           FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -388,46 +454,57 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
-                    <Grid RowDefinitions="*"
-                          ColumnDefinitions="50, *, *"
-                          VerticalOptions="Center"
-                          Margin="10">
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
 
-                        <Image Grid.Column="0"
-                               WidthRequest="40"
-                               HeightRequest="40"
-                               Source="time_icon.png" />
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="20,20"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                        </Border.Shadow>
+                        
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="50, *, *"
+                              VerticalOptions="Center"
+                              Margin="10">
 
-                        <Label Text="{Binding name}"
-                               Grid.Column="1"
-                               Padding="10"
-                               VerticalOptions="Center"
-                               FontSize="16" />
+                            <Image Grid.Column="0"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Source="time_icon.png" />
 
-                        <Grid Grid.Column="2"
-                              RowDefinitions="*, *"
-                              ColumnDefinitions="*"
-                              HorizontalOptions="End" >
+                            <Label Text="{Binding name}"
+                                   Grid.Column="1"
+                                   Padding="10"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
 
-                            <Label Text="{Binding goal_achieve_by_date}"
-                                   Grid.Row="0"
-                                   FontSize="14"
-                                   HorizontalOptions="End" />
+                            <Grid Grid.Column="2"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="End" >
 
-                            <Grid Grid.Row="1"
-                                  RowDefinitions="*"
-                                  ColumnDefinitions="Auto, Auto" >
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
 
-                                <Label Text="{Binding time_min}"
-                                       Grid.Column="0"
-                                       FontSize="14" />
+                                <Grid Grid.Row="1"
+                                      RowDefinitions="*"
+                                      ColumnDefinitions="Auto, Auto" >
 
-                                <Label Text=" mins."
-                                       Grid.Column="1"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_min}"
+                                           Grid.Column="0"
+                                           FontSize="14" />
+
+                                    <Label Text=" mins."
+                                           Grid.Column="1"
+                                           FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
             
@@ -442,46 +519,57 @@
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
-                    <Grid RowDefinitions="*"
-                          ColumnDefinitions="50, *, *"
-                          VerticalOptions="Center"
-                          Margin="10">
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
 
-                        <Image Grid.Column="0"
-                               WidthRequest="40"
-                               HeightRequest="40"
-                               Source="time_icon.png" />
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="20,20"
+                                    Radius="40"
+                                    Opacity="0.8" />
+                        </Border.Shadow>
+                        
+                        <Grid RowDefinitions="*"
+                              ColumnDefinitions="50, *, *"
+                              VerticalOptions="Center"
+                              Margin="10">
 
-                        <Label Text="{Binding name}"
-                               Grid.Column="1"
-                               Padding="10"
-                               VerticalOptions="Center"
-                               FontSize="16" />
+                            <Image Grid.Column="0"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Source="time_icon.png" />
 
-                        <Grid Grid.Column="2"
-                              RowDefinitions="*, *"
-                              ColumnDefinitions="*"
-                              HorizontalOptions="End" >
+                            <Label Text="{Binding name}"
+                                   Grid.Column="1"
+                                   Padding="10"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
 
-                            <Label Text="{Binding goal_achieve_by_date}"
-                                   Grid.Row="0"
-                                   FontSize="14"
-                                   HorizontalOptions="End" />
+                            <Grid Grid.Column="2"
+                                  RowDefinitions="*, *"
+                                  ColumnDefinitions="*"
+                                  HorizontalOptions="End" >
 
-                            <Grid Grid.Row="1"
-                                  RowDefinitions="*"
-                                  ColumnDefinitions="Auto, Auto" >
+                                <Label Text="{Binding goal_achieve_by_date}"
+                                       Grid.Row="0"
+                                       FontSize="14"
+                                       HorizontalOptions="End" />
 
-                                <Label Text="{Binding time_sec}"
-                                       Grid.Column="0"
-                                       FontSize="14" />
+                                <Grid Grid.Row="1"
+                                      RowDefinitions="*"
+                                      ColumnDefinitions="Auto, Auto" >
 
-                                <Label Text=" secs."
-                                       Grid.Column="1"
-                                       FontSize="14"  />
+                                    <Label Text="{Binding time_sec}"
+                                           Grid.Column="0"
+                                           FontSize="14" />
+
+                                    <Label Text=" secs."
+                                           Grid.Column="1"
+                                           FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 

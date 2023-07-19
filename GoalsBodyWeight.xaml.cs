@@ -24,8 +24,8 @@ public partial class GoalsBodyWeight : ContentPage
     /* swipe remove BW goal */
     private async void Remove_Body_Weight_Goal(object sender, EventArgs e)
     {
-        SwipeItem remove_bw_goal = (SwipeItem) sender;
-        string goal_name = remove_bw_goal.Text;
+        ImageButton remove_bw_goal = (ImageButton) sender;
+        string goal_name = remove_bw_goal.BindingContext.ToString();
 
         await App.RecordRepo.Remove_Goal_Body_Weight(goal_name);
         Refresh_BW_Goal_List();
