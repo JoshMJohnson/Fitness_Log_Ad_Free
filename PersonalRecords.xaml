@@ -17,61 +17,84 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="edit_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="edit_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="blue"
+                                                 Clicked="Update_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Grid RowDefinitions="*"
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                        Offset="20,20"
+                                        Radius="40"
+                                        Opacity="1" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="*"
                           ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
-                        <Image Grid.Column="0"
+                            <Image Grid.Column="0"
                                WidthRequest="40"
                                HeightRequest="40"
                                Source="weight_icon.png" />
 
-                        <Label Text="{Binding exercise_name}"
+                            <Label Text="{Binding exercise_name}"
                                Grid.Column="1"
                                Padding="10"
                                VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="2"
+                            <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*, Auto"
                               HorizontalOptions="End" >
 
-                            <Label Text="{Binding date_achieved}"
+                                <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="14"
                                    Grid.ColumnSpan="2"
                                    HorizontalOptions="End" />
 
-                            <Label Text="{Binding weight}"
+                                <Label Text="{Binding weight}"
                                    Grid.Row="1"
                                    Grid.Column="0"
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
-                            <Label Text=" lbs."
+                                <Label Text=" lbs."
                                    Grid.Row="1"
                                    Grid.Column="1"
                                    FontSize="14" />
+                            </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -79,79 +102,102 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="edit_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="edit_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="blue"
+                                                 Clicked="Update_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Grid RowDefinitions="*"
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                        Offset="20,20"
+                                        Radius="40"
+                                        Opacity="1" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="*"
                           ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
-                        <Image Grid.Column="0"
+                            <Image Grid.Column="0"
                                WidthRequest="40"
                                HeightRequest="40"
                                Source="time_icon.png" />
 
-                        <Label Text="{Binding exercise_name}"
+                            <Label Text="{Binding exercise_name}"
                                Grid.Column="1"
                                Padding="10"
                                VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="2"
+                            <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
 
-                            <Label Text="{Binding date_achieved}"
+                                <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
-                            <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"
                                   RowDefinitions="*"
                                   ColumnDefinitions="*, Auto, Auto, Auto, Auto, Auto" >
 
-                                <Label Text="{Binding time_hours}"
+                                    <Label Text="{Binding time_hours}"
                                        Grid.Column="0"
                                        HorizontalOptions="End"
                                        FontSize="14"  />
 
-                                <Label Text=" hrs. "
+                                    <Label Text=" hrs. "
                                        Grid.Column="1"
                                        FontSize="14"  />
 
-                                <Label Text="{Binding time_min}"
+                                    <Label Text="{Binding time_min}"
                                        Grid.Column="2"
                                        FontSize="14" />
 
-                                <Label Text=" mins. "
+                                    <Label Text=" mins. "
                                        Grid.Column="3"
                                        FontSize="14"  />
 
-                                <Label Text="{Binding time_sec}"
+                                    <Label Text="{Binding time_sec}"
                                        Grid.Column="4"
                                        FontSize="14" />
 
-                                <Label Text=" secs."
+                                    <Label Text=" secs."
                                        Grid.Column="5"
                                        FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -159,71 +205,94 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="edit_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="edit_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="blue"
+                                                 Clicked="Update_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Grid RowDefinitions="*"
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                        Offset="20,20"
+                                        Radius="40"
+                                        Opacity="1" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="*"
                           ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
-                        <Image Grid.Column="0"
+                            <Image Grid.Column="0"
                                WidthRequest="40"
                                HeightRequest="40"
                                Source="time_icon.png" />
 
-                        <Label Text="{Binding exercise_name}"
+                            <Label Text="{Binding exercise_name}"
                                Padding="10"
                                VerticalOptions="Center"
                                Grid.Column="1"
                                FontSize="16" />
 
-                        <Grid Grid.Column="2"
+                            <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
 
-                            <Label Text="{Binding date_achieved}"
+                                <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
-                            <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"
                                   RowDefinitions="*"
                                   ColumnDefinitions="*, Auto, Auto, Auto" >
 
-                                <Label Text="{Binding time_hours}"
+                                    <Label Text="{Binding time_hours}"
                                        Grid.Column="0"
                                        HorizontalOptions="End"
                                        FontSize="14"  />
 
-                                <Label Text=" hrs. "
+                                    <Label Text=" hrs. "
                                        Grid.Column="1"
                                        FontSize="14"  />
 
-                                <Label Text="{Binding time_min}"
+                                    <Label Text="{Binding time_min}"
                                        Grid.Column="2"
                                        FontSize="14" />
 
-                                <Label Text=" mins."
+                                    <Label Text=" mins."
                                        Grid.Column="3"
                                        FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -231,71 +300,94 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="edit_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="edit_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="blue"
+                                                 Clicked="Update_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Grid RowDefinitions="*"
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                        Offset="20,20"
+                                        Radius="40"
+                                        Opacity="1" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="*"
                           ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
-                        <Image Grid.Column="0"
+                            <Image Grid.Column="0"
                                WidthRequest="40"
                                HeightRequest="40"
                                Source="time_icon.png" />
 
-                        <Label Text="{Binding exercise_name}"
+                            <Label Text="{Binding exercise_name}"
                                VerticalOptions="Center"
                                Grid.Column="1"
                                Padding="10"
                                FontSize="16" />
 
-                        <Grid Grid.Column="2"
+                            <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
 
-                            <Label Text="{Binding date_achieved}"
+                                <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
-                            <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"
                                   RowDefinitions="*"
                                   ColumnDefinitions="*, Auto, Auto, Auto" >
 
-                                <Label Text="{Binding time_hours}"
+                                    <Label Text="{Binding time_hours}"
                                        Grid.Column="0"
                                        HorizontalOptions="End"
                                        FontSize="14"  />
 
-                                <Label Text=" hrs. "
+                                    <Label Text=" hrs. "
                                        Grid.Column="1"
                                        FontSize="14"  />
 
-                                <Label Text="{Binding time_sec}"
+                                    <Label Text="{Binding time_sec}"
                                        Grid.Column="2"
                                        FontSize="14" />
 
-                                <Label Text=" secs."
+                                    <Label Text=" secs."
                                        Grid.Column="3"
                                        FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -303,63 +395,86 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="edit_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="edit_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="blue"
+                                                 Clicked="Update_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Grid RowDefinitions="*"
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                        Offset="20,20"
+                                        Radius="40"
+                                        Opacity="1" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="*"
                           ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
-                        <Image Grid.Column="0"
+                            <Image Grid.Column="0"
                                WidthRequest="40"
                                HeightRequest="40"
                                Source="time_icon.png" />
 
-                        <Label Text="{Binding exercise_name}"
+                            <Label Text="{Binding exercise_name}"
                                Grid.Column="1"
                                VerticalOptions="Center"
                                Padding="10"
                                FontSize="16" />
 
-                        <Grid Grid.Column="2"
+                            <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
 
-                            <Label Text="{Binding date_achieved}"
+                                <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
-                            <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"
                                   RowDefinitions="*"
                                   ColumnDefinitions="*, Auto" >
 
-                                <Label Text="{Binding time_hours}"
+                                    <Label Text="{Binding time_hours}"
                                        Grid.Column="0"
                                        HorizontalOptions="End"
                                        FontSize="14"  />
 
-                                <Label Text=" hrs."
+                                    <Label Text=" hrs."
                                        Grid.Column="1"
                                        FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -367,71 +482,94 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="edit_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="edit_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="blue"
+                                                 Clicked="Update_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Grid RowDefinitions="*"
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                        Offset="20,20"
+                                        Radius="40"
+                                        Opacity="1" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="*"
                           ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
-                        <Image Grid.Column="0"
+                            <Image Grid.Column="0"
                                WidthRequest="40"
                                HeightRequest="40"
                                Source="time_icon.png" />
 
-                        <Label Text="{Binding exercise_name}"
+                            <Label Text="{Binding exercise_name}"
                                Padding="10"
                                Grid.Column="1"
                                VerticalOptions="Center"
                                FontSize="16" />
 
-                        <Grid Grid.Column="2"
+                            <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
 
-                            <Label Text="{Binding date_achieved}"
+                                <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
-                            <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"
                                   RowDefinitions="*"
                                   ColumnDefinitions="*, Auto, Auto, Auto" >
 
-                                <Label Text="{Binding time_min}"
+                                    <Label Text="{Binding time_min}"
                                        Grid.Column="0"
                                        HorizontalOptions="End"
                                        FontSize="14" />
 
-                                <Label Text=" mins. "
+                                    <Label Text=" mins. "
                                        Grid.Column="1"
                                        FontSize="14"  />
 
-                                <Label Text="{Binding time_sec}"
+                                    <Label Text="{Binding time_sec}"
                                        Grid.Column="2"
                                        FontSize="14" />
 
-                                <Label Text=" secs."
+                                    <Label Text=" secs."
                                        Grid.Column="3"
                                        FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -439,63 +577,86 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="edit_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="edit_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="blue"
+                                                 Clicked="Update_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Grid RowDefinitions="*"
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                        Offset="20,20"
+                                        Radius="40"
+                                        Opacity="1" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="*"
                           ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
-                        <Image Grid.Column="0"
+                            <Image Grid.Column="0"
                                WidthRequest="40"
                                HeightRequest="40"
                                Source="time_icon.png" />
 
-                        <Label Text="{Binding exercise_name}"
+                            <Label Text="{Binding exercise_name}"
                                VerticalOptions="Center"
                                Grid.Column="1"
                                Padding="10"
                                FontSize="16" />
 
-                        <Grid Grid.Column="2"
+                            <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
 
-                            <Label Text="{Binding date_achieved}"
+                                <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
-                            <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"
                                   RowDefinitions="*"
                                   ColumnDefinitions="*, Auto" >
 
-                                <Label Text="{Binding time_min}"
+                                    <Label Text="{Binding time_min}"
                                        Grid.Column="0"
                                        HorizontalOptions="End"
                                        FontSize="14" />
 
-                                <Label Text=" mins."
+                                    <Label Text=" mins."
                                        Grid.Column="1"
                                        FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 
@@ -503,63 +664,86 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="trash_icon.png"
-                                       BackgroundColor="Red"
-                                       Invoked="Remove_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="trash_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="red"
+                                                 Clicked="Remove_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.LeftItems>
 
                     <SwipeView.RightItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem Text="{Binding exercise_name}"
-                                       IconImageSource="edit_icon.png"
-                                       BackgroundColor="Blue"
-                                       Invoked="Update_PR" />
+                            <SwipeItemView>
+                                <ImageButton Source="edit_icon.png"
+                                                 Padding="10"
+                                                 Margin="10"
+                                                 WidthRequest="50"
+                                                 HeightRequest="50"
+                                                 BackgroundColor="blue"
+                                                 Clicked="Update_PR"
+                                                 BindingContext="{Binding exercise_name}"/>
+                            </SwipeItemView>
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Grid RowDefinitions="*"
+                    <Border Margin="5"
+                            BackgroundColor="LightGrey">
+
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                        Offset="20,20"
+                                        Radius="40"
+                                        Opacity="1" />
+                        </Border.Shadow>
+
+                        <Grid RowDefinitions="*"
                           ColumnDefinitions="50, *, *"
                           VerticalOptions="Center"
                           Margin="10">
 
-                        <Image Grid.Column="0"
+                            <Image Grid.Column="0"
                                WidthRequest="40"
                                HeightRequest="40"
                                Source="time_icon.png" />
 
-                        <Label Text="{Binding exercise_name}"
+                            <Label Text="{Binding exercise_name}"
                                Grid.Column="1"
                                VerticalOptions="Center"
                                Padding="10"
                                FontSize="16" />
 
-                        <Grid Grid.Column="2"
+                            <Grid Grid.Column="2"
                               RowDefinitions="*, *"
                               ColumnDefinitions="*"
                               HorizontalOptions="End" >
 
-                            <Label Text="{Binding date_achieved}"
+                                <Label Text="{Binding date_achieved}"
                                    Grid.Row="0"
                                    FontSize="14"
                                    HorizontalOptions="End" />
 
-                            <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"
                                   RowDefinitions="*"
                                   ColumnDefinitions="*, Auto" >
 
-                                <Label Text="{Binding time_sec}"
+                                    <Label Text="{Binding time_sec}"
                                        Grid.Column="0"
                                        HorizontalOptions="End"
                                        FontSize="14" />
 
-                                <Label Text=" secs."
+                                    <Label Text=" secs."
                                        Grid.Column="1"
                                        FontSize="14"  />
+                                </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Border>
                 </SwipeView>
             </DataTemplate>
 

@@ -12,11 +12,11 @@
 
 To Do:
  - popup entries for body progression and body weight
+ - delete/edit button icons white instead of black
 
 
 Bugs:
- - goal body weight remove sometimes makes duplicates of other list items
-	- occurs when last n/a date is removed
+ 
 
 Ads:
  - Unity
