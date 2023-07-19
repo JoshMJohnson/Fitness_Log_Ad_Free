@@ -1,3 +1,4 @@
+using AndroidX.ConstraintLayout.Motion.Widget;
 using Java.Lang;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -28,6 +29,7 @@ public partial class CalendarView : StackLayout
 		defaultValue: DateTime.Now,
 		propertyChanged: Selected_Date_Property_Changed);
 
+	/* executes when a date is selected */
 	private static void Selected_Date_Property_Changed(BindableObject bindable, object oldValue, object newValue)
 	{
 		var controls = (CalendarView) bindable;
@@ -92,7 +94,7 @@ public partial class CalendarView : StackLayout
 	public event EventHandler<DateTime> on_date_selected;
     public DateTime _tempDate 
 	{
-        get => (DateTime)GetValue(displayed_month_property);
+        get => (DateTime) GetValue(displayed_month_property);
         set => SetValue(displayed_month_property, value);
     }
     #endregion
@@ -121,7 +123,7 @@ public partial class CalendarView : StackLayout
 			});
 		}
 
-		var selected_date_data = dates.Where(d => d.date.Date == selected_date.Date).FirstOrDefault();
+        var selected_date_data = dates.Where(d => d.date.Date == selected_date.Date).FirstOrDefault();
 
         if (selected_date_data != null)
 		{
@@ -129,7 +131,7 @@ public partial class CalendarView : StackLayout
 			_tempDate = selected_date_data.date;
 		}
 
-		Identify_Date_Needs_Entry_Symbol();
+        Identify_Date_Needs_Entry_Symbol();
     }
 
 	#region Commands
@@ -174,22 +176,23 @@ public partial class CalendarView : StackLayout
 
 	/* marks/unmarks each date if it has/hasn't any workout entries */
 	private async void Identify_Date_Needs_Entry_Symbol()
-	{
+	{		
 		/* loops through all the dates in the month being displayed */
 		for (int i = 0; i < dates.Count; i++)
 		{
-			DateTime current_date = dates[i].date;
+			DateTime temp_date = dates[i].date;
 
-            List<CalendarEntry> entries = await App.RecordRepo.Get_Calendar_Entries_List(current_date);
+            List<CalendarEntry> entries = await App.RecordRepo.Get_Calendar_Entries_List(temp_date);
 
-			if (entries.Count != 0) /* if at least one entry for current calendar date */
+            if (entries.Count != 0) /* if at least one entry for current calendar date */
 			{
-				dates[i].has_entry = true;
+                dates[i].Has_Entry = true;
+
             }
 			else /* else; no entries for current calendar date */
 			{
-                dates[i].has_entry = false;
+                dates[i].Has_Entry = false;
             }
         }
-	}
+    }
 }

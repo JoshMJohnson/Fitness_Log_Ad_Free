@@ -24,29 +24,11 @@ public partial class BodyProgression : ContentPage
     /* refreshes the PR list being displayed on UI */
     public async void Refresh_Progression()
     {
-        /* TESTING START */
         List<Progression> progression_list = new List<Progression>();
 
-        Progression temp1 = new Progression();
-        Progression temp2 = new Progression();
-        Progression temp3 = new Progression();
+        progression_list_display.ItemsSource = progression_list;
 
-        temp1.id = 1;
-        temp2.id = 2;
-        temp3.id = 3;
-
-        temp1.image_full_path = "image1.jpg";
-        temp2.image_full_path = "image2.png";
-        temp3.image_full_path = "image3.jpg";
-
-        //progression_list.Add(temp1);
-        //progression_list.Add(temp2);
-        //progression_list.Add(temp3);
-        /* TESTING END */
-
-        progression_display.ItemsSource = progression_list;
-
-        if (progression_list.Count == 0)  /* if pr list is empty - no pr's set */
+        if (progression_list.Count == 0)  /* if body progression list is empty - no body progression's set */
         {
             vertical_layout_body_progression_empty.IsVisible = true;
         }
@@ -81,5 +63,11 @@ public partial class BodyProgression : ContentPage
         Grid goal_layout = progression_layout;
         Grid.SetRow(vertical_layout_body_progression_empty, 0);
         goal_layout.Add(vertical_layout_body_progression_empty);
+    }
+
+    /* todo button clicked to create a workout category */
+    private async void Progression_Selected(object sender, EventArgs e)
+    {
+
     }
 }

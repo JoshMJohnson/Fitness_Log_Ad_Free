@@ -11,5 +11,10 @@ public class CalendarDay : CalendarDatePropertyChanged
 		set => SetProperty(ref _isCurrentDate, value);
 	}
 
-	public bool has_entry { get; set; }
+	private bool has_entry;
+	public bool Has_Entry
+	{
+		get => has_entry;
+		set => SetProperty(ref has_entry, value);
+	}
 }

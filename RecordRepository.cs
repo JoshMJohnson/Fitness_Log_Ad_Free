@@ -29,15 +29,17 @@ public class RecordRepository
 
         /* create database tables */
         await conn.CreateTablesAsync<Category, PR, GoalPR, GoalBW, CalendarEntry>();
+        await conn.CreateTableAsync<Progression>();
+
 
         /*
          await conn.CreateTableAsync<BodyWeight>();
-         await conn.CreateTableAsync<Progression>();*/
+        */
     }
 
     /* * body progression section */
     /* todo adds an entry to the body progression table within the database */
-    public async Task Add_Progression()
+    public async Task Add_Progression(string date)
 	{
 
 	}

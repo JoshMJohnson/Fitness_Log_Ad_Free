@@ -13,18 +13,18 @@
     <Grid x:Name="progression_layout"
           RowDefinitions="*"
           ColumnDefinitions="*">
-
-        <CollectionView x:Name="progression_display"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Start">
-
+        
+        <CollectionView x:Name="progression_list_display">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Progression">
+                    <HorizontalStackLayout Padding="5"
+                                           HorizontalOptions="Center">
 
-                    <Label Text="{Binding image_full_path}"
-                           Grid.Column="0"
-                           FontSize="16"
-                           VerticalOptions="Center" />
+                        <Button Text="{Binding image_date}"
+                                VerticalOptions="Start"
+                                HorizontalOptions="Center"
+                                Margin="10"/>
+                    </HorizontalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
