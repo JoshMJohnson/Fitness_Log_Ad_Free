@@ -29,7 +29,7 @@ public class RecordRepository
 
         /* create database tables */
         await conn.CreateTablesAsync<Category, PR, GoalPR, GoalBW, CalendarEntry>();
-        await conn.CreateTableAsync<Progression>();
+        //await conn.CreateTableAsync<Progression>();
 
 
         /*
@@ -191,7 +191,6 @@ public class RecordRepository
             List<GoalBW> sorted_body_weight_goal_list = new List<GoalBW>();
             List<GoalBW> final_list = new List<GoalBW>();
 
-            int paused_index = 0;
 
             /* loops through list of body weight goal entries found in database */
             for (int i = 0; i < body_weight_goal_list.Count; i++)
@@ -199,30 +198,17 @@ public class RecordRepository
                 string[] date_array = body_weight_goal_list[i].goal_achieve_by_date.Split('/');
 
                 if (body_weight_goal_list[i].date_desired) /* if goal has no date desired set */
-                {
-                    if (i == 0) /* if there are no N/A dates in database */
-                    {
-                        paused_index = i;
-                        break;
-                    }
-
+                {                   
                     body_weight_goal_list[i].date_sort = new DateTime(int.Parse(date_array[2]), int.Parse(date_array[0]), int.Parse(date_array[1]));
                     sorted_body_weight_goal_list.Add(body_weight_goal_list[i]); 
                 }
                 else /* else; no goal date set */
                 {
-                    paused_index = i;
-                    break;
+                    final_list.Add(body_weight_goal_list[i]);
                 }
             }
 
             sorted_body_weight_goal_list = sorted_body_weight_goal_list.OrderBy(goal => goal.date_sort).ToList();
-
-            /* adds all none date desired body weight goals to final list */
-            for (int i = paused_index; i < body_weight_goal_list.Count; i++)
-            {
-                final_list.Add(body_weight_goal_list[i]);
-            }
 
             /* adds all date desired body weight goals to final list */
             for (int i = 0; i < sorted_body_weight_goal_list.Count; i++)
