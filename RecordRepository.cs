@@ -319,8 +319,6 @@ public class RecordRepository
             List<GoalPR> sorted_pr_goal_list = new List<GoalPR>();
             List<GoalPR> final_list = new List<GoalPR>();
 
-            int paused_index = 0;
-
             /* loops through list of pr goal entries found in database */
             for (int i = 0; i < pr_goal_list.Count; i++)
             {
@@ -328,29 +326,16 @@ public class RecordRepository
 
                 if (pr_goal_list[i].date_desired) /* if goal has no date desired set */
                 {
-                    if (i == 0) /* if there are no N/A dates in database */
-                    {
-                        paused_index = i;
-                        break;
-                    }
-
                     pr_goal_list[i].date_sort = new DateTime(int.Parse(date_array[2]), int.Parse(date_array[0]), int.Parse(date_array[1]));
                     sorted_pr_goal_list.Add(pr_goal_list[i]);
                 }
                 else /* else; no goal date set */
                 {
-                    paused_index = i;
-                    break;
+                    final_list.Add(pr_goal_list[i]);
                 }
             }
 
             sorted_pr_goal_list = sorted_pr_goal_list.OrderBy(goal => goal.date_sort).ToList();
-
-            /* adds all none date desired pr goals to final list */
-            for (int i = paused_index; i < pr_goal_list.Count; i++)
-            {
-                final_list.Add(pr_goal_list[i]);
-            }
 
             /* adds all date desired pr goals to final list */
             for (int i = 0; i < sorted_pr_goal_list.Count; i++)
