@@ -142,6 +142,7 @@ public partial class CalendarView : StackLayout
 		selected_date = current_date.date;
 		on_date_selected?.Invoke(null, current_date.date);
 		selected_date_command?.Execute(current_date.date);
+		Identify_Date_Needs_Entry_Symbol();
     });
 
 	/* changes temp variables to next months data */
