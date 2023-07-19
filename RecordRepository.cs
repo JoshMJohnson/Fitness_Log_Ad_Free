@@ -34,6 +34,7 @@ public class RecordRepository
 
         /*
          await conn.CreateTableAsync<BodyWeight>();
+        await conn.CreateTableAsync<Note>();
         */
     }
 

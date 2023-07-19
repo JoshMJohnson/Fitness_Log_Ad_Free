@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:WorkoutLog.Model"
              x:Class="WorkoutLog.Notes"
              Title="Notes">
-    
-    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"
+                     Clicked="Add_Note" />
+    </ContentPage.ToolbarItems>
+
+    <Grid x:Name="notes_layout"
+          RowDefinitions="*"
+          ColumnDefinitions="*">
+
+        <CollectionView x:Name="notes_display"
+                                VerticalOptions="Start" >
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Note">
+                    <Label Text="{Binding name}"
+                                   FontAttributes="Italic"
+                                   Padding="5"
+                                   HorizontalOptions="Center" />
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

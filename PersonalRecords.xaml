@@ -23,7 +23,7 @@
                                              Margin="10"
                                              WidthRequest="50"
                                              HeightRequest="50"
-                                             BackgroundColor="red"
+                                             BackgroundColor="Red"
                                              Clicked="Remove_PR"
                                              BindingContext="{Binding exercise_name}"/>
                             </SwipeItemView>
@@ -38,7 +38,7 @@
                                              Margin="10"
                                              WidthRequest="50"
                                              HeightRequest="50"
-                                             BackgroundColor="blue"
+                                             BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
                             </SwipeItemView>
@@ -123,7 +123,7 @@
                                              Margin="10"
                                              WidthRequest="50"
                                              HeightRequest="50"
-                                             BackgroundColor="blue"
+                                             BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
                             </SwipeItemView>
@@ -226,7 +226,7 @@
                                              Margin="10"
                                              WidthRequest="50"
                                              HeightRequest="50"
-                                             BackgroundColor="blue"
+                                             BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
                             </SwipeItemView>
@@ -321,7 +321,7 @@
                                              Margin="10"
                                              WidthRequest="50"
                                              HeightRequest="50"
-                                             BackgroundColor="blue"
+                                             BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
                             </SwipeItemView>
@@ -416,7 +416,7 @@
                                              Margin="10"
                                              WidthRequest="50"
                                              HeightRequest="50"
-                                             BackgroundColor="blue"
+                                             BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
                             </SwipeItemView>
@@ -503,7 +503,7 @@
                                              Margin="10"
                                              WidthRequest="50"
                                              HeightRequest="50"
-                                             BackgroundColor="blue"
+                                             BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
                             </SwipeItemView>
@@ -598,7 +598,7 @@
                                              Margin="10"
                                              WidthRequest="50"
                                              HeightRequest="50"
-                                             BackgroundColor="blue"
+                                             BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
                             </SwipeItemView>
@@ -685,7 +685,7 @@
                                              Margin="10"
                                              WidthRequest="50"
                                              HeightRequest="50"
-                                             BackgroundColor="blue"
+                                             BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
                             </SwipeItemView>
