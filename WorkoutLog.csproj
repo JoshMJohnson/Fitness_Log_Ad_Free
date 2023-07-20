@@ -105,6 +105,9 @@
 	  <MauiXaml Update="Popup\GoalPRPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Popup\NotesAddPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Popup\PersonalRecordAddPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

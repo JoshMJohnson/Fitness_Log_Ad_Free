@@ -1,3 +1,4 @@
+using Java.Util;
 using SQLite;
 
 
@@ -10,4 +11,6 @@ public class Note
 	public string name { get; set; }
 
 	public string content { get; set; }
+
+	public DateTime last_edited { get; set; }
 }

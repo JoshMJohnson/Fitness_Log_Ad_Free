@@ -1,3 +1,7 @@
+using CommunityToolkit.Maui.Views;
+using WorkoutLog.Popup;
+using WorkoutLog.Model;
+
 namespace WorkoutLog;
 
 public partial class Notes : ContentPage
@@ -42,7 +46,8 @@ public partial class Notes : ContentPage
     /* todo executed when the Notes plus button clicked */
     private async void Add_Note(object sender, EventArgs e)
     {
-
+        await this.ShowPopupAsync(new NotesAddPopup());
+        Refresh_Notes();
     }
 
     /* todo executed when a Note is selected to be removed */
@@ -53,6 +58,12 @@ public partial class Notes : ContentPage
 
     /* todo updates a Note */
     private async void Update_Note(object sender, EventArgs e)
+    {
+
+    }
+
+    /* todo refreshes the display of notes */
+    public async void Refresh_Notes()
     {
 
     }
