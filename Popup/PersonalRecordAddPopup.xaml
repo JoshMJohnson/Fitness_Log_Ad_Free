@@ -153,7 +153,6 @@
               ColumnDefinitions="*, *">
 
             <Button Text="Record"
-                    Grid.Row="4"
                     Grid.Column="0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
@@ -161,7 +160,6 @@
                     Margin="10" />
 
             <Button Text="Cancel"
-                    Grid.Row="4"
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"

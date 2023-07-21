@@ -7,9 +7,51 @@
            HorizontalOptions="Center"
            Size="300, 600">
 
-    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, *"
-          ColumnDefinitions="*, *">
+    <Grid RowDefinitions="Auto, Auto, *, Auto"
+          ColumnDefinitions="Auto, *, Auto">
 
+        <Button Grid.Row="0"
+                Grid.Column="2"
+                Clicked="Close_Note"
+                Margin="10"
+                BackgroundColor="DarkGrey"
+                WidthRequest="50"
+                Text="X"/>
         
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Margin="10"
+               x:Name="note_name_display"/>
+
+        <Label Grid.Row="1"
+               Grid.Column="2"
+               Margin="10"
+               x:Name="last_modified_display" />
+
+        <Label Grid.ColumnSpan="3"
+               Grid.Row="2"
+               Margin="10"
+               x:Name="note_content_display" />
+
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="3"
+              RowDefinitions="*"
+              Margin="10"
+              ColumnDefinitions="*, *">
+
+            <Button Text="Update"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    Clicked="Update_Note" 
+                    Margin="10" />
+
+            <Button Text="Delete"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="Delete_Note" 
+                    Margin="10" />
+        </Grid>
     </Grid>
 </mct:Popup>

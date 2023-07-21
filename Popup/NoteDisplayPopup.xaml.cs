@@ -5,8 +5,39 @@ namespace WorkoutLog.Popup;
 
 public partial class NoteDisplayPopup
 {
+	private Note current_note { get; set; }
+
 	public NoteDisplayPopup(string note_name)
 	{
 		InitializeComponent();
+		View_Note(note_name);
+    }
+
+	/* todo displays the notes content */
+	private async void View_Note(string note_name)
+	{
+        current_note = await App.RecordRepo.Get_Note(note_name);
+
+		note_name_display.Text = current_note.name;
+		last_modified_display.Text = current_note.last_edited_date_string;
+        note_content_display.Text = current_note.content;
+    }
+
+	/* todo executes when update note button clicked */
+	private void Update_Note(object sender, EventArgs e)
+	{
+
+	}
+
+    /* todo executes when delete note button is clicked */
+    private void Delete_Note(object sender, EventArgs e)
+    {
+
+    }
+
+	/* closes the note view */
+	private void Close_Note(object sender, EventArgs e)
+	{
+		Close();
 	}
 }
