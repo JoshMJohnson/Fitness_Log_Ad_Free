@@ -655,7 +655,7 @@ public class RecordRepository
         return temp_category;
     }
 
-    /* ? adds a note to the database */
+    /* adds a note to the database */
     public async Task Add_Note(string note_name, string note_content)
     {
         ArgumentNullException.ThrowIfNull(note_name, nameof(note_name));
@@ -754,5 +754,12 @@ public class RecordRepository
         }
 
         return new List<Note>();
+    }
+
+    /* ? returns a single note from the database matching the parameter primary key */
+    public async Task<Note> Get_Note(string note_name)
+    {
+        Note temp_note= await conn.FindAsync<Note>(note_name);
+        return temp_note;
     }
 }

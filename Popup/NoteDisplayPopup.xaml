@@ -6,6 +6,10 @@
            VerticalOptions="Start"
            HorizontalOptions="Center"
            Size="300, 600">
-    
-    
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, *"
+          ColumnDefinitions="*, *">
+
+        
+    </Grid>
 </mct:Popup>

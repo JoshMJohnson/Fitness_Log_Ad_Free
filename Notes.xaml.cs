@@ -1,6 +1,7 @@
 using CommunityToolkit.Maui.Views;
 using WorkoutLog.Popup;
 using WorkoutLog.Model;
+using System.Windows.Input;
 
 namespace WorkoutLog;
 
@@ -13,7 +14,6 @@ public partial class Notes : ContentPage
 		InitializeComponent();
         Empty_Notes_Display();
         Refresh_Notes();
-
     }
 
     /* creates message for empty categories */
@@ -51,20 +51,16 @@ public partial class Notes : ContentPage
         Refresh_Notes();
     }
 
-    /* todo executed when a Note is selected to be removed */
-    private async void Remove_Note(object sender, EventArgs e)
+    /* handles transition to view note */
+    private async void View_Note(object sender, SelectionChangedEventArgs note_clicked)
     {
-
-    }
-
-    /* todo updates a Note */
-    private async void Update_Note(object sender, EventArgs e)
-    {
-
+        string note_name = (note_clicked.CurrentSelection.FirstOrDefault() as Note)?.name;
+        await this.ShowPopupAsync(new NoteDisplayPopup(note_name));
+        Refresh_Notes();
     }
 
     /* ? refreshes the display of notes */
-    public async void Refresh_Notes()
+    private async void Refresh_Notes()
     {
         List<Note> notes_list = await App.RecordRepo.Get_All_Notes();
 
@@ -78,7 +74,5 @@ public partial class Notes : ContentPage
         {
             vertical_layout_empty_notes_list.IsVisible = false;
         }
-
-
     }
 }

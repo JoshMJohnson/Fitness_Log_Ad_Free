@@ -15,6 +15,8 @@
           ColumnDefinitions="*">
 
         <CollectionView x:Name="notes_display"
+                        SelectionMode="Single"
+                        SelectionChanged="View_Note"
                         VerticalOptions="Start" >
 
             <CollectionView.ItemTemplate>
@@ -28,6 +30,18 @@
                                     Radius="40"
                                     Opacity="1" />
                         </Border.Shadow>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal"></VisualState>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="LightSkyBlue"></Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
 
                         <Grid RowDefinitions="*, *"
                               ColumnDefinitions="Auto, *, Auto"
