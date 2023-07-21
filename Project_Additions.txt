@@ -26,3 +26,7 @@ Ads:
 
 
 Testing:
+ - resizeable for all versions of android
+	- pixel
+	- small phone
+	- tablet
