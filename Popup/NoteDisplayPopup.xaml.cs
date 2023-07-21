@@ -13,7 +13,7 @@ public partial class NoteDisplayPopup
 		View_Note(note_name);
     }
 
-	/* todo displays the notes content */
+	/* displays the notes content */
 	private async void View_Note(string note_name)
 	{
         current_note = await App.RecordRepo.Get_Note(note_name);
