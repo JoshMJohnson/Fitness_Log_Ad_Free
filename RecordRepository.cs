@@ -29,6 +29,8 @@ public class RecordRepository
 
         /* create database tables */
         await conn.CreateTablesAsync<Category, PR, GoalPR, GoalBW, CalendarEntry>();
+        await conn.CreateTableAsync<Note>();
+
         //await conn.CreateTableAsync<Progression>();
 
 
@@ -651,5 +653,106 @@ public class RecordRepository
     {
         Category temp_category = await conn.FindAsync<Category>(category_name);
         return temp_category;
+    }
+
+    /* ? adds a note to the database */
+    public async Task Add_Note(string note_name, string note_content)
+    {
+        ArgumentNullException.ThrowIfNull(note_name, nameof(note_name));
+        ArgumentNullException.ThrowIfNull(note_content, nameof(note_content));
+
+        try
+        {
+            await Init_Database();
+            DateTime current_date = DateTime.Now;
+
+            /* translate DateTime to string; removes the time display */
+            string date_only;
+            string[] date_time_temp = current_date.ToString().Split(' ');
+            date_only = date_time_temp[0];
+
+            Note new_note = new Note
+            {
+                name = note_name,
+                content = note_content,
+                last_edited_date_string = date_only,
+                last_edited_date = current_date
+            };
+
+            await conn.InsertAsync(new_note);
+
+            status_message = string.Format("{0} note added", note_name);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to add note: {0}. Error: {1}", note_name, e.Message);
+        }
+    }
+
+    /* ? removes a note to the database */
+    public async Task Remove_Note(string note_name)
+    {
+        ArgumentNullException.ThrowIfNull(note_name, nameof(note_name));
+
+        try
+        {
+            await Init_Database();
+            Note removing_note = await conn.FindAsync<Note>(note_name);
+            await conn.DeleteAsync(removing_note);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to remove {0} from notes. Error: {1}", note_name, e.Message);
+        }
+    }
+
+    /* ?  updates a note in the database */
+    public async Task Edit_Note(string note_name, string note_content)
+    {
+        ArgumentNullException.ThrowIfNull(note_name, nameof(note_name));
+        ArgumentNullException.ThrowIfNull(note_content, nameof(note_content));
+
+        try
+        {
+            await Init_Database();
+
+            DateTime current_date = DateTime.Now;
+
+            /* translate DateTime to string; removes the time display */
+            string date_only;
+            string[] date_time_temp = current_date.ToString().Split(' ');
+            date_only = date_time_temp[0];
+
+            Note updating_note = await conn.FindAsync<Note>(note_name);
+            updating_note.content = note_content;
+            updating_note.last_edited_date_string = date_only;
+            updating_note.last_edited_date = current_date;
+
+            await conn.UpdateAsync(updating_note);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to update. Error: {0}", e.Message);
+        }
+    }
+
+    /* ? returns a list of notes found in database */
+    public async Task<List<Note>> Get_All_Notes()
+    {
+        try
+        {
+            await Init_Database();
+
+            List<Note> notes_list = await conn.Table<Note>().ToListAsync();
+            notes_list = notes_list.OrderBy(note => note.last_edited_date).ToList();
+
+            return notes_list;
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+        }
+
+        return new List<Note>();
     }
 }

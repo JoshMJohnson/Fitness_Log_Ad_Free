@@ -1,6 +1,4 @@
-using Java.Util;
 using SQLite;
-
 
 namespace WorkoutLog.Model;
 
@@ -12,5 +10,6 @@ public class Note
 
 	public string content { get; set; }
 
-	public DateTime last_edited { get; set; }
+	public string last_edited_date_string { get; set; }
+	public DateTime last_edited_date { get; set; }
 }

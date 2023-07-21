@@ -1,3 +1,5 @@
+using System.Xml.Linq;
+
 namespace WorkoutLog.Popup;
 
 public partial class GoalBodyWeightPopup
@@ -17,36 +19,45 @@ public partial class GoalBodyWeightPopup
         {
             goal_name = goal_name.Trim(); /* removes leading and trailing whitespace */
 
-            string weight_update_string = weight_entry.Text;
-
-            if (weight_update_string != null && weight_update_string.Length != 0) /* if body weight value is not empty */
+            if (goal_name != null && goal_name.Length != 0) /* if name field is not empty after trim */
             {
-                weight_update_string = weight_update_string.ToString();
 
-                int weight_update = int.Parse(weight_update_string);
+                string weight_update_string = weight_entry.Text;
 
-                DateTime date;
-                bool has_desired;
-
-                if (date_included_toggle.IsToggled) /* if pr goal date included */
+                if (weight_update_string != null && weight_update_string.Length != 0) /* if body weight value is not empty */
                 {
-                    date = weight_date.Date;
-                    has_desired = true;
+                    weight_update_string = weight_update_string.ToString();
+
+                    int weight_update = int.Parse(weight_update_string);
+
+                    DateTime date;
+                    bool has_desired;
+
+                    if (date_included_toggle.IsToggled) /* if pr goal date included */
+                    {
+                        date = weight_date.Date;
+                        has_desired = true;
+                    }
+                    else /* else pr goal date not included */
+                    {
+                        date = DateTime.Now;
+                        has_desired = false;
+                    }
+
+                    await App.RecordRepo.Add_Goal_Body_Weight(goal_name, date, has_desired, weight_update);
+
+                    error_prompt.IsVisible = false;
+                    Close();
                 }
-                else /* else pr goal date not included */
+                else /* else; body weight value is empty */
                 {
-                    date = DateTime.Now;
-                    has_desired = false;
+                    error_prompt.Text = "Goal weight value cannot be empty";
+                    error_prompt.IsVisible = true;
                 }
-
-                await App.RecordRepo.Add_Goal_Body_Weight(goal_name, date, has_desired, weight_update);
-
-                error_prompt.IsVisible = false;
-                Close();
             }
-            else /* else; body weight value is empty */
+            else /* else; goal name field is empty */
             {
-                error_prompt.Text = "Goal weight value cannot be empty";
+                error_prompt.Text = "Goal name cannot be empty";
                 error_prompt.IsVisible = true;
             }
         }

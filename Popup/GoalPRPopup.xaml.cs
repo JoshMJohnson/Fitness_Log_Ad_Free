@@ -17,97 +17,105 @@ public partial class GoalPRPopup
         {
             name = name.Trim(); /* removes leading and trailing whitespace */
 
-            DateTime date;
-            bool has_desired;
-
-            if (date_included_toggle.IsToggled) /* if pr goal date included */
+            if (name != null && name.Length != 0) /* if name field is not empty after trim */
             {
-                date = achieve_by_date.Date;
-                has_desired = true;
-            }
-            else /* else pr goal date not included */
-            {
-                date = DateTime.Now;
-                has_desired = false;
-            }
+                DateTime date;
+                bool has_desired;
 
-            if (exercise_type_toggle.IsToggled) /* if time pr */
-            {
-                string hr_update_string = hr_pr.Text;
-                string min_update_string = min_pr.Text;
-                string sec_update_string = sec_pr.Text;
-
-                if ((hr_update_string != null && hr_update_string.Length != 0) || (min_update_string != null && min_update_string.Length != 0)
-                        || (sec_update_string != null && sec_update_string.Length != 0)) /* if at least one time field is not empty */
+                if (date_included_toggle.IsToggled) /* if pr goal date included */
                 {
-                    int hr_update = 0;
-                    int min_update = 0;
-                    int sec_update = 0;
-                                       
-                    if (sec_update_string != null && sec_update_string.Length != 0) /* if sec field is not empty */
-                    {
-                        sec_update_string = sec_update_string.ToString();
-                        sec_update = int.Parse(sec_update_string);
+                    date = achieve_by_date.Date;
+                    has_desired = true;
+                }
+                else /* else pr goal date not included */
+                {
+                    date = DateTime.Now;
+                    has_desired = false;
+                }
 
-                        if (sec_update >= 60) /* if sec field is more than 60 mins */
+                if (exercise_type_toggle.IsToggled) /* if time pr */
+                {
+                    string hr_update_string = hr_pr.Text;
+                    string min_update_string = min_pr.Text;
+                    string sec_update_string = sec_pr.Text;
+
+                    if ((hr_update_string != null && hr_update_string.Length != 0) || (min_update_string != null && min_update_string.Length != 0)
+                            || (sec_update_string != null && sec_update_string.Length != 0)) /* if at least one time field is not empty */
+                    {
+                        int hr_update = 0;
+                        int min_update = 0;
+                        int sec_update = 0;
+
+                        if (sec_update_string != null && sec_update_string.Length != 0) /* if sec field is not empty */
                         {
-                            int additonal_mins = sec_update / 60;
-                            min_update = additonal_mins;
+                            sec_update_string = sec_update_string.ToString();
+                            sec_update = int.Parse(sec_update_string);
 
-                            sec_update = sec_update % 60;
+                            if (sec_update >= 60) /* if sec field is more than 60 mins */
+                            {
+                                int additonal_mins = sec_update / 60;
+                                min_update = additonal_mins;
+
+                                sec_update = sec_update % 60;
+                            }
                         }
-                    }
 
-                    if (min_update_string != null && min_update_string.Length != 0) /* if min field is not empty */
-                    {
-                        min_update_string = min_update_string.ToString();
-                        min_update += int.Parse(min_update_string);
-
-                        if (min_update >= 60) /* if min field is more than 60 mins */
+                        if (min_update_string != null && min_update_string.Length != 0) /* if min field is not empty */
                         {
-                            int additional_hrs = min_update / 60;
-                            hr_update = additional_hrs;
+                            min_update_string = min_update_string.ToString();
+                            min_update += int.Parse(min_update_string);
 
-                            min_update = min_update % 60;
+                            if (min_update >= 60) /* if min field is more than 60 mins */
+                            {
+                                int additional_hrs = min_update / 60;
+                                hr_update = additional_hrs;
+
+                                min_update = min_update % 60;
+                            }
                         }
-                    }
 
-                    if (hr_update_string != null && hr_update_string.Length != 0) /* if hour field is not empty */
+                        if (hr_update_string != null && hr_update_string.Length != 0) /* if hour field is not empty */
+                        {
+                            hr_update_string = hr_update_string.ToString();
+                            hr_update += int.Parse(hr_update_string);
+                        }
+
+                        await App.RecordRepo.Add_Goal_PR(name, date, has_desired, false, -1, hr_update, min_update, sec_update);
+
+                        error_prompt.IsVisible = false;
+                        Close();
+                    }
+                    else /* else; time fields are empty */
                     {
-                        hr_update_string = hr_update_string.ToString();
-                        hr_update += int.Parse(hr_update_string);
+                        error_prompt.Text = "At least one time field must have a value";
+                        error_prompt.IsVisible = true;
                     }
-
-                    await App.RecordRepo.Add_Goal_PR(name, date, has_desired, false, -1, hr_update, min_update, sec_update);
-
-                    error_prompt.IsVisible = false;
-                    Close();
                 }
-                else /* else; time fields are empty */
+                else /* else weight pr */
                 {
-                    error_prompt.Text = "At least one time field must have a value";
-                    error_prompt.IsVisible = true;
+                    string weight_update_string = weight_pr.Text;
+
+                    if (weight_update_string != null && weight_update_string.Length != 0)
+                    {
+                        weight_update_string = weight_update_string.ToString();
+
+                        int weight_update = int.Parse(weight_update_string);
+                        await App.RecordRepo.Add_Goal_PR(name, date, has_desired, true, weight_update, -1, -1, -1);
+
+                        error_prompt.IsVisible = false;
+                        Close();
+                    }
+                    else
+                    {
+                        error_prompt.Text = "Weight value cannot be empty";
+                        error_prompt.IsVisible = true;
+                    }
                 }
             }
-            else /* else weight pr */
+            else /* else; name field is empty */
             {
-                string weight_update_string = weight_pr.Text;
-
-                if (weight_update_string != null && weight_update_string.Length != 0)
-                {
-                    weight_update_string = weight_update_string.ToString();
-
-                    int weight_update = int.Parse(weight_update_string);
-                    await App.RecordRepo.Add_Goal_PR(name, date, has_desired, true, weight_update, -1, -1, -1);
-
-                    error_prompt.IsVisible = false;
-                    Close();
-                }
-                else
-                {
-                    error_prompt.Text = "Weight value cannot be empty";
-                    error_prompt.IsVisible = true;
-                }
+                error_prompt.Text = "Goal name cannot be empty";
+                error_prompt.IsVisible = true;
             }
         }
         else /* else; name field is empty */

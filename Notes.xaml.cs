@@ -12,6 +12,7 @@ public partial class Notes : ContentPage
 	{
 		InitializeComponent();
         Empty_Notes_Display();
+        Refresh_Notes();
 
     }
 
@@ -43,7 +44,7 @@ public partial class Notes : ContentPage
         empty_display.Add(vertical_layout_empty_notes_list);
     }
 
-    /* todo executed when the Notes plus button clicked */
+    /* executed when the Notes plus button clicked */
     private async void Add_Note(object sender, EventArgs e)
     {
         await this.ShowPopupAsync(new NotesAddPopup());
@@ -62,9 +63,22 @@ public partial class Notes : ContentPage
 
     }
 
-    /* todo refreshes the display of notes */
+    /* ? refreshes the display of notes */
     public async void Refresh_Notes()
     {
+        List<Note> notes_list = await App.RecordRepo.Get_All_Notes();
+
+        notes_display.ItemsSource = notes_list;
+
+        if (notes_list.Count == 0)  /* if pr list is empty - no pr's set */
+        {
+            vertical_layout_empty_notes_list.IsVisible = true;
+        }
+        else  /* else pr list is not empty */
+        {
+            vertical_layout_empty_notes_list.IsVisible = false;
+        }
+
 
     }
 }
