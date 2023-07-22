@@ -19,7 +19,7 @@ To Do:
 
 Bugs:
 	- text wrapping on all labels
- 
+	- long user inputs currently overlap labels 
 
 Ads:
  - Unity
