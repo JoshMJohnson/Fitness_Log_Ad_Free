@@ -40,6 +40,7 @@
         <Label Grid.Row="2"
                Margin="10"
                Grid.Column="0"
+               FontAttributes="Italic"
                x:Name="last_modified_display" />
 
         <ScrollView Grid.Row="3"
