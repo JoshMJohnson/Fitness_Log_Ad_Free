@@ -67,12 +67,14 @@
                     Grid.Column="0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
+                    WidthRequest="85"
                     Clicked="Remove_Record" />
 
             <Button Text="Cancel"
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
+                    WidthRequest="85"
                     Clicked="Cancel_Record" />
         </Grid>
     </Grid>

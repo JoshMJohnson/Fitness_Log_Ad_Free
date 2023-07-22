@@ -5,12 +5,12 @@
            x:Class="WorkoutLog.Popup.CalendarCategoryRemovePopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="250, 225" >
+           Size="225, 225" >
 
     <Grid ColumnDefinitions="*, *" 
           RowDefinitions="Auto, Auto, *">
 
-        <Label Text="Remove Category"
+        <Label Text="Delete Category"
                FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"
@@ -43,17 +43,19 @@
               Margin="10"
               ColumnDefinitions="*, *">
 
-            <Button Text="Remove"
+            <Button Text="Delete"
                     Grid.Column="0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
                     x:Name="remove_category_button"
+                    WidthRequest="85"
                     Clicked="Remove_Category" />
 
             <Button Text="Cancel"
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
+                    WidthRequest="85"
                     Clicked="Cancel_Remove_Category" />
         </Grid>
     </Grid>

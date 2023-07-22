@@ -5,12 +5,12 @@
            x:Class="WorkoutLog.Popup.NoteDisplayPopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="300, 600">
+           Size="300, 500">
 
     <Grid RowDefinitions="Auto, Auto, Auto, *, Auto"
           ColumnDefinitions="*, Auto">
 
-        <Label Text="Note"
+        <Label Text="Note"               
                FontSize="24"
                Margin="10"
                LineHeight="100"
@@ -27,6 +27,7 @@
                 WidthRequest="50"
                 HeightRequest="50"
                 HorizontalOptions="End"
+                TextColor="Black"
                 Text="X"/>
         
         <Label Grid.Row="1"
@@ -55,11 +56,12 @@
               Margin="10"
               ColumnDefinitions="*, *">
 
-            <Button Text="Update"
+            <Button Text="Edit"
                     Grid.Column="0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
-                    Clicked="Update_Note" 
+                    Clicked="Edit_Note" 
+                    WidthRequest="100"
                     Margin="10" />
 
             <Button Text="Delete"
@@ -67,6 +69,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Clicked="Delete_Note" 
+                    WidthRequest="100"
                     Margin="10" />
         </Grid>
     </Grid>

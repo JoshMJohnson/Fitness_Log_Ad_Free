@@ -131,7 +131,8 @@
                     Grid.Column="0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
-                    Clicked="Submit_PR_Update" 
+                    Clicked="Submit_PR_Update"
+                    WidthRequest="100"
                     Margin="10" />
 
             <Button Text="Cancel"
@@ -140,6 +141,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Clicked="Cancel_PR_Update" 
+                    WidthRequest="100"
                     Margin="10" />
         </Grid>
     </Grid>

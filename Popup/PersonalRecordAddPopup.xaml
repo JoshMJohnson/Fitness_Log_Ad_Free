@@ -157,6 +157,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
                     Clicked="Submit_PR" 
+                    WidthRequest="100"
                     Margin="10" />
 
             <Button Text="Cancel"
@@ -164,6 +165,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Clicked="Cancel_PR" 
+                    WidthRequest="100"
                     Margin="10" />
         </Grid>
     </Grid>

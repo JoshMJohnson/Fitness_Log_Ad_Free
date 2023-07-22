@@ -24,12 +24,12 @@ public partial class NoteDisplayPopup
     }
 
 	/* todo executes when update note button clicked */
-	private void Update_Note(object sender, EventArgs e)
+	private void Edit_Note(object sender, EventArgs e)
 	{
 
 	}
 
-    /* todo executes when delete note button is clicked */
+    /* executes when delete note button is clicked */
     private async void Delete_Note(object sender, EventArgs e)
     {
 		string note_name = current_note.name;

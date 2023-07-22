@@ -5,7 +5,7 @@
            x:Class="WorkoutLog.Popup.CalendarCategoryAddPopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
-           Size="250, 225" >
+           Size="225, 225" >
 
     <Grid ColumnDefinitions="*, *" 
           RowDefinitions="Auto, Auto, Auto, *">
@@ -53,12 +53,14 @@
                     Grid.Column="0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
+                    WidthRequest="85"
                     Clicked="Create_Category" />
 
             <Button Text="Cancel"
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
+                    WidthRequest="85"
                     Clicked="Cancel_Create_Category" />
         </Grid>
     </Grid>
