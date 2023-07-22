@@ -36,6 +36,21 @@
                             </SwipeItems>
                         </SwipeView.LeftItems>
 
+                        <SwipeView.RightItems>
+                            <SwipeItems SwipeBehaviorOnInvoked="Close">
+                                <SwipeItemView>
+                                    <ImageButton Source="edit_icon.png"
+                                             Padding="10"
+                                             Margin="10"
+                                             WidthRequest="50"
+                                             HeightRequest="50"
+                                             BackgroundColor="LightBlue"
+                                             Clicked="Edit_Body_Weight_Goal"
+                                             BindingContext="{Binding name}"/>
+                                </SwipeItemView>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
                         <Border Margin="5"
                                 BackgroundColor="LightGrey">
                             

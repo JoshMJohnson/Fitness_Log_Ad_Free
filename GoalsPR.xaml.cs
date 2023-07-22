@@ -31,6 +31,16 @@ public partial class GoalsPR : ContentPage
         Refresh_PR_Goal_List();
     }
 
+    /* swipe edit pr goal */
+    private async void Edit_PR_Goal(object sender, EventArgs e)
+    {
+        ImageButton edit_pr_goal = (ImageButton)sender;
+        string goal_name = edit_pr_goal.BindingContext.ToString();
+
+        await this.ShowPopupAsync(new GoalPREditPopup(goal_name));
+        Refresh_PR_Goal_List();
+    }
+
     /* refreshes the PR goal list being displayed on UI */
     public async void Refresh_PR_Goal_List()
     {

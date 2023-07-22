@@ -31,6 +31,16 @@ public partial class GoalsBodyWeight : ContentPage
         Refresh_BW_Goal_List();
     }
 
+    /* swipe edit BW goal */
+    private async void Edit_Body_Weight_Goal(object sender, EventArgs e)
+    {
+        ImageButton edit_bw_goal = (ImageButton) sender;
+        string goal_name = edit_bw_goal.BindingContext.ToString();
+
+        await this.ShowPopupAsync(new GoalBWEditPopup(goal_name));
+        Refresh_BW_Goal_List();
+    }
+
     /* refreshes the BW goal list being displayed on UI */
     public async void Refresh_BW_Goal_List()
     {

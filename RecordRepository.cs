@@ -181,6 +181,13 @@ public class RecordRepository
         }
     }
 
+    /* todo edit a body weight goal */
+    public async Task Edit_Goal_Body_Weight(string goal_name, bool goal_date_desired, string goal_date, int goal_weight)
+    {
+
+    }
+
+
     /* returns a list of body weight goals from the database */
     public async Task<List<GoalBW>> Get_Body_Weight_Goal_List()
     {
@@ -307,6 +314,13 @@ public class RecordRepository
         {
             status_message = string.Format("Failed to remove {0}. Error: {1}", goal_name, e.Message);
         }
+    }
+
+    /* todo edit a pr goal */
+    public async Task Edit_Goal_PR(string goal_name, bool goal_date_desired, string goal_date, 
+                                    int goal_weight, int goal_hours, int goal_mins, int goal_secs)
+    {
+
     }
 
     /* returns a list of pr goals from the database */

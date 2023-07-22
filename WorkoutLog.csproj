@@ -102,6 +102,12 @@
 	  <MauiXaml Update="Popup\GoalBodyWeightPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Popup\GoalBWEditPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Popup\GoalPREditPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Popup\GoalPRPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
