@@ -23,12 +23,9 @@ public partial class NoteDisplayPopup
         note_content_display.Text = current_note.content;
     }
 
-	/* todo executes when update note button clicked */
-	private void Edit_Note(object sender, EventArgs e)
-	{
-
-	}
-
+	/* ? executes when update note button clicked */
+	private void Edit_Note(object sender, EventArgs e) => Close(true);
+	
     /* executes when delete note button is clicked */
     private async void Delete_Note(object sender, EventArgs e)
     {

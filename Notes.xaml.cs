@@ -55,7 +55,13 @@ public partial class Notes : ContentPage
     private async void View_Note(object sender, SelectionChangedEventArgs note_clicked)
     {
         string note_name = (note_clicked.CurrentSelection.FirstOrDefault() as Note)?.name;
-        await this.ShowPopupAsync(new NoteDisplayPopup(note_name));
+        var edit_clicked = await this.ShowPopupAsync(new NoteDisplayPopup(note_name));
+
+        if (edit_clicked != null) /* if chosen to edit note */
+        {
+            await this.ShowPopupAsync(new NoteEditPopup(note_name));
+        }
+
         Refresh_Notes();
     }
 

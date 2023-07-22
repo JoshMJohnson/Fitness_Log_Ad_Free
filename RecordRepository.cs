@@ -706,7 +706,7 @@ public class RecordRepository
         }
     }
 
-    /* ?  updates a note in the database */
+    /* updates a note in the database */
     public async Task Edit_Note(string note_name, string note_content)
     {
         ArgumentNullException.ThrowIfNull(note_name, nameof(note_name));
@@ -756,7 +756,7 @@ public class RecordRepository
         return new List<Note>();
     }
 
-    /* ? returns a single note from the database matching the parameter primary key */
+    /* returns a single note from the database matching the parameter primary key */
     public async Task<Note> Get_Note(string note_name)
     {
         Note temp_note= await conn.FindAsync<Note>(note_name);
