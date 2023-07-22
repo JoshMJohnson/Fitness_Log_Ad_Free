@@ -18,6 +18,7 @@ To Do:
 
 
 Bugs:
+	- text wrapping on all labels
  
 
 Ads:

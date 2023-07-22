@@ -7,34 +7,50 @@
            HorizontalOptions="Center"
            Size="300, 600">
 
-    <Grid RowDefinitions="Auto, Auto, *, Auto"
-          ColumnDefinitions="Auto, *, Auto">
+    <Grid RowDefinitions="Auto, Auto, Auto, *, Auto"
+          ColumnDefinitions="*, Auto">
+
+        <Label Text="Note"
+               FontSize="24"
+               Margin="10"
+               LineHeight="100"
+               VerticalTextAlignment="Center"
+               FontAttributes="Italic"
+               Grid.Row="0"
+               Grid.Column="0" />
 
         <Button Grid.Row="0"
-                Grid.Column="2"
+                Grid.Column="1"
                 Clicked="Close_Note"
                 Margin="10"
                 BackgroundColor="DarkGrey"
                 WidthRequest="50"
+                HeightRequest="50"
+                HorizontalOptions="End"
                 Text="X"/>
         
         <Label Grid.Row="1"
-               Grid.Column="0"
+               Grid.ColumnSpan="2"
                Margin="10"
+               FontSize="16"
+               FontAttributes="Bold"
+               HorizontalOptions="Start"
                x:Name="note_name_display"/>
 
-        <Label Grid.Row="1"
-               Grid.Column="2"
+        <Label Grid.Row="2"
                Margin="10"
+               Grid.Column="0"
                x:Name="last_modified_display" />
 
-        <Label Grid.ColumnSpan="3"
-               Grid.Row="2"
-               Margin="10"
-               x:Name="note_content_display" />
+        <ScrollView Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Margin="10">
+            
+            <Label x:Name="note_content_display" />
+        </ScrollView>
 
-        <Grid Grid.Row="3"
-              Grid.ColumnSpan="3"
+        <Grid Grid.Row="4"
+              Grid.ColumnSpan="2"
               RowDefinitions="*"
               Margin="10"
               ColumnDefinitions="*, *">

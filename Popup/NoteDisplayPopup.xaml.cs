@@ -30,9 +30,11 @@ public partial class NoteDisplayPopup
 	}
 
     /* todo executes when delete note button is clicked */
-    private void Delete_Note(object sender, EventArgs e)
+    private async void Delete_Note(object sender, EventArgs e)
     {
-
+		string note_name = current_note.name;
+        await App.RecordRepo.Remove_Note(note_name);
+		Close();
     }
 
 	/* closes the note view */

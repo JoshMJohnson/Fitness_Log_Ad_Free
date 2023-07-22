@@ -689,7 +689,7 @@ public class RecordRepository
         }
     }
 
-    /* ? removes a note to the database */
+    /* removes a note to the database */
     public async Task Remove_Note(string note_name)
     {
         ArgumentNullException.ThrowIfNull(note_name, nameof(note_name));
@@ -736,7 +736,7 @@ public class RecordRepository
         }
     }
 
-    /* ? returns a list of notes found in database */
+    /* returns a list of notes found in database */
     public async Task<List<Note>> Get_All_Notes()
     {
         try
@@ -744,7 +744,7 @@ public class RecordRepository
             await Init_Database();
 
             List<Note> notes_list = await conn.Table<Note>().ToListAsync();
-            notes_list = notes_list.OrderBy(note => note.last_edited_date).ToList();
+            notes_list = notes_list.OrderBy(note => note.last_edited_date).Reverse().ToList();
 
             return notes_list;
         }
