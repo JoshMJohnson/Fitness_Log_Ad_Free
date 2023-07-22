@@ -36,10 +36,8 @@
                    VerticalOptions="Center"
                    Text="Title:" />
 
-            <Entry Grid.Column="2"
+            <Label Grid.Column="2"
                    x:Name="note_title_content"
-                   Placeholder="Note title"
-                   MaxLength="25"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Center" />
         </Grid>

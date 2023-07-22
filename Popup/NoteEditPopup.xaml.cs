@@ -18,7 +18,7 @@ public partial class NoteEditPopup
         Prepare_Existing_Note(note_name);
     }
 
-	/* ? fills in all fields with current note data */
+	/* fills in all fields with current note data */
 	private async void Prepare_Existing_Note(string note_name)
 	{
         current_note = await App.RecordRepo.Get_Note(note_name);
