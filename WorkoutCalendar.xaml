@@ -87,6 +87,7 @@
         <customControls:CalendarView Grid.Row="1"
                                      Grid.ColumnSpan="2"
                                      Margin="10" 
+                                     x:Name="horizontal_calendar_display"
                                      on_date_selected="Horizontal_Calendar_On_Date_Selected" />
 
         <Grid x:Name="calendar_day_exercise_display"

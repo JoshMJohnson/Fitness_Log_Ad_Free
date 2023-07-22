@@ -4,6 +4,7 @@ using System.Diagnostics;
 using WorkoutLog.Model;
 using WorkoutLog.CustomControls;
 using WorkoutLog.Popup;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WorkoutLog;
 
@@ -61,6 +62,7 @@ public partial class WorkoutCalendar : ContentPage
     {
         await this.ShowPopupAsync(new CalendarAddPopup());
         Refresh_Selected_Date(selected_date_calendar);
+        Display_Entries();
     }
 
     /* executes when the minus button is clicked to record an exercise */
@@ -68,7 +70,15 @@ public partial class WorkoutCalendar : ContentPage
     {
         await this.ShowPopupAsync(new CalendarRemovePopup(selected_date_calendar));
         Refresh_Selected_Date(selected_date_calendar);
+        Display_Entries();
     }
+
+    /* updates indicator on calendar when exercise rocorded/unrecorded */
+    private void Display_Entries()
+    {
+        horizontal_calendar_display.Identify_Date_Needs_Entry_Symbol();
+    }
+
 
     /* refreshes selected date exercise display after exercise entry recorded */
     public async void Refresh_Selected_Date(DateTime selected_date_parameter)

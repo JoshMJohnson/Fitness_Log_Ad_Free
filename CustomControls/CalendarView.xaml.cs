@@ -142,7 +142,6 @@ public partial class CalendarView : StackLayout
 		selected_date = current_date.date;
 		on_date_selected?.Invoke(null, current_date.date);
 		selected_date_command?.Execute(current_date.date);
-		Identify_Date_Needs_Entry_Symbol();
     });
 
 	/* changes temp variables to next months data */
@@ -176,7 +175,7 @@ public partial class CalendarView : StackLayout
     }
 
 	/* marks/unmarks each date if it has/hasn't any workout entries */
-	private async void Identify_Date_Needs_Entry_Symbol()
+	public async void Identify_Date_Needs_Entry_Symbol()
 	{		
 		/* loops through all the dates in the month being displayed */
 		for (int i = 0; i < dates.Count; i++)
