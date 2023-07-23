@@ -181,7 +181,7 @@ public class RecordRepository
         }
     }
 
-    /* ? edit a body weight goal */
+    /* edit a body weight goal */
     public async Task Edit_Body_Weight_Goal(string goal_name, DateTime goal_date, bool has_desired, int goal_weight)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
