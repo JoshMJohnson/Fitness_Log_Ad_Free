@@ -1,9 +1,6 @@
 ﻿Additions:
- - PR/goals nodes alternate background color (grey/transparent)
- - open app on workout calendar page every time
+ - be able to set a preference for what section to open the app with every time
  - Body Weight chart. click entry on graph to show edit and delete options
- - Body Progression display -> closed tabs showing dates, tabs can expand and display image
- - calendar date has corner colored if at least 1 entry for that date
  - toggle between lbs and kg
  - body weight goals displayed as horizontal lines on body weight chart
 	- goal dates shown
@@ -12,14 +9,12 @@
 
 To Do:
  - popup entries for body progression and body weight
- - delete/edit button icons white instead of black
  - notify when adding to database when primary key already exists
-
+ - confirm remove popups
 
 
 Bugs:
-	- text wrapping on all labels
-	- long user inputs currently overlap labels 
+
 
 Ads:
  - Unity
