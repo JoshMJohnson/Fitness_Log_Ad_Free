@@ -5,12 +5,21 @@
            x:Class="WorkoutLog.Popup.NoteEditPopup"
            VerticalOptions="Start"
            HorizontalOptions="Center"
+           Color="Transparent"
            Size="300, 500">
 
-    <Grid RowDefinitions="Auto, Auto, Auto, Auto, *, Auto"
+    <Border Stroke="#87CEFA"
+        StrokeThickness="4"
+        HorizontalOptions="Center">
+
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="40,40,40,40" />
+        </Border.StrokeShape>
+
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, *, Auto"
           ColumnDefinitions="*, *">
 
-        <Label Text="Edit Note"
+            <Label Text="Edit Note"
                FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"
@@ -18,7 +27,7 @@
                Margin="20"
                FontSize="24" />
 
-        <Label Grid.Row="1"
+            <Label Grid.Row="1"
                Grid.ColumnSpan="2"
                x:Name="error_prompt"
                IsVisible="False"
@@ -27,75 +36,76 @@
                FontSize="11"
                HorizontalOptions="Center" />
 
-        <Grid Grid.Row="2"
+            <Grid Grid.Row="2"
               Grid.ColumnSpan="2"
               Margin="10"
               ColumnDefinitions="Auto, *, Auto" >
 
-            <Label Grid.Column="0"
+                <Label Grid.Column="0"
                    VerticalOptions="Center"
                    Text="Title:" />
 
-            <Label Grid.Column="2"
+                <Label Grid.Column="2"
                    x:Name="note_title_content"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Center" />
-        </Grid>
+            </Grid>
 
-        <Grid Grid.Row="3"
+            <Grid Grid.Row="3"
               Grid.ColumnSpan="2"
               Margin="15"
               HorizontalOptions="End"
               ColumnDefinitions="Auto, Auto, Auto, Auto, Auto">
 
-            <Label Text="("
+                <Label Text="("
                    Grid.Column="0"/>
 
-            <Label x:Name="current_char_value_display"
+                <Label x:Name="current_char_value_display"
                    Grid.Column="1" />
 
-            <Label Text="/"
+                <Label Text="/"
                    Grid.Column="2" />
 
-            <Label x:Name="max_char_value_display"
+                <Label x:Name="max_char_value_display"
                    Grid.Column="3" />
 
-            <Label Text=")"
+                <Label Text=")"
                    Grid.Column="4" />
-        </Grid>
+            </Grid>
 
-        <Border Grid.Row="4"
+            <Border Grid.Row="4"
                 Grid.ColumnSpan="2"
                 BackgroundColor="Transparent"
                 HeightRequest="225"
                 WidthRequest="250">
 
-            <Editor MaxLength="300" 
+                <Editor MaxLength="300" 
                     WidthRequest="250"
                     FontSize="12"
                     x:Name="text_box_display"
                     TextChanged="Refresh_Word_Count"
                     HorizontalOptions="Start"/>
-        </Border>
+            </Border>
 
-        <Grid Grid.Row="5"
+            <Grid Grid.Row="5"
               Grid.ColumnSpan="2"
               Margin="20"
               ColumnDefinitions="*, *">
 
-            <Button Text="Save"
+                <Button Text="Save"
                     Grid.Column="0"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
                     WidthRequest="100"
                     Clicked="Save_Note" />
 
-            <Button Text="Cancel"
+                <Button Text="Cancel"
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
                     WidthRequest="100"
                     Clicked="Cancel_Record" />
+            </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </mct:Popup>
