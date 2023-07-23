@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:WorkoutLog"
     Shell.FlyoutWidth="250"
     Shell.FlyoutBehavior="Flyout" >
-    
+
     <ShellContent
         Title="Body Progression"
         Icon="shell_icon_body_progression.png"
@@ -48,4 +48,19 @@
         ContentTemplate="{DataTemplate local:Notes}"
         Route="Notes" />
 
+    <Shell.FlyoutFooter>
+        <Grid RowDefinitions="Auto, Auto"
+              ColumnDefinitions="*"
+              Margin="10">
+
+            <Label Text="Today's Date"
+                   FontAttributes="Bold"
+                   Grid.Row="0"
+                   HorizontalOptions="Center" />
+
+            <Label x:Name="footer_date"
+                   Grid.Row="1"
+                   HorizontalOptions="Center" />
+        </Grid>
+    </Shell.FlyoutFooter>
 </Shell>
