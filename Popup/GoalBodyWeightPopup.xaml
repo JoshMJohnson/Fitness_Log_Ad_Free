@@ -39,6 +39,7 @@
 
             <Entry Grid.Row="1"
                    Grid.Column="2"
+                   MaximumWidthRequest="135"
                    MaxLength="25"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"

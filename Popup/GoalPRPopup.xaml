@@ -38,6 +38,7 @@
                    VerticalOptions="Center"/>
 
             <Entry Grid.Column="2"
+                   MaximumWidthRequest="200"
                    MaxLength="25"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"

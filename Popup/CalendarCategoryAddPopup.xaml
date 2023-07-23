@@ -38,6 +38,7 @@
 
             <Entry x:Name="category_name"
                    Grid.Column="2"
+                   MaximumWidthRequest="150"
                    MaxLength="25"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"

@@ -39,6 +39,7 @@
             <Entry Grid.Column="2"
                    x:Name="note_title_content"
                    Placeholder="Note title"
+                   MaximumWidthRequest="225"
                    MaxLength="25"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Center" />

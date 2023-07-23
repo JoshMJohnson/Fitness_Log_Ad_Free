@@ -30,6 +30,7 @@
         <Label Grid.Row="2"
                Grid.Column="0"
                Text="Exercise:" 
+               MaximumWidthRequest="225"
                Margin="10" 
                HorizontalOptions="Start"
                VerticalOptions="Center" />
