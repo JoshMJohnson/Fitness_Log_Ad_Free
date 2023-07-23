@@ -207,7 +207,6 @@ public class RecordRepository
                 date_only = "N/A";
             }
 
-            editing_goal.name = goal_name;
             editing_goal.goal_achieve_by_date = date_only;
             editing_goal.date_desired = has_desired;
             editing_goal.weight = goal_weight;
@@ -303,7 +302,7 @@ public class RecordRepository
 
         try
         {
-            await Init_Database();
+            await Init_Database();            
             string date_only;
 
             if (has_desired) /* if a date set for pr goal */
@@ -356,11 +355,59 @@ public class RecordRepository
         }
     }
 
-    /* todo edit a pr goal */
-    public async Task Edit_Goal_PR(string goal_name, bool goal_date_desired, string goal_date, 
-                                    int goal_weight, int goal_hours, int goal_mins, int goal_secs)
+    /* edit a pr goal */
+    public async Task Edit_Goal_PR(string goal_name, DateTime goal_date, bool has_desired_date, bool is_weight,
+                                        int goal_weight, int goal_hours, int goal_mins, int goal_secs)
     {
+        ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
+        ArgumentNullException.ThrowIfNull(goal_date, nameof(goal_date));
+        ArgumentNullException.ThrowIfNull(has_desired_date, nameof(has_desired_date));
+        ArgumentNullException.ThrowIfNull(is_weight, nameof(is_weight));
+        ArgumentNullException.ThrowIfNull(goal_weight, nameof(goal_weight));
+        ArgumentNullException.ThrowIfNull(goal_hours, nameof(goal_hours));
+        ArgumentNullException.ThrowIfNull(goal_mins, nameof(goal_mins));
+        ArgumentNullException.ThrowIfNull(goal_secs, nameof(goal_secs));
 
+        try
+        {
+            await Init_Database();
+            GoalPR editing_goal = await Get_PR_Goal(goal_name);
+
+            if (is_weight) /* if weight pr type */
+            {
+                editing_goal.weight = goal_weight;
+            }
+            else /* if time pr type */
+            {
+                editing_goal.time_hours = goal_hours;
+                editing_goal.time_min = goal_mins;
+                editing_goal.time_sec = goal_secs;
+            }
+
+            string date_only;
+
+            if (has_desired_date) /* if a date set for pr goal */
+            {
+                /* translate DateTime to string; removes the time display */
+                string[] date_time_temp = goal_date.ToString().Split(' ');
+                date_only = date_time_temp[0];
+            }
+            else /* else no date of goal set */
+            {
+                date_only = "N/A";
+            }
+
+            editing_goal.goal_achieve_by_date = date_only;
+            editing_goal.date_desired = has_desired_date;
+
+            await conn.UpdateAsync(editing_goal);
+
+            status_message = string.Format("{0} PR goal edited", goal_name);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to edit PR goal date: {0}. Error: {1}", goal_name, e.Message);
+        }
     }
 
     /* returns a list of pr goals from the database */
@@ -408,6 +455,13 @@ public class RecordRepository
         }
 
         return new List<GoalPR>();
+    }
+
+    /* returns a pr goal with primary key matching parameter */
+    public async Task<GoalPR> Get_PR_Goal(string goal_name)
+    {
+        GoalPR temp_goal = await conn.FindAsync<GoalPR>(goal_name);
+        return temp_goal;
     }
 
     /* * personal records section */
