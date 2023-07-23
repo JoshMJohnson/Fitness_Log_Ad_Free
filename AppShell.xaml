@@ -7,6 +7,12 @@
     Shell.FlyoutWidth="250"
     Shell.FlyoutBehavior="Flyout" >
 
+    <Shell.FlyoutHeader>
+        <Image Source="workout_log_splash.svg" 
+               x:Name="header_image"
+               HeightRequest="230"/>
+    </Shell.FlyoutHeader>
+
     <ShellContent
         Title="Body Progression"
         Icon="shell_icon_body_progression.png"
