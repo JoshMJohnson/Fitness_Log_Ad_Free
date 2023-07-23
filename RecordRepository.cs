@@ -181,10 +181,43 @@ public class RecordRepository
         }
     }
 
-    /* todo edit a body weight goal */
-    public async Task Edit_Goal_Body_Weight(string goal_name, bool goal_date_desired, string goal_date, int goal_weight)
+    /* ? edit a body weight goal */
+    public async Task Edit_Body_Weight_Goal(string goal_name, DateTime goal_date, bool has_desired, int goal_weight)
     {
+        ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
+        ArgumentNullException.ThrowIfNull(goal_date, nameof(goal_date));
+        ArgumentNullException.ThrowIfNull(has_desired, nameof(has_desired));
+        ArgumentNullException.ThrowIfNull(goal_weight, nameof(goal_weight));
 
+        try
+        {
+            await Init_Database();
+            GoalBW editing_goal = await Get_Body_Weight_Goal(goal_name);
+
+            string date_only;
+
+            if (has_desired) /* if a date set for pr goal */
+            {
+                /* translate DateTime to string; removes the time display */
+                string[] date_time_temp = goal_date.ToString().Split(' ');
+                date_only = date_time_temp[0];
+            }
+            else /* else no date of goal set */
+            {
+                date_only = "N/A";
+            }
+
+            editing_goal.name = goal_name;
+            editing_goal.goal_achieve_by_date = date_only;
+            editing_goal.date_desired = has_desired;
+            editing_goal.weight = goal_weight;
+
+            await conn.UpdateAsync(editing_goal);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to edit goal name: {0}. Error: {1}", goal_name, e.Message);
+        }
     }
 
 
@@ -234,6 +267,13 @@ public class RecordRepository
         }
 
         return new List<GoalBW>();
+    }
+
+    /* returns a body weight goal with primary key matching parameter */
+    public async Task<GoalBW> Get_Body_Weight_Goal(string goal_name)
+    {
+        GoalBW temp_goal = await conn.FindAsync<GoalBW>(goal_name);
+        return temp_goal;
     }
 
     /* * pr goals section */
