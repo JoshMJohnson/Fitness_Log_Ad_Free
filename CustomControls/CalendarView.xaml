@@ -89,7 +89,8 @@
                         <Frame Grid.Row="2"
                                x:Name="has_entry_display"
                                Margin="10"
-                               BackgroundColor="#87CEFA"                               
+                               BackgroundColor="#87CEFA"     
+                               BorderColor="Black"
                                IsVisible="{Binding Has_Entry}"/>
                     </Grid>
 
