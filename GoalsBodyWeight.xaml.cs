@@ -74,11 +74,10 @@ public partial class GoalsBodyWeight : ContentPage
             HorizontalOptions = LayoutOptions.Center
         });
 
-        vertical_layout_empty_bw_goal_list.Add(new Image
-        {
-            Source = "empty_list.png",
-            HeightRequest = 200
-        });
+        Image empty_list_image = new Image();
+        empty_list_image.SetAppTheme<FileImageSource>(Image.SourceProperty, "empty_list.png", "empty_list_dark.png");
+        empty_list_image.HeightRequest = 200;
+        vertical_layout_empty_bw_goal_list.Add(empty_list_image);
 
         Grid goal_layout = goal_bw_layout;
         Grid.SetRow(vertical_layout_empty_bw_goal_list, 0);

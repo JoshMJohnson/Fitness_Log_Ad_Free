@@ -54,11 +54,10 @@ public partial class BodyProgression : ContentPage
             HorizontalOptions = LayoutOptions.Center
         });
 
-        vertical_layout_body_progression_empty.Add(new Image
-        {
-            Source = "empty_list.png",
-            HeightRequest = 200
-        });
+        Image empty_list_image = new Image();
+        empty_list_image.SetAppTheme<FileImageSource>(Image.SourceProperty, "empty_list.png", "empty_list_dark.png");
+        empty_list_image.HeightRequest = 200;
+        vertical_layout_body_progression_empty.Add(empty_list_image);
 
         Grid goal_layout = progression_layout;
         Grid.SetRow(vertical_layout_body_progression_empty, 0);
