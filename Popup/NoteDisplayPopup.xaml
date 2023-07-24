@@ -32,11 +32,10 @@
                 Grid.Column="1"
                 Clicked="Close_Note"
                 Margin="20"
-                BackgroundColor="DarkGrey"
                 WidthRequest="40"
                 HeightRequest="40"
                 HorizontalOptions="End"
-                TextColor="Black"
+                TextColor="white"
                 Text="X"/>
 
             <Label Grid.Row="1"
