@@ -19,7 +19,7 @@
         <Grid ColumnDefinitions="*, *" 
           RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, *">
 
-            <Label Text="PR Goal"
+            <Label Text="Create Goal"
                FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"

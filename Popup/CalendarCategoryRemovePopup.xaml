@@ -37,6 +37,7 @@
                    Text="Name:" />
 
                 <Picker x:Name="exercise_category"
+                        HorizontalTextAlignment="Center"
                     Grid.Column="2" />
 
                 <Label x:Name="exercise_category_empty_display"

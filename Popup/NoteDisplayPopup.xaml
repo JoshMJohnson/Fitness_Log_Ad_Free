@@ -14,8 +14,8 @@
 
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="40,40,40,40" />
-
         </Border.StrokeShape>
+        
         <Grid RowDefinitions="Auto, Auto, Auto, *, Auto"
           ColumnDefinitions="*, Auto">
 
