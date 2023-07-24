@@ -4,7 +4,7 @@
              xmlns:model="clr-namespace:WorkoutLog.Model"
              xmlns:cells="clr-namespace:WorkoutLog.Cells"
              x:Class="WorkoutLog.GoalsPR"
-             Title="PR Goals">
+             Title="Personal Record Goals">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+"

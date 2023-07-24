@@ -18,7 +18,7 @@
               RowDefinitions="50, 50"
               ColumnDefinitions="*, *, *" 
               Padding="20"
-              BackgroundColor="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Primary}}" >
+              BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Primary}}" >
 
             <Grid Grid.Row="0"
                   Grid.Column="0"

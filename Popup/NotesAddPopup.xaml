@@ -84,7 +84,6 @@
 
                 <Editor MaxLength="300" 
                         WidthRequest="250"
-                        FontSize="12"
                         x:Name="text_box_display"
                         TextChanged="Refresh_Word_Count"
                         HorizontalOptions="Start"/>
