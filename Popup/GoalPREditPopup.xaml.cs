@@ -10,6 +10,8 @@ public partial class GoalPREditPopup
 	{
 		InitializeComponent();
         Gather_Data(goal_name);
+
+        achieve_by_date.MinimumDate = DateTime.Now;
     }
 
     /* gathers current info about the body weight goal from the database */
