@@ -45,8 +45,7 @@
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Border Margin="5"
-                            BackgroundColor="LightGrey">
+                    <Border Margin="5">
 
                         <Border.Shadow>
                             <Shadow Brush="Black"
@@ -130,8 +129,7 @@
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Border Margin="5"
-                            BackgroundColor="LightGrey">
+                    <Border Margin="5">
 
                         <Border.Shadow>
                             <Shadow Brush="Black"
@@ -233,8 +231,7 @@
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Border Margin="5"
-                            BackgroundColor="LightGrey">
+                    <Border Margin="5">
 
                         <Border.Shadow>
                             <Shadow Brush="Black"
@@ -328,8 +325,7 @@
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Border Margin="5"
-                            BackgroundColor="LightGrey">
+                    <Border Margin="5">
 
                         <Border.Shadow>
                             <Shadow Brush="Black"
@@ -423,8 +419,7 @@
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Border Margin="5"
-                            BackgroundColor="LightGrey">
+                    <Border Margin="5">
 
                         <Border.Shadow>
                             <Shadow Brush="Black"
@@ -510,8 +505,7 @@
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Border Margin="5"
-                            BackgroundColor="LightGrey">
+                    <Border Margin="5">
 
                         <Border.Shadow>
                             <Shadow Brush="Black"
@@ -605,8 +599,7 @@
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Border Margin="5"
-                            BackgroundColor="LightGrey">
+                    <Border Margin="5">
 
                         <Border.Shadow>
                             <Shadow Brush="Black"
@@ -692,8 +685,7 @@
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Border Margin="5"
-                            BackgroundColor="LightGrey">
+                    <Border Margin="5">
 
                         <Border.Shadow>
                             <Shadow Brush="Black"

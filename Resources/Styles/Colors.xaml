@@ -6,7 +6,8 @@
 
     <Color x:Key="Primary">#4682B4</Color>
     <Color x:Key="Secondary">#87CEFA</Color>
-    <Color x:Key="Tertiary">#DFD8F7</Color>
+    <Color x:Key="Tertiary">#191970</Color>
+    <Color x:Key="FourthMain">#483D8B</Color>
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
     <Color x:Key="Gray100">#E1E1E1</Color>
@@ -40,5 +41,4 @@
     <Color x:Key="Blue100Accent">#3E8EED</Color>
     <Color x:Key="Blue200Accent">#72ACF1</Color>
     <Color x:Key="Blue300Accent">#A7CBF6</Color>
-
 </ResourceDictionary>
