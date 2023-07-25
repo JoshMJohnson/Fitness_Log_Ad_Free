@@ -13,7 +13,7 @@
         <Image Grid.Column="0"
                HeightRequest="15"
                WidthRequest="15"
-               Source="left_arrow.png" >
+               Source="{AppThemeBinding Light=left_arrow.png, Dark=left_arrow_dark.png}" >
 
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=previous_month_command}" />
@@ -29,7 +29,7 @@
         <Image HeightRequest="15"
                WidthRequest="15"
                Grid.Column="2"
-               Source="right_arrow.png" >
+               Source="{AppThemeBinding Light=right_arrow.png, Dark=right_arrow_dark.png}" >
 
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=next_month_command}" />
