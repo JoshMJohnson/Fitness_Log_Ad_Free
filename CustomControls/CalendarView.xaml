@@ -12,7 +12,7 @@
 
         <Image Grid.Column="0"
                HeightRequest="15"
-               WidthRequest="15"
+               WidthRequest="50"
                Source="{AppThemeBinding Light=left_arrow.png, Dark=left_arrow_dark.png}" >
 
             <Image.GestureRecognizers>
@@ -27,7 +27,7 @@
                FontAttributes="Bold" />
 
         <Image HeightRequest="15"
-               WidthRequest="15"
+               WidthRequest="50"
                Grid.Column="2"
                Source="{AppThemeBinding Light=right_arrow.png, Dark=right_arrow_dark.png}" >
 
