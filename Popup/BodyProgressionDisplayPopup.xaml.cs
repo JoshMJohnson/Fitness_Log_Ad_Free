@@ -14,6 +14,9 @@ public partial class BodyProgressionDisplayPopup
     }
 
     /* todo delete progression currently being viewed */
+    private async void Remove_Body_Progression(object sender, EventArgs e)
+    {
 
 
+    }
 }

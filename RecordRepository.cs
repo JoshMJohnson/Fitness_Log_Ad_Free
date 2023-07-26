@@ -37,7 +37,7 @@ public class RecordRepository
     }
 
     /* * body progression section */
-    /* ? adds an entry to the body progression table within the database */
+    /* adds an entry to the body progression table within the database */
     public async Task Add_Progression(string image_name, DateTime image_date)
 	{
         ArgumentNullException.ThrowIfNull(image_name, nameof(image_name));
@@ -88,7 +88,7 @@ public class RecordRepository
         }
     }
 
-    /* ? returns a list of progressions from the database */
+    /* returns a list of progressions from the database */
     public async Task<List<Progression>> Get_Progression_List()
     {
         try
@@ -105,7 +105,7 @@ public class RecordRepository
         return new List<Progression>();
     }
 
-    /* ? returns a progression from the database */
+    /* returns a progression from the database */
     public async Task<Progression> Get_Progression(string image_name)
     {
         await Init_Database();

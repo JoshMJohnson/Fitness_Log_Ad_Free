@@ -22,13 +22,6 @@ public partial class BodyProgression : ContentPage
         Refresh_Progression();
     }
 
-    /* todo removes selected body progression */
-    private async void Remove_Body_Progression(object sender, EventArgs e)
-    {
-
-        Refresh_Progression();
-    }
-
     /* handles transition to view progression */
     private async void View_Progression(object sender, SelectionChangedEventArgs progression_clicked)
     {

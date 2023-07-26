@@ -34,7 +34,7 @@
                                 <VisualState Name="Normal"></VisualState>
                                 <VisualState Name="Selected">
                                     <VisualState.Setters>
-                                        <Setter Property="BackgroundColor" Value="LightSkyBlue"></Setter>
+                                        <Setter Property="BackgroundColor" Value="LightSkyBlue"/>
                                     </VisualState.Setters>
                                 </VisualState>
                             </VisualStateGroup>
