@@ -27,7 +27,7 @@ public partial class BodyProgressionDisplayPopup
         Close();
     }
 
-    /* ? delete progression currently being viewed */
+    /* delete progression currently being viewed */
     private async void Remove_Body_Progression(object sender, EventArgs e)
     {
         string progression_image_name = current_progression.name;

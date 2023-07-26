@@ -71,7 +71,7 @@ public class RecordRepository
         }
     }
 
-    /* ? removes an entry in the body progression table within the database */
+    /* removes an entry in the body progression table within the database */
     public async Task Remove_Progression(string image_name)
     {
         ArgumentNullException.ThrowIfNull(image_name, nameof(image_name));
