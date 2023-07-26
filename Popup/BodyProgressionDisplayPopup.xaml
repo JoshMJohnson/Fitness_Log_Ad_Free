@@ -19,7 +19,7 @@
         <Grid ColumnDefinitions="*, *" 
               RowDefinitions="Auto, Auto, *, Auto">
 
-            <Label Text="Progression"
+            <Label Text="Recorded Progression"
                FontAttributes="Bold"
                Grid.Row="0"
                Grid.ColumnSpan="2"

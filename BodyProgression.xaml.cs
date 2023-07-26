@@ -35,6 +35,8 @@ public partial class BodyProgression : ContentPage
     {
         List<Progression> progression_list = await App.RecordRepo.Get_Progression_List();
 
+        progression_list_display.ItemsSource = progression_list;
+
         if (progression_list.Count == 0)  /* if body progression list is empty - no body progression's set */
         {
             vertical_layout_body_progression_empty.IsVisible = true;
@@ -42,7 +44,6 @@ public partial class BodyProgression : ContentPage
         else  /* else pr list is not empty */
         {
             vertical_layout_body_progression_empty.IsVisible = false;
-            progression_list_display.ItemsSource = progression_list;
         }
     }
 
