@@ -95,7 +95,7 @@ public class RecordRepository
         {
             await Init_Database();
             List<Progression> body_progression_list = await conn.Table<Progression>().ToListAsync();
-            body_progression_list = body_progression_list.OrderBy(progress => progress.date_sort).ToList();
+            body_progression_list = body_progression_list.OrderBy(progress => progress.date_sort).Reverse().ToList();
             return body_progression_list;
         }
         catch (Exception e)
