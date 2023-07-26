@@ -4,7 +4,7 @@ namespace WorkoutLog.Popup;
 
 public partial class BodyProgressionPopup
 {
-    private string full_path;
+    private string image_file_name = "";
 
 	public BodyProgressionPopup()
 	{
@@ -18,9 +18,18 @@ public partial class BodyProgressionPopup
     }
 
     /* submits body progression image */
-    private void Save_Progression(object sender, EventArgs e)
+    private async void Save_Progression(object sender, EventArgs e)
     {
-        
+        if (image_file_name == "") /* if trying to save with no image selected */
+        {
+            error_prompt.IsVisible = true;
+        }
+        else /* else; saving a body progression image */
+        {
+            DateTime image_date = image_date_selected_display.Date;
+            await App.RecordRepo.Add_Progression(image_file_name, image_date);
+            Close();
+        }
     }
 
     /* load local image from device */
@@ -37,7 +46,9 @@ public partial class BodyProgressionPopup
             return;
         }
 
-        full_path = result.FullPath;
+        error_prompt.IsVisible = false;
+
+        image_file_name = result.FileName;
 
         var stream = await result.OpenReadAsync();
 

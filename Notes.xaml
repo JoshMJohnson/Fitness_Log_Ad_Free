@@ -22,7 +22,6 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Note">
                     <Border Margin="5">
-
                         <Border.Shadow>
                             <Shadow Brush="Black"
                                     Offset="20,20"
@@ -38,7 +37,6 @@
                                         <Setter Property="BackgroundColor" Value="LightSkyBlue"></Setter>
                                     </VisualState.Setters>
                                 </VisualState>
-
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
 

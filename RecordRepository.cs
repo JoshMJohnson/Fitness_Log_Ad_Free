@@ -29,28 +29,63 @@ public class RecordRepository
 
         /* create database tables */
         await conn.CreateTablesAsync<Category, PR, GoalPR, GoalBW, CalendarEntry>();
-        await conn.CreateTableAsync<Note>();
-
-        //await conn.CreateTableAsync<Progression>();
-
+        await conn.CreateTablesAsync<Note, Progression>();
 
         /*
          await conn.CreateTableAsync<BodyWeight>();
-        await conn.CreateTableAsync<Note>();
         */
     }
 
     /* * body progression section */
-    /* todo adds an entry to the body progression table within the database */
-    public async Task Add_Progression(string date)
+    /* ? adds an entry to the body progression table within the database */
+    public async Task Add_Progression(string image_name, DateTime image_date)
 	{
+        ArgumentNullException.ThrowIfNull(image_name, nameof(image_name));
+        ArgumentNullException.ThrowIfNull(image_date, nameof(image_date));
 
-	}
+        try
+        {
+            await Init_Database();
 
-    /* todo removes an entry in the body progression table within the database */
-    public async Task Remove_Progression()
+            /* translate DateTime to string; removes the time display */
+            string[] date_time_temp = image_date.ToString().Split(' ');
+            string date_only = date_time_temp[0];
+
+            string[] date_broken_up =date_only.Split('/');
+            DateTime date_datatype = new DateTime(int.Parse(date_broken_up[2]), int.Parse(date_broken_up[0]), int.Parse(date_broken_up[1]));
+
+            Progression new_goal = new Progression
+            {
+                name = image_name,
+                date = date_only,
+                date_sort = date_datatype
+            };
+
+            int result = await conn.InsertAsync(new_goal);
+
+            status_message = string.Format("{0} progression added", result);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to add progression. Error: {0}", e.Message);
+        }
+    }
+
+    /* ? removes an entry in the body progression table within the database */
+    public async Task Remove_Progression(string image_name)
     {
+        ArgumentNullException.ThrowIfNull(image_name, nameof(image_name));
 
+        try
+        {
+            await Init_Database();
+            Progression removing_progression = await conn.FindAsync<Progression>(image_name);
+            await conn.DeleteAsync(removing_progression);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to remove {0}. Error: {1}", image_name, e.Message);
+        }
     }
 
     /* ? returns a list of progressions from the database */
@@ -68,6 +103,14 @@ public class RecordRepository
         }
 
         return new List<Progression>();
+    }
+
+    /* ? returns a progression from the database */
+    public async Task<Progression> Get_Progression(string image_name)
+    {
+        await Init_Database();
+        Progression progression_temp = await conn.FindAsync<Progression>(image_name);
+        return progression_temp;
     }
 
     /* * body weight section */

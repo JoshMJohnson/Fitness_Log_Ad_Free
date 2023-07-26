@@ -6,18 +6,18 @@
            VerticalOptions="Start"
            HorizontalOptions="Center"
            Color="Transparent"
-           Size="300, 500" >
+           Size="300, 550" >
 
     <Border Stroke="#87CEFA"
-        StrokeThickness="4"
-        HorizontalOptions="Center">
+            StrokeThickness="4"
+            HorizontalOptions="Center">
 
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="40,40,40,40" />
         </Border.StrokeShape>
 
         <Grid ColumnDefinitions="*, *" 
-          RowDefinitions="Auto, Auto, Auto, *, Auto">
+              RowDefinitions="Auto, Auto, Auto, Auto, *, Auto">
 
             <Label Text="Save Progression"
                FontAttributes="Bold"
@@ -27,52 +27,63 @@
                Margin="20"
                FontSize="24" />
 
-            <Grid Grid.Row="1"
-              Grid.ColumnSpan="2"
-              ColumnDefinitions="Auto, *, Auto"
-              Margin="10" >
+            <Label Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Text="Choose an image to save as progression"
+                   x:Name="error_prompt"
+                   IsVisible="False"
+                   FontAttributes="Italic"
+                   TextColor="Red"
+                   FontSize="11"
+                   HorizontalOptions="Center" />
+
+            <Grid Grid.Row="2"
+                  Grid.ColumnSpan="2"
+                  ColumnDefinitions="Auto, *, Auto"
+                  Margin="10" >
 
                 <Label Grid.Row="3"
-                   Grid.Column="0"
-                   Text="Date:" 
-                   VerticalOptions="Center"
-                   HorizontalOptions="Start" />
+                       Grid.Column="0"
+                       Text="Date:" 
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start" />
 
                 <DatePicker Grid.Column="1"
-                        HorizontalOptions="End"
-                        VerticalOptions="Center" />
+                            x:Name="image_date_selected_display"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center" />
             </Grid>
 
             <Button Grid.ColumnSpan="2"
-                Grid.Row="2"
-                Text="Load Image"
-                Clicked="Load_Image"
-                HorizontalOptions="Center"
-                VerticalOptions="Center" />
+                    Grid.Row="3"
+                    Text="Load Image"
+                    Clicked="Load_Image"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
 
             <Image x:Name="load_progression_preview"
-               Margin="10"
-               Grid.Row="3"
-               Grid.ColumnSpan="2" />
+                   Margin="10"
+                   Grid.Row="4"
+                   Grid.ColumnSpan="2" />
 
-            <Grid Grid.Row="4"
-              Grid.ColumnSpan="2"
-              Margin="20"
-              ColumnDefinitions="*, *">
+            <Grid Grid.Row="5"
+                  Grid.ColumnSpan="2"
+                  Margin="20"
+                  ColumnDefinitions="*, *">
 
                 <Button Text="Record"
-                    Grid.Column="0"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center" 
-                    WidthRequest="100"
-                    Clicked="Save_Progression" />
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" 
+                        WidthRequest="100"
+                        Clicked="Save_Progression" />
 
                 <Button Text="Cancel"
-                    Grid.Column="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="100"
-                    Clicked="Cancel_Progression" />
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="100"
+                        Clicked="Cancel_Progression" />
             </Grid>
         </Grid>
     </Border>

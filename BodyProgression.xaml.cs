@@ -18,15 +18,29 @@ public partial class BodyProgression : ContentPage
     /* executed when PR plus button clicked */
     private async void Add_Body_Progression(object sender, EventArgs e)
     {
-        object result = await this.ShowPopupAsync(new BodyProgressionPopup());
+        await this.ShowPopupAsync(new BodyProgressionPopup());
+        Refresh_Progression();
+    }
+
+    /* todo removes selected body progression */
+    private async void Remove_Body_Progression(object sender, EventArgs e)
+    {
+
+        Refresh_Progression();
+    }
+
+    /* handles transition to view progression */
+    private async void View_Progression(object sender, SelectionChangedEventArgs progression_clicked)
+    {
+        string progression_name = (progression_clicked.CurrentSelection.FirstOrDefault() as Progression)?.name;
+        await this.ShowPopupAsync(new BodyProgressionDisplayPopup(progression_name));
+        Refresh_Progression();
     }
 
     /* refreshes the PR list being displayed on UI */
     public async void Refresh_Progression()
     {
-        List<Progression> progression_list = new List<Progression>();
-
-        progression_list_display.ItemsSource = progression_list;
+        List<Progression> progression_list = await App.RecordRepo.Get_Progression_List();
 
         if (progression_list.Count == 0)  /* if body progression list is empty - no body progression's set */
         {
@@ -35,6 +49,7 @@ public partial class BodyProgression : ContentPage
         else  /* else pr list is not empty */
         {
             vertical_layout_body_progression_empty.IsVisible = false;
+            progression_list_display.ItemsSource = progression_list;
         }
     }
 
@@ -62,11 +77,5 @@ public partial class BodyProgression : ContentPage
         Grid goal_layout = progression_layout;
         Grid.SetRow(vertical_layout_body_progression_empty, 0);
         goal_layout.Add(vertical_layout_body_progression_empty);
-    }
-
-    /* todo button clicked to create a workout category */
-    private async void Progression_Selected(object sender, EventArgs e)
-    {
-
     }
 }

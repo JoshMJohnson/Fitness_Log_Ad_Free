@@ -46,7 +46,6 @@
                     </SwipeView.RightItems>
 
                     <Border Margin="5">
-
                         <Border.Shadow>
                             <Shadow Brush="Black"
                                     Offset="20,20"
@@ -130,7 +129,6 @@
                     </SwipeView.RightItems>
 
                     <Border Margin="5">
-
                         <Border.Shadow>
                             <Shadow Brush="Black"
                                     Offset="20,20"
@@ -232,7 +230,6 @@
                     </SwipeView.RightItems>
 
                     <Border Margin="5">
-
                         <Border.Shadow>
                             <Shadow Brush="Black"
                                     Offset="20,20"
@@ -326,7 +323,6 @@
                     </SwipeView.RightItems>
 
                     <Border Margin="5">
-
                         <Border.Shadow>
                             <Shadow Brush="Black"
                                     Offset="20,20"
@@ -420,7 +416,6 @@
                     </SwipeView.RightItems>
 
                     <Border Margin="5">
-
                         <Border.Shadow>
                             <Shadow Brush="Black"
                                     Offset="20,20"
@@ -506,7 +501,6 @@
                     </SwipeView.RightItems>
 
                     <Border Margin="5">
-
                         <Border.Shadow>
                             <Shadow Brush="Black"
                                     Offset="20,20"
@@ -600,7 +594,6 @@
                     </SwipeView.RightItems>
 
                     <Border Margin="5">
-
                         <Border.Shadow>
                             <Shadow Brush="Black"
                                     Offset="20,20"
@@ -686,7 +679,6 @@
                     </SwipeView.RightItems>
 
                     <Border Margin="5">
-
                         <Border.Shadow>
                             <Shadow Brush="Black"
                                     Offset="20,20"

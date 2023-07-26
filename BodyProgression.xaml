@@ -14,17 +14,38 @@
           RowDefinitions="*"
           ColumnDefinitions="*">
         
-        <CollectionView x:Name="progression_list_display">
+        <CollectionView x:Name="progression_list_display"
+                        VerticalOptions="Start"
+                        SelectionMode="Single"
+                        SelectionChanged="View_Progression">
+            
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Progression">
-                    <HorizontalStackLayout Padding="5"
-                                           HorizontalOptions="Center">
+                    <Border Margin="5">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="20,20"
+                                    Radius="40"
+                                    Opacity="1" />
+                            </Border.Shadow>
 
-                        <Button Text="{Binding image_date}"
-                                VerticalOptions="Start"
-                                HorizontalOptions="Center"
-                                Margin="10"/>
-                    </HorizontalStackLayout>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal"></VisualState>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="LightSkyBlue"></Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Label HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center"
+                                   HeightRequest="50"
+                                   Text="{Binding date}" />
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
