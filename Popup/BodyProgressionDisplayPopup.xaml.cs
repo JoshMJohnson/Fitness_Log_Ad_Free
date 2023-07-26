@@ -12,12 +12,15 @@ public partial class BodyProgressionDisplayPopup
         View_Progression_Data(image_name);
     }
 
-    /* todo displays the progression image */
+    /* displays the progression image */
     private async void View_Progression_Data(string image_name)
     {
         current_progression = await App.RecordRepo.Get_Progression(image_name);
 
         image_date_selected_display.Text = current_progression.date;
+
+        /* todo loads image of progression */
+
 
     }
 
