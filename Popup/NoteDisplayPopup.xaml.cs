@@ -23,7 +23,7 @@ public partial class NoteDisplayPopup
         note_content_display.Text = current_note.content;
     }
 
-	/* ? executes when update note button clicked */
+	/* executes when update note button clicked */
 	private void Edit_Note(object sender, EventArgs e) => Close(true);
 	
     /* executes when delete note button is clicked */
