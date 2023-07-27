@@ -18,10 +18,7 @@ public partial class BodyProgressionDisplayPopup
         current_progression = await App.RecordRepo.Get_Progression(image_name);
 
         image_date_selected_display.Text = current_progression.date;
-
-        /* todo loads image of progression */
-
-
+        load_progression_view.Source = current_progression.image_full_path;
     }
 
     /* closes popup for viewing a body progression */
@@ -33,7 +30,7 @@ public partial class BodyProgressionDisplayPopup
     /* delete progression currently being viewed */
     private async void Remove_Body_Progression(object sender, EventArgs e)
     {
-        string progression_image_name = current_progression.name;
+        string progression_image_name = current_progression.image_full_path;
         await App.RecordRepo.Remove_Progression(progression_image_name);
         Close();
     }

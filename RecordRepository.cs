@@ -38,9 +38,9 @@ public class RecordRepository
 
     /* * body progression section */
     /* adds an entry to the body progression table within the database */
-    public async Task Add_Progression(string image_name, DateTime image_date)
+    public async Task Add_Progression(string image_path, DateTime image_date)
 	{
-        ArgumentNullException.ThrowIfNull(image_name, nameof(image_name));
+        ArgumentNullException.ThrowIfNull(image_path, nameof(image_path));
         ArgumentNullException.ThrowIfNull(image_date, nameof(image_date));
 
         try
@@ -56,7 +56,7 @@ public class RecordRepository
 
             Progression new_goal = new Progression
             {
-                name = image_name,
+                image_full_path = image_path,
                 date = date_only,
                 date_sort = date_datatype
             };

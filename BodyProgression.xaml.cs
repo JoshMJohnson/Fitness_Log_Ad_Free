@@ -25,7 +25,7 @@ public partial class BodyProgression : ContentPage
     /* handles transition to view progression */
     private async void View_Progression(object sender, SelectionChangedEventArgs progression_clicked)
     {
-        string progression_name = (progression_clicked.CurrentSelection.FirstOrDefault() as Progression)?.name;
+        string progression_name = (progression_clicked.CurrentSelection.FirstOrDefault() as Progression)?.image_full_path;
         await this.ShowPopupAsync(new BodyProgressionDisplayPopup(progression_name));
         Refresh_Progression();
     }
