@@ -64,7 +64,7 @@ public partial class Notes : ContentPage
         Refresh_Notes();
     }
 
-    /* ? refreshes the display of notes */
+    /* refreshes the display of notes */
     private async void Refresh_Notes()
     {
         List<Note> notes_list = await App.RecordRepo.Get_All_Notes();
