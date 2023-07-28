@@ -16,13 +16,6 @@ public partial class BodyWeight : ContentPage
     public BodyWeight()
 	{
 		InitializeComponent();
-
-		actual_weight = Preferences.Get("ActualWeight", 0);
-        change_weight = Preferences.Get("ChangeWeight", 0);
-        week_change = Preferences.Get("WeekChangeWeight", 0);
-        month_change = Preferences.Get("MonthChangeWeight", 0);
-        total_change = Preferences.Get("TotalChangeWeight", 0);
-
         Refresh_Table_Data();
     }
 
@@ -40,21 +33,38 @@ public partial class BodyWeight : ContentPage
     /* refreshes the Body Weight table data */
     private async void Refresh_Table_Data()
     {
-        /* todo 'Actual' cell */
-        /* todo 'Change' cell */
+        List<BodyWeightEntry> entries = await App.RecordRepo.Get_Body_Weight_List();
+
+        chart_data_display.ItemsSource = entries; /* updates the chart data */
+
+        /* 'Actual' cell */
+        actual_weight_display.Text = entries[0].weight.ToString();
+
+        /* 'Change' cell */
+        int most_recent_weight_entry = entries[0].weight;
+        int second_most_recent_weight_entry = entries[1].weight;
+        int weight_change = most_recent_weight_entry - second_most_recent_weight_entry;
+
+        change_weight_display.Text = weight_change.ToString();
+
+
         /* todo 'Closest Goal' cell */
+        //goal_display.Text = goal_weight.ToString();
+
+
         /* todo 'This Week' cell */
+        //week_change_display.Text = week_change.ToString();
+
+
         /* todo 'This Month' cell */
+        //month_change_display.Text = month_change.ToString();
+
+
         /* todo 'Total' cell */
+        //total_change_display.Text = total_change.ToString();
 
-        chart_data_display.ItemsSource = await App.RecordRepo.Get_Body_Weight_List();
 
 
-        actual_weight_display.Text = actual_weight.ToString();
-        change_weight_display.Text = change_weight.ToString();
-        goal_display.Text = goal_weight.ToString();
-        week_change_display.Text = week_change.ToString();
-        month_change_display.Text = month_change.ToString();
-        total_change_display.Text = total_change.ToString();
+
     }
 }

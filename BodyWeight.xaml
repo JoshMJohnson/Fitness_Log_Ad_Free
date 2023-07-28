@@ -111,10 +111,6 @@
                HorizontalOptions="End"
                Grid.Row="1" />
 
-
-
-
-
         <CollectionView x:Name="chart_data_display"
                         Grid.Row="2"
                         VerticalOptions="Start" >

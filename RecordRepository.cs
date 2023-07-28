@@ -182,6 +182,7 @@ public class RecordRepository
         {
             await Init_Database();
             List<BodyWeightEntry> body_weight_list = await conn.Table<BodyWeightEntry>().ToListAsync();
+            body_weight_list = body_weight_list.OrderBy(entry => entry.date).Reverse().ToList();
             return body_weight_list;
         }
         catch (Exception e)
