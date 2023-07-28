@@ -18,6 +18,8 @@ public partial class BodyProgressionDisplayPopup
         current_progression = await App.RecordRepo.Get_Progression(image_name);
 
         image_date_selected_display.Text = current_progression.date;
+
+        /* todo retrieve data from storage instead of cache */
         load_progression_view.Source = current_progression.image_full_path;
     }
 
