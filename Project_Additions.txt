@@ -14,6 +14,7 @@ To Do:
 
 
 Bugs:
+ - body progressino images get removed when not in cache memeory anymore
 
 
 Ads:
