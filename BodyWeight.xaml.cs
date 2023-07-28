@@ -37,7 +37,7 @@ public partial class BodyWeight : ContentPage
         }
     }
 
-    /* refreshes the 'Closest Goal' for display within the table */
+    /* refreshes the Body Weight table data */
     private async void Refresh_Table_Data()
     {
         /* todo 'Actual' cell */
