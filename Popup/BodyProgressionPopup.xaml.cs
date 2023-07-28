@@ -5,6 +5,8 @@ namespace WorkoutLog.Popup;
 public partial class BodyProgressionPopup
 {
     private string image_full_path_cache = "";
+    private string image_file_name;
+    private Stream stream;
 
     public BodyProgressionPopup()
 	{
@@ -31,7 +33,12 @@ public partial class BodyProgressionPopup
             /* todo save image from cache to local storage */
             Console.WriteLine($"******image_full_path: {image_full_path_cache}******");
 
-            
+            string local_storage_location = Path.Combine(FileSystem.AppDataDirectory, image_file_name);
+
+            FileStream local_file_stream = File.OpenWrite(local_storage_location);
+
+            await stream.CopyToAsync(local_file_stream);
+
 
 
             await App.RecordRepo.Add_Progression(image_full_path_cache, image_date);
@@ -43,7 +50,7 @@ public partial class BodyProgressionPopup
     /* load local image from device */
     private async void Load_Image(object sender, EventArgs e)
     {
-        var result = await FilePicker.PickAsync(new PickOptions
+        FileResult result = await FilePicker.PickAsync(new PickOptions
         {
             PickerTitle = "Load Body Progression",
             FileTypes = FilePickerFileType.Images
@@ -54,8 +61,13 @@ public partial class BodyProgressionPopup
             return;
         }
 
-        error_prompt.IsVisible = false;
+        stream = await result.OpenReadAsync();
+
+        
         image_full_path_cache = result.FullPath;
+        image_file_name = result.FileName;
+
         load_progression_preview.Source = image_full_path_cache;
+        error_prompt.IsVisible = false;
     }
 }
