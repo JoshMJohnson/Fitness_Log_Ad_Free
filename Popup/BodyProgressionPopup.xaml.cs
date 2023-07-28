@@ -30,19 +30,13 @@ public partial class BodyProgressionPopup
         {
             DateTime image_date = image_date_selected_display.Date;
 
-            /* todo save image from cache to local storage */
-            Console.WriteLine($"******image_full_path: {image_full_path_cache}******");
-
+            /* save image from cache to local storage */
             string local_storage_location = Path.Combine(FileSystem.AppDataDirectory, image_file_name);
-
             FileStream local_file_stream = File.OpenWrite(local_storage_location);
-
             await stream.CopyToAsync(local_file_stream);
 
-
-
-            await App.RecordRepo.Add_Progression(image_full_path_cache, image_date);
-
+            /* save progression to database */
+            await App.RecordRepo.Add_Progression(local_storage_location, image_date);
             Close();
         }
     }
