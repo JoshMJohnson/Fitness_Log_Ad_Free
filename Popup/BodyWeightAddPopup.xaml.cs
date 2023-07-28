@@ -22,10 +22,10 @@ public partial class BodyWeightAddPopup
 
             DateTime date = record_date.Date;
 
-            await App.RecordRepo.Add_Body_Weight(weight_update, date);
+            await App.RecordRepo.Add_Body_Weight(date, weight_update);
 
             error_prompt.IsVisible = false;
-            Close();
+            Close(true);
         }
         else /* if weight field is empty */
         {

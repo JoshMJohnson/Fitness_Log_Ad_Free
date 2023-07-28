@@ -110,7 +110,31 @@
                FontSize="12"
                HorizontalOptions="End"
                Grid.Row="1" />
-        
-        
+
+
+
+
+
+        <CollectionView x:Name="chart_data_display"
+                        Grid.Row="2"
+                        VerticalOptions="Start" >
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:BodyWeightEntry">
+                    <Grid RowDefinitions="*"
+                          ColumnDefinitions="*, *"
+                          Margin="10">
+
+                        <Label VerticalOptions="Center"
+                               Grid.Column="0"
+                               Text="{Binding date}"/>
+
+                        <Label Grid.Column="1"
+                               HorizontalOptions="End"
+                               Text="{Binding weight}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 </ContentPage>

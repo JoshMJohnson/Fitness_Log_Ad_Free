@@ -8,14 +8,11 @@
  - can zoom out and see entrie body weight chart
 
 To Do:
- - popup entries for body progression and body weight
  - notify when adding to database when primary key already exists
  - confirm remove popups
-
+ - update status_message message accordingly for each function
 
 Bugs:
- - body progressino images get removed when not in cache memeory anymore
-
 
 Ads:
  - Unity

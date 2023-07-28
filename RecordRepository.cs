@@ -29,11 +29,7 @@ public class RecordRepository
 
         /* create database tables */
         await conn.CreateTablesAsync<Category, PR, GoalPR, GoalBW, CalendarEntry>();
-        await conn.CreateTablesAsync<Note, Progression>();
-
-        /*
-         await conn.CreateTableAsync<BodyWeight>();
-        */
+        await conn.CreateTablesAsync<Note, Progression, BodyWeightEntry>();
     }
 
     /* * body progression section */
@@ -115,23 +111,43 @@ public class RecordRepository
     }
 
     /* * body weight section */
-    /* todo adds an entry to the body weight table within the database */
-    public async Task Add_Body_Weight(int weight, DateTime date)
+    /* adds an entry to the body weight table within the database */
+    public async Task Add_Body_Weight(DateTime entry_date, int entry_weight)
     {
+        ArgumentNullException.ThrowIfNull(entry_date, nameof(entry_date));
+        ArgumentNullException.ThrowIfNull(entry_weight, nameof(entry_weight));
 
+        try
+        {
+            await Init_Database();
+
+            BodyWeightEntry new_entry = new BodyWeightEntry
+            {
+                date = entry_date,
+                weight = entry_weight
+            };
+
+            int result = await conn.InsertAsync(new_entry);
+
+            status_message = string.Format("{0} progression added", result);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to add body weight entry. Error: {0}", e.Message);
+        }
     }
 
     /* ? edit an entry in the body weight table within the database */
-    public async Task Edit_Body_Weight(DateTime date, int updated_weight)
+    public async Task Edit_Body_Weight(DateTime entry_date, int updated_weight)
     {
-        ArgumentNullException.ThrowIfNull(date, nameof(date));
+        ArgumentNullException.ThrowIfNull(entry_date, nameof(entry_date));
         ArgumentNullException.ThrowIfNull(updated_weight, nameof(updated_weight));
 
         try
         {
             await Init_Database();
 
-            BodyWeightEntry updating_body_weight_entry = await conn.FindAsync<BodyWeightEntry>(date);
+            BodyWeightEntry updating_body_weight_entry = await conn.FindAsync<BodyWeightEntry>(entry_date);
             updating_body_weight_entry.weight = updated_weight;
 
             await conn.UpdateAsync(updating_body_weight_entry);
@@ -142,19 +158,30 @@ public class RecordRepository
         }
     }
 
-    /* todo removes an entry in the body weight table within the database */
-    public async Task Remove_Body_Weight()
+    /* ? removes an entry in the body weight table within the database */
+    public async Task Remove_Body_Weight(DateTime entry_date)
     {
+        ArgumentNullException.ThrowIfNull(entry_date, nameof(entry_date));
 
+        try
+        {
+            await Init_Database();
+            BodyWeightEntry removing_bw_entry = await conn.FindAsync<BodyWeightEntry>(entry_date);
+            await conn.DeleteAsync(removing_bw_entry);
+        }
+        catch (Exception e)
+        {
+            status_message = string.Format("Failed to remove entry on {0}. Error: {1}", entry_date, e.Message);
+        }
     }
 
-    /* ? returns a list of body weight entries from the database */
-    public async Task<List<BodyWeight>> Get_Body_Weight_List()
+    /* returns a list of body weight entries from the database */
+    public async Task<List<BodyWeightEntry>> Get_Body_Weight_List()
     {
         try
         {
             await Init_Database();
-            List<BodyWeight> body_weight_list = await conn.Table<BodyWeight>().ToListAsync();
+            List<BodyWeightEntry> body_weight_list = await conn.Table<BodyWeightEntry>().ToListAsync();
             return body_weight_list;
         }
         catch (Exception e)
@@ -162,7 +189,7 @@ public class RecordRepository
             status_message = string.Format("Failed to retrieve data. {0}", e.Message);
         }
 
-        return new List<BodyWeight>();
+        return new List<BodyWeightEntry>();
     }
 
     /* * body weight goals section */

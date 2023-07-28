@@ -6,7 +6,7 @@ namespace WorkoutLog.Model;
 public class BodyWeightEntry
 {
     [PrimaryKey]
-    public DateTime entry_date { get; set; }
+    public DateTime date { get; set; }
 
     [NotNull]
     public int weight { get; set; }

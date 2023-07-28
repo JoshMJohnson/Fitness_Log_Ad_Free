@@ -23,17 +23,38 @@ public partial class BodyWeight : ContentPage
         month_change = Preferences.Get("MonthChangeWeight", 0);
         total_change = Preferences.Get("TotalChangeWeight", 0);
 
-        actual_weight_display.Text = actual_weight.ToString();
-        change_weight_display.Text = change_weight.ToString();
-        goal_display.Text = goal_weight.ToString();
-        week_change_display.Text = week_change.ToString();
-        month_change_display.Text = month_change.ToString();
-        total_change_display.Text = total_change.ToString();
+        Refresh_Table_Data();
     }
 
     /* executed when body weight plus button clicked to record an update in body weight */
     private async void Record_Body_Weight(object sender, EventArgs e)
     {
         object result = await this.ShowPopupAsync(new BodyWeightAddPopup());
+
+        if (result != null) /* if body weight entry was made */
+        {
+            Refresh_Table_Data();
+        }
+    }
+
+    /* refreshes the 'Closest Goal' for display within the table */
+    private async void Refresh_Table_Data()
+    {
+        /* todo 'Actual' cell */
+        /* todo 'Change' cell */
+        /* todo 'Closest Goal' cell */
+        /* todo 'This Week' cell */
+        /* todo 'This Month' cell */
+        /* todo 'Total' cell */
+
+        chart_data_display.ItemsSource = await App.RecordRepo.Get_Body_Weight_List();
+
+
+        actual_weight_display.Text = actual_weight.ToString();
+        change_weight_display.Text = change_weight.ToString();
+        goal_display.Text = goal_weight.ToString();
+        week_change_display.Text = week_change.ToString();
+        month_change_display.Text = month_change.ToString();
+        total_change_display.Text = total_change.ToString();
     }
 }
