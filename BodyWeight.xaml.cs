@@ -40,7 +40,7 @@ public partial class BodyWeight : ContentPage
             actual_weight_display.Text = entries[0].weight.ToString();
         }
 
-        /* 'Change' cell */
+        /* 'Recent Change' cell */
         if (entries.Count <= 1) /* if less than 2 body weight entries */
         {
             change_weight_display.Text = "----";
@@ -78,7 +78,7 @@ public partial class BodyWeight : ContentPage
             }
         }
 
-        /* ? 'Last 7 Days' cell */
+        /* 'Last 7 Days' cell */
         DateTime current_date = DateTime.Now;
         DateTime week_earlier_date = current_date.AddDays(-7);
 
@@ -121,11 +121,12 @@ public partial class BodyWeight : ContentPage
         /* todo 'Last 30 Days' cell */
         //month_change_display.Text = month_change.ToString();
 
-        Console.WriteLine("**********************3");
+
+
         /* 'Total' cell */
         int num_entries = entries.Count;
 
-        if (num_entries <= 2) /* if; 0 or 1 body weight entries */ 
+        if (num_entries <= 1) /* if; 0 or 1 body weight entries */ 
         {
             total_change_display.Text = "----";
         }
