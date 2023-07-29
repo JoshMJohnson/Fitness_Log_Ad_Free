@@ -10,36 +10,37 @@
                      Clicked="Record_Body_Weight" />
     </ContentPage.ToolbarItems>
 
-    <Grid RowDefinitions="Auto, Auto, *"
+    <Grid RowDefinitions="Auto, Auto, Auto, *"
           ColumnDefinitions="*"
           Padding="20">
 
         <Grid Grid.Row="0"
-              RowDefinitions="75, 75"
+              RowDefinitions="75, 10, 75"
               ColumnDefinitions="*, *, *" 
-              Padding="20"
+              Padding="10"
               BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Primary}}" >
 
             <Grid Grid.Row="0"
-                  Grid.Column="0"
+                  Grid.Column="0"                  
                   RowDefinitions="*, *" >
-
+                    
                 <Label Text="Actual"
                        Grid.Row="0"
                        Grid.Column="0"
                        FontAttributes="Bold"
-                       VerticalOptions="Center"
+                       VerticalOptions="Center"                           
                        HorizontalOptions="Center" />
 
-                <Label x:Name="actual_weight_display"                       
+                <Label x:Name="actual_weight_display"
                        Grid.Row="1"
                        VerticalOptions="Center"
-                       HorizontalOptions="Center" />
+                       HorizontalOptions="Center" />                
             </Grid>
 
             <Grid Grid.Row="0"
                   Grid.Column="1"
-                  RowDefinitions="*, *" >
+                  RowDefinitions="*, *" 
+                  ColumnDefinitions="*">
 
                 <Label Text="Recent Change"
                        Grid.Row="0"
@@ -58,7 +59,7 @@
                   Grid.Column="2"
                   RowDefinitions="*, *" >
 
-                <Label Text="Closest Date Goal"
+                <Label Text="Closest Goal (Date)"
                        LineBreakMode="WordWrap"
                        VerticalOptions="Center"
                        Grid.Row="0"
@@ -73,7 +74,14 @@
                        HorizontalOptions="Center" />
             </Grid>
 
-            <Grid Grid.Row="1"
+            <BoxView Grid.Row="1"
+                     Grid.ColumnSpan="3"
+                     Color="red"  
+                     Margin="0,0,0,0"                   
+                     HeightRequest="2"  
+                     VerticalOptions="Fill"/>
+
+            <Grid Grid.Row="2"
                   Grid.Column="0"
                   RowDefinitions="*, *" >
 
@@ -90,7 +98,7 @@
                        HorizontalOptions="Center" />
             </Grid>
 
-            <Grid Grid.Row="1"
+            <Grid Grid.Row="2"
                   Grid.Column="1"
                   RowDefinitions="*, *" >
 
@@ -107,7 +115,7 @@
                        HorizontalOptions="Center" />
             </Grid>
 
-            <Grid Grid.Row="1"
+            <Grid Grid.Row="2"
                   Grid.Column="2"
                   RowDefinitions="*, *" >
 
@@ -123,16 +131,16 @@
                        VerticalOptions="Center"
                        HorizontalOptions="Center" />
             </Grid>
-        </Grid>
+        </Grid>        
 
         <Label Text="values are in lbs"
                FontAttributes="Italic"
                FontSize="12"
                HorizontalOptions="End"
-               Grid.Row="1" />
+               Grid.Row="2" />
 
         <CollectionView x:Name="chart_data_display"
-                        Grid.Row="2"
+                        Grid.Row="3"
                         VerticalOptions="Start" >
 
             <CollectionView.ItemTemplate>
