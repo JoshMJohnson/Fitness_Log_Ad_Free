@@ -82,25 +82,25 @@ public partial class BodyWeight : ContentPage
         DateTime current_date = DateTime.Now;
         DateTime week_earlier_date = current_date.AddDays(-7);
 
-        bool one_entry = false;
-        bool two_entries = false;
+        bool one_entry_week = false;
+        bool two_entries_week = false;
 
-        BodyWeightEntry most_recent_entry = new BodyWeightEntry();
+        BodyWeightEntry most_recent_entry_week = new BodyWeightEntry();
         BodyWeightEntry furthest_entry_within_week = new BodyWeightEntry();
 
         for (int i = 0; i < entries.Count; i++) /* loops through body weight entries */
         {
             DateTime temp_date = entries[i].date;
 
-            if (temp_date >= week_earlier_date && one_entry == false) /* if entry in database is within a week from todays date */
+            if (temp_date >= week_earlier_date && one_entry_week == false) /* if entry in database is within a week from todays date */
             {
-                most_recent_entry = entries[i];
-                one_entry = true;
+                most_recent_entry_week = entries[i];
+                one_entry_week = true;
             }
             else if (temp_date >= week_earlier_date) /* if entry in database is within a week from todays date and another entry found within a week */
             {
                 furthest_entry_within_week = entries[i];
-                two_entries = true;
+                two_entries_week = true;
             }
             else /* else; entry in database is older than a week from todays date */
             {
@@ -108,9 +108,9 @@ public partial class BodyWeight : ContentPage
             }
         }
 
-        if (one_entry && two_entries) /* if at least 2 entries with 7 days */
+        if (one_entry_week && two_entries_week) /* if at least 2 entries with 7 days */
         {
-            double weight_diff = most_recent_entry.weight - furthest_entry_within_week.weight;
+            double weight_diff = most_recent_entry_week.weight - furthest_entry_within_week.weight;
             week_change_display.Text = weight_diff.ToString();
         }
         else /* else; only 1 or 2 entries with 7 days */
@@ -118,10 +118,44 @@ public partial class BodyWeight : ContentPage
             week_change_display.Text = "----";
         }
 
-        /* todo 'Last 30 Days' cell */
-        //month_change_display.Text = month_change.ToString();
+        /* 'Last 30 Days' cell */
+        DateTime month_earlier_date = current_date.AddDays(-30);
 
+        bool one_entry_month = false;
+        bool two_entries_month = false;
 
+        BodyWeightEntry most_recent_entry_month = new BodyWeightEntry();
+        BodyWeightEntry furthest_entry_within_month = new BodyWeightEntry();
+
+        for (int i = 0; i < entries.Count; i++) /* loops through body weight entries */
+        {
+            DateTime temp_date = entries[i].date;
+
+            if (temp_date >= month_earlier_date && one_entry_month == false) /* if entry in database is within a month from todays date */
+            {
+                most_recent_entry_month = entries[i];
+                one_entry_month = true;
+            }
+            else if (temp_date >= month_earlier_date) /* if entry in database is within a month from todays date and another entry found within a month */
+            {
+                furthest_entry_within_month = entries[i];
+                two_entries_month = true;
+            }
+            else /* else; entry in database is older than a month from todays date */
+            {
+                break;
+            }
+        }
+
+        if (one_entry_month && two_entries_month) /* if at least 2 entries with 7 days */
+        {
+            double weight_diff = most_recent_entry_month.weight - furthest_entry_within_month.weight;
+            month_change_display.Text = weight_diff.ToString();
+        }
+        else /* else; only 1 or 2 entries with 7 days */
+        {
+            month_change_display.Text = "----";
+        }
 
         /* 'Total' cell */
         int num_entries = entries.Count;
