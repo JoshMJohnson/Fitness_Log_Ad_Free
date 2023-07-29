@@ -15,7 +15,7 @@
           Padding="20">
 
         <Grid Grid.Row="0"
-              RowDefinitions="50, 50"
+              RowDefinitions="75, 75"
               ColumnDefinitions="*, *, *" 
               Padding="20"
               BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Primary}}" >
@@ -27,10 +27,13 @@
                 <Label Text="Actual"
                        Grid.Row="0"
                        Grid.Column="0"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
 
-                <Label x:Name="actual_weight_display"
+                <Label x:Name="actual_weight_display"                       
                        Grid.Row="1"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
             </Grid>
 
@@ -41,10 +44,13 @@
                 <Label Text="Change"
                        Grid.Row="0"
                        Grid.Column="0"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
 
                 <Label x:Name="change_weight_display"
                        Grid.Row="1"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
             </Grid>
 
@@ -52,13 +58,18 @@
                   Grid.Column="2"
                   RowDefinitions="*, *" >
 
-                <Label Text="Closest Goal"
+                <Label Text="Closest Date Goal"
+                       LineBreakMode="WordWrap"
+                       VerticalOptions="Center"
                        Grid.Row="0"
                        Grid.Column="0"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
                        HorizontalOptions="Center" />
 
                 <Label x:Name="goal_display"
                        Grid.Row="1"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
             </Grid>
 
@@ -69,10 +80,13 @@
                 <Label Text="This Week"
                        Grid.Row="0"
                        Grid.Column="0"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
 
                 <Label x:Name="week_change_display"
                        Grid.Row="1"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
             </Grid>
 
@@ -83,10 +97,13 @@
                 <Label Text="This Month"
                        Grid.Row="0"
                        Grid.Column="0"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
 
                 <Label x:Name="month_change_display"
                        Grid.Row="1"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
             </Grid>
 
@@ -97,10 +114,13 @@
                 <Label Text="Total"
                        Grid.Row="0"
                        Grid.Column="0"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
 
                 <Label x:Name="total_change_display"
                        Grid.Row="1"
+                       VerticalOptions="Center"
                        HorizontalOptions="Center" />
             </Grid>
         </Grid>

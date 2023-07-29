@@ -291,7 +291,6 @@ public class RecordRepository
         }
     }
 
-
     /* returns a list of body weight goals from the database */
     public async Task<List<GoalBW>> Get_Body_Weight_Goal_List()
     {
