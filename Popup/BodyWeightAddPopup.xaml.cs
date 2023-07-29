@@ -8,7 +8,9 @@ public partial class BodyWeightAddPopup
 	public BodyWeightAddPopup()
 	{
 		InitializeComponent();
-	}
+     
+        record_date.MaximumDate = DateTime.Now;
+    }
 
     /* records body weight entry */
     private async void Submit_Body_Weight(object sender, EventArgs e)

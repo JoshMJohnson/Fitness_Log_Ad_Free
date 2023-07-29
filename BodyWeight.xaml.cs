@@ -31,14 +31,28 @@ public partial class BodyWeight : ContentPage
         chart_data_display.ItemsSource = entries; /* updates the chart data */
 
         /* 'Actual' cell */
-        actual_weight_display.Text = entries[0].weight.ToString();
+        if (entries.Count == 0) /* if empty body weight entries */
+        {
+            actual_weight_display.Text = "----";
+        }
+        else  /* else at least 1 body weight entries */
+        {
+            actual_weight_display.Text = entries[0].weight.ToString();
+        }
 
         /* 'Change' cell */
-        int most_recent_weight_entry = entries[0].weight;
-        int second_most_recent_weight_entry = entries[1].weight;
-        int weight_change = most_recent_weight_entry - second_most_recent_weight_entry;
+        if (entries.Count <= 1) /* if less than 2 body weight entries */
+        {
+            change_weight_display.Text = "----";
+        }
+        else /* else; at least 2 body weight entries */
+        {
+            int most_recent_weight_entry = entries[0].weight;
+            int second_most_recent_weight_entry = entries[1].weight;
+            int weight_change = most_recent_weight_entry - second_most_recent_weight_entry;
 
-        change_weight_display.Text = weight_change.ToString();
+            change_weight_display.Text = weight_change.ToString();
+        }
 
         /* 'Closest Goal' cell */
         List<GoalBW> body_weight_goals = await App.RecordRepo.Get_Body_Weight_Goal_List();
@@ -64,15 +78,50 @@ public partial class BodyWeight : ContentPage
             }
         }
 
-        /* todo 'This Week' cell */
+        /* ? 'Last 7 Days' cell */
+        DateTime current_date = DateTime.Now;
+        DateTime week_earlier_date = current_date.AddDays(-7);
 
-        //week_change_display.Text = week_change.ToString();
+        bool one_entry = false;
+        bool two_entries = false;
 
+        BodyWeightEntry most_recent_entry = new BodyWeightEntry();
+        BodyWeightEntry furthest_entry_within_week = new BodyWeightEntry();
 
-        /* todo 'This Month' cell */
+        for (int i = 0; i < entries.Count; i++) /* loops through body weight entries */
+        {
+            DateTime temp_date = entries[i].date;
+
+            if (temp_date >= week_earlier_date && one_entry == false) /* if entry in database is within a week from todays date */
+            {
+                most_recent_entry = entries[i];
+                one_entry = true;
+            }
+            else if (temp_date >= week_earlier_date) /* if entry in database is within a week from todays date and another entry found within a week */
+            {
+                furthest_entry_within_week = entries[i];
+                two_entries = true;
+            }
+            else /* else; entry in database is older than a week from todays date */
+            {
+                break;
+            }
+        }
+
+        if (one_entry && two_entries) /* if at least 2 entries with 7 days */
+        {
+            double weight_diff = most_recent_entry.weight - furthest_entry_within_week.weight;
+            week_change_display.Text = weight_diff.ToString();
+        }
+        else /* else; only 1 or 2 entries with 7 days */
+        {
+            week_change_display.Text = "----";
+        }
+
+        /* todo 'Last 30 Days' cell */
         //month_change_display.Text = month_change.ToString();
 
-
+        Console.WriteLine("**********************3");
         /* 'Total' cell */
         int num_entries = entries.Count;
 
