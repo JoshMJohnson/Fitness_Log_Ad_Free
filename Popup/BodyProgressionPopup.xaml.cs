@@ -1,4 +1,5 @@
 using Microsoft.Maui.Storage;
+using WorkoutLog.Model;
 
 namespace WorkoutLog.Popup;
 
@@ -28,6 +29,8 @@ public partial class BodyProgressionPopup
         }
         else /* else; saving a body progression image */
         {
+            List<Progression> progression_list_before_entry = await App.RecordRepo.Get_Progression_List();
+
             DateTime image_date = image_date_selected_display.Date;
 
             /* save image from cache to local storage */
@@ -37,7 +40,18 @@ public partial class BodyProgressionPopup
 
             /* save progression to database */
             await App.RecordRepo.Add_Progression(local_storage_location, image_date);
-            Close();
+
+            /* if list size does not change; duplicate; entry already exists */
+            List<Progression> progression_list_after_entry = await App.RecordRepo.Get_Progression_List();
+
+            if (progression_list_before_entry.Count == progression_list_after_entry.Count) /* if duplicate */
+            {
+                Close(true);
+            }
+            else
+            {
+                Close();
+            }
         }
     }
 

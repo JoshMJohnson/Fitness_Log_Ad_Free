@@ -102,6 +102,9 @@
 	  <MauiXaml Update="Popup\CalendarRemovePopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Popup\DuplicateEntryPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Popup\GoalBodyWeightPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

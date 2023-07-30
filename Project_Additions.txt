@@ -8,6 +8,7 @@
 
 To Do:
  - notify when adding to database when primary key already exists
+	- create popup class for duplicate message
 
 Bugs:
 

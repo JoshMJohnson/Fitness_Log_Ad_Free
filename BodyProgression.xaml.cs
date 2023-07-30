@@ -18,8 +18,16 @@ public partial class BodyProgression : ContentPage
     /* executed when PR plus button clicked */
     private async void Add_Body_Progression(object sender, EventArgs e)
     {
-        await this.ShowPopupAsync(new BodyProgressionPopup());
-        Refresh_Progression();
+        object result = await this.ShowPopupAsync(new BodyProgressionPopup());
+
+        if (result != null) /* if duplicate */
+        {
+            await this.ShowPopupAsync(new DuplicateEntryPopup("Body Progression"));
+        }
+        else /* else; new entry */
+        {
+            Refresh_Progression();
+        }
     }
 
     /* handles transition to view progression */
