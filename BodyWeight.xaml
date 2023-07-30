@@ -20,6 +20,24 @@
               Padding="10"
               BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Primary}}" >
 
+            <BoxView Grid.Row="1"
+                     Grid.ColumnSpan="5"
+                     Margin="0,0,0,0"                   
+                     HeightRequest="2"  
+                     VerticalOptions="Fill"/>
+
+            <BoxView Grid.RowSpan="3"
+                     Grid.Column="1"
+                     Margin="0,0,0,0"                   
+                     WidthRequest="2"  
+                     VerticalOptions="Fill"/>
+
+            <BoxView Grid.RowSpan="3"
+                     Grid.Column="3"
+                     Margin="0,0,0,0"                   
+                     WidthRequest="2"  
+                     VerticalOptions="Fill"/>
+
             <Grid Grid.Row="0"
                   Grid.Column="0"                  
                   RowDefinitions="*, *" >
@@ -73,27 +91,6 @@
                        VerticalOptions="Center"
                        HorizontalOptions="Center" />
             </Grid>
-
-            <BoxView Grid.Row="1"
-                     Grid.ColumnSpan="5"
-                     Color="red"  
-                     Margin="0,0,0,0"                   
-                     HeightRequest="2"  
-                     VerticalOptions="Fill"/>
-
-            <BoxView Grid.RowSpan="3"
-                     Grid.Column="1"
-                     Color="red"  
-                     Margin="0,0,0,0"                   
-                     WidthRequest="2"  
-                     VerticalOptions="Fill"/>
-
-            <BoxView Grid.RowSpan="3"
-                     Grid.Column="3"
-                     Color="red"  
-                     Margin="0,0,0,0"                   
-                     WidthRequest="2"  
-                     VerticalOptions="Fill"/>
 
             <Grid Grid.Row="2"
                   Grid.Column="0"
