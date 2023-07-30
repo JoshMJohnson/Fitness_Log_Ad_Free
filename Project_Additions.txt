@@ -13,7 +13,6 @@ To Do:
  - update status_message message accordingly for each function
 
 Bugs:
- - bw goal deleted/removed doesnt update bw chart table
 
 Ads:
  - Unity
