@@ -9,6 +9,7 @@
 To Do:
  - notify when adding to database when primary key already exists
  - update status_message message accordingly for each function
+ - update comments throughout project
 
 Bugs:
 

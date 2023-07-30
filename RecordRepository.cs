@@ -80,7 +80,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to remove {0}. Error: {1}", image_name, e.Message);
+            status_message = string.Format("Failed to remove progression {0}. Error: {1}", image_name, e.Message);
         }
     }
 
@@ -96,7 +96,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+            status_message = string.Format("Failed to retrieve progression list. {0}", e.Message);
         }
 
         return new List<Progression>();
@@ -129,7 +129,7 @@ public class RecordRepository
 
             int result = await conn.InsertAsync(new_entry);
 
-            status_message = string.Format("{0} progression added", result);
+            status_message = string.Format("{0} body weight added", result);
         }
         catch (Exception e)
         {
@@ -154,7 +154,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to update. Error: {0}", e.Message);
+            status_message = string.Format("Failed to edit body weight entry. Error: {0}", e.Message);
         }
     }
 
@@ -171,7 +171,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to remove entry on {0}. Error: {1}", entry_date, e.Message);
+            status_message = string.Format("Failed to remove body weight entry on {0}. Error: {1}", entry_date, e.Message);
         }
     }
 
@@ -187,7 +187,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+            status_message = string.Format("Failed to retrieve body weight entry list. {0}", e.Message);
         }
 
         return new List<BodyWeightEntry>();
@@ -228,11 +228,11 @@ public class RecordRepository
 
             int result = await conn.InsertAsync(new_goal);
 
-            status_message = string.Format("{0} goal added (Goal date: {1})", result, date);
+            status_message = string.Format("{0} body weight goal added (Goal date: {1})", result, date);
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to add goal date: {0}. Error: {1}", date, e.Message);
+            status_message = string.Format("Failed to add body weight goal date: {0}. Error: {1}", date, e.Message);
         }
     }
 
@@ -249,7 +249,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to remove {0}. Error: {1}", goal_name, e.Message);
+            status_message = string.Format("Failed to remove body weight goal {0}. Error: {1}", goal_name, e.Message);
         }
     }
 
@@ -287,7 +287,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to edit goal name: {0}. Error: {1}", goal_name, e.Message);
+            status_message = string.Format("Failed to edit body weight goal name: {0}. Error: {1}", goal_name, e.Message);
         }
     }
 
@@ -333,7 +333,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+            status_message = string.Format("Failed to retrieve body weight goal list. {0}", e.Message);
         }
 
         return new List<GoalBW>();
@@ -422,7 +422,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to remove {0}. Error: {1}", goal_name, e.Message);
+            status_message = string.Format("Failed to remove pr goal {0}. Error: {1}", goal_name, e.Message);
         }
     }
 
@@ -522,7 +522,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+            status_message = string.Format("Failed to retrieve pr goal list. {0}", e.Message);
         }
 
         return new List<GoalPR>();
@@ -573,7 +573,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to add {0}. Error: {1}", name, e.Message);
+            status_message = string.Format("Failed to add PR {0}. Error: {1}", name, e.Message);
         }
     }
 
@@ -613,7 +613,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to update. Error: {0}", e.Message);
+            status_message = string.Format("Failed to update PR. Error: {0}", e.Message);
         }
     }
 
@@ -630,7 +630,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to remove {0}. Error: {1}", exercise_name, e.Message);
+            status_message = string.Format("Failed to remove PR {0}. Error: {1}", exercise_name, e.Message);
         }
     }
 
@@ -653,7 +653,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+            status_message = string.Format("Failed to retrieve PR list. {0}", e.Message);
         }
 
         return new List<PR>();
@@ -732,7 +732,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+            status_message = string.Format("Failed to retrieve calendar entry list. {0}", e.Message);
         }
 
         return new List<CalendarEntry>();
@@ -767,11 +767,11 @@ public class RecordRepository
                 result = await conn.InsertAsync(new_category);
             }
 
-            status_message = string.Format("{0} category added (Category Name: {1})", result, category_name);
+            status_message = string.Format("{0} calendar category added (Category Name: {1})", result, category_name);
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to add category {0}. Error: {1}", category_name, e.Message);
+            status_message = string.Format("Failed to add calendar category {0}. Error: {1}", category_name, e.Message);
         }
     }
     
@@ -790,11 +790,11 @@ public class RecordRepository
 
             await conn.UpdateAsync(removing_category);
 
-            status_message = string.Format("category removed (Category Name: {1})", category_name);
+            status_message = string.Format("calendar category removed (Category Name: {1})", category_name);
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to remove category {0}. Error: {1}", category_name, e.Message);
+            status_message = string.Format("Failed to remove calendar category {0}. Error: {1}", category_name, e.Message);
         }
     }
 
@@ -821,7 +821,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+            status_message = string.Format("Failed to retrieve calendar category list. {0}", e.Message);
         }
 
         return new List<Category>();
@@ -911,7 +911,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to update. Error: {0}", e.Message);
+            status_message = string.Format("Failed to edit note. Error: {0}", e.Message);
         }
     }
 
@@ -929,7 +929,7 @@ public class RecordRepository
         }
         catch (Exception e)
         {
-            status_message = string.Format("Failed to retrieve data. {0}", e.Message);
+            status_message = string.Format("Failed to retrieve note list. {0}", e.Message);
         }
 
         return new List<Note>();
