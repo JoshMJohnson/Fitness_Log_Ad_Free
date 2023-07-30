@@ -8,7 +8,6 @@
 
 To Do:
  - notify when adding to database when primary key already exists
- - update comments throughout project
 
 Bugs:
 
