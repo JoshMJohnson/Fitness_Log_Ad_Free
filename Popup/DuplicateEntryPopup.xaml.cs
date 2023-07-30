@@ -13,33 +13,33 @@ public partial class DuplicateEntryPopup
 		{
 			Display_Body_Progression(table_name);
         }
-		else if (table_name == "Body Weight") /* todo else if duplicate entry is a body weight entry */
+		else if (table_name == "Body Weight") /* else if duplicate entry is a body weight entry */
         {
-
-		}
-        else if (table_name == "Body Weight Goal") /* todo else if duplicate entry is a body weight goal entry */
-        {
-
+            Display_Body_Weight(table_name);
         }
-        else if (table_name == "PR Goal") /* todo else if duplicate entry is a pr goal entry */
+        else if (table_name == "Body Weight Goal") /* else if duplicate entry is a body weight goal entry */
         {
-
+            Display_Body_Weight_Goal(table_name);
         }
-        else if (table_name == "PR") /* todo else if duplicate entry is a PR entry */
+        else if (table_name == "PR Goal") /* else if duplicate entry is a pr goal entry */
         {
-
+            Display_PR_Goal(table_name);
         }
-        else if (table_name == "Category") /* todo else if duplicate entry is a calendar category entry */
+        else if (table_name == "PR") /* else if duplicate entry is a PR entry */
         {
-
+            Display_PR(table_name);
         }
-        else /* todo else duplicate entry is a notes entry */
+        else if (table_name == "Category") /* else if duplicate entry is a calendar category entry */
         {
-
+            Display_Category(table_name);
+        }
+        else /* else duplicate entry is a notes entry */
+        {
+            Display_Notes(table_name);
         }
     }
 
-	/* displays body progressin duplicate info */
+	/* displays body progression duplicate info */
 	private void Display_Body_Progression(string table_name)
 	{
         duplicate_table_display.Text = table_name;
@@ -51,9 +51,44 @@ public partial class DuplicateEntryPopup
         duplicate_table_prompt2_display.Text = prompt2;
     }
 
+    /* todo displays body weight duplicate info */
+    private void Display_Body_Weight(string table_name)
+    {
+        
+    }
 
-	/* closes the popup alert for duplicate */
-	private void Close_Popup(object sender, EventArgs e)
+    /* todo displays body weight goal duplicate info */
+    private void Display_Body_Weight_Goal(string table_name)
+    {
+
+    }
+
+    /* todo displays PR goal duplicate info */
+    private void Display_PR_Goal(string table_name)
+    {
+
+    }
+
+    /* todo displays PR duplicate info */
+    private void Display_PR(string table_name)
+    {
+
+    }
+
+    /* todo displays category duplicate info */
+    private void Display_Category(string table_name)
+    {
+
+    }
+
+    /* todo displays notes duplicate info */
+    private void Display_Notes(string table_name)
+    {
+
+    }
+
+    /* closes the popup alert for duplicate */
+    private void Close_Popup(object sender, EventArgs e)
 	{
 		Close();
 	}
