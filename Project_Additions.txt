@@ -1,5 +1,4 @@
 ﻿Additions:
- - be able to set a preference for what section to open the app with every time
  - Body Weight chart. click entry on graph to show edit and delete options
  - toggle between lbs and kg
  - body weight goals displayed as horizontal lines on body weight chart
@@ -9,10 +8,10 @@
 
 To Do:
  - notify when adding to database when primary key already exists
- - confirm remove popups
  - update status_message message accordingly for each function
 
 Bugs:
+
 
 Ads:
  - Unity
