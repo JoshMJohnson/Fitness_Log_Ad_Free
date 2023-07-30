@@ -93,7 +93,8 @@
                        VerticalOptions="Center"
                        HorizontalOptions="Center" />
 
-                <Button ImageSource="refresh_icon"
+                <Button ImageSource="{AppThemeBinding Light=refresh_icon.png, Dark=refresh_icon_dark.png}"
+                        BackgroundColor="Transparent"
                         Clicked="Refresh_Table"
                         WidthRequest="30"
                         HeightRequest="30"
