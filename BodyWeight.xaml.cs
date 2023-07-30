@@ -23,6 +23,12 @@ public partial class BodyWeight : ContentPage
         }
     }
 
+    /* refreshes the Body Weight table data when refresh button clicked */
+    private void Refresh_Table(object sender, EventArgs e)
+    {
+        Refresh_Table_Data();
+    }
+
     /* refreshes the Body Weight table data */
     private async void Refresh_Table_Data()
     {

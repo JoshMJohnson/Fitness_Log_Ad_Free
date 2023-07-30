@@ -23,7 +23,7 @@
     <ShellContent
         Title="Body Weight"
         Icon="shell_icon_body_weight.png"
-        ContentTemplate="{DataTemplate local:BodyWeight}"
+        ContentTemplate="{DataTemplate local:BodyWeight}"        
         Route="BodyWeight" />
 
     <FlyoutItem Title="Goals"

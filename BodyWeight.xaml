@@ -75,21 +75,31 @@
 
             <Grid Grid.Row="0"
                   Grid.Column="4"
-                  RowDefinitions="*, *" >
+                  RowDefinitions="*, *"
+                  ColumnDefinitions="*, 0">
 
                 <Label Text="Closest Goal (Date)"
                        LineBreakMode="WordWrap"
                        VerticalOptions="Center"
                        Grid.Row="0"
-                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        HorizontalOptions="Center" />
 
                 <Label x:Name="goal_display"
                        Grid.Row="1"
+                       Grid.Column="0"
                        VerticalOptions="Center"
                        HorizontalOptions="Center" />
+
+                <Button ImageSource="refresh_icon"
+                        Clicked="Refresh_Table"
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        HorizontalOptions="End"
+                        Grid.Row="1"
+                        Grid.Column="1" />
             </Grid>
 
             <Grid Grid.Row="2"
