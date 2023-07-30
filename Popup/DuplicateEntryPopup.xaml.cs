@@ -13,7 +13,30 @@ public partial class DuplicateEntryPopup
 		{
 			Display_Body_Progression(table_name);
         }
+		else if (table_name == "Body Weight") /* todo else if duplicate entry is a body weight entry */
+        {
 
+		}
+        else if (table_name == "Body Weight Goal") /* todo else if duplicate entry is a body weight goal entry */
+        {
+
+        }
+        else if (table_name == "PR Goal") /* todo else if duplicate entry is a pr goal entry */
+        {
+
+        }
+        else if (table_name == "PR") /* todo else if duplicate entry is a PR entry */
+        {
+
+        }
+        else if (table_name == "Category") /* todo else if duplicate entry is a calendar category entry */
+        {
+
+        }
+        else /* todo else duplicate entry is a notes entry */
+        {
+
+        }
     }
 
 	/* displays body progressin duplicate info */
