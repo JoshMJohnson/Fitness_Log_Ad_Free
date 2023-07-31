@@ -34,11 +34,11 @@ public partial class CalendarCategoryAddPopup
 
             if (categories_before.Count == categories_after.Count) /* if duplicate entry */
             {
-                Close(true);
+                Close(false);
             }
             else /* else; valid entry; not a duplicate */
             {
-                Close();
+                Close(true);
             }
         }
         else /* else; name field is empty */

@@ -32,13 +32,18 @@ public partial class WorkoutCalendar : ContentPage
     {
         object result = await this.ShowPopupAsync(new CalendarCategoryAddPopup());
 
-        if (result != null) /* if duplicate; not a valid entry */
+        if (result != null) /* if body weight entry was made */
         {
-            await this.ShowPopupAsync(new DuplicateEntryPopup("Calendar Category"));
-        }
-        else /* else not a duplicate; valid entry */
-        {
-            Retrieve_Categories();
+            string result_string = result.ToString();
+
+            if (result_string == "True") /* if valid entry */
+            {
+                Retrieve_Categories();
+            }
+            else
+            {
+                await this.ShowPopupAsync(new DuplicateEntryPopup("Calendar Category"));
+            }
         }
     }
 
