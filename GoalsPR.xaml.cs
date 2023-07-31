@@ -17,8 +17,16 @@ public partial class GoalsPR : ContentPage
 
     private async void Add_PR_Goal(object sender, EventArgs e)
     {
-        await this.ShowPopupAsync(new GoalPRPopup());
-        Refresh_PR_Goal_List();
+        object result = await this.ShowPopupAsync(new GoalPRPopup());
+
+        if (result == null) /* if duplicate entry */
+        {
+            Refresh_PR_Goal_List();
+        }
+        else /* else; valid entry; not a duplicate */
+        {
+            await this.ShowPopupAsync(new DuplicateEntryPopup("PR Goal"));
+        }
     }
 
     /* swipe remove pr goal */

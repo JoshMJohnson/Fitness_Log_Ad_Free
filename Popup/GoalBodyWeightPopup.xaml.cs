@@ -1,4 +1,5 @@
 using System.Xml.Linq;
+using WorkoutLog.Model;
 
 namespace WorkoutLog.Popup;
 
@@ -44,10 +45,20 @@ public partial class GoalBodyWeightPopup
                         has_desired = false;
                     }
 
+                    List<GoalBW> body_weight_goal_list_before = await App.RecordRepo.Get_Body_Weight_Goal_List();
                     await App.RecordRepo.Add_Goal_Body_Weight(goal_name, date, has_desired, weight_update);
+                    List<GoalBW> body_weight_goal_list_after = await App.RecordRepo.Get_Body_Weight_Goal_List();
 
                     error_prompt.IsVisible = false;
-                    Close();
+
+                    if (body_weight_goal_list_before.Count == body_weight_goal_list_after.Count) /* if duplicate entry */
+                    {
+                        Close(true);
+                    }
+                    else /* else; valid entry; not a duplicate */
+                    {
+                        Close();
+                    }
                 }
                 else /* else; body weight value is empty */
                 {

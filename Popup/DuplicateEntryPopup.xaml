@@ -19,7 +19,7 @@
         <Grid ColumnDefinitions="*, *" 
               RowDefinitions="Auto, Auto, Auto, *">
 
-            <Label x:Name="duplicate_table_display"
+            <Label Text="Duplicate"
                    FontAttributes="Bold"
                    Grid.Row="0"
                    Grid.ColumnSpan="2"

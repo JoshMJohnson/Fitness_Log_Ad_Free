@@ -1,3 +1,5 @@
+using WorkoutLog.Model;
+
 namespace WorkoutLog.Popup;
 
 public partial class GoalPRPopup
@@ -80,10 +82,20 @@ public partial class GoalPRPopup
                             hr_update += int.Parse(hr_update_string);
                         }
 
+                        List<GoalPR> pr_goal_list_before = await App.RecordRepo.Get_Goal_PR_List();
                         await App.RecordRepo.Add_Goal_PR(name, date, has_desired, false, -1, hr_update, min_update, sec_update);
+                        List<GoalPR> pr_goal_list_after = await App.RecordRepo.Get_Goal_PR_List();
 
                         error_prompt.IsVisible = false;
-                        Close();
+
+                        if (pr_goal_list_before.Count == pr_goal_list_after.Count) /* if duplicate entry */
+                        {
+                            Close(true);
+                        }
+                        else /* else; valid entry; not a duplicate */
+                        {
+                            Close();
+                        }
                     }
                     else /* else; time fields are empty */
                     {
@@ -100,10 +112,21 @@ public partial class GoalPRPopup
                         weight_update_string = weight_update_string.ToString();
 
                         int weight_update = int.Parse(weight_update_string);
+
+                        List<GoalPR> pr_goal_list_before = await App.RecordRepo.Get_Goal_PR_List();
                         await App.RecordRepo.Add_Goal_PR(name, date, has_desired, true, weight_update, -1, -1, -1);
+                        List<GoalPR> pr_goal_list_after = await App.RecordRepo.Get_Goal_PR_List();
 
                         error_prompt.IsVisible = false;
-                        Close();
+
+                        if (pr_goal_list_before.Count == pr_goal_list_after.Count) /* if duplicate entry */
+                        {
+                            Close(true);
+                        }
+                        else /* else; valid entry; not a duplicate */
+                        {
+                            Close();
+                        }
                     }
                     else
                     {

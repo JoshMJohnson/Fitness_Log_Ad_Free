@@ -21,6 +21,10 @@ public partial class BodyWeight : ContentPage
         {
             Refresh_Table_Data();
         }
+        else /* else; body weight entry was a duplicate */
+        {
+            await this.ShowPopupAsync(new DuplicateEntryPopup("Body Weight"));
+        }
     }
 
     /* refreshes the Body Weight table data when refresh button clicked */

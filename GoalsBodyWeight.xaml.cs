@@ -15,10 +15,19 @@ public partial class GoalsBodyWeight : ContentPage
         Refresh_BW_Goal_List();
     }
 
+    /* submits a body weight goal to the database */
     private async void Add_Body_Weight_Goal(object sender, EventArgs e)
     {
-        await this.ShowPopupAsync(new GoalBodyWeightPopup());
-        Refresh_BW_Goal_List();
+        object result = await this.ShowPopupAsync(new GoalBodyWeightPopup());
+
+        if (result == null) /* if duplicate entry */
+        {
+            Refresh_BW_Goal_List();
+        }
+        else /* else; valid entry; not a duplicate */
+        {
+            await this.ShowPopupAsync(new DuplicateEntryPopup("Body Weight Goal"));
+        }
     }
 
     /* swipe remove BW goal */
