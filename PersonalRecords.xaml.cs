@@ -24,13 +24,18 @@ public partial class PersonalRecords : ContentPage
     {
         object result = await this.ShowPopupAsync(new PersonalRecordAddPopup());
 
-        if (result != null) /* if duplicate; not a valid entry */
+        if (result != null) /* if body weight entry was made */
         {
-            await this.ShowPopupAsync(new DuplicateEntryPopup("PR"));
-        }
-        else /* else not a duplicate; valid entry */
-        {
-            Refresh_PR_List();
+            string result_string = result.ToString();
+
+            if (result_string == "True") /* if valid entry */
+            {
+                Refresh_PR_List();
+            }
+            else
+            {
+                await this.ShowPopupAsync(new DuplicateEntryPopup("PR"));
+            }
         }
     }
 

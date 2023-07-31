@@ -20,13 +20,18 @@ public partial class GoalsBodyWeight : ContentPage
     {
         object result = await this.ShowPopupAsync(new GoalBodyWeightPopup());
 
-        if (result == null) /* if duplicate entry */
+        if (result != null) /* if body weight entry was made */
         {
-            Refresh_BW_Goal_List();
-        }
-        else /* else; valid entry; not a duplicate */
-        {
-            await this.ShowPopupAsync(new DuplicateEntryPopup("Body Weight Goal"));
+            string result_string = result.ToString();
+
+            if (result_string == "True") /* if valid entry */
+            {
+                Refresh_BW_Goal_List();
+            }
+            else
+            {
+                await this.ShowPopupAsync(new DuplicateEntryPopup("Body Weight Goal"));
+            }
         }
     }
 

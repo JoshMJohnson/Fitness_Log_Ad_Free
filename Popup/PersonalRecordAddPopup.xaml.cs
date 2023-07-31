@@ -82,11 +82,11 @@ public partial class PersonalRecordAddPopup
 
                         if (pr_list_before.Count == pr_list_after.Count) /* if duplicate entry */
                         {
-                            Close(true);
+                            Close(false);
                         }
                         else /* else; valid entry; not a duplicate */
                         {
-                            Close();
+                            Close(true);
                         }
                     }
                     else /* else; time field is empty */
@@ -111,11 +111,11 @@ public partial class PersonalRecordAddPopup
 
                         if (pr_list_before.Count == pr_list_after.Count) /* if duplicate entry */
                         {
-                            Close(true);
+                            Close(false);
                         }
                         else /* else; valid entry; not a duplicate */
                         {
-                            Close();
+                            Close(true);
                         }
                     }
                     else /* if weight field is empty */
