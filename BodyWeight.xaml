@@ -14,7 +14,7 @@
           ColumnDefinitions="*"
           Padding="10">
 
-        <Border Stroke="#87CEFA"
+        <Border Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
                 StrokeThickness="4"
                 Grid.Row="0">
 
