@@ -90,11 +90,11 @@ public partial class GoalPRPopup
 
                         if (pr_goal_list_before.Count == pr_goal_list_after.Count) /* if duplicate entry */
                         {
-                            Close(true);
+                            Close(false);
                         }
                         else /* else; valid entry; not a duplicate */
                         {
-                            Close();
+                            Close(true);
                         }
                     }
                     else /* else; time fields are empty */
@@ -121,11 +121,11 @@ public partial class GoalPRPopup
 
                         if (pr_goal_list_before.Count == pr_goal_list_after.Count) /* if duplicate entry */
                         {
-                            Close(true);
+                            Close(false);
                         }
                         else /* else; valid entry; not a duplicate */
                         {
-                            Close();
+                            Close(true);
                         }
                     }
                     else

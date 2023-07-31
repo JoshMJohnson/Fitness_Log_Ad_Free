@@ -19,13 +19,18 @@ public partial class GoalsPR : ContentPage
     {
         object result = await this.ShowPopupAsync(new GoalPRPopup());
 
-        if (result == null) /* if duplicate entry */
+        if (result != null) /* if body weight entry was made */
         {
-            Refresh_PR_Goal_List();
-        }
-        else /* else; valid entry; not a duplicate */
-        {
-            await this.ShowPopupAsync(new DuplicateEntryPopup("PR Goal"));
+            string result_string = result.ToString();
+
+            if (result_string == "True") /* if valid entry */
+            {
+                Refresh_PR_Goal_List();
+            }
+            else
+            {
+                await this.ShowPopupAsync(new DuplicateEntryPopup("PR Goal"));
+            }
         }
     }
 
