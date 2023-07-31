@@ -1,6 +1,6 @@
 ﻿Additions:
- - Body Weight chart. click entry on graph to show edit and delete options
  - toggle between lbs and kg
+ - Body Weight chart. click entry on graph to show edit and delete options
  - body weight goals displayed as horizontal lines on body weight chart
 	- goal dates shown
 	- closest date goal shown in table
