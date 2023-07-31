@@ -46,11 +46,11 @@ public partial class BodyProgressionPopup
 
             if (progression_list_before_entry.Count == progression_list_after_entry.Count) /* if duplicate */
             {
-                Close(true);
+                Close(false);
             }
             else
             {
-                Close();
+                Close(true);
             }
         }
     }

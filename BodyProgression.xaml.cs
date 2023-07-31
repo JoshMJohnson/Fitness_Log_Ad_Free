@@ -20,13 +20,18 @@ public partial class BodyProgression : ContentPage
     {
         object result = await this.ShowPopupAsync(new BodyProgressionPopup());
 
-        if (result != null) /* if duplicate */
+        if (result != null) /* if body weight entry was made */
         {
-            await this.ShowPopupAsync(new DuplicateEntryPopup("Body Progression"));
-        }
-        else /* else; new entry */
-        {
-            Refresh_Progression();
+            string result_string = result.ToString();
+
+            if (result_string == "True") /* if valid entry */
+            {
+                Refresh_Progression();
+            }
+            else
+            {
+                await this.ShowPopupAsync(new DuplicateEntryPopup("Body Progression"));
+            }
         }
     }
 

@@ -19,11 +19,16 @@ public partial class BodyWeight : ContentPage
 
         if (result != null) /* if body weight entry was made */
         {
-            Refresh_Table_Data();
-        }
-        else /* else; body weight entry was a duplicate */
-        {
-            await this.ShowPopupAsync(new DuplicateEntryPopup("Body Weight"));
+            string result_string = result.ToString();
+            
+            if (result_string == "True") /* if valid entry */
+            {
+                Refresh_Table_Data();
+            }
+            else
+            {
+                await this.ShowPopupAsync(new DuplicateEntryPopup("Body Weight"));
+            }
         }
     }
 

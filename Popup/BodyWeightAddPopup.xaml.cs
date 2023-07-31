@@ -33,7 +33,7 @@ public partial class BodyWeightAddPopup
 
             if (body_weight_list_before.Count == body_weight_list_after.Count) /* if duplicate entry */
             {
-                Close();
+                Close(false);
             }
             else /* else; valid entry; not a duplicate */
             {
