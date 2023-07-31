@@ -1,4 +1,5 @@
 using GoogleGson;
+using WorkoutLog.Model;
 
 namespace WorkoutLog.Popup;
 
@@ -73,10 +74,20 @@ public partial class PersonalRecordAddPopup
                             hr_update += int.Parse(hr_update_string);
                         }
 
+                        List<PR> pr_list_before = await App.RecordRepo.Get_PR_List();
                         await App.RecordRepo.Add_PR(name, date, false, -1, hr_update, min_update, sec_update);
+                        List<PR> pr_list_after = await App.RecordRepo.Get_PR_List();
 
                         error_prompt.IsVisible = false;
-                        Close();
+
+                        if (pr_list_before.Count == pr_list_after.Count) /* if duplicate entry */
+                        {
+                            Close(true);
+                        }
+                        else /* else; valid entry; not a duplicate */
+                        {
+                            Close();
+                        }
                     }
                     else /* else; time field is empty */
                     {
@@ -93,10 +104,19 @@ public partial class PersonalRecordAddPopup
                         weight_update_string = weight_update_string.ToString();
 
                         int weight_update = int.Parse(weight_update_string);
-                        await App.RecordRepo.Add_PR(name, date, true, weight_update, -1, -1, -1);
 
-                        error_prompt.IsVisible = false;
-                        Close();
+                        List<PR> pr_list_before = await App.RecordRepo.Get_PR_List();
+                        await App.RecordRepo.Add_PR(name, date, true, weight_update, -1, -1, -1);
+                        List<PR> pr_list_after = await App.RecordRepo.Get_PR_List();
+
+                        if (pr_list_before.Count == pr_list_after.Count) /* if duplicate entry */
+                        {
+                            Close(true);
+                        }
+                        else /* else; valid entry; not a duplicate */
+                        {
+                            Close();
+                        }
                     }
                     else /* if weight field is empty */
                     {

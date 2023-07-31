@@ -46,8 +46,16 @@ public partial class Notes : ContentPage
     /* executed when the Notes plus button clicked */
     private async void Add_Note(object sender, EventArgs e)
     {
-        await this.ShowPopupAsync(new NotesAddPopup());
-        Refresh_Notes();
+        object result = await this.ShowPopupAsync(new NotesAddPopup());
+
+        if (result != null) /* if duplicate; not a valid entry */
+        {
+            await this.ShowPopupAsync(new DuplicateEntryPopup("Note"));
+        }
+        else /* else not a duplicate; valid entry */
+        {
+            Refresh_Notes();
+        }
     }
 
     /* handles transition to view note */

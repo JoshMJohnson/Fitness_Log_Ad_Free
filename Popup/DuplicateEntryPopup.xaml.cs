@@ -18,21 +18,9 @@ public partial class DuplicateEntryPopup
         {
             Display_Body_Weight(table_name);
         }
-        else if (table_name == "Body Weight Goal" || table_name == "PR Goal") /* else if duplicate entry is a goal */
+        else /* else if duplicate entry must have a unique name */
         {
-            Display_Body_Weight_Goal(table_name);
-        }
-        else if (table_name == "PR") /* else if duplicate entry is a PR entry */
-        {
-            Display_PR(table_name);
-        }
-        else if (table_name == "Category") /* else if duplicate entry is a calendar category entry */
-        {
-            Display_Category(table_name);
-        }
-        else /* else duplicate entry is a notes entry */
-        {
-            Display_Notes(table_name);
+            Display_Unique_Name(table_name);
         }
     }
 
@@ -57,37 +45,13 @@ public partial class DuplicateEntryPopup
     }
 
     /* displays body weight goal duplicate info */
-    private void Display_Body_Weight_Goal(string table_name)
+    private void Display_Unique_Name(string table_name)
     {
         string prompt = $"The {table_name} is a duplicate.";
         string prompt2 = $"A {table_name} must have a unique name.";
 
         duplicate_table_prompt_display.Text = prompt;
         duplicate_table_prompt2_display.Text = prompt2;
-    }
-
-    /* todo displays PR goal duplicate info */
-    private void Display_PR_Goal(string table_name)
-    {
-
-    }
-
-    /* todo displays PR duplicate info */
-    private void Display_PR(string table_name)
-    {
-
-    }
-
-    /* todo displays category duplicate info */
-    private void Display_Category(string table_name)
-    {
-
-    }
-
-    /* todo displays notes duplicate info */
-    private void Display_Notes(string table_name)
-    {
-
     }
 
     /* closes the popup alert for duplicate */

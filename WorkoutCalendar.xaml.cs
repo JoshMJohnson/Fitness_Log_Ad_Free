@@ -30,8 +30,16 @@ public partial class WorkoutCalendar : ContentPage
     /* button clicked to create a workout category */
     private async void Create_Category(object sender, EventArgs e)
     {
-        await this.ShowPopupAsync(new CalendarCategoryAddPopup());
-        Retrieve_Categories();
+        object result = await this.ShowPopupAsync(new CalendarCategoryAddPopup());
+
+        if (result != null) /* if duplicate; not a valid entry */
+        {
+            await this.ShowPopupAsync(new DuplicateEntryPopup("Calendar Category"));
+        }
+        else /* else not a duplicate; valid entry */
+        {
+            Retrieve_Categories();
+        }
     }
 
     /* button clicked to remove a workout category */

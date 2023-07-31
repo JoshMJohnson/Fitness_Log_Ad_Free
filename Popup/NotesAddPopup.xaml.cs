@@ -1,3 +1,5 @@
+using WorkoutLog.Model;
+
 namespace WorkoutLog.Popup;
 
 public partial class NotesAddPopup
@@ -41,10 +43,20 @@ public partial class NotesAddPopup
                     note_content = "";
                 }
 
+                List<Note> notes_list_before = await App.RecordRepo.Get_All_Notes();
                 await App.RecordRepo.Add_Note(name, note_content);
+                List<Note> notes_list_after = await App.RecordRepo.Get_All_Notes();
 
                 error_prompt.IsVisible = false;
-                Close();
+
+                if (notes_list_before.Count == notes_list_after.Count) /* if duplicate entry */
+                {
+                    Close(true);
+                }
+                else /* else; valid entry; not a duplicate */
+                {
+                    Close();
+                }
             }
             else /* else; name field is empty after trim */
             {

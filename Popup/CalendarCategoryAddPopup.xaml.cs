@@ -25,10 +25,21 @@ public partial class CalendarCategoryAddPopup
         if (name != null && name.Length != 0) /* if name field is not empty */
         {
             name = name.Trim(); /* removes leading and trailing whitespace */
+
+            List<Category> categories_before = await App.RecordRepo.Get_Calendar_Category_List();
             await App.RecordRepo.Add_Calendar_Category(name);
-            
+            List<Category> categories_after = await App.RecordRepo.Get_Calendar_Category_List();
+
             error_prompt.IsVisible = false;
-            Close();
+
+            if (categories_before.Count == categories_after.Count) /* if duplicate entry */
+            {
+                Close(true);
+            }
+            else /* else; valid entry; not a duplicate */
+            {
+                Close();
+            }
         }
         else /* else; name field is empty */
         {

@@ -22,8 +22,16 @@ public partial class PersonalRecords : ContentPage
     /* executed when PR plus button clicked */
     private async void Add_PR(object sender, EventArgs e)
     {
-        await this.ShowPopupAsync(new PersonalRecordAddPopup());
-        Refresh_PR_List();
+        object result = await this.ShowPopupAsync(new PersonalRecordAddPopup());
+
+        if (result != null) /* if duplicate; not a valid entry */
+        {
+            await this.ShowPopupAsync(new DuplicateEntryPopup("PR"));
+        }
+        else /* else not a duplicate; valid entry */
+        {
+            Refresh_PR_List();
+        }
     }
 
     /* swipe remove pr */
