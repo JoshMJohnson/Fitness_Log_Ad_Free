@@ -1,5 +1,4 @@
 ﻿Additions:
- - toggle between lbs and kg
  - Body Weight chart. click entry on graph to show edit and delete options
  - body weight goals displayed as horizontal lines on body weight chart
 	- goal dates shown
@@ -7,7 +6,9 @@
  - can zoom out and see entrie body weight chart
 
 To Do:
-
+ - Create a linear graph for body weight entries
+ - Create an edit body weight entry option
+ - Create a delete body weight entry option
 
 Bugs:
 
