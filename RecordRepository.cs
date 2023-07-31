@@ -193,6 +193,13 @@ public class RecordRepository
         return new List<BodyWeightEntry>();
     }
 
+    /* returns an entry for body weight from the database */
+    public async Task<BodyWeightEntry> Get_Body_Weight(DateTime entry_date)
+    {
+        BodyWeightEntry temp_body_weight_entry = await conn.FindAsync<BodyWeightEntry>(entry_date);
+        return temp_body_weight_entry;
+    }
+
     /* * body weight goals section */
     /* adds a body weight entry to the goal table within the database */
     public async Task Add_Goal_Body_Weight(string goal_name, DateTime date, bool has_desired, int goal_weight)
