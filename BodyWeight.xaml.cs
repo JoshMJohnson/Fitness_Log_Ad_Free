@@ -46,7 +46,7 @@ public partial class BodyWeight : ContentPage
         /* 'Actual' cell */
         if (entries.Count == 0) /* if empty body weight entries */
         {
-            actual_weight_display.Text = "----";
+            actual_weight_display.Text = "---";
         }
         else  /* else at least 1 body weight entries */
         {
@@ -56,7 +56,7 @@ public partial class BodyWeight : ContentPage
         /* 'Recent Change' cell */
         if (entries.Count <= 1) /* if less than 2 body weight entries */
         {
-            change_weight_display.Text = "----";
+            change_weight_display.Text = "---";
         }
         else /* else; at least 2 body weight entries */
         {
@@ -72,7 +72,7 @@ public partial class BodyWeight : ContentPage
 
         if (body_weight_goals.Count == 0) /* if no body weight goals */
         {
-            goal_display.Text = "----";
+            goal_display.Text = "---";
         }
         else /* else; at least one body weight goal set */
         {
@@ -86,7 +86,7 @@ public partial class BodyWeight : ContentPage
 
                 if (i == body_weight_goals.Count - 1) /* if no body weight goals have a desired date */
                 {
-                    goal_display.Text = "----";
+                    goal_display.Text = "---";
                 }
             }
         }
@@ -128,7 +128,7 @@ public partial class BodyWeight : ContentPage
         }
         else /* else; only 1 or 2 entries with 7 days */
         {
-            week_change_display.Text = "----";
+            week_change_display.Text = "---";
         }
 
         /* 'Last 30 Days' cell */
@@ -167,7 +167,7 @@ public partial class BodyWeight : ContentPage
         }
         else /* else; only 1 or 2 entries with 7 days */
         {
-            month_change_display.Text = "----";
+            month_change_display.Text = "---";
         }
 
         /* 'Total' cell */
@@ -175,7 +175,7 @@ public partial class BodyWeight : ContentPage
 
         if (num_entries <= 1) /* if; 0 or 1 body weight entries */ 
         {
-            total_change_display.Text = "----";
+            total_change_display.Text = "---";
         }
         else /* else more than 1 recorded body weight entries */
         {

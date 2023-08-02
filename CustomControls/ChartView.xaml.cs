@@ -90,6 +90,56 @@ public partial class ChartView : Grid
                 weight = entry_list[i].weight,
             });
         }
+
+        Update_Y_Axis(entry_list);
+    }
+
+    /* todo picks accurate y axis label values and displays them */
+    private async void Update_Y_Axis(List<BodyWeightEntry> entry_list)
+    {
+        int highest_body_weight_value = -1;
+        int lowest_body_weight_value = -1;
+        bool has_entry = false;
+
+        for (int i = 0; i < entry_list.Count; i++) /* loops through list of body weight entries */
+        {
+            if (has_entry == false) /* if first entry from list */
+            {
+                has_entry = true;
+                highest_body_weight_value = entry_list[i].weight;
+                lowest_body_weight_value = entry_list[i].weight;
+                continue;
+            }
+
+            if (entry_list[i].weight > highest_body_weight_value) /* if current entry is higher weight value than the current high value */
+            {
+                highest_body_weight_value = entry_list[i].weight;
+            }
+            else if (entry_list[i].weight < lowest_body_weight_value) /* if current entry is lower weight value than the current low value */
+            {
+                lowest_body_weight_value = entry_list[i].weight;
+            }
+        }
+
+        if (has_entry) /* if at least 1 body weight entry */
+        {
+            if (highest_body_weight_value == lowest_body_weight_value) /* if only one entry */
+            {
+                y_axis_3.Text = highest_body_weight_value.ToString();
+            }
+            else /* more than one entry */
+            {
+                int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
+                double total_weight_change_gap = (double) (total_weight_change / 6);
+
+                y_axis_6.Text = highest_body_weight_value.ToString();
+                y_axis_5.Text = (total_weight_change_gap * 5).ToString();
+                y_axis_4.Text = (total_weight_change_gap * 4).ToString();
+                y_axis_3.Text = (total_weight_change_gap * 3).ToString();
+                y_axis_2.Text = (total_weight_change_gap * 2).ToString();
+                y_axis_1.Text = lowest_body_weight_value.ToString();
+            }
+        }
     }
 
     #region Commands

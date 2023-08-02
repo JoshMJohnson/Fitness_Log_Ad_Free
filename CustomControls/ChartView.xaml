@@ -13,33 +13,33 @@
           Grid.Row="0"
           Grid.Column="0">
 
-        <Label x:Name="y_axis_1"
-               Text="150"
+        <Label x:Name="y_axis_6"
+               Text="---"
                VerticalOptions="Center"
                Grid.Row="0" />
 
-        <Label x:Name="y_axis_2"
-               Text="140"
+        <Label x:Name="y_axis_5"
+               Text="---"
                VerticalOptions="Center"
                Grid.Row="1" />
 
-        <Label x:Name="y_axis_3"
-               Text="130"
+        <Label x:Name="y_axis_4"
+               Text="---"
                VerticalOptions="Center"
                Grid.Row="2" />
 
-        <Label x:Name="y_axis_4"
-               Text="120"
+        <Label x:Name="y_axis_3"
+               Text="---"
                VerticalOptions="Center"
                Grid.Row="3" />
 
-        <Label x:Name="y_axis_5"
-               Text="110"
+        <Label x:Name="y_axis_2"
+               Text="---"
                VerticalOptions="Center"
                Grid.Row="4" />
 
-        <Label x:Name="y_axis_6"
-               Text="100"
+        <Label x:Name="y_axis_1"
+               Text="---"
                VerticalOptions="Center"
                Grid.Row="5" />
     </Grid>    
