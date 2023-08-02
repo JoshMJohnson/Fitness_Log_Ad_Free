@@ -12,6 +12,40 @@ public partial class UpdatePR
         Get_PR_Data(pr_name);
     }
 
+    /* gets pr data from database */
+    private async void Get_PR_Data(string pr_name)
+    {
+        updating_pr = await App.RecordRepo.Get_PR(pr_name);
+
+        string[] date_string = updating_pr.date_achieved.Split('/');
+        DateTime date = new DateTime(int.Parse(date_string[2]), int.Parse(date_string[0]), int.Parse(date_string[1]));
+
+        update_pr_exercise_name.Text = pr_name;
+        record_date.Date = date;
+
+
+        if (updating_pr.is_weight_pr) /* if updating pr is a weight pr */
+        {
+            /* shows/hides content */
+            time_display.IsVisible = false;
+            weight_display.IsVisible = true;
+
+            /* displays data */
+            weight_pr.Placeholder = updating_pr.weight.ToString();
+        }
+        else /* else updating pr is a time pr */
+        {
+            /* shows/hides content */
+            time_display.IsVisible = true;
+            weight_display.IsVisible = false;
+
+            /* displays data */
+            hr_pr.Placeholder = updating_pr.time_hours.ToString();
+            min_pr.Placeholder = updating_pr.time_min.ToString();
+            sec_pr.Placeholder = updating_pr.time_sec.ToString();
+        }
+    }
+
     /* creates an exercise along with the PR */
     private async void Submit_PR_Update(object sender, EventArgs e)
     {
@@ -102,39 +136,5 @@ public partial class UpdatePR
     private void Cancel_PR_Update(object sender, EventArgs e)
     {
         Close();
-    }
-
-    /* gets pr data from database */
-    private async void Get_PR_Data(string pr_name)
-    {
-        updating_pr = await App.RecordRepo.Get_PR(pr_name);
-
-        string[] date_string = updating_pr.date_achieved.Split('/');
-        DateTime date = new DateTime(int.Parse(date_string[2]), int.Parse(date_string[0]), int.Parse(date_string[1]));
-
-        update_pr_exercise_name.Text = pr_name;
-        record_date.Date = date;
-
-
-        if (updating_pr.is_weight_pr) /* if updating pr is a weight pr */
-        {
-            /* shows/hides content */
-            time_display.IsVisible = false;
-            weight_display.IsVisible = true;
-
-            /* displays data */
-            weight_pr.Text = updating_pr.weight.ToString();
-        }
-        else /* else updating pr is a time pr */
-        {
-            /* shows/hides content */
-            time_display.IsVisible = true;
-            weight_display.IsVisible = false;
-
-            /* displays data */
-            hr_pr.Text = updating_pr.time_hours.ToString();
-            min_pr.Text = updating_pr.time_min.ToString();
-            sec_pr.Text = updating_pr.time_sec.ToString();
-        }
-    }
+    }    
 }

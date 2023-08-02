@@ -22,7 +22,7 @@ public partial class GoalBWEditPopup
         editing_body_weight_goal = await App.RecordRepo.Get_Body_Weight_Goal(goal_name);
 
         goal_name_entry.Text = editing_body_weight_goal.name;
-        weight_entry.Text = editing_body_weight_goal.weight.ToString();
+        weight_entry.Placeholder = editing_body_weight_goal.weight.ToString();
 
         if (editing_body_weight_goal.date_desired) /* if goal has a desired date previously */
         {

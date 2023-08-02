@@ -26,16 +26,16 @@ public partial class GoalPREditPopup
             time_display.IsVisible = false;
             weight_display.IsVisible = true;
 
-            weight_pr.Text = editing_pr_goal.weight.ToString();
+            weight_pr.Placeholder = editing_pr_goal.weight.ToString();
         }
         else /* else pr goal is a time goal */
         {
             time_display.IsVisible = true;
             weight_display.IsVisible = false;
 
-            hr_pr.Text = editing_pr_goal.time_hours.ToString();
-            min_pr.Text = editing_pr_goal.time_min.ToString();
-            sec_pr.Text = editing_pr_goal.time_sec.ToString();
+            hr_pr.Placeholder = editing_pr_goal.time_hours.ToString();
+            min_pr.Placeholder = editing_pr_goal.time_min.ToString();
+            sec_pr.Placeholder = editing_pr_goal.time_sec.ToString();
         }
 
         if (editing_pr_goal.date_desired) /* if pr goal has a date achieve date */
