@@ -64,7 +64,6 @@ public partial class ChartView : Grid
     }
 
     public event EventHandler<DateTime> on_entry_selected;
-    
     #endregion
 
     public ObservableCollection<BodyWeightEntryDot> entries { get; set; } = new ObservableCollection<BodyWeightEntryDot>();
