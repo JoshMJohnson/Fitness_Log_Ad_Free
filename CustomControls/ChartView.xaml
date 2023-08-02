@@ -55,6 +55,7 @@
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:BodyWeightEntryDot">
                 <Border Padding="10"
+                        BackgroundColor="Transparent"
                         WidthRequest="100">   
                     
                     <Grid RowDefinitions="Auto, *, Auto"
