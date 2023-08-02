@@ -19,12 +19,14 @@
         <Grid RowDefinitions="Auto, Auto, Auto, Auto, *, Auto"
           ColumnDefinitions="*, *">
 
-            <Label Text="Edit Note"
+            <Label Text="Note"
                FontAttributes="Italic"
                Grid.Row="0"
                Grid.ColumnSpan="2"
                HorizontalOptions="Start"
-               Margin="20"
+               Margin="10"
+               LineHeight="100"
+               VerticalTextAlignment="Center"
                FontSize="24" />
 
             <Button Grid.Row="0"

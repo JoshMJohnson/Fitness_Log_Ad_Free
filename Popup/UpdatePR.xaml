@@ -19,14 +19,15 @@
         <Grid ColumnDefinitions="Auto, *" 
               RowDefinitions="Auto, Auto, Auto, Auto, Auto, *">
 
-            <Label Text="Personal Record"
+            <Label Text="PR"
                    Grid.Row="0"
                    Grid.ColumnSpan="2"
                    LineHeight="100"
                    VerticalTextAlignment="Center"
                    FontAttributes="Italic"
                    HorizontalOptions="Start"
-                   Margin="20"
+                   MinimumWidthRequest="200"
+                   Margin="10"
                    FontSize="24" />
 
             <Button Grid.Row="0"
