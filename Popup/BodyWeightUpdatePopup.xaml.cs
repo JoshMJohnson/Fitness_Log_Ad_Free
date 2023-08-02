@@ -17,7 +17,11 @@ public partial class BodyWeightUpdatePopup
     {
         current_entry = await App.RecordRepo.Get_Body_Weight(entry_date);
 
-        record_date.Text = current_entry.date.ToString();
+        string full_date = current_entry.date.ToString();
+        string[] split_date = full_date.Split(' ');
+        string date_only = split_date[0];
+
+        record_date.Text = date_only;
         weight_entry.Placeholder = current_entry.weight.ToString();
     }
 

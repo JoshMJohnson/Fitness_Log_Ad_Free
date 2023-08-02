@@ -6,7 +6,7 @@
            VerticalOptions="Start"
            HorizontalOptions="Center"
            Color="Transparent"
-           Size="300, 295">
+           Size="250, 295">
 
     <Border Stroke="#87CEFA"
             StrokeThickness="4"

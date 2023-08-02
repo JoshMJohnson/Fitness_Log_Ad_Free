@@ -158,7 +158,7 @@ public class RecordRepository
         }
     }
 
-    /* ? removes an entry in the body weight table within the database */
+    /* removes an entry in the body weight table within the database */
     public async Task Remove_Body_Weight(DateTime entry_date)
     {
         ArgumentNullException.ThrowIfNull(entry_date, nameof(entry_date));

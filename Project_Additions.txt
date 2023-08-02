@@ -12,7 +12,7 @@ To Do:
 	- Click body weight entry on graph to show circle button
 
 Bugs:
-
+ - doesnt update immediately on body weight edit/delete/add
 
 Ads:
  - Unity
