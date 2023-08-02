@@ -6,14 +6,9 @@
 
 To Do:
  - Create a linear graph for body weight entries
- - Create an edit body weight entry option
-	- Click body weight entry on graph to show circle button
- - Create a delete body weight entry option
-	- Click body weight entry on graph to show circle button
 
 Bugs:
  - doesnt update immediately on body weight edit/delete/add
- - move cancel buttons for updates to x corner button
 
 Ads:
  - Unity
