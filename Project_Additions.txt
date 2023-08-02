@@ -5,7 +5,7 @@
  - can zoom out and see entrie body weight chart
 
 To Do:
- - Create a linear graph for body weight entries
+ - adjust height of body weight entry dot and label to match y-axis
 
 Bugs:
  - doesnt update immediately on body weight edit/delete/add
