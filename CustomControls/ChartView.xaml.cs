@@ -79,6 +79,7 @@ public partial class ChartView : Grid
     private async void Fill_Chart()
     {
         List<BodyWeightEntry> entry_list = await App.RecordRepo.Get_Body_Weight_List();
+        entry_list = entry_list.OrderBy(progress => progress.date).ToList();
 
         /* loop through the days in the selected month */
         for (int i = 0; i < entry_list.Count; i++)

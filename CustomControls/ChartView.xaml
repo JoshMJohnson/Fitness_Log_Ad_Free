@@ -20,17 +20,15 @@
                     Grid.Column="1">
 
         <CollectionView.ItemsLayout>
-            <LinearItemsLayout Orientation="Horizontal" 
-                               ItemSpacing="20"/>
+            <LinearItemsLayout Orientation="Horizontal" />
         
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:BodyWeightEntryDot">
-                <Border WidthRequest="80"
-                        HeightRequest="120"
-                        Padding="15">
+                <Border Padding="10"
+                        WidthRequest="100">   
                     
-                    <Grid RowDefinitions="*, Auto"
+                    <Grid RowDefinitions="Auto, *, Auto"
                           ColumnDefinitions="*">
                         
                         <Label Text="{Binding weight}" 
@@ -50,12 +48,15 @@
                         </Label>
                         
                         <Frame Grid.Row="1"
+                               VerticalOptions="Start"
+                               WidthRequest="20"
+                               HeightRequest="20"
                                Margin="10"
                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
                                BorderColor="Black"/>
                         
-                        <Label Text="{Binding date, StringFormat='{0:d }'}" 
-                               FontSize="24" 
+                        <Label Text="{Binding date, StringFormat='{0:M/d/yy}'}" 
+                               FontSize="14" 
                                HorizontalOptions="Center"
                                Grid.Row="2"
                                FontAttributes="Bold">
