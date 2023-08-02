@@ -130,12 +130,12 @@ public partial class ChartView : Grid
             else /* more than one entry */
             {
                 int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
-                double total_weight_change_gap = (double) (total_weight_change / 6);
+                double total_weight_change_gap = total_weight_change / 5;
 
-                int y_value5 = (int)((total_weight_change_gap * 5) + lowest_body_weight_value);
-                int y_value4 = (int)((total_weight_change_gap * 4) + lowest_body_weight_value);
-                int y_value3 = (int)((total_weight_change_gap * 3) + lowest_body_weight_value);
-                int y_value2 = (int)((total_weight_change_gap * 2) + lowest_body_weight_value);
+                int y_value5 = (int) ((total_weight_change_gap * 4) + lowest_body_weight_value);
+                int y_value4 = (int) ((total_weight_change_gap * 3) + lowest_body_weight_value);
+                int y_value3 = (int) ((total_weight_change_gap * 2) + lowest_body_weight_value);
+                int y_value2 = (int) ((total_weight_change_gap) + lowest_body_weight_value);
 
                 y_axis_6.Text = highest_body_weight_value.ToString();
                 y_axis_5.Text = y_value5.ToString();
