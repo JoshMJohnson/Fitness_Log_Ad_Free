@@ -8,12 +8,14 @@
              RowDefinitions="*, Auto" >
 
     <Label Rotation="270"
+           Margin="-50"
            Text="Body Weight (lbs.)"
            VerticalOptions="Center"
            Grid.Row="0"
            Grid.Column="0"/>
 
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=entries}"
+                    Margin="20"
                     Grid.Row="0"
                     Grid.Column="1">
 
