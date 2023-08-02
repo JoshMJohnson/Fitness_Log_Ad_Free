@@ -168,7 +168,7 @@
             </Grid>
         </Border>
 
-        <Label Text="values are in lbs"
+        <Label Text="values are in lbs.  "
                FontAttributes="Italic"
                FontSize="12"
                HorizontalOptions="End"
@@ -176,7 +176,6 @@
 
         <customControls:ChartView Grid.Row="3"
                                   VerticalOptions="End"
-                                  Margin="10" 
                                   on_entry_selected="Entry_Selected" />
     </Grid>
 </ContentPage>

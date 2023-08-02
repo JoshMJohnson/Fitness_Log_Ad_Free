@@ -4,18 +4,47 @@
              xmlns:models="clr-namespace:WorkoutLog.Model"
              x:Class="WorkoutLog.CustomControls.ChartView"
              x:Name="this"
-             ColumnDefinitions="Auto, *"
+             ColumnDefinitions="30, *"
              RowDefinitions="*, Auto" >
 
-    <Label Rotation="270"
-           Margin="-50"
-           Text="Body Weight (lbs.)"
-           VerticalOptions="Center"
-           Grid.Row="0"
-           Grid.Column="0"/>
+    <Grid RowDefinitions="*, *, *, *, *, *"
+          ColumnDefinitions="*"
+          HorizontalOptions="Start"
+          Grid.Row="0"
+          Grid.Column="0">
+
+        <Label x:Name="y_axis_1"
+               Text="150"
+               VerticalOptions="Center"
+               Grid.Row="0" />
+
+        <Label x:Name="y_axis_2"
+               Text="140"
+               VerticalOptions="Center"
+               Grid.Row="1" />
+
+        <Label x:Name="y_axis_3"
+               Text="130"
+               VerticalOptions="Center"
+               Grid.Row="2" />
+
+        <Label x:Name="y_axis_4"
+               Text="120"
+               VerticalOptions="Center"
+               Grid.Row="3" />
+
+        <Label x:Name="y_axis_5"
+               Text="110"
+               VerticalOptions="Center"
+               Grid.Row="4" />
+
+        <Label x:Name="y_axis_6"
+               Text="100"
+               VerticalOptions="Center"
+               Grid.Row="5" />
+    </Grid>
 
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=entries}"
-                    Margin="20"
                     Grid.Row="0"
                     Grid.Column="1">
 
