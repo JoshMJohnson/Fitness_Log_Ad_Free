@@ -13,6 +13,7 @@ To Do:
 
 Bugs:
  - doesnt update immediately on body weight edit/delete/add
+ - move cancel buttons for updates to x corner button
 
 Ads:
  - Unity
