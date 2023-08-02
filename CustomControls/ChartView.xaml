@@ -5,7 +5,7 @@
              x:Class="WorkoutLog.CustomControls.ChartView"
              x:Name="this"
              ColumnDefinitions="30, *"
-             RowDefinitions="*, Auto" >
+             RowDefinitions="*" >
 
     <Grid RowDefinitions="*, *, *, *, *, *"
           ColumnDefinitions="*"
@@ -158,9 +158,4 @@
                  HeightRequest="1"  
                  VerticalOptions="Fill"/>
     </Grid>
-
-    <Label Text="Recorded Date"
-           HorizontalOptions="Center"
-           Grid.Row="1"
-           Grid.Column="1"/>
 </Grid>
