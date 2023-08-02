@@ -4,7 +4,7 @@ using WorkoutLog.Model;
 
 namespace WorkoutLog.CustomControls;
 
-public partial class ChartView : StackLayout
+public partial class ChartView : Grid
 {
     #region BinableProperty
     /* updating data after selecting a new date */

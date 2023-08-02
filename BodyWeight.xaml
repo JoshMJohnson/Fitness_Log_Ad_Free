@@ -174,10 +174,9 @@
                HorizontalOptions="End"
                Grid.Row="2" />
 
-        <customControls:ChartView x:Name="chart_display"
-                                     Grid.Row="3"
-                                     VerticalOptions="Start"
-                                     Margin="10" 
-                                     on_entry_selected="Entry_Selected" />
+        <customControls:ChartView Grid.Row="3"
+                                  VerticalOptions="End"
+                                  Margin="10" 
+                                  on_entry_selected="Entry_Selected" />
     </Grid>
 </ContentPage>

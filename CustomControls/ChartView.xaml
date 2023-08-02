@@ -1,106 +1,103 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:WorkoutLog.Model"
              x:Class="WorkoutLog.CustomControls.ChartView"
              x:Name="this"
-             Spacing="10">
+             ColumnDefinitions="Auto, *"
+             RowDefinitions="*, Auto" >
 
-    <Grid ColumnDefinitions="Auto, *"
-          RowDefinitions="*, Auto">
+    <Label Rotation="270"
+           Text="Body Weight (lbs.)"
+           VerticalOptions="Center"
+           Grid.Row="0"
+           Grid.Column="0"/>
 
-        <Label Text="Body Weight (lbs.)"
-               VerticalOptions="Center"
-               Rotation="270"
-               Grid.Row="0"
-               Grid.Column="0"/>
+    <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=entries}"
+                    Grid.Row="0"
+                    Grid.Column="1">
 
-        <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=entries}"
-                        Grid.Row="0"
-                        Grid.Column="1">
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Horizontal" 
+                               ItemSpacing="20"/>
+        
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:BodyWeightEntryDot">
+                <Border WidthRequest="80"
+                        HeightRequest="120"
+                        Padding="15">
+                    
+                    <Grid RowDefinitions="*, Auto"
+                          ColumnDefinitions="*">
+                        
+                        <Label Text="{Binding weight}" 
+                               HorizontalOptions="Center"
+                               Grid.Row="0"
+                               FontSize="18" >
+                            
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" 
+                                             Binding="{Binding is_current_date}" 
+                                             Value="True">
+                                    
+                                    <Setter Property="TextColor"
+                                            Value="White" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                        
+                        <Frame Grid.Row="1"
+                               Margin="10"
+                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
+                               BorderColor="Black"/>
+                        
+                        <Label Text="{Binding date, StringFormat='{0:d }'}" 
+                               FontSize="24" 
+                               HorizontalOptions="Center"
+                               Grid.Row="2"
+                               FontAttributes="Bold">
+                            
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" 
+                                             Binding="{Binding is_current_date}" 
+                                             Value="True">
+                                    
+                                    <Setter Property="TextColor"
+                                            Value="White" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>                            
+                    </Grid>
 
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Horizontal" 
-                                   ItemSpacing="10"/>
+                    <Border.Triggers>
+                        <DataTrigger TargetType="Border"
+                                     Binding="{Binding is_current_date}"
+                                     Value="True">
 
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:BodyWeightEntryDot">
-                    <Border WidthRequest="80"
-                            HeightRequest="120"
-                            Padding="15">
+                            <Setter Property="BackgroundColor"
+                                    Value="LightBlue" />
+                        </DataTrigger>
 
-                        <Grid RowDefinitions="*, Auto"
-                              ColumnDefinitions="*">
+                        <DataTrigger TargetType="Border"
+                                     Binding="{Binding is_current_date}"
+                                     Value="False">
 
-                            <Label Text="{Binding weight, StringFormat='{0:ddd }'}" 
-                                   HorizontalOptions="Center"
-                                   Grid.Row="0"
-                                   FontSize="18" >
+                            <Setter Property="BackgroundColor"
+                                    Value="Transparent" />
+                        </DataTrigger>
+                    </Border.Triggers>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=current_date_command}"
+                                              CommandParameter="{Binding .}" />
+                    </Border.GestureRecognizers>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 
-                                <Label.Triggers>
-                                    <DataTrigger TargetType="Label" 
-                                                 Binding="{Binding is_current_date}" 
-                                                 Value="True">
-
-                                        <Setter Property="TextColor"
-                                                Value="White" />
-                                    </DataTrigger>
-                                </Label.Triggers>
-                            </Label>
-
-                            <Frame Grid.Row="1"
-                                   Margin="10"
-                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
-                                   BorderColor="Black"/>
-
-                            <Label Text="{Binding date, StringFormat='{0:d }'}" 
-                                   FontSize="24" 
-                                   HorizontalOptions="Center"
-                                   Grid.Row="2"
-                                   FontAttributes="Bold">
-
-                                <Label.Triggers>
-                                    <DataTrigger TargetType="Label" 
-                                                 Binding="{Binding is_current_date}" 
-                                                 Value="True">
-
-                                        <Setter Property="TextColor"
-                                                Value="White" />
-                                    </DataTrigger>
-                                </Label.Triggers>
-                            </Label>                            
-                        </Grid>
-
-                        <Border.Triggers>
-                            <DataTrigger TargetType="Border"
-                                         Binding="{Binding is_current_date}"
-                                         Value="True">
-
-                                <Setter Property="BackgroundColor"
-                                        Value="LightBlue" />
-                            </DataTrigger>
-
-                            <DataTrigger TargetType="Border"
-                                         Binding="{Binding is_current_date}"
-                                         Value="False">
-
-                                <Setter Property="BackgroundColor"
-                                        Value="Transparent" />
-                            </DataTrigger>
-                        </Border.Triggers>
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={x:Reference this}, Path=current_date_command}"
-                                                  CommandParameter="{Binding .}" />
-                        </Border.GestureRecognizers>
-                    </Border>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-
-        <Label Text="Recorded Date"
-               HorizontalOptions="Center"
-               Grid.Row="1"
-               Grid.Column="1"/>
-    </Grid>
-</StackLayout>
+    <Label Text="Recorded Date"
+           HorizontalOptions="Center"
+           Grid.Row="1"
+           Grid.Column="1"/>
+</Grid>
