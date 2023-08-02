@@ -20,12 +20,22 @@
           ColumnDefinitions="*, *">
 
             <Label Text="Edit Note"
-               FontAttributes="Bold"
+               FontAttributes="Italic"
                Grid.Row="0"
                Grid.ColumnSpan="2"
-               HorizontalOptions="Center"
+               HorizontalOptions="Start"
                Margin="20"
                FontSize="24" />
+
+            <Button Grid.Row="0"
+                Grid.Column="1"
+                Clicked="Cancel_Record"
+                Margin="20"
+                WidthRequest="40"
+                HeightRequest="40"
+                HorizontalOptions="End"
+                TextColor="white"
+                Text="X"/>
 
             <Label Grid.Row="1"
                Grid.ColumnSpan="2"
@@ -87,25 +97,14 @@
                     HorizontalOptions="Start"/>
             </Border>
 
-            <Grid Grid.Row="5"
-              Grid.ColumnSpan="2"
-              Margin="20"
-              ColumnDefinitions="*, *">
-
-                <Button Text="Save"
-                    Grid.Column="0"
+            <Button Text="Save"
+                    Grid.Row="5"
+                    Grid.ColumnSpan="2"
+                    Margin="20"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
                     WidthRequest="100"
                     Clicked="Save_Note" />
-
-                <Button Text="Cancel"
-                    Grid.Column="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="100"
-                    Clicked="Cancel_Record" />
-            </Grid>
         </Grid>
     </Border>
 </mct:Popup>

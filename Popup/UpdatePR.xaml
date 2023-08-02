@@ -20,9 +20,11 @@
               RowDefinitions="Auto, Auto, Auto, Auto, Auto, *">
 
             <Label Text="Personal Record"
-                   FontAttributes="Bold"
                    Grid.Row="0"
                    Grid.ColumnSpan="2"
+                   LineHeight="100"
+                   VerticalTextAlignment="Center"
+                   FontAttributes="Italic"
                    HorizontalOptions="Start"
                    Margin="20"
                    FontSize="24" />
