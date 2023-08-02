@@ -62,6 +62,7 @@
                           ColumnDefinitions="*">
                         
                         <Label Text="{Binding weight}" 
+                               x:Name="weight_value_entry_display"                               
                                HorizontalOptions="Center"
                                Grid.Row="0"
                                FontSize="18" >
@@ -78,6 +79,7 @@
                         </Label>
                         
                         <Frame Grid.Row="1"
+                               x:Name="entry_dot_display"
                                VerticalOptions="Start"
                                WidthRequest="20"
                                HeightRequest="20"

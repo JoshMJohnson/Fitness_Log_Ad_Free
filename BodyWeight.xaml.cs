@@ -187,11 +187,9 @@ public partial class BodyWeight : ContentPage
         }
     }
 
-    /* todo executes when a body weight entry is selected in the graph */
+    /* executes when a body weight entry is selected in the graph */
     private async void Entry_Selected(object sender, DateTime date)
     {
-        /* todo display edit body weight entry button */
-        /* todo display delete body weight entry button */
-
+        await this.ShowPopupAsync(new BodyWeightUpdatePopup(date));
     }
 }

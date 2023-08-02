@@ -38,6 +38,22 @@
 
             <Grid Grid.Row="2"
               Grid.ColumnSpan="2"
+              ColumnDefinitions="Auto, *, Auto"
+              Margin="10" >
+
+                <Label Grid.Column="0"
+                   Text="Date:" 
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start" />
+
+                <DatePicker Grid.Column="1"
+                        x:Name="record_date"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center" />
+            </Grid>
+
+            <Grid Grid.Row="3"
+              Grid.ColumnSpan="2"
               Margin="10"
               RowDefinitions="*"
               ColumnDefinitions="Auto, *, Auto">
@@ -53,22 +69,6 @@
                    MaxLength="5"
                    HorizontalTextAlignment="Center"
                    Placeholder="200" />
-            </Grid>
-
-            <Grid Grid.Row="3"
-              Grid.ColumnSpan="2"
-              ColumnDefinitions="Auto, *, Auto"
-              Margin="10" >
-
-                <Label Grid.Column="0"
-                   Text="Date:" 
-                   VerticalOptions="Center"
-                   HorizontalOptions="Start" />
-
-                <DatePicker Grid.Column="1"
-                        x:Name="record_date"
-                        HorizontalOptions="End"
-                        VerticalOptions="Center" />
             </Grid>
 
             <Grid Grid.Row="4"

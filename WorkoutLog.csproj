@@ -93,6 +93,9 @@
 	  <MauiXaml Update="Popup\BodyWeightAddPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Popup\BodyWeightUpdatePopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Popup\CalendarAddPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

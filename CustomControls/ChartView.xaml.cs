@@ -94,8 +94,8 @@ public partial class ChartView : Grid
         Update_Y_Axis(entry_list);
     }
 
-    /* todo picks accurate y axis label values and displays them */
-    private async void Update_Y_Axis(List<BodyWeightEntry> entry_list)
+    /* picks accurate y axis label values and displays them */
+    private void Update_Y_Axis(List<BodyWeightEntry> entry_list)
     {
         int highest_body_weight_value = -1;
         int lowest_body_weight_value = -1;
