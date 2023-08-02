@@ -19,14 +19,17 @@
         <Grid ColumnDefinitions="*, *" 
               RowDefinitions="Auto, Auto, Auto, Auto, *">
 
-            <Label Text="Edit Entry"
-                   FontAttributes="Bold"
+            <Label Text="BW Entry"
+                   FontAttributes="Italic"
                    Grid.Row="0"
                    Grid.ColumnSpan="2"
-                   HorizontalOptions="Center"
-                   Margin="20"
+                   HorizontalOptions="Start"
+                   LineHeight="100"
+                   MinimumWidthRequest="200"
+                   VerticalTextAlignment="Center"
+                   Margin="10"
                    FontSize="24" />
-
+            
             <Button Grid.Row="0"
                     Grid.Column="1"
                     Clicked="Close_Edit_Popup"
