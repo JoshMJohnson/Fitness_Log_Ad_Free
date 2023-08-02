@@ -19,13 +19,25 @@
         <Grid ColumnDefinitions="*, *" 
               RowDefinitions="Auto, Auto, *, Auto">
 
-            <Label Text="Recorded Progression"
-                   FontAttributes="Bold"
+            <Label Text="Progression"
+                   FontAttributes="Italic"
                    Grid.Row="0"
                    Grid.ColumnSpan="2"
-                   HorizontalOptions="Center"
-                   Margin="20"
+                   HorizontalOptions="Start"
+                   LineHeight="100"
+                   VerticalTextAlignment="Center"
+                   Margin="10"
                    FontSize="24" />
+
+            <Button Grid.Row="0"
+                Grid.Column="1"
+                Clicked="Close_Progression_Popup"
+                Margin="20"
+                WidthRequest="40"
+                HeightRequest="40"
+                HorizontalOptions="End"
+                TextColor="white"
+                Text="X"/>
 
             <Grid Grid.Row="1"
                   Grid.ColumnSpan="2"
@@ -49,25 +61,14 @@
                    Grid.Row="2"
                    Grid.ColumnSpan="2" />
 
-            <Grid Grid.Row="3"
-                  Grid.ColumnSpan="2"
-                  Margin="20"
-                  ColumnDefinitions="*, *">
-
-                <Button Text="Delete"
-                        Grid.Column="0"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center" 
-                        WidthRequest="100"
-                        Clicked="Remove_Body_Progression" />
-
-                <Button Text="Close"
-                        Grid.Column="1"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                        WidthRequest="100"
-                        Clicked="Close_Progression_Popup" />
-            </Grid>
+            <Button Text="Delete"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Margin="20"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    WidthRequest="100"
+                    Clicked="Remove_Body_Progression" />
         </Grid>
     </Border>
 </mct:Popup>
