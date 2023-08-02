@@ -43,8 +43,6 @@ public partial class BodyWeight : ContentPage
     {
         List<BodyWeightEntry> entries = await App.RecordRepo.Get_Body_Weight_List();
 
-        chart_data_display.ItemsSource = entries; /* updates the chart data */
-
         /* 'Actual' cell */
         if (entries.Count == 0) /* if empty body weight entries */
         {
@@ -187,5 +185,13 @@ public partial class BodyWeight : ContentPage
 
             total_change_display.Text = diff_weight.ToString();
         }
+    }
+
+    /* todo executes when a body weight entry is selected in the graph */
+    private async void Entry_Selected(object sender, DateTime date)
+    {
+        /* todo display edit body weight entry button */
+        /* todo display delete body weight entry button */
+
     }
 }

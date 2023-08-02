@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:WorkoutLog.Model"
+             xmlns:customControls="clr-namespace:WorkoutLog.CustomControls"
              x:Class="WorkoutLog.BodyWeight"
              Title="Body Weight">
 
@@ -148,8 +149,8 @@
                 </Grid>
 
                 <Grid Grid.Row="2"
-                  Grid.Column="4"
-                  RowDefinitions="*, *" >
+                      Grid.Column="4"
+                      RowDefinitions="*, *" >
 
                     <Label Text="Total Change"
                            LineBreakMode="WordWrap"
@@ -173,31 +174,10 @@
                HorizontalOptions="End"
                Grid.Row="2" />
 
-        
-        
-        
-        
-
-        <CollectionView x:Name="chart_data_display"
-                        Grid.Row="3"
-                        VerticalOptions="Start" >
-
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:BodyWeightEntry">
-                    <Grid RowDefinitions="*"
-                          ColumnDefinitions="*, *"
-                          Margin="10">
-
-                        <Label VerticalOptions="Center"
-                               Grid.Column="0"
-                               Text="{Binding date}"/>
-
-                        <Label Grid.Column="1"
-                               HorizontalOptions="End"
-                               Text="{Binding weight}" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <customControls:ChartView x:Name="chart_display"
+                                     Grid.Row="3"
+                                     VerticalOptions="Start"
+                                     Margin="10" 
+                                     on_entry_selected="Entry_Selected" />
     </Grid>
 </ContentPage>

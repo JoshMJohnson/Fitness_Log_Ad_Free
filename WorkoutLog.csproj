@@ -66,6 +66,9 @@
 	  <MauiXaml Update="CustomControls\CalendarView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="CustomControls\ChartView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Goals.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
