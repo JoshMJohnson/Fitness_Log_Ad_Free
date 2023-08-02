@@ -25,10 +25,27 @@ public partial class BodyWeightUpdatePopup
         weight_entry.Placeholder = current_entry.weight.ToString();
     }
 
-    /* todo executes when edit body weight entry button clicked */
-    private void Edit_Body_Weight_Entry(object sender, EventArgs e)
+    /* executes when edit body weight entry button clicked */
+    private async void Edit_Body_Weight_Entry(object sender, EventArgs e)
     {
+        DateTime date = current_entry.date;
+        string weight_update_string = weight_entry.Text;
 
+        if (weight_update_string != null && weight_update_string.Length != 0) /* if weight field is not empty */
+        {
+            weight_update_string = weight_update_string.ToString();
+            int weight_update = int.Parse(weight_update_string);
+
+            await App.RecordRepo.Edit_Body_Weight(date, weight_update);
+
+            error_prompt.IsVisible = false;
+            Close();
+        }
+        else /* if weight field is empty */
+        {
+            error_prompt.Text = "Body weight value cannot be empty";
+            error_prompt.IsVisible = true;
+        }
     }
 
     /* executes when delete body weight entry button is clicked */

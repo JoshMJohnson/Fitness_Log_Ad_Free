@@ -137,7 +137,7 @@ public class RecordRepository
         }
     }
 
-    /* ? edit an entry in the body weight table within the database */
+    /* edit an entry in the body weight table within the database */
     public async Task Edit_Body_Weight(DateTime entry_date, int updated_weight)
     {
         ArgumentNullException.ThrowIfNull(entry_date, nameof(entry_date));
