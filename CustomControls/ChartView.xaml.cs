@@ -153,16 +153,17 @@ public partial class ChartView : Grid
 
             var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
             double screen_height = mainDisplayInfo.Height;
-            double chart_height = screen_height * .188;
+            double chart_height = screen_height - 600;
 
             for (int i = 0; i < entries.Count; i++) /* adjusts y value of entry marker */
             {
                 int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
-                int entry_value_lowest_value_diff = highest_body_weight_value - entries[i].weight;
+                int entry_value_diff_from_highest_value = highest_body_weight_value - entries[i].weight;
                 
-                double adjustment_ratio = (double) (entry_value_lowest_value_diff) / total_weight_change;
+                double adjustment_ratio = (double) (entry_value_diff_from_highest_value) / total_weight_change;
                 double adjustment_pixels = chart_height * adjustment_ratio;
                 int adjustment_pixels_int = (int) adjustment_pixels;
+                int pre_adjustment = -5;
 
                 if (entries.Count > 1) /* if more than 1 entry */
                 {
@@ -171,7 +172,7 @@ public partial class ChartView : Grid
                         adjustment_pixels_int -= 12;
                     }
 
-                    entries[i].y_adjustment = adjustment_pixels_int;
+                    entries[i].y_adjustment = pre_adjustment + adjustment_pixels_int;
                 }
                 else
                 {
