@@ -9,7 +9,7 @@ To Do:
  - draw lines connecting body weight entry dots
 
 Bugs:
- - doesnt update immediately on body weight edit/delete/add
+
 
 Ads:
  - Unity
