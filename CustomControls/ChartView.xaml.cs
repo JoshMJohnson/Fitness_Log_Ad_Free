@@ -89,6 +89,7 @@ public partial class ChartView : Grid
             {
                 date = entry_list[i].date,
                 weight = entry_list[i].weight,
+                y_adjustment = -180
             });
         }
 

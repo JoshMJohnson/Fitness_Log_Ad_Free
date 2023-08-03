@@ -95,6 +95,8 @@
 
                         <Grid RowDefinitions="*, *"
                               ColumnDefinitions="*"
+                              x:Name="dot_value_group"
+                              TranslationY="{Binding y_adjustment}"
                               VerticalOptions="End"
                               Grid.Row="0">
 

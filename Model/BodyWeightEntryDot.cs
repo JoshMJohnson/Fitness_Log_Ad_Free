@@ -4,6 +4,7 @@ public class BodyWeightEntryDot : BodyWeightEntryPropertyChanged
 {
     public DateTime date { get; set; }
     public int weight { get; set; }
+    public int y_adjustment { get; set; }
 
     private bool _isCurrentDateSelected;
     public bool is_current_date_selected
