@@ -175,6 +175,7 @@
                Grid.Row="2" />
 
         <customControls:ChartView Grid.Row="3"
+                                  x:Name="chart_display"
                                   VerticalOptions="End"
                                   on_entry_selected="Entry_Selected" />
     </Grid>

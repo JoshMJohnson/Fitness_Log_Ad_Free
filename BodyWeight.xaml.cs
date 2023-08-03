@@ -191,5 +191,6 @@ public partial class BodyWeight : ContentPage
     private async void Entry_Selected(object sender, DateTime date)
     {
         await this.ShowPopupAsync(new BodyWeightUpdatePopup(date));
+        chart_display.Fill_Chart();
     }
 }

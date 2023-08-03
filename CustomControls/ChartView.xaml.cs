@@ -75,8 +75,10 @@ public partial class ChartView : Grid
     }
 
     /* prepares the body weight graph to be displayed; links chart entries with appropriate data */
-    private async void Fill_Chart()
+    public async void Fill_Chart()
     {
+        entries.Clear();
+
         List<BodyWeightEntry> entry_list = await App.RecordRepo.Get_Body_Weight_List();
         entry_list = entry_list.OrderBy(progress => progress.date).ToList();
 
@@ -94,7 +96,7 @@ public partial class ChartView : Grid
     }
 
     /* picks accurate y axis label values and displays them */
-    private void Update_Y_Axis(List<BodyWeightEntry> entry_list)
+    public void Update_Y_Axis(List<BodyWeightEntry> entry_list)
     {
         int highest_body_weight_value = -1;
         int lowest_body_weight_value = -1;
