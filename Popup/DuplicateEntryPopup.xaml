@@ -9,8 +9,8 @@
            Size="300, 300">
 
     <Border Stroke="#87CEFA"
-        StrokeThickness="4"
-        HorizontalOptions="Center">
+            StrokeThickness="4"
+            HorizontalOptions="Center">
 
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="40,40,40,40" />

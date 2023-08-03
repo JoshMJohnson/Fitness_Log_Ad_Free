@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
 using WorkoutLog.Model;
 
@@ -82,13 +83,36 @@ public partial class ChartView : Grid
         List<BodyWeightEntry> entry_list = await App.RecordRepo.Get_Body_Weight_List();
         entry_list = entry_list.OrderBy(progress => progress.date).ToList();
 
-        /* loop through the days in the selected month */
+        int highest_val_entry = -1;
+        int lowest_val_entry = -1;
+
+        /* loop through the body weight entries in database */
+        for (int i = 0; i < entry_list.Count; i++)
+        {
+            if (i == 0) /* if first entry */
+            {
+                highest_val_entry = entry_list[i].weight;
+                lowest_val_entry = entry_list[i].weight;
+            }
+            else if (entry_list[i].weight > highest_val_entry) /* else if current value is new high value */
+            {
+                highest_val_entry = entry_list[i].weight;
+            }
+            else if (entry_list[i].weight < lowest_val_entry) /* else if current value is new low value */
+            {
+                lowest_val_entry = entry_list[i].weight;
+            }
+        }
+
+        /* loop through the body weight entries in database */
         for (int i = 0; i < entry_list.Count; i++)
         {
             entries.Add(new BodyWeightEntryDot
             {
                 date = entry_list[i].date,
                 weight = entry_list[i].weight,
+                highest_value = highest_val_entry,
+                lowest_value = lowest_val_entry
             });
         }
 
@@ -126,12 +150,12 @@ public partial class ChartView : Grid
         {
             if (highest_body_weight_value == lowest_body_weight_value) /* if only one entry */
             {
-                y_axis_6.Text = "----";
+                y_axis_6.Text = entries[0].weight.ToString();
                 y_axis_5.Text = "----";
                 y_axis_4.Text = "----";
                 y_axis_3.Text = "----";
                 y_axis_2.Text = "----";
-                y_axis_1.Text = entries[0].weight.ToString();
+                y_axis_1.Text = "----";
             }
             else /* more than one entry */
             {
@@ -149,34 +173,39 @@ public partial class ChartView : Grid
                 y_axis_3.Text = y_value3.ToString();
                 y_axis_2.Text = y_value2.ToString();
                 y_axis_1.Text = lowest_body_weight_value.ToString();
-            }
 
-            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
-            double screen_height = mainDisplayInfo.Height;
-            double chart_height = screen_height - 600;
-
-            for (int i = 0; i < entries.Count; i++) /* adjusts y value of entry marker */
-            {
-                int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
-                int entry_value_diff_from_highest_value = highest_body_weight_value - entries[i].weight;
-                
-                double adjustment_ratio = (double) (entry_value_diff_from_highest_value) / total_weight_change;
-                double adjustment_pixels = chart_height * adjustment_ratio;
-                int adjustment_pixels_int = (int) adjustment_pixels;
-                int pre_adjustment = -5;
-
-                if (entries.Count > 1) /* if more than 1 entry */
+                for (int i = 0; i < entries.Count; i++) /* adjusts y value of entry marker */
                 {
-                    if (entries[i].weight < int.Parse(y_axis_2.Text)) /* if above second from top bar; adjustment for rounding */
+                    int min_group6 = (int) (y_value5 + (total_weight_change_gap / 2));
+                    int min_group5 = (int) (y_value4 + (total_weight_change_gap / 2));
+                    int min_group4 = (int) (y_value3 + (total_weight_change_gap / 2));
+                    int min_group3 = (int) (y_value2 + (total_weight_change_gap / 2));
+                    int min_group2 = (int) (lowest_body_weight_value + (total_weight_change_gap / 2));
+
+                    if (entries[i].weight >= min_group6) /* todo if entry in top 1/6 */
                     {
-                        adjustment_pixels_int -= 12;
+                        entries[i].y_adjustment = 0;
                     }
-
-                    entries[i].y_adjustment = pre_adjustment + adjustment_pixels_int;
-                }
-                else
-                {
-                    entries[i].y_adjustment = 0;
+                    else if (entries[i].weight >= min_group5) /* todo else if entry is top 2/6th */
+                    {
+                        entries[i].y_adjustment = 0;
+                    }
+                    else if (entries[i].weight >= min_group4)  /* todo else if entry is top 2/6th */
+                    {
+                        entries[i].y_adjustment = 0;
+                    }
+                    else if (entries[i].weight >= min_group3)  /* todo else if entry is top 2/6th */
+                    {
+                        entries[i].y_adjustment = 0;
+                    }
+                    else if (entries[i].weight >= min_group2)  /* todo else if entry is top 2/6th */
+                    {
+                        entries[i].y_adjustment = 0;
+                    }
+                    else /* todo else; entry is lowest 6th */
+                    {
+                        entries[i].y_adjustment = 0;
+                    }
                 }
             }
         }
@@ -189,6 +218,8 @@ public partial class ChartView : Grid
             y_axis_2.Text = "----";
             y_axis_1.Text = "----";
         }
+
+        Console.WriteLine("**************3");
     }
 
     #region Commands
