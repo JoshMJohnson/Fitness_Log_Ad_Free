@@ -5,7 +5,7 @@
              x:Class="WorkoutLog.CustomControls.ChartView"
              x:Name="this"
              ColumnDefinitions="30, *"
-             RowDefinitions="*" >
+             RowDefinitions="*, 30" >
 
     <Grid RowDefinitions="*, *, *, *, *, *"
           ColumnDefinitions="*"
@@ -76,7 +76,7 @@
     </Grid>
 
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=entries}"
-                    Grid.Row="0"
+                    Grid.RowSpan="2"
                     Grid.Column="1">
 
         <CollectionView.ItemsLayout>
