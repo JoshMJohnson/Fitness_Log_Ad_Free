@@ -90,39 +90,46 @@
                         BackgroundColor="Transparent"
                         WidthRequest="75">
 
-                    <Grid RowDefinitions="Auto, *, Auto"
+                    <Grid RowDefinitions="*, Auto"
                           ColumnDefinitions="*">
 
-                        <Label Text="{Binding weight}" 
-                               x:Name="weight_value_entry_display"                               
-                               HorizontalOptions="Center"
-                               Grid.Row="0"
-                               FontSize="14" >
+                        <Grid RowDefinitions="*, *"
+                              ColumnDefinitions="*"
+                              VerticalOptions="End"
+                              Grid.Row="0">
 
-                            <Label.Triggers>
-                                <DataTrigger TargetType="Label" 
+                            <Label Text="{Binding weight}" 
+                                   x:Name="weight_value_entry_display"                               
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="End"                                   
+                                   Grid.Row="0"
+                                   FontSize="14" >
+
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" 
                                              Binding="{Binding is_current_date}" 
                                              Value="True">
 
-                                    <Setter Property="TextColor"
+                                        <Setter Property="TextColor"
                                             Value="White" />
-                                </DataTrigger>
-                            </Label.Triggers>
-                        </Label>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
 
-                        <Frame Grid.Row="1"
-                               x:Name="entry_dot_display"
-                               VerticalOptions="Start"
-                               WidthRequest="5"
-                               HeightRequest="5"
-                               Margin="10"
-                               BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
-                               BorderColor="Black"/>
+                            <Frame Grid.Row="1"
+                                   x:Name="entry_dot_display"
+                                   VerticalOptions="Start"
+                                   WidthRequest="5"
+                                   HeightRequest="5"
+                                   Margin="4"
+                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
+                                   BorderColor="Black"/>
+                        </Grid>
 
                         <Label Text="{Binding date, StringFormat='{0:M/d/yy}'}" 
                                FontSize="12" 
                                HorizontalOptions="Center"
-                               Grid.Row="2"
+                               Grid.Row="1"
                                FontAttributes="Bold">
 
                             <Label.Triggers>
