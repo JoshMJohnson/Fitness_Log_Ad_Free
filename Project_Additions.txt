@@ -5,7 +5,6 @@
  - can zoom out and see entrie body weight chart
 
 To Do:
- - adjust height of body weight entry dot and label to match y-axis
  - draw lines connecting body weight entry dots
 
 Bugs:

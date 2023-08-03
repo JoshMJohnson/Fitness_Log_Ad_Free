@@ -150,23 +150,14 @@ public partial class ChartView : Grid
             double screen_height = mainDisplayInfo.Height;
             double chart_height = screen_height * .188;
 
-            Console.WriteLine($"******screen_height: {screen_height}******");
-
-            for (int i = 0; i < entries.Count; i++) /* todo adjusts y value of entry marker */
+            for (int i = 0; i < entries.Count; i++) /* adjusts y value of entry marker */
             {
                 int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
                 int entry_value_lowest_value_diff = entries[i].weight - lowest_body_weight_value;
-
-                Console.WriteLine($"******total_weight_change: {total_weight_change}******");
-                Console.WriteLine($"******entry_value_lowest_value_diff: {entry_value_lowest_value_diff}******");
-
+                
                 double adjustment_ratio = (double) (entry_value_lowest_value_diff) / total_weight_change;
                 double adjustment_pixels = chart_height * adjustment_ratio;
                 int adjustment_pixels_int = (int) adjustment_pixels;
-
-                Console.WriteLine($"******adjustment_ratio: {adjustment_ratio}******");
-                Console.WriteLine($"******adjustment_pixels: {adjustment_pixels}******");
-                Console.WriteLine($"******adjustment_pixels_int: {adjustment_pixels_int}******");
 
                 if (entries[i].weight > int.Parse(y_axis_5.Text)) /* if above second from top bar; adjustment for rounding */
                 {
