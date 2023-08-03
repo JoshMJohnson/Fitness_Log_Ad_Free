@@ -24,8 +24,9 @@ public partial class BodyWeight : ContentPage
             if (result_string == "True") /* if valid entry */
             {
                 Refresh_Table_Data();
+                chart_display.Fill_Chart();
             }
-            else
+            else /* if entry already exists for given date */
             {
                 await this.ShowPopupAsync(new DuplicateEntryPopup("Body Weight"));
             }
