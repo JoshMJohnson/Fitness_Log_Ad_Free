@@ -8,7 +8,7 @@ To Do:
  - draw lines connecting body weight entry dots
 
 Bugs:
-
+ - body progression. if image duplicate is still in cache memory
 
 Ads:
  - Unity

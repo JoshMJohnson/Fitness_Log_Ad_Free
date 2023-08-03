@@ -126,7 +126,12 @@ public partial class ChartView : Grid
         {
             if (highest_body_weight_value == lowest_body_weight_value) /* if only one entry */
             {
-                y_axis_3.Text = highest_body_weight_value.ToString();
+                y_axis_6.Text = "----";
+                y_axis_5.Text = "----";
+                y_axis_4.Text = "----";
+                y_axis_3.Text = "----";
+                y_axis_2.Text = "----";
+                y_axis_1.Text = entries[0].weight.ToString();
             }
             else /* more than one entry */
             {
@@ -159,12 +164,19 @@ public partial class ChartView : Grid
                 double adjustment_pixels = chart_height * adjustment_ratio;
                 int adjustment_pixels_int = (int) adjustment_pixels;
 
-                if (entries[i].weight > int.Parse(y_axis_5.Text)) /* if above second from top bar; adjustment for rounding */
+                if (entries.Count > 1) /* if more than 1 entry */
                 {
-                    adjustment_pixels_int -= 12;
-                }
+                    if (entries[i].weight > int.Parse(y_axis_5.Text)) /* if above second from top bar; adjustment for rounding */
+                    {
+                        adjustment_pixels_int -= 12;
+                    }
 
-                entries[i].y_adjustment = adjustment_pixels_int * (-1);
+                    entries[i].y_adjustment = adjustment_pixels_int * (-1);
+                }
+                else
+                {
+                    entries[i].y_adjustment = 0;
+                }
             }
         }
     }
