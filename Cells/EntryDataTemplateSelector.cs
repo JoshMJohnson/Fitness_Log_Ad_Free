@@ -13,24 +13,20 @@ public class EntryDataTemplateSelector : DataTemplateSelector
 
     protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
     {
-        var body_weight_entry = (BodyWeightEntryDot)item;
+        var body_weight_entry = (BodyWeightEntryDot) item;
 
         int total_weight_change = body_weight_entry.highest_value - body_weight_entry.lowest_value;
-        double total_weight_change_gap = total_weight_change / 6;
+        double total_weight_change_gap = total_weight_change / 5;
 
-        int y_value5 = (int)((total_weight_change_gap * 4) + body_weight_entry.lowest_value);
-        int y_value4 = (int)((total_weight_change_gap * 3) + body_weight_entry.lowest_value);
-        int y_value3 = (int)((total_weight_change_gap * 2) + body_weight_entry.lowest_value);
-        int y_value2 = (int)((total_weight_change_gap) + body_weight_entry.lowest_value);
+        Console.WriteLine($"******total_weight_change_gap: {total_weight_change_gap}******");
 
-        int min_group6 = (int)(y_value5 + (total_weight_change_gap / 2));
-        int min_group5 = (int)(y_value4 + (total_weight_change_gap / 2));
-        int min_group4 = (int)(y_value3 + (total_weight_change_gap / 2));
-        int min_group3 = (int)(y_value2 + (total_weight_change_gap / 2));
-        int min_group2 = (int)(body_weight_entry.lowest_value + (total_weight_change_gap / 2));
+        int half_gap = (int) (total_weight_change_gap / 2);
 
-        Console.WriteLine($"**************body_weight_entry.highest_value: {body_weight_entry.highest_value}");
-        Console.WriteLine($"**************body_weight_entry.lowest_value: {body_weight_entry.lowest_value}");
+        int min_group6 = (int) (body_weight_entry.highest_value - half_gap);
+        int min_group5 = (int) (body_weight_entry.highest_value - half_gap - total_weight_change_gap);
+        int min_group4 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 2));
+        int min_group3 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 3));
+        int min_group2 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 4));
 
         if (body_weight_entry.weight >= min_group6) /* if entry in top 1/6 */
         {
