@@ -11,6 +11,37 @@
           ColumnDefinitions="*"
           HorizontalOptions="Start"
           Grid.Row="0"
+          Grid.Column="1">
+
+        <BoxView Grid.Row="0"
+                 HeightRequest="1"  
+                 VerticalOptions="Fill"/>
+
+        <BoxView Grid.Row="1"
+                 HeightRequest="1"  
+                 VerticalOptions="Fill"/>
+
+        <BoxView Grid.Row="2"
+                 HeightRequest="1"  
+                 VerticalOptions="Fill"/>
+
+        <BoxView Grid.Row="3"
+                 HeightRequest="1"  
+                 VerticalOptions="Fill"/>
+
+        <BoxView Grid.Row="4"
+                 HeightRequest="1"  
+                 VerticalOptions="Fill"/>
+
+        <BoxView Grid.Row="5"
+                 HeightRequest="1"  
+                 VerticalOptions="Fill"/>
+    </Grid>
+
+    <Grid RowDefinitions="*, *, *, *, *, *"
+          ColumnDefinitions="*"
+          HorizontalOptions="Start"
+          Grid.Row="0"
           Grid.Column="0">
 
         <Label x:Name="y_axis_6"
@@ -42,7 +73,7 @@
                Text="---"
                VerticalOptions="Center"
                Grid.Row="5" />
-    </Grid>    
+    </Grid>
 
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=entries}"
                     Grid.Row="0"
@@ -50,35 +81,35 @@
 
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Horizontal" />
-        
+
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:BodyWeightEntryDot">
                 <Border Padding="10"
                         Stroke="Transparent"
                         BackgroundColor="Transparent"
-                        WidthRequest="75">   
-                    
+                        WidthRequest="75">
+
                     <Grid RowDefinitions="Auto, *, Auto"
                           ColumnDefinitions="*">
-                        
+
                         <Label Text="{Binding weight}" 
                                x:Name="weight_value_entry_display"                               
                                HorizontalOptions="Center"
                                Grid.Row="0"
                                FontSize="14" >
-                            
+
                             <Label.Triggers>
                                 <DataTrigger TargetType="Label" 
                                              Binding="{Binding is_current_date}" 
                                              Value="True">
-                                    
+
                                     <Setter Property="TextColor"
                                             Value="White" />
                                 </DataTrigger>
                             </Label.Triggers>
                         </Label>
-                        
+
                         <Frame Grid.Row="1"
                                x:Name="entry_dot_display"
                                VerticalOptions="Start"
@@ -87,23 +118,23 @@
                                Margin="10"
                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
                                BorderColor="Black"/>
-                        
+
                         <Label Text="{Binding date, StringFormat='{0:M/d/yy}'}" 
                                FontSize="12" 
                                HorizontalOptions="Center"
                                Grid.Row="2"
                                FontAttributes="Bold">
-                            
+
                             <Label.Triggers>
                                 <DataTrigger TargetType="Label" 
                                              Binding="{Binding is_current_date}" 
                                              Value="True">
-                                    
+
                                     <Setter Property="TextColor"
                                             Value="White" />
                                 </DataTrigger>
                             </Label.Triggers>
-                        </Label>                            
+                        </Label>
                     </Grid>
 
                     <Border.Triggers>
@@ -131,35 +162,4 @@
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
-
-    <Grid RowDefinitions="*, *, *, *, *, *"
-          ColumnDefinitions="*"
-          HorizontalOptions="Start"
-          Grid.Row="0"
-          Grid.Column="1">
-
-        <BoxView Grid.Row="0"
-                 HeightRequest="1"  
-                 VerticalOptions="Fill"/>
-
-        <BoxView Grid.Row="1"
-                 HeightRequest="1"  
-                 VerticalOptions="Fill"/>
-
-        <BoxView Grid.Row="2"
-                 HeightRequest="1"  
-                 VerticalOptions="Fill"/>
-
-        <BoxView Grid.Row="3"
-                 HeightRequest="1"  
-                 VerticalOptions="Fill"/>
-
-        <BoxView Grid.Row="4"
-                 HeightRequest="1"  
-                 VerticalOptions="Fill"/>
-
-        <BoxView Grid.Row="5"
-                 HeightRequest="1"  
-                 VerticalOptions="Fill"/>
-    </Grid>
 </Grid>
