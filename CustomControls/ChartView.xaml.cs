@@ -168,6 +168,11 @@ public partial class ChartView : Grid
                 Console.WriteLine($"******adjustment_pixels: {adjustment_pixels}******");
                 Console.WriteLine($"******adjustment_pixels_int: {adjustment_pixels_int}******");
 
+                if (entries[i].weight > int.Parse(y_axis_5.Text)) /* if above second from top bar; adjustment for rounding */
+                {
+                    adjustment_pixels_int -= 12;
+                }
+
                 entries[i].y_adjustment = adjustment_pixels_int * (-1);
             }
         }
