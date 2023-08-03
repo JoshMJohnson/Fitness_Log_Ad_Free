@@ -87,7 +87,7 @@ public partial class PersonalRecords : ContentPage
 
         vertical_layout_empty_pr_list.Add(new Label
         {
-            Text = "No PRs Saved!",
+            Text = "No Personal Records Saved!",
             FontSize = 20,
             FontAttributes = FontAttributes.Italic,
             HorizontalOptions = LayoutOptions.Center

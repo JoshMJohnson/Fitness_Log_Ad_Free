@@ -82,7 +82,7 @@ public partial class GoalsBodyWeight : ContentPage
 
         vertical_layout_empty_bw_goal_list.Add(new Label
         {
-            Text = "No body weight goals!",
+            Text = "No Body Weight Goals!",
             FontSize = 20,
             FontAttributes = FontAttributes.Italic,
             HorizontalOptions = LayoutOptions.Center

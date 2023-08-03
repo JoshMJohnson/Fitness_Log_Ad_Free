@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:WorkoutLog.Model"
              x:Class="WorkoutLog.GoalsBodyWeight"
-             Title="Body Weight Goals">
+             Title="Goals">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+"

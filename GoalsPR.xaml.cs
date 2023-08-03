@@ -81,7 +81,7 @@ public partial class GoalsPR : ContentPage
 
         vertical_layout_empty_pr_goal_list.Add(new Label
         {
-            Text = "No PR goals!",
+            Text = "No Personal Record Goals!",
             FontSize = 20,
             FontAttributes = FontAttributes.Italic,
             HorizontalOptions = LayoutOptions.Center
