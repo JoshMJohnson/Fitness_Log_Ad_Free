@@ -193,5 +193,6 @@ public partial class BodyWeight : ContentPage
     {
         await this.ShowPopupAsync(new BodyWeightUpdatePopup(date));
         chart_display.Fill_Chart();
+        Refresh_Table_Data();
     }
 }
