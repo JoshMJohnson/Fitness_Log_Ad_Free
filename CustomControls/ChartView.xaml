@@ -525,7 +525,6 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-
     <Grid RowDefinitions="*, *, *, *, *, *"
           ColumnDefinitions="*"
           HorizontalOptions="Start"
@@ -534,27 +533,27 @@
 
         <BoxView Grid.Row="0"
                  HeightRequest="1"  
-                 VerticalOptions="Fill"/>
+                 VerticalOptions="Center"/>
 
         <BoxView Grid.Row="1"
                  HeightRequest="1"  
-                 VerticalOptions="Fill"/>
+                 VerticalOptions="Center"/>
 
         <BoxView Grid.Row="2"
                  HeightRequest="1"  
-                 VerticalOptions="Fill"/>
+                 VerticalOptions="Center"/>
 
         <BoxView Grid.Row="3"
                  HeightRequest="1"  
-                 VerticalOptions="Fill"/>
+                 VerticalOptions="Center"/>
 
         <BoxView Grid.Row="4"
                  HeightRequest="1"  
-                 VerticalOptions="Fill"/>
+                 VerticalOptions="Center"/>
 
         <BoxView Grid.Row="5"
                  HeightRequest="1"  
-                 VerticalOptions="Fill"/>
+                 VerticalOptions="Center"/>
     </Grid>
 
     <Grid RowDefinitions="*, *, *, *, *, *"

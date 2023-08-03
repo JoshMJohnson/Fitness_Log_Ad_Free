@@ -18,8 +18,6 @@ public class EntryDataTemplateSelector : DataTemplateSelector
         int total_weight_change = body_weight_entry.highest_value - body_weight_entry.lowest_value;
         double total_weight_change_gap = total_weight_change / 5;
 
-        Console.WriteLine($"******total_weight_change_gap: {total_weight_change_gap}******");
-
         int half_gap = (int) (total_weight_change_gap / 2);
 
         int min_group6 = (int) (body_weight_entry.highest_value - half_gap);
