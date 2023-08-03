@@ -179,6 +179,15 @@ public partial class ChartView : Grid
                 }
             }
         }
+        else /* else no body weight entries found */
+        {
+            y_axis_6.Text = "----";
+            y_axis_5.Text = "----";
+            y_axis_4.Text = "----";
+            y_axis_3.Text = "----";
+            y_axis_2.Text = "----";
+            y_axis_1.Text = "----";
+        }
     }
 
     #region Commands
