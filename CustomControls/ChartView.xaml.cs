@@ -158,7 +158,7 @@ public partial class ChartView : Grid
             for (int i = 0; i < entries.Count; i++) /* adjusts y value of entry marker */
             {
                 int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
-                int entry_value_lowest_value_diff = entries[i].weight - lowest_body_weight_value;
+                int entry_value_lowest_value_diff = highest_body_weight_value - entries[i].weight;
                 
                 double adjustment_ratio = (double) (entry_value_lowest_value_diff) / total_weight_change;
                 double adjustment_pixels = chart_height * adjustment_ratio;
@@ -166,12 +166,12 @@ public partial class ChartView : Grid
 
                 if (entries.Count > 1) /* if more than 1 entry */
                 {
-                    if (entries[i].weight > int.Parse(y_axis_5.Text)) /* if above second from top bar; adjustment for rounding */
+                    if (entries[i].weight < int.Parse(y_axis_2.Text)) /* if above second from top bar; adjustment for rounding */
                     {
                         adjustment_pixels_int -= 12;
                     }
 
-                    entries[i].y_adjustment = adjustment_pixels_int * (-1);
+                    entries[i].y_adjustment = adjustment_pixels_int;
                 }
                 else
                 {

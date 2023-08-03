@@ -97,7 +97,7 @@
                               ColumnDefinitions="*"
                               x:Name="dot_value_group"
                               TranslationY="{Binding y_adjustment}"
-                              VerticalOptions="End"
+                              VerticalOptions="Start"
                               Grid.Row="0">
 
                             <Label Text="{Binding weight}" 
