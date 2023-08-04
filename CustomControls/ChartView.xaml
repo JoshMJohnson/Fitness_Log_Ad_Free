@@ -28,7 +28,7 @@
                             <Label Text="{Binding weight}" 
                                    x:Name="weight_value_entry_display"                               
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Start"       
+                                   VerticalOptions="End"       
                                    Margin="-20"
                                    FontSize="14" >
 
@@ -112,7 +112,7 @@
                             <Label Text="{Binding weight}" 
                                    x:Name="weight_value_entry_display"                               
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Start"       
+                                   VerticalOptions="End"       
                                    Margin="-20"
                                    FontSize="14" >
 
@@ -196,7 +196,7 @@
                             <Label Text="{Binding weight}" 
                                    x:Name="weight_value_entry_display"                               
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Start"       
+                                   VerticalOptions="End"       
                                    Margin="-20"
                                    FontSize="14" >
 
@@ -280,7 +280,7 @@
                             <Label Text="{Binding weight}" 
                                    x:Name="weight_value_entry_display"                               
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Start"       
+                                   VerticalOptions="End"       
                                    Margin="-20"
                                    FontSize="14" >
 
@@ -364,7 +364,7 @@
                             <Label Text="{Binding weight}" 
                                    x:Name="weight_value_entry_display"                               
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Start"       
+                                   VerticalOptions="End"       
                                    Margin="-20"
                                    FontSize="14" >
 
@@ -448,7 +448,7 @@
                             <Label Text="{Binding weight}" 
                                    x:Name="weight_value_entry_display"                               
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Start"       
+                                   VerticalOptions="End"       
                                    Margin="-20"
                                    FontSize="14" >
 
