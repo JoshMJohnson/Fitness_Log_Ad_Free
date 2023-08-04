@@ -182,30 +182,55 @@ public partial class ChartView : Grid
                     int min_group3 = (int) (y_value2 + (total_weight_change_gap / 2));
                     int min_group2 = (int) (lowest_body_weight_value + (total_weight_change_gap / 2));
 
+                    int initial_adjustments = 0;
+
+                    /* set initial adjustments */
+                    if (entries[i].weight >= min_group6) /* if entry in top 1/6 */
+                    {
+                        initial_adjustments = -3;
+                    }
+                    else if (entries[i].weight >= min_group3 && entries[i].weight < min_group4)
+                    {
+                        initial_adjustments = -8;
+                    }
+                    else if (entries[i].weight < min_group3) /* else if entry is not in bottom 2/6th section */
+                    {
+                        initial_adjustments = -11;
+                    }
+                    else /* else; entry is not last or first sections */
+                    {
+                        initial_adjustments = -5;                        
+                    }
+
+                    int final_adjustments = initial_adjustments;
+
+
                     if (entries[i].weight >= min_group6) /* todo if entry in top 1/6 */
                     {
-                        entries[i].y_adjustment = 0;
+
                     }
                     else if (entries[i].weight >= min_group5) /* todo else if entry is top 2/6th */
                     {
-                        entries[i].y_adjustment = 0;
+
                     }
                     else if (entries[i].weight >= min_group4)  /* todo else if entry is top 2/6th */
                     {
-                        entries[i].y_adjustment = 0;
+
                     }
                     else if (entries[i].weight >= min_group3)  /* todo else if entry is top 2/6th */
                     {
-                        entries[i].y_adjustment = 0;
+
                     }
                     else if (entries[i].weight >= min_group2)  /* todo else if entry is top 2/6th */
                     {
-                        entries[i].y_adjustment = 0;
+
                     }
                     else /* todo else; entry is lowest 6th */
                     {
-                        entries[i].y_adjustment = 0;
+                        
                     }
+
+                    entries[i].y_adjustment = final_adjustments;
                 }
             }
         }
