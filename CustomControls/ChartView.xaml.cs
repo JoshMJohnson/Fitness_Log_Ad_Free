@@ -215,7 +215,7 @@ public partial class ChartView : Grid
                     int chart_height_pixels = screen_pixels_height - (int) heading_height_pixels;
                     int chart_adjustment_height_pixels = chart_height_pixels / 10;
 
-                    if (entries[i].weight >= min_group6) /* todo if entry in top 1/6; only positive adjustment */
+                    if (entries[i].weight >= min_group6) /* if entry in top 1/6; only positive adjustment */
                     {
                         int diff_value_from_line = highest_body_weight_value - entries[i].weight;
                         double ratio_from_line = (double) diff_value_from_line / half_gap;
@@ -226,12 +226,12 @@ public partial class ChartView : Grid
                     }
                     else if (entries[i].weight >= min_group5) /* todo else if entry is top 2/6th */
                     {
-                        if (entries[i].weight > y_value5) /* positive adjustment; above line */
+                        if (entries[i].weight > y_value5) /* negative adjustment; above line */
                         {
 
 
                         }
-                        else /* negative adjustment; below line */ 
+                        else /* positive adjustment; below line */ 
                         {
 
 
@@ -239,12 +239,12 @@ public partial class ChartView : Grid
                     }
                     else if (entries[i].weight >= min_group4)  /* todo else if entry is top 2/6th */
                     {
-                        if (entries[i].weight > y_value4) /* positive adjustment; above line */
+                        if (entries[i].weight > y_value4) /* negative adjustment; above line */
                         {
 
 
                         }
-                        else /* negative adjustment; below line */
+                        else /* positive adjustment; below line */
                         {
 
 
@@ -252,12 +252,12 @@ public partial class ChartView : Grid
                     }
                     else if (entries[i].weight >= min_group3)  /* todo else if entry is top 2/6th */
                     {
-                        if (entries[i].weight > y_value3) /* positive adjustment; above line */
+                        if (entries[i].weight > y_value3) /* negative adjustment; above line */
                         {
 
 
                         }
-                        else /* negative adjustment; below line */
+                        else /* positive adjustment; below line */
                         {
 
 
@@ -265,12 +265,12 @@ public partial class ChartView : Grid
                     }
                     else if (entries[i].weight >= min_group2)  /* todo else if entry is top 2/6th */
                     {
-                        if (entries[i].weight > y_value2) /* positive adjustment; above line */
+                        if (entries[i].weight > y_value2) /* negative adjustment; above line */
                         {
 
 
                         }
-                        else /* negative adjustment; below line */
+                        else /* positive adjustment; below line */
                         {
 
 
