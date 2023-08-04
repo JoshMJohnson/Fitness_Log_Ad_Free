@@ -215,7 +215,7 @@ public partial class ChartView : Grid
                     int chart_height_pixels = screen_pixels_height - (int) heading_height_pixels;
                     int chart_adjustment_height_pixels = chart_height_pixels / 10;
 
-                    if (entries[i].weight >= min_group6) /* if entry in top 1/6; only positive adjustment */
+                    if (entries[i].weight >= min_group6) /* only positive adjustment */
                     {
                         int diff_value_from_line = highest_body_weight_value - entries[i].weight;
                         double ratio_from_line = (double) diff_value_from_line / half_gap;
@@ -224,62 +224,98 @@ public partial class ChartView : Grid
 
                         final_adjustments += adjustment_value;
                     }
-                    else if (entries[i].weight >= min_group5) /* todo else if entry is top 2/6th */
+                    else if (entries[i].weight >= min_group5) 
                     {
                         if (entries[i].weight > y_value5) /* negative adjustment; above line */
                         {
+                            int diff_value_from_line = entries[i].weight - y_value5;
+                            double ratio_from_line = (double) diff_value_from_line / half_gap;
+                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
-
+                            final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */ 
                         {
+                            int diff_value_from_line = y_value5 - entries[i].weight;
+                            double ratio_from_line = (double) diff_value_from_line / half_gap;
+                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
-
+                            final_adjustments += adjustment_value;
                         }
                     }
-                    else if (entries[i].weight >= min_group4)  /* todo else if entry is top 2/6th */
+                    else if (entries[i].weight >= min_group4) 
                     {
                         if (entries[i].weight > y_value4) /* negative adjustment; above line */
                         {
+                            int diff_value_from_line = entries[i].weight - y_value4;
+                            double ratio_from_line = (double)diff_value_from_line / half_gap;
+                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
 
-
+                            final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */
                         {
+                            int diff_value_from_line = y_value4 - entries[i].weight;
+                            double ratio_from_line = (double)diff_value_from_line / half_gap;
+                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
 
-
+                            final_adjustments += adjustment_value;
                         }
                     }
-                    else if (entries[i].weight >= min_group3)  /* todo else if entry is top 2/6th */
+                    else if (entries[i].weight >= min_group3)
                     {
                         if (entries[i].weight > y_value3) /* negative adjustment; above line */
                         {
+                            int diff_value_from_line = entries[i].weight - y_value3;
+                            double ratio_from_line = (double)diff_value_from_line / half_gap;
+                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
 
-
+                            final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */
                         {
+                            int diff_value_from_line = y_value3 - entries[i].weight;
+                            double ratio_from_line = (double)diff_value_from_line / half_gap;
+                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
 
-
+                            final_adjustments += adjustment_value;
                         }
                     }
-                    else if (entries[i].weight >= min_group2)  /* todo else if entry is top 2/6th */
+                    else if (entries[i].weight >= min_group2)
                     {
                         if (entries[i].weight > y_value2) /* negative adjustment; above line */
                         {
+                            int diff_value_from_line = entries[i].weight - y_value2;
+                            double ratio_from_line = (double)diff_value_from_line / half_gap;
+                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
 
-
+                            final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */
                         {
+                            int diff_value_from_line = y_value2 - entries[i].weight;
+                            double ratio_from_line = (double)diff_value_from_line / half_gap;
+                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
 
-
+                            final_adjustments += adjustment_value;
                         }
                     }
-                    else /* todo else; entry is lowest 6th; only negative adjustment */
+                    else /* only negative adjustment */
                     {
+                        int diff_value_from_line = entries[i].weight - lowest_body_weight_value;
+                        double ratio_from_line = (double)diff_value_from_line / half_gap;
+                        int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                        int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
 
-
+                        final_adjustments -= adjustment_value;
                     }
 
                     entries[i].y_adjustment = final_adjustments;
