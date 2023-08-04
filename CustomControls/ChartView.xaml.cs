@@ -213,11 +213,16 @@ public partial class ChartView : Grid
                     double heading_height_pixels = heading_height * 5.4;
 
                     int chart_height_pixels = screen_pixels_height - (int) heading_height_pixels;
+                    int chart_adjustment_height_pixels = chart_height_pixels / 10;
 
                     if (entries[i].weight >= min_group6) /* todo if entry in top 1/6; only positive adjustment */
                     {
+                        int diff_value_from_line = highest_body_weight_value - entries[i].weight;
+                        double ratio_from_line = (double) diff_value_from_line / half_gap;
+                        int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                        int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
-
+                        final_adjustments += adjustment_value;
                     }
                     else if (entries[i].weight >= min_group5) /* todo else if entry is top 2/6th */
                     {
