@@ -1,13 +1,12 @@
 ﻿Additions:
- - body weight goals displayed as horizontal lines on body weight chart
-	- goal dates shown
-	- closest date goal shown in table
+
 
 To Do:
 
 
 Bugs:
  - body progression. if image duplicate is still in cache memory
+
 
 Ads:
  - Unity
