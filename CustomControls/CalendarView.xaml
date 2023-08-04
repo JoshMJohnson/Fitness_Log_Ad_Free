@@ -90,7 +90,6 @@
                                x:Name="has_entry_display"
                                Margin="10"
                                BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
-                               BorderColor="Black"
                                IsVisible="{Binding Has_Entry}"/>
                     </Grid>
 
@@ -100,7 +99,7 @@
                                      Value="True">
 
                             <Setter Property="BackgroundColor"
-                                    Value="LightBlue" />
+                                    Value="{AppThemeBinding Light={StaticResource CustomSelectedCalendarLight}, Dark={StaticResource CustomSelectedCalendarDark}}" />
                         </DataTrigger>
 
                         <DataTrigger TargetType="Border"

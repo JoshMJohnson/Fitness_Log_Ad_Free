@@ -47,8 +47,7 @@
                                    VerticalOptions="Center"
                                    WidthRequest="5"
                                    HeightRequest="5"
-                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
-                                   BorderColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}" />
                         </Grid>
 
                         <Label Text="{Binding date, StringFormat='{0:M/d/yy}'}" 
@@ -131,8 +130,7 @@
                                    VerticalOptions="Center"
                                    WidthRequest="5"
                                    HeightRequest="5"
-                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
-                                   BorderColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"/>
                         </Grid>
 
                         <Label Text="{Binding date, StringFormat='{0:M/d/yy}'}" 
@@ -215,8 +213,7 @@
                                    VerticalOptions="Center"
                                    WidthRequest="5"
                                    HeightRequest="5"
-                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
-                                   BorderColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"/>
                         </Grid>
 
                         <Label Text="{Binding date, StringFormat='{0:M/d/yy}'}" 
@@ -299,8 +296,7 @@
                                    VerticalOptions="Center"
                                    WidthRequest="5"
                                    HeightRequest="5"
-                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
-                                   BorderColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"/>
                         </Grid>
 
                         <Label Text="{Binding date, StringFormat='{0:M/d/yy}'}" 
@@ -383,8 +379,7 @@
                                    VerticalOptions="Center"
                                    WidthRequest="5"
                                    HeightRequest="5"
-                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
-                                   BorderColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"/>
                         </Grid>
 
                         <Label Text="{Binding date, StringFormat='{0:M/d/yy}'}" 
@@ -467,8 +462,7 @@
                                    VerticalOptions="Center"
                                    WidthRequest="5"
                                    HeightRequest="5"
-                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"     
-                                   BorderColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                                   BackgroundColor="{AppThemeBinding Light={StaticResource Secondary}, Dark={StaticResource Primary}}"/>
                         </Grid>
 
                         <Label Text="{Binding date, StringFormat='{0:M/d/yy}'}" 
