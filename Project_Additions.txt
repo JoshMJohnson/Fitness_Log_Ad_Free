@@ -9,6 +9,7 @@ To Do:
 
 Bugs:
  - body progression. if image duplicate is still in cache memory
+ - cuts off label for highest body weight entry on wide tablet
 
 Ads:
  - Unity

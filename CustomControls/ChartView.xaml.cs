@@ -174,13 +174,15 @@ public partial class ChartView : Grid
                 y_axis_2.Text = y_value2.ToString();
                 y_axis_1.Text = lowest_body_weight_value.ToString();
 
+                int half_gap = (int) (total_weight_change_gap / 2);
+
                 for (int i = 0; i < entries.Count; i++) /* adjusts y value of entry marker */
                 {
-                    int min_group6 = (int) (y_value5 + (total_weight_change_gap / 2));
-                    int min_group5 = (int) (y_value4 + (total_weight_change_gap / 2));
-                    int min_group4 = (int) (y_value3 + (total_weight_change_gap / 2));
-                    int min_group3 = (int) (y_value2 + (total_weight_change_gap / 2));
-                    int min_group2 = (int) (lowest_body_weight_value + (total_weight_change_gap / 2));
+                    int min_group6 = (int) (highest_body_weight_value - half_gap);
+                    int min_group5 = (int) (highest_body_weight_value - half_gap - total_weight_change_gap);
+                    int min_group4 = (int) (highest_body_weight_value - half_gap - (total_weight_change_gap * 2));
+                    int min_group3 = (int) (highest_body_weight_value - half_gap - (total_weight_change_gap * 3));
+                    int min_group2 = (int) (highest_body_weight_value - half_gap - (total_weight_change_gap * 4));
 
                     int initial_adjustments = 0;
 
@@ -204,30 +206,75 @@ public partial class ChartView : Grid
 
                     int final_adjustments = initial_adjustments;
 
+                    var main_display_info = DeviceDisplay.MainDisplayInfo;
+                    int screen_pixels_height = (int) main_display_info.Height;
 
-                    if (entries[i].weight >= min_group6) /* todo if entry in top 1/6 */
+                    int heading_height = 200;
+                    double heading_height_pixels = heading_height * 5.4;
+
+                    int chart_height_pixels = screen_pixels_height - (int) heading_height_pixels;
+
+                    if (entries[i].weight >= min_group6) /* todo if entry in top 1/6; only positive adjustment */
                     {
+
 
                     }
                     else if (entries[i].weight >= min_group5) /* todo else if entry is top 2/6th */
                     {
+                        if (entries[i].weight > y_value5) /* positive adjustment; above line */
+                        {
 
+
+                        }
+                        else /* negative adjustment; below line */ 
+                        {
+
+
+                        }
                     }
                     else if (entries[i].weight >= min_group4)  /* todo else if entry is top 2/6th */
                     {
+                        if (entries[i].weight > y_value4) /* positive adjustment; above line */
+                        {
 
+
+                        }
+                        else /* negative adjustment; below line */
+                        {
+
+
+                        }
                     }
                     else if (entries[i].weight >= min_group3)  /* todo else if entry is top 2/6th */
                     {
+                        if (entries[i].weight > y_value3) /* positive adjustment; above line */
+                        {
 
+
+                        }
+                        else /* negative adjustment; below line */
+                        {
+
+
+                        }
                     }
                     else if (entries[i].weight >= min_group2)  /* todo else if entry is top 2/6th */
                     {
+                        if (entries[i].weight > y_value2) /* positive adjustment; above line */
+                        {
 
+
+                        }
+                        else /* negative adjustment; below line */
+                        {
+
+
+                        }
                     }
-                    else /* todo else; entry is lowest 6th */
+                    else /* todo else; entry is lowest 6th; only negative adjustment */
                     {
-                        
+
+
                     }
 
                     entries[i].y_adjustment = final_adjustments;
@@ -243,8 +290,6 @@ public partial class ChartView : Grid
             y_axis_2.Text = "----";
             y_axis_1.Text = "----";
         }
-
-        Console.WriteLine("**************3");
     }
 
     #region Commands

@@ -26,27 +26,27 @@ public class EntryDataTemplateSelector : DataTemplateSelector
         int min_group3 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 3));
         int min_group2 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 4));
 
-        if (body_weight_entry.weight >= min_group6) /* if entry in top 1/6 */
+        if (body_weight_entry.weight >= min_group6)
         {
             return Min_Group_6;
         }
-        else if (body_weight_entry.weight >= min_group5) /* else if entry is top 2/6th */
+        else if (body_weight_entry.weight >= min_group5) 
         {
             return Min_Group_5;
         }
-        else if (body_weight_entry.weight >= min_group4)  /* else if entry is top 2/6th */
+        else if (body_weight_entry.weight >= min_group4)  
         {
             return Min_Group_4;
         }
-        else if (body_weight_entry.weight >= min_group3)  /* else if entry is top 2/6th */
+        else if (body_weight_entry.weight >= min_group3)  
         {
             return Min_Group_3;
         }
-        else if (body_weight_entry.weight >= min_group2)  /* else if entry is top 2/6th */
+        else if (body_weight_entry.weight >= min_group2)  
         {
             return Min_Group_2;
         }
-        else /* else; entry is lowest 6th */
+        else 
         {
             return Group_1;
         }
