@@ -2,10 +2,9 @@
 
 
 To Do:
-
+ - save 2 versions; with/without ads
 
 Bugs:
- - body progression. if image duplicate is still in cache memory
 
 
 Ads:
@@ -15,7 +14,3 @@ Ads:
 
 Testing:
  - resizeable for all versions of android
-	- pixel
-	- small phone
-	- tablet
- - Theme changes
