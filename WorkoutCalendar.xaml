@@ -15,45 +15,45 @@
 
     <ScrollView>
         <Grid ColumnDefinitions="*, *"
-          RowDefinitions="200, Auto, *" >
+              RowDefinitions="200, Auto, *" >
 
             <Grid RowDefinitions="Auto, *"
-              ColumnDefinitions="*"
-              Grid.Row="0"
-              Grid.Column="0" >
+                  ColumnDefinitions="*"
+                  Grid.Row="0"
+                  Grid.Column="0" >
 
                 <Grid Grid.Row="0"
-                  Grid.Column="0"
-                  RowDefinitions="*, *"
-                  Margin="10">
+                      Grid.Column="0"
+                      RowDefinitions="*, *"
+                      Margin="10">
 
                     <Label Text="Exercise"
-                       FontAttributes="Bold"
-                       Grid.Row="0"
-                       HorizontalOptions="Center"
-                       FontSize="20" />
+                           FontAttributes="Bold"
+                           Grid.Row="0"
+                           HorizontalOptions="Center"
+                           FontSize="20" />
 
                     <Label Text="Categories"
-                       FontAttributes="Bold"
-                       Grid.Row="1"
-                       HorizontalOptions="Center"
-                       FontSize="20" />
+                           FontAttributes="Bold"
+                           Grid.Row="1"
+                           HorizontalOptions="Center"
+                           FontSize="20" />
                 </Grid>
 
                 <Grid x:Name="category_layout" 
-                  RowDefinitions="*"
-                  ColumnDefinitions="*"
-                  Grid.Row="1">
+                      RowDefinitions="*"
+                      ColumnDefinitions="*"
+                      Grid.Row="1">
 
                     <CollectionView x:Name="workout_category_display"
-                                VerticalOptions="Start" >
+                                    VerticalOptions="Start" >
 
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="model:Category">
                                 <Label Text="{Binding name}"
-                                   FontAttributes="Italic"
-                                   Padding="5"
-                                   HorizontalOptions="Center" />
+                                       FontAttributes="Italic"
+                                       Padding="5"
+                                       HorizontalOptions="Center" />
 
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
@@ -62,9 +62,9 @@
             </Grid>
 
             <Grid Grid.Row="0"
-              Grid.Column="1"
-              RowDefinitions="*, *"
-              VerticalOptions="Center" >
+                  Grid.Column="1"
+                  RowDefinitions="*, *"
+                  VerticalOptions="Center" >
 
                 <Button Text="Create Category"
                         Grid.Row="0"
@@ -86,16 +86,16 @@
             </Grid>
 
             <customControls:CalendarView Grid.Row="1"
-                                     Grid.ColumnSpan="2"
-                                     Margin="10" 
-                                     x:Name="horizontal_calendar_display"
-                                     on_date_selected="Horizontal_Calendar_On_Date_Selected" />
+                                         Grid.ColumnSpan="2"
+                                         Margin="10" 
+                                         x:Name="horizontal_calendar_display"
+                                         on_date_selected="Horizontal_Calendar_On_Date_Selected" />
 
             <Grid x:Name="calendar_day_exercise_display"
-              Grid.ColumnSpan="2"
-              Grid.Row="2"
-              RowDefinitions="*"
-              ColumnDefinitions="*" >
+                  Grid.ColumnSpan="2"
+                  Grid.Row="2"
+                  RowDefinitions="*"
+                  ColumnDefinitions="*" >
 
                 <CollectionView x:Name="workout_selected_date_exercise_display">
                     <CollectionView.ItemTemplate>
@@ -104,9 +104,9 @@
                                                HorizontalOptions="Center">
 
                                 <Label Text="{Binding calendar_category_name}" 
-                                   Margin="5"
-                                   FontAttributes="Italic"
-                                   FontSize="16"/>
+                                       Margin="5"
+                                       FontAttributes="Italic"
+                                       FontSize="16"/>
                             </HorizontalStackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
