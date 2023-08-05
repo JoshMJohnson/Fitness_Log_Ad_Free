@@ -57,6 +57,7 @@
                         HorizontalOptions="Center" />
 
                 <Label Text="No Entries Recorded"
+                       MinimumWidthRequest="120"
                        FontSize="12"
                        FontAttributes="Italic"
                        x:Name="day_entries_display_empty"

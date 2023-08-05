@@ -74,7 +74,8 @@
                            Grid.Column="0"
                            FontAttributes="Bold"
                            VerticalOptions="Center"
-                           HorizontalOptions="Center" />
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"/>
 
                     <Label x:Name="change_weight_display"
                            Grid.Row="1"
