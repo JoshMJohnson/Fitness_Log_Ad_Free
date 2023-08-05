@@ -29,28 +29,34 @@ public partial class BodyProgressionPopup
         }
         else /* else; saving a body progression image */
         {
-            
-
             DateTime image_date = image_date_selected_display.Date;
 
-            /* save image from cache to local storage */
-            string local_storage_location = Path.Combine(FileSystem.AppDataDirectory, image_file_name);
-            FileStream local_file_stream = File.OpenWrite(local_storage_location);
-            await stream.CopyToAsync(local_file_stream);
+            string local_storage_location_prev = Path.Combine(FileSystem.AppDataDirectory, image_file_name);
 
-
-            /* save progression to database */
-            List<Progression> progression_list_before_entry = await App.RecordRepo.Get_Progression_List();
-            await App.RecordRepo.Add_Progression(local_storage_location, image_date);
-            List<Progression> progression_list_after_entry = await App.RecordRepo.Get_Progression_List();
-
-            if (progression_list_before_entry.Count == progression_list_after_entry.Count) /* if duplicate */
+            if (local_storage_location_prev != image_full_path_cache) /* if stream already being used by image */
             {
-                Close(false);
+                /* save image from cache to local storage */
+                string local_storage_location = Path.Combine(FileSystem.AppDataDirectory, image_file_name);
+                FileStream local_file_stream = File.OpenWrite(local_storage_location);
+                await stream.CopyToAsync(local_file_stream);
+
+                /* save progression to database */
+                List<Progression> progression_list_before_entry = await App.RecordRepo.Get_Progression_List();
+                await App.RecordRepo.Add_Progression(local_storage_location, image_date);
+                List<Progression> progression_list_after_entry = await App.RecordRepo.Get_Progression_List();
+
+                if (progression_list_before_entry.Count == progression_list_after_entry.Count) /* if duplicate */
+                {
+                    Close(false);
+                }
+                else
+                {
+                    Close(true);
+                }
             }
             else
             {
-                Close(true);
+                Close(false);
             }
         }
     }
