@@ -9,7 +9,7 @@
     Shell.FlyoutBehavior="Flyout" >
 
     <Shell.FlyoutHeader>
-        <Image Source="fitness_log_shell.svg" 
+        <Image Source="fitness_log_splash.svg" 
                x:Name="header_image"
                HeightRequest="230"/>
         

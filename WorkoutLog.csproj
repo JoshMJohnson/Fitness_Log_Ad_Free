@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>Workout Log</ApplicationTitle>
+		<ApplicationTitle>Fitness Log</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.workoutlog</ApplicationId>
@@ -35,7 +35,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\workout_log_splash.svg" Color="#99D9EA" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\fitness_log_splash.svg" Color="#99D9EA" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />

@@ -1,10 +1,5 @@
-using Android.OS;
 using SQLite;
-using System.Net;
-using System.Xml.Linq;
 using WorkoutLog.Model;
-using static SQLite.SQLite3;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WorkoutLog;
 

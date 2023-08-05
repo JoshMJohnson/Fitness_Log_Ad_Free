@@ -1,7 +1,4 @@
-using AndroidX.ConstraintLayout.Motion.Widget;
-using Java.Lang;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Windows.Input;
 using WorkoutLog.Model;
 

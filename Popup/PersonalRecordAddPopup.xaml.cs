@@ -1,4 +1,3 @@
-using GoogleGson;
 using WorkoutLog.Model;
 
 namespace WorkoutLog.Popup;
