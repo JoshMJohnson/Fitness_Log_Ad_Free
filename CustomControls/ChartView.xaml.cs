@@ -190,7 +190,27 @@ public partial class ChartView : Grid
                     double min_group3 = highest_body_weight_value - half_gap - (total_weight_change_gap * 3.0);
                     double min_group2 = highest_body_weight_value - half_gap - (total_weight_change_gap * 4.0);
 
-                    int final_adjustments = -3;
+                    int initial_adjustments = 0;
+
+                    /* set initial adjustments */
+                    if (entries[i].weight >= min_group6) /* if entry in top 1/6 */
+                    {
+                        initial_adjustments = -3;
+                    }
+                    else if (entries[i].weight >= min_group3 && entries[i].weight < min_group4)
+                    {
+                        initial_adjustments = -8;
+                    }
+                    else if (entries[i].weight < min_group3) /* else if entry is not in bottom 2/6th section */
+                    {
+                        initial_adjustments = -11;
+                    }
+                    else /* else; entry is not last or first sections */
+                    {
+                        initial_adjustments = -5;
+                    }
+
+                    int final_adjustments = initial_adjustments;
 
                     var main_display_info = DeviceDisplay.MainDisplayInfo;
                     double screen_pixels_height = main_display_info.Height;
