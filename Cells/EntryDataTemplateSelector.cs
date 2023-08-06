@@ -16,15 +16,15 @@ public class EntryDataTemplateSelector : DataTemplateSelector
         var body_weight_entry = (BodyWeightEntryDot) item;
 
         int total_weight_change = body_weight_entry.highest_value - body_weight_entry.lowest_value;
-        double total_weight_change_gap = total_weight_change / 5;
+        double total_weight_change_gap = total_weight_change / 5.0;
 
-        int half_gap = (int) (total_weight_change_gap / 2);
+        int half_gap = (int) (total_weight_change_gap / 2.0);
 
         int min_group6 = (int) (body_weight_entry.highest_value - half_gap);
         int min_group5 = (int) (body_weight_entry.highest_value - half_gap - total_weight_change_gap);
-        int min_group4 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 2));
-        int min_group3 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 3));
-        int min_group2 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 4));
+        int min_group4 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 2.0));
+        int min_group3 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 3.0));
+        int min_group2 = (int) (body_weight_entry.highest_value - half_gap - (total_weight_change_gap * 4.0));
 
         if (body_weight_entry.weight >= min_group6)
         {

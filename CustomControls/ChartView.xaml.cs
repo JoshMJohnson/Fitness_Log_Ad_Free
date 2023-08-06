@@ -157,15 +157,15 @@ public partial class ChartView : Grid
                 y_axis_2.Text = "----";
                 y_axis_1.Text = "----";
             }
-            else /* more than one entry */ /* todo chart breaks when largest_value-smallest_value is less than 10 */
+            else /* more than one entry */ 
             {
                 int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
                 double total_weight_change_gap = total_weight_change / 5.0; 
 
-                int y_value5 = (int) ((total_weight_change_gap * 4) + lowest_body_weight_value);
-                int y_value4 = (int) ((total_weight_change_gap * 3) + lowest_body_weight_value);
-                int y_value3 = (int) ((total_weight_change_gap * 2) + lowest_body_weight_value);
-                int y_value2 = (int) ((total_weight_change_gap) + lowest_body_weight_value);
+                int y_value5 = (int) ((total_weight_change_gap * 4.0) + lowest_body_weight_value);
+                int y_value4 = (int) ((total_weight_change_gap * 3.0) + lowest_body_weight_value);
+                int y_value3 = (int) ((total_weight_change_gap * 2.0) + lowest_body_weight_value);
+                int y_value2 = (int) (total_weight_change_gap + lowest_body_weight_value);
 
                 y_axis_6.Text = highest_body_weight_value.ToString();
                 y_axis_5.Text = y_value5.ToString();
@@ -174,15 +174,15 @@ public partial class ChartView : Grid
                 y_axis_2.Text = y_value2.ToString();
                 y_axis_1.Text = lowest_body_weight_value.ToString();
 
-                int half_gap = (int) (total_weight_change_gap / 2);
+                double half_gap = total_weight_change_gap / 2.0;
 
                 for (int i = 0; i < entries.Count; i++) /* adjusts y value of entry marker */
                 {
-                    int min_group6 = (int) (highest_body_weight_value - half_gap);
-                    int min_group5 = (int) (highest_body_weight_value - half_gap - total_weight_change_gap);
-                    int min_group4 = (int) (highest_body_weight_value - half_gap - (total_weight_change_gap * 2));
-                    int min_group3 = (int) (highest_body_weight_value - half_gap - (total_weight_change_gap * 3));
-                    int min_group2 = (int) (highest_body_weight_value - half_gap - (total_weight_change_gap * 4));
+                    double min_group6 = highest_body_weight_value - half_gap;
+                    double min_group5 = highest_body_weight_value - half_gap - total_weight_change_gap;
+                    double min_group4 = highest_body_weight_value - half_gap - (total_weight_change_gap * 2.0);
+                    double min_group3 = highest_body_weight_value - half_gap - (total_weight_change_gap * 3.0);
+                    double min_group2 = highest_body_weight_value - half_gap - (total_weight_change_gap * 4.0);
 
                     int initial_adjustments = 0;
 
@@ -207,22 +207,31 @@ public partial class ChartView : Grid
                     int final_adjustments = initial_adjustments;
 
                     var main_display_info = DeviceDisplay.MainDisplayInfo;
-                    int screen_pixels_height = (int) main_display_info.Height;
+                    double screen_pixels_height = main_display_info.Height;
 
                     int heading_height = 220;
                     double heading_height_pixels = heading_height * 5.4;
 
-                    int chart_height_pixels = screen_pixels_height - (int) heading_height_pixels;
+                    double chart_height_pixels = screen_pixels_height - heading_height_pixels;
                     chart_height_pixels = Math.Abs(chart_height_pixels);
 
-                    int chart_adjustment_height_pixels = chart_height_pixels / 10;
+                    double chart_adjustment_height_pixels = chart_height_pixels / 10.0;
+
+                    Console.WriteLine($"******highest_body_weight_value: {highest_body_weight_value}******");
+                    Console.WriteLine($"******min_group6: {min_group6}******");
+                    Console.WriteLine($"******min_group5: {min_group5}******");
+                    Console.WriteLine($"******min_group4: {min_group4}******");
+                    Console.WriteLine($"******min_group3: {min_group3}******");
+                    Console.WriteLine($"******min_group2: {min_group2}******");
+                    Console.WriteLine($"******lowest_body_weight_value: {lowest_body_weight_value}******");
 
                     /* slight y value adjustments for entry dot */
                     if (entries[i].weight >= min_group6) /* only positive adjustment */
                     {
+                        Console.WriteLine($"******1: {entries[i].weight}******");
                         int diff_value_from_line = highest_body_weight_value - entries[i].weight;
-                        double ratio_from_line = (double) diff_value_from_line / half_gap;
-                        int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                        double ratio_from_line =  diff_value_from_line / half_gap;
+                        int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
                         int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                         final_adjustments += adjustment_value;
@@ -231,19 +240,27 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value5) /* negative adjustment; above line */
                         {
+                            Console.WriteLine($"******2: {entries[i].weight}******");
                             int diff_value_from_line = entries[i].weight - y_value5;
-                            double ratio_from_line = (double) diff_value_from_line / half_gap;
-                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            double ratio_from_line = diff_value_from_line / half_gap;
+                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
                             int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */ 
                         {
-                            int diff_value_from_line = y_value5 - entries[i].weight;
-                            double ratio_from_line = (double) diff_value_from_line / half_gap;
-                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
+                            Console.WriteLine($"******3: {entries[i].weight}******");
+                            double diff_value_from_line = y_value5 - entries[i].weight;
+                            double ratio_from_line = diff_value_from_line / half_gap;
+                            double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                             int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
+
+                            Console.WriteLine($"******half_gap: {half_gap}******");
+                            Console.WriteLine($"******diff_value_from_line: {diff_value_from_line}******");
+                            Console.WriteLine($"******ratio_from_line: {ratio_from_line}******");
+                            Console.WriteLine($"******chart_adjustment_height: {chart_adjustment_height}******");
+                            Console.WriteLine($"******adjustment_value: {adjustment_value}******");
 
                             final_adjustments += adjustment_value;
                         }
@@ -252,19 +269,21 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value4) /* negative adjustment; above line */
                         {
+                            Console.WriteLine($"******4: {entries[i].weight}******");
                             int diff_value_from_line = entries[i].weight - y_value4;
-                            double ratio_from_line = (double)diff_value_from_line / half_gap;
-                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
-                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
+                            double ratio_from_line = diff_value_from_line / half_gap;
+                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */
                         {
+                            Console.WriteLine($"******5: {entries[i].weight}******");
                             int diff_value_from_line = y_value4 - entries[i].weight;
-                            double ratio_from_line = (double)diff_value_from_line / half_gap;
-                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
-                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
+                            double ratio_from_line = diff_value_from_line / half_gap;
+                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments += adjustment_value;
                         }
@@ -273,19 +292,21 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value3) /* negative adjustment; above line */
                         {
+                            Console.WriteLine($"******6: {entries[i].weight}******");
                             int diff_value_from_line = entries[i].weight - y_value3;
-                            double ratio_from_line = (double)diff_value_from_line / half_gap;
-                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
-                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
+                            double ratio_from_line = diff_value_from_line / half_gap;
+                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */
                         {
+                            Console.WriteLine($"******7: {entries[i].weight}******");
                             int diff_value_from_line = y_value3 - entries[i].weight;
-                            double ratio_from_line = (double)diff_value_from_line / half_gap;
-                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
-                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
+                            double ratio_from_line = diff_value_from_line / half_gap;
+                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments += adjustment_value;
                         }
@@ -294,29 +315,32 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value2) /* negative adjustment; above line */
                         {
+                            Console.WriteLine($"******8: {entries[i].weight}******");
                             int diff_value_from_line = entries[i].weight - y_value2;
-                            double ratio_from_line = (double)diff_value_from_line / half_gap;
-                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
-                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
+                            double ratio_from_line = diff_value_from_line / half_gap;
+                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */
                         {
+                            Console.WriteLine($"******9: {entries[i].weight}******");
                             int diff_value_from_line = y_value2 - entries[i].weight;
-                            double ratio_from_line = (double)diff_value_from_line / half_gap;
-                            int chart_adjustment_height = chart_adjustment_height_pixels / 4;
-                            int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
+                            double ratio_from_line = diff_value_from_line / half_gap;
+                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments += adjustment_value;
                         }
                     }
                     else /* only negative adjustment */
                     {
+                        Console.WriteLine($"******10: {entries[i].weight}******");
                         int diff_value_from_line = entries[i].weight - lowest_body_weight_value;
-                        double ratio_from_line = (double)diff_value_from_line / half_gap;
-                        int chart_adjustment_height = chart_adjustment_height_pixels / 4;
-                        int adjustment_value = (int)(chart_adjustment_height * ratio_from_line);
+                        double ratio_from_line = diff_value_from_line / half_gap;
+                        int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                        int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                         final_adjustments -= adjustment_value;
                     }
