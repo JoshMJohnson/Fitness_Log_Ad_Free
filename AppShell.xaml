@@ -5,13 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:WorkoutLog"
     FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Primary}}"
-    Shell.FlyoutWidth="250"
+    Shell.FlyoutWidth="210"
     Shell.FlyoutBehavior="Flyout" >
 
     <Shell.FlyoutHeader>
         <Image Source="fitness_log_splash.svg" 
                x:Name="header_image"
-               HeightRequest="230"/>
+               HeightRequest="185"/>
         
     </Shell.FlyoutHeader>
 
