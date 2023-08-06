@@ -63,7 +63,7 @@
 
                 <Image x:Name="load_progression_preview"
                        Margin="10"
-                       MinimumHeightRequest="300"
+                       HeightRequest="200"
                        Grid.Row="4"
                        Grid.ColumnSpan="2" />
 
@@ -85,8 +85,8 @@
                             VerticalOptions="Center"
                             WidthRequest="100"
                             Clicked="Cancel_Progression" />
-                    </Grid>
                 </Grid>
-            </Border>
-        </ScrollView>
+            </Grid>
+        </Border>
+    </ScrollView>
 </mct:Popup>

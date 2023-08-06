@@ -8,7 +8,7 @@
            Color="Transparent"
            Size="275, 415" >
 
-    <ScrollView>
+    <ScrollView MinimumHeightRequest="415">
         <Border Stroke="#87CEFA"
                 StrokeThickness="4">
 
