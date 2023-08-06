@@ -8,78 +8,79 @@
            Color="Transparent"
            Size="300, 500">
 
-    <Border Stroke="#87CEFA"
-        StrokeThickness="4"
-        HorizontalOptions="Center">
+    <ScrollView>
+        <Border Stroke="#87CEFA"
+                StrokeThickness="4">
 
-        <Border.StrokeShape>
-            <RoundRectangle CornerRadius="40,40,40,40" />
-        </Border.StrokeShape>
-        
-        <Grid RowDefinitions="Auto, Auto, Auto, *, Auto"
-          ColumnDefinitions="*, Auto">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="40,40,40,40" />
+            </Border.StrokeShape>
 
-            <Label Text="Note"               
-               FontSize="24"
-               Margin="10"
-               LineHeight="100"
-               VerticalTextAlignment="Center"
-               FontAttributes="Italic"
-               Grid.Row="0"
-               Grid.Column="0" />
+            <Grid RowDefinitions="Auto, Auto, Auto, *, Auto"
+                  ColumnDefinitions="*, Auto">
 
-            <Button Grid.Row="0"
-                Grid.Column="1"
-                Clicked="Close_Note"
-                Margin="20"
-                WidthRequest="40"
-                HeightRequest="40"
-                HorizontalOptions="End"
-                TextColor="white"
-                Text="X"/>
+                <Label Text="Note"               
+                       FontSize="24"
+                       Margin="10"
+                       LineHeight="100"
+                       VerticalTextAlignment="Center"
+                       FontAttributes="Italic"
+                       Grid.Row="0"
+                       Grid.Column="0" />
 
-            <Label Grid.Row="1"
-               Grid.ColumnSpan="2"
-               Margin="10"
-               FontAttributes="Bold"
-               HorizontalOptions="Start"
-               x:Name="note_name_display"/>
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Clicked="Close_Note"
+                        Margin="20"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        HorizontalOptions="End"
+                        TextColor="white"
+                        Text="X"/>
 
-            <Label Grid.Row="2"
-               Margin="10"
-               Grid.Column="0"
-               FontAttributes="Italic"
-               x:Name="last_modified_display" />
+                <Label Grid.Row="1"
+                       Grid.ColumnSpan="2"
+                       Margin="10"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       x:Name="note_name_display"/>
 
-            <ScrollView Grid.Row="3"
-                    Grid.ColumnSpan="2"
-                    Margin="10">
+                <Label Grid.Row="2"
+                       Margin="10"
+                       Grid.Column="0"
+                       FontAttributes="Italic"
+                       x:Name="last_modified_display" />
 
-                <Label x:Name="note_content_display" />
-            </ScrollView>
+                <ScrollView Grid.Row="3"
+                            Grid.ColumnSpan="2"
+                            Margin="10">
 
-            <Grid Grid.Row="4"
-              Grid.ColumnSpan="2"
-              RowDefinitions="*"
-              Margin="10"
-              ColumnDefinitions="*, *">
+                    <Label x:Name="note_content_display" />
+                </ScrollView>
 
-                <Button Text="Edit"
-                    Grid.Column="0"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center" 
-                    Clicked="Edit_Note" 
-                    WidthRequest="100"
-                    Margin="10" />
+                <Grid Grid.Row="4"
+                      Grid.ColumnSpan="2"
+                      RowDefinitions="*"
+                      Margin="10"
+                      ColumnDefinitions="*, *">
 
-                <Button Text="Delete"
-                    Grid.Column="1"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Clicked="Delete_Note" 
-                    WidthRequest="100"
-                    Margin="10" />
+                    <Button Text="Edit"
+                            Grid.Column="0"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" 
+                            Clicked="Edit_Note" 
+                            WidthRequest="100"
+                            Margin="10" />
+
+                    <Button Text="Delete"
+                            Grid.Column="1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Clicked="Delete_Note" 
+                            WidthRequest="100"
+                            Margin="10" />
+                </Grid>
             </Grid>
-        </Grid>
-    </Border>
+        </Border>
+    </ScrollView>
 </mct:Popup>
