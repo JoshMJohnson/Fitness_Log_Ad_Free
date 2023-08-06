@@ -13,7 +13,7 @@
             <DataTemplate x:Key="Min_Group_6">
                 <Border Stroke="Transparent"
                         BackgroundColor="Transparent"
-                        WidthRequest="75">
+                        WidthRequest="55">
 
                     <Grid RowDefinitions="*, *, *, *, *, *, Auto"
                           ColumnDefinitions="*">
@@ -96,7 +96,7 @@
             <DataTemplate x:Key="Min_Group_5">
                 <Border Stroke="Transparent"
                         BackgroundColor="Transparent"
-                        WidthRequest="75">
+                        WidthRequest="55">
 
                     <Grid RowDefinitions="*, *, *, *, *, *, Auto"
                           ColumnDefinitions="*">
@@ -179,7 +179,7 @@
             <DataTemplate x:Key="Min_Group_4">
                 <Border Stroke="Transparent"
                         BackgroundColor="Transparent"
-                        WidthRequest="75">
+                        WidthRequest="55">
 
                     <Grid RowDefinitions="*, *, *, *, *, *, Auto"
                           ColumnDefinitions="*">
@@ -262,7 +262,7 @@
             <DataTemplate x:Key="Min_Group_3">
                 <Border Stroke="Transparent"
                         BackgroundColor="Transparent"
-                        WidthRequest="75">
+                        WidthRequest="55">
 
                     <Grid RowDefinitions="*, *, *, *, *, *, Auto"
                           ColumnDefinitions="*">
@@ -345,7 +345,7 @@
             <DataTemplate x:Key="Min_Group_2">
                 <Border Stroke="Transparent"
                         BackgroundColor="Transparent"
-                        WidthRequest="75">
+                        WidthRequest="55">
 
                     <Grid RowDefinitions="*, *, *, *, *, *, Auto"
                           ColumnDefinitions="*">
@@ -428,7 +428,7 @@
             <DataTemplate x:Key="Group_1">
                 <Border Stroke="Transparent"
                         BackgroundColor="Transparent"
-                        WidthRequest="75">
+                        WidthRequest="55">
 
                     <Grid RowDefinitions="*, *, *, *, *, *, Auto"
                           ColumnDefinitions="*">

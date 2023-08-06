@@ -25,7 +25,7 @@
 
             <Grid RowDefinitions="75, 10, 75"
                   ColumnDefinitions="*, Auto, *, Auto, *" 
-                  Padding="15"
+                  Padding="10"
                   BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Primary}}" >
 
                 <BoxView Grid.Row="1"
