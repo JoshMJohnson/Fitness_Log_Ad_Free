@@ -120,7 +120,7 @@ public partial class ChartView : Grid
     }
 
     /* picks accurate y axis label values and displays them */
-    public void Update_Y_Axis(List<BodyWeightEntry> entry_list)
+    public void Update_Y_Axis(List<BodyWeightEntry> entry_list) 
     {
         int highest_body_weight_value = -1;
         int lowest_body_weight_value = -1;
@@ -146,7 +146,7 @@ public partial class ChartView : Grid
             }
         }
 
-        if (has_entry) /* if at least 1 body weight entry */
+        if (has_entry) /* if at least 1 body weight entry */ 
         {
             if (highest_body_weight_value == lowest_body_weight_value) /* if only one entry */
             {
@@ -157,10 +157,10 @@ public partial class ChartView : Grid
                 y_axis_2.Text = "----";
                 y_axis_1.Text = "----";
             }
-            else /* more than one entry */
+            else /* more than one entry */ /* todo chart breaks when largest_value-smallest_value is less than 10 */
             {
                 int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
-                double total_weight_change_gap = total_weight_change / 5;
+                double total_weight_change_gap = total_weight_change / 5.0; 
 
                 int y_value5 = (int) ((total_weight_change_gap * 4) + lowest_body_weight_value);
                 int y_value4 = (int) ((total_weight_change_gap * 3) + lowest_body_weight_value);
