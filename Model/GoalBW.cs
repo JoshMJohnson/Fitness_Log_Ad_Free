@@ -12,7 +12,7 @@ public class GoalBW
     public string goal_achieve_by_date { get; set; }
     public bool date_desired { get; set; }
 
-    public int weight { get; set; }
+    public double weight { get; set; }
 
     public DateTime date_sort { get; set; }
 }

@@ -29,7 +29,7 @@ public partial class GoalBodyWeightPopup
                 {
                     weight_update_string = weight_update_string.ToString();
 
-                    int weight_update = int.Parse(weight_update_string);
+                    double weight_update = double.Parse(weight_update_string);
 
                     DateTime date;
                     bool has_desired;

@@ -9,5 +9,5 @@ public class BodyWeightEntry
     public DateTime date { get; set; }
 
     [NotNull]
-    public int weight { get; set; }
+    public double weight { get; set; }
 }

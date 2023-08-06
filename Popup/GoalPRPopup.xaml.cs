@@ -111,7 +111,7 @@ public partial class GoalPRPopup
                     {
                         weight_update_string = weight_update_string.ToString();
 
-                        int weight_update = int.Parse(weight_update_string);
+                        double weight_update = double.Parse(weight_update_string);
 
                         List<GoalPR> pr_goal_list_before = await App.RecordRepo.Get_Goal_PR_List();
                         await App.RecordRepo.Add_Goal_PR(name, date, has_desired, true, weight_update, -1, -1, -1);

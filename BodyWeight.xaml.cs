@@ -61,9 +61,9 @@ public partial class BodyWeight : ContentPage
         }
         else /* else; at least 2 body weight entries */
         {
-            int most_recent_weight_entry = entries[0].weight;
-            int second_most_recent_weight_entry = entries[1].weight;
-            int weight_change = most_recent_weight_entry - second_most_recent_weight_entry;
+            double most_recent_weight_entry = entries[0].weight;
+            double second_most_recent_weight_entry = entries[1].weight;
+            double weight_change = most_recent_weight_entry - second_most_recent_weight_entry;
 
             change_weight_display.Text = weight_change.ToString();
         }

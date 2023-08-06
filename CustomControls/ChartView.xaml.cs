@@ -83,8 +83,8 @@ public partial class ChartView : Grid
         List<BodyWeightEntry> entry_list = await App.RecordRepo.Get_Body_Weight_List();
         entry_list = entry_list.OrderBy(progress => progress.date).ToList();
 
-        int highest_val_entry = -1;
-        int lowest_val_entry = -1;
+        double highest_val_entry = -1;
+        double lowest_val_entry = -1;
 
         /* loop through the body weight entries in database */
         for (int i = 0; i < entry_list.Count; i++)
@@ -122,8 +122,8 @@ public partial class ChartView : Grid
     /* picks accurate y axis label values and displays them */
     public void Update_Y_Axis(List<BodyWeightEntry> entry_list) 
     {
-        int highest_body_weight_value = -1;
-        int lowest_body_weight_value = -1;
+        double highest_body_weight_value = -1;
+        double lowest_body_weight_value = -1;
         bool has_entry = false;
 
         for (int i = 0; i < entry_list.Count; i++) /* loops through list of body weight entries */
@@ -159,7 +159,7 @@ public partial class ChartView : Grid
             }
             else /* more than one entry */ 
             {
-                int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
+                double total_weight_change = highest_body_weight_value - lowest_body_weight_value;
                 double total_weight_change_gap = total_weight_change / 5.0; 
 
                 double y_value5 = (total_weight_change_gap * 4.0) + lowest_body_weight_value;
@@ -190,27 +190,7 @@ public partial class ChartView : Grid
                     double min_group3 = highest_body_weight_value - half_gap - (total_weight_change_gap * 3.0);
                     double min_group2 = highest_body_weight_value - half_gap - (total_weight_change_gap * 4.0);
 
-                    int initial_adjustments = 0;
-
-                    /* set initial adjustments */
-                    if (entries[i].weight >= min_group6) /* if entry in top 1/6 */
-                    {
-                        initial_adjustments = -3;
-                    }
-                    else if (entries[i].weight >= min_group3 && entries[i].weight < min_group4)
-                    {
-                        initial_adjustments = -8;
-                    }
-                    else if (entries[i].weight < min_group3) /* else if entry is not in bottom 2/6th section */
-                    {
-                        initial_adjustments = -11;
-                    }
-                    else /* else; entry is not last or first sections */
-                    {
-                        initial_adjustments = -5;                        
-                    }
-
-                    int final_adjustments = initial_adjustments;
+                    int final_adjustments = -3;
 
                     var main_display_info = DeviceDisplay.MainDisplayInfo;
                     double screen_pixels_height = main_display_info.Height;
@@ -223,9 +203,18 @@ public partial class ChartView : Grid
 
                     double chart_adjustment_height_pixels = chart_height_pixels / 10.0;
 
+                    Console.WriteLine($"----------------------");
+                    Console.WriteLine($"******min_group6: {min_group6}");
+                    Console.WriteLine($"******min_group5: {min_group5}");
+                    Console.WriteLine($"******min_group4: {min_group4}");
+                    Console.WriteLine($"******min_group3: {min_group3}");
+                    Console.WriteLine($"******min_group2: {min_group2}");
+                    Console.WriteLine($"----------------------");
+
                     /* slight y value adjustments for entry dot */
                     if (entries[i].weight >= min_group6) /* only positive adjustment */
                     {
+                        Console.WriteLine($"******1");
                         double diff_value_from_line = highest_body_weight_value - entries[i].weight;
                         double ratio_from_line =  diff_value_from_line / half_gap;
                         double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -237,6 +226,7 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value5) /* negative adjustment; above line */
                         {
+                            Console.WriteLine($"******2");
                             double diff_value_from_line = entries[i].weight - y_value5;
                             double ratio_from_line = diff_value_from_line / half_gap;
                             double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -246,6 +236,7 @@ public partial class ChartView : Grid
                         }
                         else /* positive adjustment; below line */ 
                         {
+                            Console.WriteLine($"******3");
                             double diff_value_from_line = y_value5 - entries[i].weight;
                             double ratio_from_line = diff_value_from_line / half_gap;
                             double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -258,6 +249,7 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value4) /* negative adjustment; above line */
                         {
+                            Console.WriteLine($"******4");
                             double diff_value_from_line = entries[i].weight - y_value4;
                             double ratio_from_line = diff_value_from_line / half_gap;
                             double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -267,6 +259,7 @@ public partial class ChartView : Grid
                         }
                         else /* positive adjustment; below line */
                         {
+                            Console.WriteLine($"******5");
                             double diff_value_from_line = y_value4 - entries[i].weight;
                             double ratio_from_line = diff_value_from_line / half_gap;
                             double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -279,6 +272,7 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value3) /* negative adjustment; above line */
                         {
+                            Console.WriteLine($"******6");
                             double diff_value_from_line = entries[i].weight - y_value3;
                             double ratio_from_line = diff_value_from_line / half_gap;
                             double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -288,6 +282,7 @@ public partial class ChartView : Grid
                         }
                         else /* positive adjustment; below line */
                         {
+                            Console.WriteLine($"******7");
                             double diff_value_from_line = y_value3 - entries[i].weight;
                             double ratio_from_line = diff_value_from_line / half_gap;
                             double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -300,6 +295,7 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value2) /* negative adjustment; above line */
                         {
+                            Console.WriteLine($"******8");
                             double diff_value_from_line = entries[i].weight - y_value2;
                             double ratio_from_line = diff_value_from_line / half_gap;
                             double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -309,6 +305,7 @@ public partial class ChartView : Grid
                         }
                         else /* positive adjustment; below line */
                         {
+                            Console.WriteLine($"******9");
                             double diff_value_from_line = y_value2 - entries[i].weight;
                             double ratio_from_line = diff_value_from_line / half_gap;
                             double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -319,6 +316,7 @@ public partial class ChartView : Grid
                     }
                     else /* only negative adjustment */
                     {
+                        Console.WriteLine($"******10");
                         double diff_value_from_line = entries[i].weight - lowest_body_weight_value;
                         double ratio_from_line = diff_value_from_line / half_gap;
                         double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
@@ -327,6 +325,7 @@ public partial class ChartView : Grid
                         final_adjustments -= adjustment_value;
                     }
 
+                    Console.WriteLine($"******final_adjustments: {final_adjustments}");
                     entries[i].y_adjustment = final_adjustments;
                 }
             }

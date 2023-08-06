@@ -14,7 +14,7 @@ public class PR
     [NotNull]
     public bool is_weight_pr { get; set; }
 
-    public int weight { get; set; }
+    public double weight { get; set; }
 
     public int time_hours { get; set; }
     public int time_min { get;set; }

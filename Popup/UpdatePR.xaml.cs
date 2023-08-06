@@ -118,7 +118,7 @@ public partial class UpdatePR
             {
                 weight_update_string = weight_update_string.ToString();
 
-                int weight_update = int.Parse(weight_update_string);
+                double weight_update = double.Parse(weight_update_string);
                 await App.RecordRepo.Update_PR(name, date, weight_update, -1, -1, -1);
 
                 error_prompt.IsVisible = false;

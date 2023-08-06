@@ -34,7 +34,7 @@ public partial class BodyWeightUpdatePopup
         if (weight_update_string != null && weight_update_string.Length != 0) /* if weight field is not empty */
         {
             weight_update_string = weight_update_string.ToString();
-            int weight_update = int.Parse(weight_update_string);
+            double weight_update = double.Parse(weight_update_string);
 
             await App.RecordRepo.Edit_Body_Weight(date, weight_update);
 

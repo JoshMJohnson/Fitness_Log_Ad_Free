@@ -15,7 +15,7 @@ public class GoalPR
 
     public bool is_weight_goal { get; set; }
 
-    public int weight { get; set; }
+    public double weight { get; set; }
 
     public int time_hours { get; set; }
     public int time_min { get; set; }

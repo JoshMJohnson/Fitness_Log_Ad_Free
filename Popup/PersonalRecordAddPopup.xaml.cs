@@ -102,7 +102,7 @@ public partial class PersonalRecordAddPopup
                     {
                         weight_update_string = weight_update_string.ToString();
 
-                        int weight_update = int.Parse(weight_update_string);
+                        double weight_update = double.Parse(weight_update_string);
 
                         List<PR> pr_list_before = await App.RecordRepo.Get_PR_List();
                         await App.RecordRepo.Add_PR(name, date, true, weight_update, -1, -1, -1);

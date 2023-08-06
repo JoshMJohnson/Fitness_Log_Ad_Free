@@ -107,7 +107,7 @@ public class RecordRepository
 
     /* * body weight section */
     /* adds an entry to the body weight table within the database */
-    public async Task Add_Body_Weight(DateTime entry_date, int entry_weight)
+    public async Task Add_Body_Weight(DateTime entry_date, double entry_weight)
     {
         ArgumentNullException.ThrowIfNull(entry_date, nameof(entry_date));
         ArgumentNullException.ThrowIfNull(entry_weight, nameof(entry_weight));
@@ -133,7 +133,7 @@ public class RecordRepository
     }
 
     /* edit an entry in the body weight table within the database */
-    public async Task Edit_Body_Weight(DateTime entry_date, int updated_weight)
+    public async Task Edit_Body_Weight(DateTime entry_date, double updated_weight)
     {
         ArgumentNullException.ThrowIfNull(entry_date, nameof(entry_date));
         ArgumentNullException.ThrowIfNull(updated_weight, nameof(updated_weight));
@@ -197,7 +197,7 @@ public class RecordRepository
 
     /* * body weight goals section */
     /* adds a body weight entry to the goal table within the database */
-    public async Task Add_Goal_Body_Weight(string goal_name, DateTime date, bool has_desired, int goal_weight)
+    public async Task Add_Goal_Body_Weight(string goal_name, DateTime date, bool has_desired, double goal_weight)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
@@ -256,7 +256,7 @@ public class RecordRepository
     }
 
     /* edit a body weight goal */
-    public async Task Edit_Body_Weight_Goal(string goal_name, DateTime goal_date, bool has_desired, int goal_weight)
+    public async Task Edit_Body_Weight_Goal(string goal_name, DateTime goal_date, bool has_desired, double goal_weight)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
         ArgumentNullException.ThrowIfNull(goal_date, nameof(goal_date));
@@ -350,8 +350,8 @@ public class RecordRepository
 
     /* * pr goals section */
     /* adds a pr entry to the goal table within the database */
-    public async Task Add_Goal_PR(string goal_name, DateTime date, bool has_desired, bool is_weight, 
-                                    int goal_weight, int hours, int mins, int sec)
+    public async Task Add_Goal_PR(string goal_name, DateTime date, bool has_desired, bool is_weight,
+                                    double goal_weight, int hours, int mins, int sec)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
@@ -430,7 +430,7 @@ public class RecordRepository
 
     /* edit a pr goal */
     public async Task Edit_Goal_PR(string goal_name, DateTime goal_date, bool has_desired_date, bool is_weight,
-                                        int goal_weight, int goal_hours, int goal_mins, int goal_secs)
+                                        double goal_weight, int goal_hours, int goal_mins, int goal_secs)
     {
         ArgumentNullException.ThrowIfNull(goal_name, nameof(goal_name));
         ArgumentNullException.ThrowIfNull(goal_date, nameof(goal_date));
@@ -540,7 +540,7 @@ public class RecordRepository
     /* * personal records section */
     /* adds a pr entry to the pr table within the database */
     public async Task Add_PR(string name, DateTime date, bool is_weight_pr_type,
-                                int weight_pr, int hours, int min, int sec)
+                                double weight_pr, int hours, int min, int sec)
     {
         ArgumentNullException.ThrowIfNull(name, nameof(name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
@@ -580,7 +580,7 @@ public class RecordRepository
     }
 
     /* updates a pr entry in the pr table within the database */
-    public async Task Update_PR(string exercise_name, DateTime date, int updated_weight, int hours, int mins, int sec)
+    public async Task Update_PR(string exercise_name, DateTime date, double updated_weight, int hours, int mins, int sec)
     {
         ArgumentNullException.ThrowIfNull(exercise_name, nameof(exercise_name));
         ArgumentNullException.ThrowIfNull(date, nameof(date));
