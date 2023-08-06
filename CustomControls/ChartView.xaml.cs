@@ -162,10 +162,16 @@ public partial class ChartView : Grid
                 int total_weight_change = highest_body_weight_value - lowest_body_weight_value;
                 double total_weight_change_gap = total_weight_change / 5.0; 
 
-                int y_value5 = (int) ((total_weight_change_gap * 4.0) + lowest_body_weight_value);
-                int y_value4 = (int) ((total_weight_change_gap * 3.0) + lowest_body_weight_value);
-                int y_value3 = (int) ((total_weight_change_gap * 2.0) + lowest_body_weight_value);
-                int y_value2 = (int) (total_weight_change_gap + lowest_body_weight_value);
+                double y_value5 = (total_weight_change_gap * 4.0) + lowest_body_weight_value;
+                double y_value4 = (total_weight_change_gap * 3.0) + lowest_body_weight_value;
+                double y_value3 = (total_weight_change_gap * 2.0) + lowest_body_weight_value;
+                double y_value2 = total_weight_change_gap + lowest_body_weight_value;
+
+                /* rounds y-axis values to 1 decimal point */
+                y_value5 = Math.Round(y_value5, 2);
+                y_value4 = Math.Round(y_value4, 2);
+                y_value3 = Math.Round(y_value3, 2);
+                y_value2 = Math.Round(y_value2, 2);
 
                 y_axis_6.Text = highest_body_weight_value.ToString();
                 y_axis_5.Text = y_value5.ToString();
@@ -220,9 +226,9 @@ public partial class ChartView : Grid
                     /* slight y value adjustments for entry dot */
                     if (entries[i].weight >= min_group6) /* only positive adjustment */
                     {
-                        int diff_value_from_line = highest_body_weight_value - entries[i].weight;
+                        double diff_value_from_line = highest_body_weight_value - entries[i].weight;
                         double ratio_from_line =  diff_value_from_line / half_gap;
-                        int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                        double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                         int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                         final_adjustments += adjustment_value;
@@ -231,9 +237,9 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value5) /* negative adjustment; above line */
                         {
-                            int diff_value_from_line = entries[i].weight - y_value5;
+                            double diff_value_from_line = entries[i].weight - y_value5;
                             double ratio_from_line = diff_value_from_line / half_gap;
-                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                             int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments -= adjustment_value;
@@ -252,18 +258,18 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value4) /* negative adjustment; above line */
                         {
-                            int diff_value_from_line = entries[i].weight - y_value4;
+                            double diff_value_from_line = entries[i].weight - y_value4;
                             double ratio_from_line = diff_value_from_line / half_gap;
-                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                             int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */
                         {
-                            int diff_value_from_line = y_value4 - entries[i].weight;
+                            double diff_value_from_line = y_value4 - entries[i].weight;
                             double ratio_from_line = diff_value_from_line / half_gap;
-                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                             int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments += adjustment_value;
@@ -273,18 +279,18 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value3) /* negative adjustment; above line */
                         {
-                            int diff_value_from_line = entries[i].weight - y_value3;
+                            double diff_value_from_line = entries[i].weight - y_value3;
                             double ratio_from_line = diff_value_from_line / half_gap;
-                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                             int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */
                         {
-                            int diff_value_from_line = y_value3 - entries[i].weight;
+                            double diff_value_from_line = y_value3 - entries[i].weight;
                             double ratio_from_line = diff_value_from_line / half_gap;
-                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                             int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments += adjustment_value;
@@ -294,18 +300,18 @@ public partial class ChartView : Grid
                     {
                         if (entries[i].weight > y_value2) /* negative adjustment; above line */
                         {
-                            int diff_value_from_line = entries[i].weight - y_value2;
+                            double diff_value_from_line = entries[i].weight - y_value2;
                             double ratio_from_line = diff_value_from_line / half_gap;
-                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                             int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments -= adjustment_value;
                         }
                         else /* positive adjustment; below line */
                         {
-                            int diff_value_from_line = y_value2 - entries[i].weight;
+                            double diff_value_from_line = y_value2 - entries[i].weight;
                             double ratio_from_line = diff_value_from_line / half_gap;
-                            int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                            double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                             int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                             final_adjustments += adjustment_value;
@@ -313,9 +319,9 @@ public partial class ChartView : Grid
                     }
                     else /* only negative adjustment */
                     {
-                        int diff_value_from_line = entries[i].weight - lowest_body_weight_value;
+                        double diff_value_from_line = entries[i].weight - lowest_body_weight_value;
                         double ratio_from_line = diff_value_from_line / half_gap;
-                        int chart_adjustment_height = (int) (chart_adjustment_height_pixels / 4.0);
+                        double chart_adjustment_height = chart_adjustment_height_pixels / 4.0;
                         int adjustment_value = (int) (chart_adjustment_height * ratio_from_line);
 
                         final_adjustments -= adjustment_value;
