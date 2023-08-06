@@ -25,24 +25,24 @@
 
             <Grid RowDefinitions="75, 10, 75"
                   ColumnDefinitions="*, Auto, *, Auto, *" 
-                  Padding="10"
+                  Padding="5"
                   BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Primary}}" >
 
                 <BoxView Grid.Row="1"
                          Grid.ColumnSpan="5"
-                         Margin="0,0,0,0"                   
+                         Margin="5,0,5,0"                   
                          HeightRequest="2"  
                          VerticalOptions="Fill"/>
 
                 <BoxView Grid.RowSpan="3"
                          Grid.Column="1"
-                         Margin="0,0,0,0"                   
+                         Margin="0,5,0,5"                   
                          WidthRequest="2"  
                          VerticalOptions="Fill"/>
 
                 <BoxView Grid.RowSpan="3"
                          Grid.Column="3"
-                         Margin="0,0,0,0"                   
+                         Margin="0,5,0,5"                   
                          WidthRequest="2"  
                          VerticalOptions="Fill"/>
 
