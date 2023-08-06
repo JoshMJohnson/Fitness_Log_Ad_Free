@@ -5,7 +5,8 @@ To Do:
  - save 2 versions; with/without ads
 
 Bugs:
-
+ - rotating screen (orientation change) messes up body weight chart if section opened once already
+     -solution: lock landscape mode
 
 Ads:
  - Unity
