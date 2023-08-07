@@ -6,7 +6,7 @@
            VerticalOptions="Start"
            HorizontalOptions="Center"
            Color="Transparent"
-           Size="300, 500">
+           Size="300, 515">
 
     <ScrollView MinimumHeightRequest="500">
         <Border Stroke="#87CEFA"
@@ -57,15 +57,16 @@
                 </Grid>
 
                 <Image x:Name="load_progression_view"
-                       Margin="10"
-                       HeightRequest="205"
+                       Margin="5"
+                       HeightRequest="300"
+                       Aspect="Fill"
                        Grid.Row="2"
                        Grid.ColumnSpan="2" />
 
                 <Button Text="Delete"
                         Grid.Row="3"
                         Grid.ColumnSpan="2"
-                        Margin="20"
+                        Margin="15"
                         HorizontalOptions="Center"
                         VerticalOptions="Center" 
                         WidthRequest="100"
