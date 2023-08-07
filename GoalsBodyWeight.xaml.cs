@@ -85,7 +85,9 @@ public partial class GoalsBodyWeight : ContentPage
             Text = "No Body Weight Goals!",
             FontSize = 20,
             FontAttributes = FontAttributes.Italic,
-            HorizontalOptions = LayoutOptions.Center
+            HorizontalOptions = LayoutOptions.Center,
+            HorizontalTextAlignment = TextAlignment.Center,
+            MinimumWidthRequest = 250
         });
 
         Image empty_list_image = new Image();

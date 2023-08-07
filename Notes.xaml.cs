@@ -30,7 +30,9 @@ public partial class Notes : ContentPage
             Text = "No Notes!",
             FontSize = 20,
             FontAttributes = FontAttributes.Italic,
-            HorizontalOptions = LayoutOptions.Center
+            HorizontalOptions = LayoutOptions.Center,
+            HorizontalTextAlignment = TextAlignment.Center,
+            MinimumWidthRequest = 175
         });
 
         Image empty_list_image = new Image();

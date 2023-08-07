@@ -84,7 +84,9 @@ public partial class GoalsPR : ContentPage
             Text = "No Personal Record Goals!",
             FontSize = 20,
             FontAttributes = FontAttributes.Italic,
-            HorizontalOptions = LayoutOptions.Center
+            HorizontalOptions = LayoutOptions.Center,
+            HorizontalTextAlignment = TextAlignment.Center,
+            MinimumWidthRequest = 250
         });
 
         Image empty_list_image = new Image();

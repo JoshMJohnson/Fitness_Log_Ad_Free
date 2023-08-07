@@ -166,7 +166,7 @@ public partial class WorkoutCalendar : ContentPage
             Text = "No Categories Yet!",
             FontSize = 12,
             FontAttributes = FontAttributes.Italic,
-            HorizontalOptions = LayoutOptions.Center,
+            HorizontalOptions = LayoutOptions.Center
         });
 
         Grid goal_layout = category_layout;
