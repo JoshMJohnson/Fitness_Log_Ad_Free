@@ -276,25 +276,34 @@
                                        FontSize="14"
                                        HorizontalOptions="End" />
 
-                                <Grid Grid.Row="1"
-                                      RowDefinitions="*"
-                                      ColumnDefinitions="*, Auto, Auto, Auto" >
+                                <Grid Grid.Row="1"                                      
+                                      RowDefinitions="*, *"
+                                      VerticalOptions="End"
+                                      HorizontalOptions="End"
+                                      ColumnDefinitions="*, Auto" >
 
                                     <Label Text="{Binding time_hours}"
+                                           Grid.Row="0"
                                            Grid.Column="0"
                                            HorizontalOptions="End"
                                            FontSize="14"  />
 
-                                    <Label Text=" hrs. "
+                                    <Label Text=" H"
+                                           Grid.Row="0"
                                            Grid.Column="1"
+                                           HorizontalOptions="Center"
                                            FontSize="14"  />
 
                                     <Label Text="{Binding time_min}"
-                                           Grid.Column="2"
+                                           Grid.Row="1"
+                                           HorizontalOptions="End"
+                                           Grid.Column="0"
                                            FontSize="14" />
 
-                                    <Label Text=" mins."
-                                           Grid.Column="3"
+                                    <Label Text=" M"
+                                           Grid.Column="1"
+                                           HorizontalOptions="Center"
+                                           Grid.Row="1"
                                            FontSize="14"  />
                                 </Grid>
                             </Grid>
@@ -369,25 +378,34 @@
                                        FontSize="14"
                                        HorizontalOptions="End" />
 
-                                <Grid Grid.Row="1"
-                                      RowDefinitions="*"
-                                      ColumnDefinitions="*, Auto, Auto, Auto" >
+                                <Grid Grid.Row="1"                                      
+                                      RowDefinitions="*, *"
+                                      VerticalOptions="End"
+                                      HorizontalOptions="End"
+                                      ColumnDefinitions="*, Auto" >
 
                                     <Label Text="{Binding time_hours}"
+                                           Grid.Row="0"
                                            Grid.Column="0"
                                            HorizontalOptions="End"
                                            FontSize="14"  />
 
-                                    <Label Text=" hrs. "
+                                    <Label Text=" H"
+                                           Grid.Row="0"
                                            Grid.Column="1"
+                                           HorizontalOptions="Center"
                                            FontSize="14"  />
 
                                     <Label Text="{Binding time_sec}"
-                                           Grid.Column="2"
+                                           Grid.Column="0"
+                                           Grid.Row="1"
+                                           HorizontalOptions="End"
                                            FontSize="14" />
 
-                                    <Label Text=" secs."
-                                           Grid.Column="3"
+                                    <Label Text=" S"
+                                           Grid.Column="1"
+                                           Grid.Row="1"
+                                           HorizontalOptions="Center"
                                            FontSize="14"  />
                                 </Grid>
                             </Grid>
@@ -462,17 +480,22 @@
                                        FontSize="14"
                                        HorizontalOptions="End" />
 
-                                <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"                                      
                                       RowDefinitions="*"
+                                      VerticalOptions="End"
+                                      HorizontalOptions="End"
                                       ColumnDefinitions="*, Auto" >
 
                                     <Label Text="{Binding time_hours}"
+                                           Grid.Row="0"
                                            Grid.Column="0"
                                            HorizontalOptions="End"
                                            FontSize="14"  />
 
-                                    <Label Text=" hrs."
+                                    <Label Text=" H"
+                                           Grid.Row="0"
                                            Grid.Column="1"
+                                           HorizontalOptions="Center"
                                            FontSize="14"  />
                                 </Grid>
                             </Grid>
@@ -547,25 +570,34 @@
                                        FontSize="14"
                                        HorizontalOptions="End" />
 
-                                <Grid Grid.Row="1"
-                                      RowDefinitions="*"
-                                      ColumnDefinitions="*, Auto, Auto, Auto" >
+                                <Grid Grid.Row="1"                                      
+                                      RowDefinitions="*, *"
+                                      VerticalOptions="End"
+                                      HorizontalOptions="End"
+                                      ColumnDefinitions="*, Auto" >
 
                                     <Label Text="{Binding time_min}"
-                                           Grid.Column="0"
+                                           Grid.Row="0"
                                            HorizontalOptions="End"
+                                           Grid.Column="0"
                                            FontSize="14" />
 
-                                    <Label Text=" mins. "
+                                    <Label Text=" M"
                                            Grid.Column="1"
+                                           HorizontalOptions="Center"
+                                           Grid.Row="0"
                                            FontSize="14"  />
 
                                     <Label Text="{Binding time_sec}"
-                                           Grid.Column="2"
+                                           Grid.Column="0"
+                                           Grid.Row="1"
+                                           HorizontalOptions="End"
                                            FontSize="14" />
 
-                                    <Label Text=" secs."
-                                           Grid.Column="3"
+                                    <Label Text=" S"
+                                           Grid.Column="1"
+                                           Grid.Row="1"
+                                           HorizontalOptions="Center"
                                            FontSize="14"  />
                                 </Grid>
                             </Grid>
@@ -640,17 +672,22 @@
                                        FontSize="14"
                                        HorizontalOptions="End" />
 
-                                <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"                                      
                                       RowDefinitions="*"
+                                      VerticalOptions="End"
+                                      HorizontalOptions="End"
                                       ColumnDefinitions="*, Auto" >
 
                                     <Label Text="{Binding time_min}"
-                                           Grid.Column="0"
+                                           Grid.Row="0"
                                            HorizontalOptions="End"
+                                           Grid.Column="0"
                                            FontSize="14" />
 
-                                    <Label Text=" mins."
+                                    <Label Text=" M"
                                            Grid.Column="1"
+                                           HorizontalOptions="Center"
+                                           Grid.Row="0"
                                            FontSize="14"  />
                                 </Grid>
                             </Grid>
@@ -725,17 +762,22 @@
                                        FontSize="14"
                                        HorizontalOptions="End" />
 
-                                <Grid Grid.Row="1"
+                                <Grid Grid.Row="1"                                      
                                       RowDefinitions="*"
+                                      VerticalOptions="End"
+                                      HorizontalOptions="End"
                                       ColumnDefinitions="*, Auto" >
 
                                     <Label Text="{Binding time_sec}"
                                            Grid.Column="0"
+                                           Grid.Row="2"
                                            HorizontalOptions="End"
                                            FontSize="14" />
 
-                                    <Label Text=" secs."
+                                    <Label Text=" S"
                                            Grid.Column="1"
+                                           Grid.Row="0"
+                                           HorizontalOptions="Center"
                                            FontSize="14"  />
                                 </Grid>
                             </Grid>
