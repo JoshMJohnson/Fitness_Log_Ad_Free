@@ -6,7 +6,7 @@
            VerticalOptions="Start"
            HorizontalOptions="Center"
            Color="Transparent"
-           Size="300, 500" >
+           Size="300, 600" >
 
     <ScrollView>
         <Border Stroke="#87CEFA"
@@ -56,20 +56,22 @@
 
                 <Button Grid.ColumnSpan="2"
                         Grid.Row="3"
+                        Margin="5"
                         Text="Load Image"
                         Clicked="Load_Image"
                         HorizontalOptions="Center"
                         VerticalOptions="Center" />
 
                 <Image x:Name="load_progression_preview"
-                       Margin="10"
-                       HeightRequest="205"
+                       Margin="5"
+                       HeightRequest="300"
+                       Aspect="Fill"
                        Grid.Row="4"
                        Grid.ColumnSpan="2" />
 
                 <Grid Grid.Row="5"
                       Grid.ColumnSpan="2"
-                      Margin="20"
+                      Margin="15"
                       ColumnDefinitions="*, *">
 
                     <Button Text="Record"
