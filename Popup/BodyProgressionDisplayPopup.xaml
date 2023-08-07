@@ -58,7 +58,7 @@
 
                 <Image x:Name="load_progression_view"
                        Margin="10"
-                       HeightRequest ="200"
+                       HeightRequest="205"
                        Grid.Row="2"
                        Grid.ColumnSpan="2" />
 
