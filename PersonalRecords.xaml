@@ -163,7 +163,7 @@
                                        HorizontalOptions="End" />
 
                                 <Grid Grid.Row="1"                                      
-                                      RowDefinitions="*, *, *"
+                                      RowDefinitions="Auto, Auto, Auto"
                                       VerticalOptions="End"
                                       HorizontalOptions="End"
                                       ColumnDefinitions="*, Auto" >
@@ -277,7 +277,7 @@
                                        HorizontalOptions="End" />
 
                                 <Grid Grid.Row="1"                                      
-                                      RowDefinitions="*, *"
+                                      RowDefinitions="Auto, Auto"
                                       VerticalOptions="End"
                                       HorizontalOptions="End"
                                       ColumnDefinitions="*, Auto" >
@@ -379,7 +379,7 @@
                                        HorizontalOptions="End" />
 
                                 <Grid Grid.Row="1"                                      
-                                      RowDefinitions="*, *"
+                                      RowDefinitions="Auto, Auto"
                                       VerticalOptions="End"
                                       HorizontalOptions="End"
                                       ColumnDefinitions="*, Auto" >
@@ -481,7 +481,7 @@
                                        HorizontalOptions="End" />
 
                                 <Grid Grid.Row="1"                                      
-                                      RowDefinitions="*"
+                                      RowDefinitions="Auto"
                                       VerticalOptions="End"
                                       HorizontalOptions="End"
                                       ColumnDefinitions="*, Auto" >
@@ -571,7 +571,7 @@
                                        HorizontalOptions="End" />
 
                                 <Grid Grid.Row="1"                                      
-                                      RowDefinitions="*, *"
+                                      RowDefinitions="Auto, Auto"
                                       VerticalOptions="End"
                                       HorizontalOptions="End"
                                       ColumnDefinitions="*, Auto" >
@@ -663,7 +663,7 @@
                                    FontSize="16" />
 
                             <Grid Grid.Column="2"
-                                  RowDefinitions="*, *"
+                                  RowDefinitions="Auto, Auto"
                                   ColumnDefinitions="*"
                                   HorizontalOptions="End" >
 
@@ -763,7 +763,7 @@
                                        HorizontalOptions="End" />
 
                                 <Grid Grid.Row="1"                                      
-                                      RowDefinitions="*"
+                                      RowDefinitions="Auto"
                                       VerticalOptions="End"
                                       HorizontalOptions="End"
                                       ColumnDefinitions="*, Auto" >
