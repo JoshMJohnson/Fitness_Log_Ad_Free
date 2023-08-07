@@ -29,21 +29,6 @@
 
             <Grid Grid.Row="1"
               Grid.ColumnSpan="2"
-              Margin="10"
-              ColumnDefinitions="Auto, *, Auto" >
-
-                <Label Grid.Column="0"
-                   VerticalOptions="Center"
-                   Text="Category:" />
-
-                <Picker x:Name="exercise_category"
-                    HorizontalTextAlignment="Center"
-                    Grid.Column="2"
-                    HorizontalOptions="Center" />
-            </Grid>
-
-            <Grid Grid.Row="2"
-              Grid.ColumnSpan="2"
               ColumnDefinitions="Auto, *, Auto"
               Margin="10"
               x:Name="record_date_display">
@@ -57,6 +42,32 @@
                         VerticalOptions="Center" />
             </Grid>
 
+            <Grid Grid.Row="2"
+              Grid.ColumnSpan="2"
+              Margin="10"
+              ColumnDefinitions="Auto, *, Auto" >
+
+                <Label Grid.Column="0"
+                   VerticalOptions="Center"
+                   Text="Category:" />
+
+                <Picker x:Name="exercise_category"
+                    HorizontalTextAlignment="Center"
+                    Grid.Column="2"
+                    HorizontalOptions="Center" />
+
+                <Label x:Name="exercise_category_empty_display"
+                       Text="No Categories Found"
+                       Margin="10"
+                       FontAttributes="Italic"
+                       FontSize="12"
+                       MinimumWidthRequest="125"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center" 
+                       Grid.Column="2"
+                       IsVisible="False"/>
+            </Grid>
+            
             <Grid Grid.Row="3"
               Grid.ColumnSpan="2"
               Margin="10"
@@ -67,6 +78,7 @@
                     HorizontalOptions="Center"
                     VerticalOptions="Center" 
                     WidthRequest="85"
+                        x:Name="submit_exercise_button"
                     Clicked="Submit_Record" />
 
                 <Button Text="Cancel"

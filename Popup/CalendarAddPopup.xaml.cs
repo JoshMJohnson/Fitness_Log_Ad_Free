@@ -32,16 +32,28 @@ public partial class CalendarAddPopup
         List<Category> categories = await App.RecordRepo.Get_Calendar_Category_List();
         List<string> category_string_list = new List<string>();
 
-        /* loops through the list of categories found on database */
-        for (int i = 0; i < categories.Count; i++)
+        if (categories.Count == 0) /* if no categories found in database */
         {
-            category_string_list.Add(categories[i].name);
+            exercise_category_empty_display.IsVisible = true;
+            exercise_category.IsVisible = false;
+            submit_exercise_button.IsVisible = false;
+        }
+        else /* else; at least 1 category found in database */
+        {
+            exercise_category_empty_display.IsVisible = false;
+            exercise_category.IsVisible = true;
+            submit_exercise_button.IsVisible = true;
+
+            /* loops through the list of categories found on database */
+            for (int i = 0; i < categories.Count; i++)
+            {
+                category_string_list.Add(categories[i].name);
+            }
+
+            exercise_category.ItemsSource = category_string_list;
+            exercise_category.SelectedIndex = 0;
         }
 
-        exercise_category.ItemsSource = category_string_list;
-
-        /* set and display default values */
-        exercise_category.SelectedIndex = 0;
         record_date.Date = DateTime.Now;
     }
 }
