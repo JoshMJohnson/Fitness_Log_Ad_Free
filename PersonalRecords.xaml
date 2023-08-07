@@ -19,10 +19,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="trash_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="Red"
                                              Clicked="Remove_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -34,10 +34,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="edit_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -102,10 +102,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="trash_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="red"
                                              Clicked="Remove_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -117,10 +117,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="edit_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -216,10 +216,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="trash_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="red"
                                              Clicked="Remove_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -231,10 +231,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="edit_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -318,10 +318,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="trash_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="red"
                                              Clicked="Remove_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -333,10 +333,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="edit_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -420,10 +420,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="trash_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="red"
                                              Clicked="Remove_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -435,10 +435,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="edit_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -510,10 +510,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="trash_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="red"
                                              Clicked="Remove_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -525,10 +525,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="edit_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -612,10 +612,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="trash_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="red"
                                              Clicked="Remove_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -627,10 +627,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="edit_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -702,10 +702,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="trash_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="red"
                                              Clicked="Remove_PR"
                                              BindingContext="{Binding exercise_name}"/>
@@ -717,10 +717,10 @@
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
                             <SwipeItemView>
                                 <ImageButton Source="edit_icon.png"
-                                             Padding="10"
-                                             Margin="10"
-                                             WidthRequest="50"
-                                             HeightRequest="50"
+                                             Padding="5"
+                                             Margin="5"
+                                             WidthRequest="60"
+                                             HeightRequest="60"
                                              BackgroundColor="LightBlue"
                                              Clicked="Update_PR"
                                              BindingContext="{Binding exercise_name}"/>
