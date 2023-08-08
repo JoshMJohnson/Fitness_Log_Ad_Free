@@ -17,7 +17,7 @@
                 <SwipeView>
                     <SwipeView.LeftItems>
                         <SwipeItems SwipeBehaviorOnInvoked="Close">
-                            <SwipeItem IconImageSource="trash_icon.png"
+                            <SwipeItem IconImageSource="trash_icon.png"                                       
                                        BackgroundColor="Red"
                                        Clicked="Remove_PR"
                                        BindingContext="{Binding exercise_name}"/>
