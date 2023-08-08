@@ -42,7 +42,7 @@ public partial class PersonalRecords : ContentPage
     /* swipe remove pr */
     private async void Remove_PR(object sender, EventArgs e)
     {
-        ImageButton remove_pr = (ImageButton) sender;
+        SwipeItem remove_pr = (SwipeItem) sender;
         string pr_name = remove_pr.BindingContext.ToString();
 
         await App.RecordRepo.Remove_PR(pr_name);
@@ -52,7 +52,7 @@ public partial class PersonalRecords : ContentPage
     /* swipe edit pr */
     private async void Update_PR(object sender, EventArgs e)
     {
-        ImageButton update_pr = (ImageButton) sender;
+        SwipeItem update_pr = (SwipeItem) sender;
         string pr_name = update_pr.BindingContext.ToString();
 
         await this.ShowPopupAsync(new UpdatePR(pr_name));
