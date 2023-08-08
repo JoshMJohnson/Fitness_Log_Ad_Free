@@ -27,8 +27,8 @@
                                     <ImageButton Source="trash_icon.png"
                                                  Padding="5"
                                                  Margin="5"
-                                                 WidthRequest="100"
-                                                 HeightRequest="50"
+                                                 WidthRequest="150"
+                                                 HeightRequest="70"
                                                  BackgroundColor="red"
                                                  Clicked="Remove_Body_Weight_Goal"
                                                  BindingContext="{Binding name}"/>
@@ -42,8 +42,8 @@
                                     <ImageButton Source="edit_icon.png"
                                              Padding="5"
                                              Margin="5"
-                                             WidthRequest="100"
-                                             HeightRequest="50"
+                                             WidthRequest="150"
+                                             HeightRequest="70"
                                              BackgroundColor="LightBlue"
                                              Clicked="Edit_Body_Weight_Goal"
                                              BindingContext="{Binding name}"/>
