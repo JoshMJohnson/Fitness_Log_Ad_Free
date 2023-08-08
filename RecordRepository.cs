@@ -819,6 +819,8 @@ public class RecordRepository
                 }
             }
 
+            available_category_list = available_category_list.OrderBy(c => c.name).ToList();
+
             return available_category_list;
         }
         catch (Exception e)
