@@ -37,7 +37,7 @@ public partial class GoalsPR : ContentPage
     /* swipe remove pr goal */
     private async void Remove_PR_Goal(object sender, EventArgs e)
     {
-        ImageButton remove_pr = (ImageButton) sender;
+        SwipeItem remove_pr = (SwipeItem) sender;
         string pr_name = remove_pr.BindingContext.ToString();
 
         await App.RecordRepo.Remove_Goal_PR(pr_name);
@@ -47,7 +47,7 @@ public partial class GoalsPR : ContentPage
     /* swipe edit pr goal */
     private async void Edit_PR_Goal(object sender, EventArgs e)
     {
-        ImageButton edit_pr_goal = (ImageButton)sender;
+        SwipeItem edit_pr_goal = (SwipeItem)sender;
         string goal_name = edit_pr_goal.BindingContext.ToString();
 
         await this.ShowPopupAsync(new GoalPREditPopup(goal_name));

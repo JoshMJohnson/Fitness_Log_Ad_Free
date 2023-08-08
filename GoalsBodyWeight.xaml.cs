@@ -38,7 +38,7 @@ public partial class GoalsBodyWeight : ContentPage
     /* swipe remove BW goal */
     private async void Remove_Body_Weight_Goal(object sender, EventArgs e)
     {
-        ImageButton remove_bw_goal = (ImageButton) sender;
+        SwipeItem remove_bw_goal = (SwipeItem) sender;
         string goal_name = remove_bw_goal.BindingContext.ToString();
 
         await App.RecordRepo.Remove_Goal_Body_Weight(goal_name);
@@ -48,7 +48,7 @@ public partial class GoalsBodyWeight : ContentPage
     /* swipe edit BW goal */
     private async void Edit_Body_Weight_Goal(object sender, EventArgs e)
     {
-        ImageButton edit_bw_goal = (ImageButton) sender;
+        SwipeItem edit_bw_goal = (SwipeItem) sender;
         string goal_name = edit_bw_goal.BindingContext.ToString();
 
         await this.ShowPopupAsync(new GoalBWEditPopup(goal_name));
