@@ -6,7 +6,7 @@
            VerticalOptions="Start"
            HorizontalOptions="Center"
            Color="Transparent"
-           Size="300, 500">
+           Size="300, 525">
 
     <ScrollView MinimumHeightRequest="500">
         <Border Stroke="#87CEFA"
