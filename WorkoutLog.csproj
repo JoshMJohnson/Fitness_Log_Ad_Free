@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>Fitness Log</ApplicationTitle>
+		<ApplicationTitle>Fitness Log Ad Free</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.workoutlog</ApplicationId>
@@ -142,5 +142,4 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
-
 </Project>
