@@ -24,7 +24,9 @@ public partial class CalendarCategoryAddPopup
 
         if (name != null && name.Length != 0) /* if name field is not empty */
         {
+            /* name appearance tweaking */
             name = name.Trim(); /* removes leading and trailing whitespace */
+            name = string.Concat(char.ToUpper(name[0]), name.Substring(1));
 
             List<Category> categories_before = await App.RecordRepo.Get_Calendar_Category_List();
             await App.RecordRepo.Add_Calendar_Category(name);

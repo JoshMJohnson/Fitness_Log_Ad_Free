@@ -1,5 +1,6 @@
 using System.Xml.Linq;
 using WorkoutLog.Model;
+using static Java.Util.Jar.Attributes;
 
 namespace WorkoutLog.Popup;
 
@@ -18,7 +19,9 @@ public partial class GoalBodyWeightPopup
 
         if (goal_name != null && goal_name.Length != 0) /* if goal name field is not empty */
         {
+            /* name appearance tweaking */
             goal_name = goal_name.Trim(); /* removes leading and trailing whitespace */
+            goal_name = string.Concat(char.ToUpper(goal_name[0]), goal_name.Substring(1));
 
             if (goal_name != null && goal_name.Length != 0) /* if name field is not empty after trim */
             {

@@ -19,7 +19,9 @@ public partial class PersonalRecordAddPopup
 
         if (name != null && name.Length != 0) /* if name field is not empty */
         {
+            /* name appearance tweaking */
             name = name.Trim(); /* removes leading and trailing whitespace */
+            name = string.Concat(char.ToUpper(name[0]), name.Substring(1));
 
             if (name != null && name.Length != 0) /* if name field is not empty */
             {
