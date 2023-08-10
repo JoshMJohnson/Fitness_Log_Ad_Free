@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>Fitness Log Ad Free</ApplicationTitle>
+		<ApplicationTitle>Fitness Log Premium</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.workoutlog</ApplicationId>
