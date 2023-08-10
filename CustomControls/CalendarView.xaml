@@ -38,11 +38,11 @@
     </Grid>
 
     <CollectionView ItemsSource="{Binding Source={x:Reference this}, Path=dates}">
-        
+
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Horizontal" 
                                ItemSpacing="10"/>
-            
+
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:CalendarDay">
