@@ -1,6 +1,4 @@
-using System.Xml.Linq;
 using WorkoutLog.Model;
-using static Java.Util.Jar.Attributes;
 
 namespace WorkoutLog.Popup;
 

@@ -1,4 +1,3 @@
-using Android.Media.TV;
 using WorkoutLog.Model;
 
 namespace WorkoutLog.Popup;
