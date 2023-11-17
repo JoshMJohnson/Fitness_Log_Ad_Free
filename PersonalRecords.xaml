@@ -51,7 +51,7 @@
                             <Image Grid.Column="0"
                                    WidthRequest="40"
                                    HeightRequest="40"
-                                   Source="weight_icon.png" />
+                                   Source="{AppThemeBinding Light=weight_icon.png, Dark=weight_icon_dark.png}"/>
 
                             <Label Text="{Binding exercise_name}"
                                    Grid.Column="1"
@@ -124,7 +124,7 @@
                             <Image Grid.Column="0"
                                    WidthRequest="40"
                                    HeightRequest="40"
-                                   Source="time_icon.png" />
+                                   Source="{AppThemeBinding Light=time_icon.png, Dark=time_icon_dark.png}"/>
 
                             <Label Text="{Binding exercise_name}"
                                    Grid.Column="1"
@@ -228,7 +228,7 @@
                             <Image Grid.Column="0"
                                    WidthRequest="40"
                                    HeightRequest="40"
-                                   Source="time_icon.png" />
+                                   Source="{AppThemeBinding Light=time_icon.png, Dark=time_icon_dark.png}"/>
 
                             <Label Text="{Binding exercise_name}"
                                    Padding="10"
@@ -320,7 +320,7 @@
                             <Image Grid.Column="0"
                                    WidthRequest="40"
                                    HeightRequest="40"
-                                   Source="time_icon.png" />
+                                   Source="{AppThemeBinding Light=time_icon.png, Dark=time_icon_dark.png}"/>
 
                             <Label Text="{Binding exercise_name}"
                                    VerticalOptions="Center"
@@ -412,7 +412,7 @@
                             <Image Grid.Column="0"
                                    WidthRequest="40"
                                    HeightRequest="40"
-                                   Source="time_icon.png" />
+                                   Source="{AppThemeBinding Light=time_icon.png, Dark=time_icon_dark.png}"/>
 
                             <Label Text="{Binding exercise_name}"
                                    Grid.Column="1"
@@ -492,7 +492,7 @@
                             <Image Grid.Column="0"
                                    WidthRequest="40"
                                    HeightRequest="40"
-                                   Source="time_icon.png" />
+                                   Source="{AppThemeBinding Light=time_icon.png, Dark=time_icon_dark.png}"/>
 
                             <Label Text="{Binding exercise_name}"
                                    Padding="10"
@@ -584,7 +584,7 @@
                             <Image Grid.Column="0"
                                    WidthRequest="40"
                                    HeightRequest="40"
-                                   Source="time_icon.png" />
+                                   Source="{AppThemeBinding Light=time_icon.png, Dark=time_icon_dark.png}"/>
 
                             <Label Text="{Binding exercise_name}"
                                    VerticalOptions="Center"
@@ -664,7 +664,7 @@
                             <Image Grid.Column="0"
                                    WidthRequest="40"
                                    HeightRequest="40"
-                                   Source="time_icon.png" />
+                                   Source="{AppThemeBinding Light=time_icon.png, Dark=time_icon_dark.png}"/>
 
                             <Label Text="{Binding exercise_name}"
                                    Grid.Column="1"
