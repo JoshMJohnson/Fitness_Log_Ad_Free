@@ -22,21 +22,21 @@
 
 <div align='center'>
 
-<img src="/screenshots/phone/fancy/version2/1_navigation_premium.png" alt="Home page light mode" width="250" height="500" align="left">
-<img src="/screenshots/phone/fancy/version2/2_body_weight_chart.png" alt="Home page dark mode" width="250" height="500" align="right">
+<img src="./Resources/Project_Screenshots/1_navigation_premium.png" alt="Navigation" width="250" height="500" align="left">
+<img src="./Resources/Project_Screenshots/2_body_weight_chart.png" alt="Body weight chart" width="250" height="500" align="right">
 
 <br>
 
-<img src="/screenshots/phone/fancy/version2/3_personal_records.png" alt="Home page light mode" width="250" height="500" align="left">
-<img src="/screenshots/phone/fancy/version2/4_goals.png" alt="Home page dark mode" width="250" height="500" align="right">
+<img src="./Resources/Project_Screenshots/3_personal_records.png" alt="Personal records" width="250" height="500" align="left">
+<img src="./Resources/Project_Screenshots/4_goals.png" alt="Goals" width="250" height="500" align="right">
 
 <br>
 
-<img src="/screenshots/phone/fancy/version2/5_body_progression.png" alt="Home page light mode" width="250" height="500" align="left">
-<img src="/screenshots/phone/fancy/version2/6_workout_calendar.png" alt="Home page dark mode" width="250" height="500" align="right">
+<img src="./Resources/Project_Screenshots/5_body_progression.png" alt="Body Progression" width="250" height="500" align="left">
+<img src="./Resources/Project_Screenshots/6_workout_calendar.png" alt="Workout Calendar" width="250" height="500" align="right">
 
 <br>
 
-<img src="/screenshots/phone/fancy/version2/7_notes.png" alt="Home page light mode" width="250" height="500" align="left">
+<img src="./" alt="Notes" width="250" height="500" align="left">
 
 </div>
