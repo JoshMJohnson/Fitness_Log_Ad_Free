@@ -22,27 +22,21 @@
 
 <div align='center'>
 
-<!-- <img src="/project_screenshots/home_light.png" alt="Home page light mode" width="250" height="500" align="left">
-<img src="/project_screenshots/home_dark.png" alt="Home page dark mode" width="250" height="500" align="right">
+<img src="/screenshots/phone/fancy/version2/1_navigation_premium.png" alt="Home page light mode" width="250" height="500" align="left">
+<img src="/screenshots/phone/fancy/version2/2_body_weight_chart.png" alt="Home page dark mode" width="250" height="500" align="right">
 
 <br>
 
-<img src="/project_screenshots/bear_bull_notifications.jpg" alt="Bear/Bull notifications" width="250" height="500" align="left">
-<img src="/project_screenshots/updating_watchlist_notification.jpg" alt="Updating watchlist" width="250" height="500" align="right">
+<img src="/screenshots/phone/fancy/version2/3_personal_records.png" alt="Home page light mode" width="250" height="500" align="left">
+<img src="/screenshots/phone/fancy/version2/4_goals.png" alt="Home page dark mode" width="250" height="500" align="right">
 
 <br>
 
-<img src="/project_screenshots/settings_light.png" alt="Settings page light mode" width="250" height="500" align="left">
-<img src="/project_screenshots/settings_dark.png" alt="Settings page dark mode" width="250" height="500" align="right">
+<img src="/screenshots/phone/fancy/version2/5_body_progression.png" alt="Home page light mode" width="250" height="500" align="left">
+<img src="/screenshots/phone/fancy/version2/6_workout_calendar.png" alt="Home page dark mode" width="250" height="500" align="right">
 
 <br>
 
-<img src="/project_screenshots/popup.png" alt="Popup" width="250" height="500" align="left">
-<img src="/project_screenshots/error_popup.png" alt="Error popup" width="250" height="500" align="right">
-
-<br>
-
-<img src="/project_screenshots/ticker_light.png" alt="Ticker page light mode" width="250" height="500" align="left">
-<img src="/project_screenshots/ticker_dark.png" alt="Ticker page dark mode" width="250" height="500" align="right"> -->
+<img src="/screenshots/phone/fancy/version2/7_notes.png" alt="Home page light mode" width="250" height="500" align="left">
 
 </div>
