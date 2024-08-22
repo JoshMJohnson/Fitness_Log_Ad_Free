@@ -28,6 +28,6 @@
 <img src="./Resources/Project_Screenshots/4_goals.png" alt="Goals" width="400" height="500">
 <img src="./Resources/Project_Screenshots/5_body_progression.png" alt="Body Progression" width="400" height="500">
 <img src="./Resources/Project_Screenshots/6_workout_calendar.png" alt="Workout Calendar" width="400" height="500">
-<img src="./" alt="Notes" width="400" height="500">
+<img src="./Resources/Project_Screenshots/7_notes.png" alt="Notes" width="400" height="500">
 
 </div>
