@@ -22,21 +22,12 @@
 
 <div align='center'>
 
-<img src="./Resources/Project_Screenshots/1_navigation_premium.png" alt="Navigation" width="250" height="500" align="left">
-<img src="./Resources/Project_Screenshots/2_body_weight_chart.png" alt="Body weight chart" width="250" height="500" align="right">
-
-<br>
-
-<img src="./Resources/Project_Screenshots/3_personal_records.png" alt="Personal records" width="250" height="500" align="left">
-<img src="./Resources/Project_Screenshots/4_goals.png" alt="Goals" width="250" height="500" align="right">
-
-<br>
-
-<img src="./Resources/Project_Screenshots/5_body_progression.png" alt="Body Progression" width="250" height="500" align="left">
-<img src="./Resources/Project_Screenshots/6_workout_calendar.png" alt="Workout Calendar" width="250" height="500" align="right">
-
-<br>
-
-<img src="./" alt="Notes" width="250" height="500" align="left">
+<img src="./Resources/Project_Screenshots/1_navigation_premium.png" alt="Navigation" width="400" height="500">
+<img src="./Resources/Project_Screenshots/2_body_weight_chart.png" alt="Body weight chart" width="400" height="500">
+<img src="./Resources/Project_Screenshots/3_personal_records.png" alt="Personal records" width="400" height="500">
+<img src="./Resources/Project_Screenshots/4_goals.png" alt="Goals" width="400" height="500">
+<img src="./Resources/Project_Screenshots/5_body_progression.png" alt="Body Progression" width="400" height="500">
+<img src="./Resources/Project_Screenshots/6_workout_calendar.png" alt="Workout Calendar" width="400" height="500">
+<img src="./" alt="Notes" width="400" height="500">
 
 </div>
